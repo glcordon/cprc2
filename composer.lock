@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a88c4247cd8fb951710aa529f591888",
+    "content-hash": "0aa1ce20192fab4c0b8fb351cffa7286",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -67,6 +67,70 @@
                 "widgets"
             ],
             "time": "2018-04-15T19:59:08+00:00"
+        },
+        {
+            "name": "bread-templates",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/launcher-host/bread-templates.git",
+                "reference": "1.0.13"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^6.2|^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "Launcher\\BreadTemplates\\BreadTemplatesServiceProvider"
+                    ],
+                    "aliases": {
+                        "Launcher\\BreadTemplates": "Launcher\\BreadTemplates\\BreadTemplatesFacade"
+                    },
+                    "migrations": [
+                        "publishable/database/migrations"
+                    ],
+                    "seeders": [
+                        "publishable/database/seeds/BreadTemplatesDatabaseSeeder.php"
+                    ],
+                    "unseeders": [
+                        "publishable/database/unseeds/BreadTemplatesDatabaseUnseeder.php"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Launcher\\BreadTemplates\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Launcher\\BreadTemplates\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Torrinha",
+                    "email": "bruno@torrinha.com"
+                }
+            ],
+            "description": "Templating BREAD Views",
+            "keywords": [
+                "blade",
+                "hooks",
+                "laravel",
+                "launcher",
+                "templates",
+                "views",
+                "voyager"
+            ],
+            "time": "2019-02-23T16:02:22+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -907,6 +971,46 @@
                 "parser"
             ],
             "time": "2018-03-08T01:11:30+00:00"
+        },
+        {
+            "name": "extended-bread-form-fields",
+            "version": "v0.2-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnku/extended-bread-form-fields.git",
+                "reference": "v0.2-beta"
+            },
+            "require": {
+                "larapack/hooks": "^1.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "ExtendedBreadFormFields\\ExtendedBreadFormFieldsServiceProvider"
+                    ],
+                    "views": [
+                        "resources/vievs"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ExtendedBreadFormFields\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bnku",
+                    "email": "bnku@ya.ru"
+                }
+            ],
+            "description": "Extended FormFields hook interface to Voyager BREAD",
+            "time": "2019-02-23T16:02:22+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -6021,7 +6125,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "extended-bread-form-fields": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
