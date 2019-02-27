@@ -19,10 +19,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-       
+        //
         $clients = Client::paginate('15');
- 	return view('vendor.voyager.clients.browse');
-       // return view('partials.clients.client-index', compact('clients'));
+        return view('partials.clients.client-index', compact('clients'));
     }
 
     /**
@@ -51,12 +50,13 @@ class ClientController extends Controller
         $user->last_name = $request->last_name;
         $user->email = $request->email ?? $request->first_name.str_random(5).'@cpreentrync.org';
         $user->password = bcrypt(str_random(40));
-        $user->name = $request->first_name .  " " . $request->last_name;
+        // $user->name = 0;
         $user->save();
 
-        Client::updateOrCreate(['user_id' => $user->id,
-                'first_name' => $request->first_name, 
-                'last_name' => $request->last_name,
+        Client::updateOrCreate(['user_id' => $user->id]);
+        
+        ClientProfile::updateOrCreate(['user_id' => $user->id], 
+            [
                 'address_1' => $request->street_address, 
                 'address_2' => $request->s_treet_address,
                 'city' => $request->city,
