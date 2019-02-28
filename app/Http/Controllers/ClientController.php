@@ -57,6 +57,8 @@ class ClientController extends Controller
         
         ClientProfile::updateOrCreate(['user_id' => $user->id], 
             [
+                'first_name' => $request->first_name, 
+                'last_name' => $request->last_name,
                 'address_1' => $request->street_address, 
                 'address_2' => $request->s_treet_address,
                 'city' => $request->city,
