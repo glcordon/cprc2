@@ -16,12 +16,11 @@
             <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
           </li>
           <li class="nav-item">
-              <form action="http://157.230.6.170/admin/logout" method="POST">
-                <input type="hidden" name="_token" value="vbsDKFY3gKdOeJGTC4QuszmcxQZL2bX4yyF5cxbP">
+              <a class="nav-link" href="/client/{{ \Auth::user()->id }}"><form action="http://157.230.6.170/admin/logout" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn btn-danger btn-block">
                                                     <i class="voyager-power"></i>
-                                                    Logout
-    d
+                                                    Logout</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
