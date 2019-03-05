@@ -107,7 +107,7 @@
                                 <option value="complete">Complete</option>
                             </select>
                         </li>
-        <ul class="list-group list-group-horizontal">
+        <ul class="list-group">
             @foreach($services as $service)
                 <li class="list-group-item"><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
             @endforeach
