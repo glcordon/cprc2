@@ -84,20 +84,6 @@ class ClientController extends Controller
         $additional_service = Services::get();
         $allServices = collect($additional_service->toArray());
         $otherServices = $additional_service->diff($services)->toArray();
-    //     $mine = [];
-    //         foreach($services as $srv)
-    //         {
-    //             $myServices = $allServices->reject(function ($value, $key) use ($srv) {
-            
-    //         // dd($services);
-    //         dump($srv);
-    //         dump($value);
-    //          return $value['service_name'] == $srv['service_name'];
-                
-           
-            
-    //     }); 
-    // }
         $notes = $clients->notes;
         $last_contact = $clients->notes->first()->created_at ?? '';
         // dd(Services::select('id', 'service_name')->pluck('id'));
@@ -145,6 +131,14 @@ class ClientController extends Controller
            ClientService::updateOrCreate(['service_id' => $request->service_id, 'client_id' => $client->id]);
            return 'done';
         }
+    }
+
+    public function myCaseload(int $id)
+    {
+
+        $clients = Client::where('id', $id)->paginate('15');
+        // return view('vendor.voyager.clients.browse');
+        return view('partials.clients.client-index', compact('clients'));
     }
 }
 
