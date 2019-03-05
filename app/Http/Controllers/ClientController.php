@@ -45,29 +45,22 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-    
-        // $user = new User;
-        // $user->first_name = $request->first_name;
-        // $user->last_name = $request->last_name;
-        // $user->email = $request->email ?? $request->first_name.str_random(5).'@cpreentrync.org';
-        // $user->password = bcrypt(str_random(40));
-        // $user->name = $request->first_name .  " " . $request->last_name;
-        // $user->save();
+ 
         $client = new Client;
         
-                $client->first_name = $request->first_name; 
-                $client->last_name = $request->last_name;
-                $client->address_1 = $request->street_address; 
-                $client->address_2 = $request->s_treet_address;
-                $client->city = $request->city;
-                $client->state = $request->state;
-                $client->zip = $request->zip;
-                $client->primary_phone =$request->primary_phone;
-                $client->secondary_phone = $request->secondary_phone;
-                $client->sex = $request->preferred_sex;
-                $client->release_date = $request->release_date;
-                $client->status = $request->status;
-                $client->full_name = $request->last_name. ', '. $request->first_name;
+            $client->first_name = $request->first_name; 
+            $client->last_name = $request->last_name;
+            $client->address_1 = $request->street_address; 
+            $client->address_2 = $request->s_treet_address;
+            $client->city = $request->city;
+            $client->state = $request->state;
+            $client->zip = $request->zip;
+            $client->primary_phone =$request->primary_phone;
+            $client->secondary_phone = $request->secondary_phone;
+            $client->sex = $request->preferred_sex;
+            $client->release_date = $request->release_date;
+            $client->status = $request->status;
+            $client->full_name = $request->last_name. ', '. $request->first_name;
             $client->save();
 
             $client->services()->attach($request->services);

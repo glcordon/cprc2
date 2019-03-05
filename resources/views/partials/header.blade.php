@@ -4,16 +4,16 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/client">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add New Client</a>
+            <a class="nav-link" href="/client-add">Add New Client</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">View Clients</a>
+            <a class="nav-link" href="/client">View Clients</a>
           </li>
 	<li class="nav-item">
-		<a class="nav-link" href="#">My Caseload</a>
+		<a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
 	</li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
