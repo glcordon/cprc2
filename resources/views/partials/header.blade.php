@@ -20,7 +20,7 @@
             </li>
         </ul>
         <form action="http://157.230.6.170/admin/logout" method="POST">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}>
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <button type="submit" class="btn btn-danger btn-block">
                                               <i class="voyager-power"></i>
                                               Logout
