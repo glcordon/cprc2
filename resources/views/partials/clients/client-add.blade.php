@@ -9,9 +9,6 @@
 @endpush
 @section('content1')
 
-
-   <div class="album text-muted">
-
      <div class="container">
 
        <div class="row">

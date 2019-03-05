@@ -8,8 +8,7 @@
  </head>
  
  <body>
-
- 
+ @include('partials.header') 
 @yield('content1')
  
 @include('partials.footer')
