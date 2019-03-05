@@ -48,8 +48,8 @@
        <div class="row" style="margin-top:4.5em">
     <div class="card-column col-3">
         <div class="card">
-         <img class="round" width="150" height="150" avatar="{{ $clients->users->first_name ?? ''}} {{ $clients->users->last_name ?? ''}}">
-        <div class="card-title success"><h1>{{ $clients->users->last_name ?? ''}}, {{ $clients->users->first_name ?? ''}}</h1></div>
+         <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
+        <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
         <div class="card-body">
             <div class="card-text"> 
                     {{ $clients->address_1 }} <br>
