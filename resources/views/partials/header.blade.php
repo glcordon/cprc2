@@ -19,10 +19,13 @@
               <a class="nav-link" href="/admin/logout">Log Out</a>
             </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <form action="http://157.230.6.170/admin/logout" method="POST">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}>
+          <button type="submit" class="btn btn-danger btn-block">
+                                              <i class="voyager-power"></i>
+                                              Logout
+          </button>
+      </form>
       </div>
 	</nav>
 </header>
