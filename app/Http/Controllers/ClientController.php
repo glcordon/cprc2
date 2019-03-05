@@ -71,8 +71,6 @@ class ClientController extends Controller
             $client->save();
 
             $client->services()->attach($request->services);
-
-            dd($request->services);
             
 
         return redirect()->route('client.index');
