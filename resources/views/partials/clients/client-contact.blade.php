@@ -45,7 +45,7 @@
    <div class="album text-muted">
 
      <div class="container">
-       <div class="row">
+       <div class="row" style="margin-top:4.5em">
     <div class="card-column col-3">
         <div class="card">
          <img class="round" width="150" height="150" avatar="{{ $clients->users->first_name ?? ''}} {{ $clients->users->last_name ?? ''}}">
