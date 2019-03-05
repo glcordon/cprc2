@@ -15,7 +15,7 @@
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
+Route::group(['middleware' => 'web'], function () {
 //Client Routes
 Route::get('/test', function(){return 'hey';});
 Route::get('/client', 'ClientController@index')->name('client.index');
@@ -34,3 +34,4 @@ Route::get('/delete-client/{id}', function($id) {
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
+});
