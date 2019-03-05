@@ -112,7 +112,7 @@
              <h5>Services</h5>
             <ul>
                 @foreach($services as $service)
-                    <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
+                    <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
                 @endforeach
             </ul>
         </div>
