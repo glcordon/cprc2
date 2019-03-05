@@ -33,6 +33,8 @@ class ClientController extends Controller
     public function create()       
     {
         //
+        return view('vendor.voyager.clients.add');
+
         return view('partials.clients.client-add');
 
     }
@@ -54,14 +56,7 @@ class ClientController extends Controller
         $user->name = $request->first_name .  " " . $request->last_name;
         $user->save();
 
-<<<<<<< HEAD
-        Client::updateOrCreate(['user_id' => $user->id]);
-        
-        ClientProfile::updateOrCreate(['user_id' => $user->id], 
-            [
-=======
         Client::updateOrCreate(['user_id' => $user->id,
->>>>>>> 954fc9ec82437d9a37e8c1060f21da803c135103
                 'first_name' => $request->first_name, 
                 'last_name' => $request->last_name,
                 'address_1' => $request->street_address, 
