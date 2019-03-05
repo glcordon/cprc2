@@ -69,8 +69,11 @@ class ClientController extends Controller
                 $client->status = $request->status;
                 $client->full_name = $request->last_name. ', '. $request->first_name;
             $client->save();
+
+            $client->services()->attach($request->services);
+
             dd($request->services);
-        // $client = Client::find($user->id);
+            
 
         return redirect()->route('client.index');
         
