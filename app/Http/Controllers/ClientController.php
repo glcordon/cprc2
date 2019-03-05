@@ -53,22 +53,22 @@ class ClientController extends Controller
         // $user->password = bcrypt(str_random(40));
         // $user->name = $request->first_name .  " " . $request->last_name;
         // $user->save();
-
-        Client::updateOrCreate(['user_id' => $user->id,
-                'first_name' => $request->first_name, 
-                'last_name' => $request->last_name,
-                'address_1' => $request->street_address, 
-                'address_2' => $request->s_treet_address,
-                'city' => $request->city,
-                'state' => $request->state,
-                'zip' => $request->zip,
-                'primary_phone' =>$request->primary_phone,
-                'secondary_phone' => $request->secondary_phone,
-                'sex' => $request->preferred_sex,
-                'release_date' => $request->release_date,
-                'status' => $request->status,
-                'full_name' => $request->last_name. ', '. $request->first_name,
-            ]);
+        $client = new Client;
+        
+                $client->first_name = $request->first_name; 
+                $client->last_name = $request->last_name;
+                $client->address_1 = $request->street_address; 
+                $client->address_2 = $request->s_treet_address;
+                $client->city = $request->city;
+                $client->state = $request->state;
+                $client->zip = $request->zip;
+                $client->primary_phone =$request->primary_phone;
+                $client->secondary_phone = $request->secondary_phone;
+                $client->sex = $request->preferred_sex;
+                $client->release_date = $request->release_date;
+                $client->status = $request->status;
+                $client->full_name = $request->last_name. ', '. $request->first_name;
+            $client->save();
         $client = Client::find($user->id);
 
         return redirect()->route('client.index');
