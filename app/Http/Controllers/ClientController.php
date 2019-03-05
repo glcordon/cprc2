@@ -33,8 +33,6 @@ class ClientController extends Controller
     public function create()       
     {
         //
-        return view('vendor.voyager.clients.add');
-
         return view('partials.clients.client-add');
 
     }
@@ -48,13 +46,13 @@ class ClientController extends Controller
     public function store(Request $request)
     {
     
-        $user = new User;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email ?? $request->first_name.str_random(5).'@cpreentrync.org';
-        $user->password = bcrypt(str_random(40));
-        $user->name = $request->first_name .  " " . $request->last_name;
-        $user->save();
+        // $user = new User;
+        // $user->first_name = $request->first_name;
+        // $user->last_name = $request->last_name;
+        // $user->email = $request->email ?? $request->first_name.str_random(5).'@cpreentrync.org';
+        // $user->password = bcrypt(str_random(40));
+        // $user->name = $request->first_name .  " " . $request->last_name;
+        // $user->save();
 
         Client::updateOrCreate(['user_id' => $user->id,
                 'first_name' => $request->first_name, 
