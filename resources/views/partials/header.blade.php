@@ -13,7 +13,9 @@
             <a class="nav-link" href="/client">View Clients</a>
           </li>
           <li class="nav-item">
+           @if(\Auth::user())
             <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
+            @endif
           </li>
           <li class="nav-item">
               <a class="nav-link" href="/admin/logout">Log Out</a>
