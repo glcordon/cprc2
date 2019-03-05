@@ -109,7 +109,6 @@
                         </li>
         <ul class="list-group list-group-horizontal">
             @foreach($services as $service)
-        </ul> class="list-group-item"
                 <li class="list-group-item"><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
             @endforeach
         </ul>
