@@ -109,7 +109,7 @@
                         </li>
         <div>
             @foreach($services as $service)
-                <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service"> {{ $service->service_name }}</li>
+                <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">s</label></li>
             @endforeach
         </div>
        <div class="gf_clear gf_clear_complex"><br /></div>
