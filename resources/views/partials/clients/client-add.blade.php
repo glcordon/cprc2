@@ -107,12 +107,14 @@
                                 <option value="complete">Complete</option>
                             </select>
                         </li>
-         <div class="display-4">Services</div>
-        <ul>
-            @foreach($services as $service)
-                <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
-            @endforeach
-        </ul>
+         <div>
+             <h5>Services</h5>
+            <ul>
+                @foreach($services as $service)
+                    <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
+                @endforeach
+            </ul>
+        </div>
        <div class="gf_clear gf_clear_complex"><br /></div>
            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
         </li> 
