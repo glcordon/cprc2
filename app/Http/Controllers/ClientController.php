@@ -32,7 +32,7 @@ class ClientController extends Controller
      */
     public function create()       
     {
-        $services = Services::get();
+        $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services'));
 
     }
