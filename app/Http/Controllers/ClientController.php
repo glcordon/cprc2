@@ -67,6 +67,7 @@ class ClientController extends Controller
                 'sex' => $request->preferred_sex,
                 'release_date' => $request->release_date,
                 'status' => $request->status,
+                'full_name' => $request->last_name. ', '. $request->first_name,
             ]);
         $client = Client::find($user->id);
 
