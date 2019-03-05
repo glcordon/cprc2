@@ -21,8 +21,8 @@ class ClientController extends Controller
     {
        
         $clients = Client::paginate('15');
- 	return view('vendor.voyager.clients.browse');
-       // return view('partials.clients.client-index', compact('clients'));
+ 	// return view('vendor.voyager.clients.browse');
+       return view('partials.clients.client-index', compact('clients'));
           }
 
     /**
