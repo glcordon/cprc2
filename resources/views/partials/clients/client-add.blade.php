@@ -108,6 +108,7 @@
                             </select>
                         </li>
          <div>
+             <hr>
              <h5>Services</h5>
             <ul>
                 @foreach($services as $service)
