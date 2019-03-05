@@ -2,11 +2,9 @@
 
 @section('content1')
 
-   <div class="album text-muted">
+     <div class="container"
 
-     <div class="container">
-
-       <div class="row">
+       <div class="row" style="margin-top:4.5em">>
 
          <h1>List all Clients <small><em>({{ $clients->count() }})</em></small></h1>
         @if($clients->count() == 0)
