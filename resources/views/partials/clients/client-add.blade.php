@@ -107,6 +107,7 @@
                                 <option value="complete">Complete</option>
                             </select>
                         </li>
+         <div class="display-4">Services</div>
         <ul>
             @foreach($services as $service)
                 <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
