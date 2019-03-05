@@ -32,8 +32,8 @@ class ClientController extends Controller
      */
     public function create()       
     {
-        //
-        return view('partials.clients.client-add');
+        $services = Services::get();
+        return view('partials.clients.client-add', compact('services'));
 
     }
 

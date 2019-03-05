@@ -106,7 +106,12 @@
                                 <option value="inactive">Inactive</option>
                                 <option value="complete">Complete</option>
                             </select>
-                        </li>          
+                        </li>
+        <div>
+            @foreach($services as $service)
+                <li><input type="checkbox" name="service" value="{{ $service->id }}" id="service"> {{ $service->service_name }}</li>
+            @endforeach
+        </div>
        <div class="gf_clear gf_clear_complex"><br /></div>
            <button class="btn btn-lg btn-primary" type="submit">Submit</button>
         </li> 
