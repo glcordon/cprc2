@@ -53,7 +53,7 @@ class NoteController extends Controller
         $type = $request['type'];
         $note = '<h2>'. $request['title'] . '</h2>' . $request['note'];
         $client_id = $request['client_id'];
-        $user_id = Auth::user()->id;
+       // $user_id = Auth::user()->id;
         $new_note = new Note;
         $new_note->note = $note;
         $new_note->contact_type = $type;

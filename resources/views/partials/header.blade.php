@@ -17,9 +17,6 @@
             <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
             @endif
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="/admin/logout">Log Out</a>
-            </li>
         </ul>
         <form action="http://157.230.6.170/admin/logout" method="POST">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
