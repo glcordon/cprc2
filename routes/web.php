@@ -16,7 +16,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 Route::get('login',function(){return redirect('/admin/login');})->name('login');
-Route::post('login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
+Route::post('login', 'LoginController@index')->name('login.action');
 
 Route::group(['middleware' => 'web'], function () {
 //Client Routes
