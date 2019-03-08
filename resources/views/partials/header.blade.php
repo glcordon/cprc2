@@ -27,7 +27,7 @@
           </button>
       </form>
       @else
-      <button class="btn btn-success btn-block">
+      <button type="submit" class="btn btn-success">
         Login
       </button>
       @endif
