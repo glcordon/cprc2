@@ -4,17 +4,21 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/client">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/client-add">Add New Client</a>
+            @if(\Auth::user())
+              <a class="nav-link" href="/client-add">Add New Client</a>
+            @endif
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/client">View Clients</a>
+            @if(\Auth::user())
+              <a class="nav-link" href="/client">View Clients</a>
+            @endif
           </li>
           <li class="nav-item">
-           @if(\Auth::user())
-            <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
+            @if(\Auth::user())
+              <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
             @endif
           </li>
         </ul>
