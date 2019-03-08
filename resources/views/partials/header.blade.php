@@ -26,6 +26,10 @@
                                               Logout
           </button>
       </form>
+      @else
+      <button class="btn btn-success btn-block">
+        Login
+      </button>
       @endif
       </div>
 	</nav>
