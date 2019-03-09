@@ -30,9 +30,7 @@ Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contac
 Route::get('/delete-client/{id}', function($id) {
     //
     App\Client::find($id)->delete();
-    
     return redirect()->back()->withInput();
-    
 });
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');

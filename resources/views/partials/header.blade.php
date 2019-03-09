@@ -4,7 +4,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/client">Home</a>
           </li>
           <li class="nav-item">
             @if(\Auth::user())
