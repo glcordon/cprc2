@@ -23,7 +23,7 @@
           </li>
         </ul>
          @if(\Auth::user())
-        <form action="http://157.230.6.170/admin/logout" method="POST">
+        <form action="/admin/logout" method="POST">
           {{ csrf_field() }}
           <button type="submit" class="btn btn-danger btn-block">
                                               <i class="voyager-power"></i>
