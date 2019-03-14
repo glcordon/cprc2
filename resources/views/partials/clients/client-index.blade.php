@@ -32,12 +32,12 @@
                                 @endif
 
                             </td>
-                            <td>{{ $client->assignedTo->name ?? ''}}
+                            <td>{{ $client->assignedTo->name ?? 'Not Assigned'}}
                                 {{--  @if(!$client->assignedTo)
                                     <a href="#" id="assign_caseworker" class="btn btn-default">Assign Case Worker</a>
                                 @endif  --}}
                             </td>
-                            <td>{{ $client->assignedTo->updated_at ?? '' }}</td>
+                            <td>{{ $client->assignedTo->updated_at ?? ' - ' }}</td>
                             <td>
                                     <button class="btn btn-default"> View Profile</button>
                                     <a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
