@@ -33,7 +33,6 @@
 
                             </td>
                             <td>{{ $client->assignedTo->name ?? ''}}
-                                {{ dump($client) }}
                                 @if(!$client->assignedTo)
                                     <a href="#" class="btn btn-default">Assign Case Worker</a>
                                 @endif
