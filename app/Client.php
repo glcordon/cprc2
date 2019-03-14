@@ -15,7 +15,7 @@ class Client extends Model
 
     public function caseworker()
     {
-        return $this->hasOne('App\User', 'id', 'user_id');
+        return $this->hasOne('App\User', 'id', 'case_worker');
     }
     public function profile()
     {
