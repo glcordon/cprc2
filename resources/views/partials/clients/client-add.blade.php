@@ -22,6 +22,15 @@
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span>
     </div>
+    <div>
+        Assign Caseworker:
+        <select name="caseworker" id="caseworker" class="form-control">
+            <option value="">Select Caseworker</option>
+            @foreach($users as $user)
+                <option value="{{ $user->id }}">{{ $user->name }}</option>
+            @endforeach
+        </select>
+    </div>
     <div class="gform_body"><ul id="gform_fields_4" class="gform_fields top_label form_sublabel_below description_below">
         <li id="field_4_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
