@@ -22,8 +22,8 @@
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span>
     </div>
-    <div>
-        Assign Caseworker:
+    <div class="gform_body">
+        <label>Assign Caseworker:</label>
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
