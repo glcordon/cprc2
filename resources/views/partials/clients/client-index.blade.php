@@ -27,15 +27,15 @@
                                 {{-- {{ dump($client->services) }} --}}
                                 @if(isset($client->services))
                                     @foreach ($client->services as $service)
-                                        <small><em><a href="/client/{{ $client->id }}/service/{{ $service->id }}">{{ $service->service_name }}</a></em></small><br />
+                                        <small><em>{{ $service->service_name }}</em></small><br />
                                     @endforeach
                                 @endif
 
                             </td>
                             <td>{{ $client->assignedTo->name ?? ''}}
-                                @if(!$client->assignedTo)
-                                    <a href="#" class="btn btn-default">Assign Case Worker</a>
-                                @endif
+                                {{--  @if(!$client->assignedTo)
+                                    <a href="#" id="assign_caseworker" class="btn btn-default">Assign Case Worker</a>
+                                @endif  --}}
                             </td>
                             <td>{{ $client->assignedTo->updated_at ?? '' }}</td>
                             <td>
@@ -75,6 +75,9 @@
                 return true;
             }
         })
+        $('#assign_caseworker').on('click', function(){
+            
+        });
     });
 </script>
 @endpush
