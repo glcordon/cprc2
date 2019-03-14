@@ -13,7 +13,7 @@ class Client extends Model
     protected $fillable = ['user_id', 'client_services', 'assigned_to'];
     protected $dates = ['deleted_at'];
 
-    public function users()
+    public function caseworker()
     {
         return $this->hasOne('App\User', 'id', 'user_id');
     }
