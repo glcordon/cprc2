@@ -39,7 +39,7 @@ class ClientController extends Controller
     {
 
         $users = User::get();
-        $users = $users->roles->contains('admin');
+        dd($users);
         $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users'));
 
