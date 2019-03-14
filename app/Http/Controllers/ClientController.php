@@ -52,7 +52,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
- 
+        dd($request);
         $client = new Client;
         
             $client->first_name = $request->first_name; 
@@ -68,6 +68,7 @@ class ClientController extends Controller
             $client->release_date = $request->release_date;
             $client->status = $request->status;
             $client->full_name = $request->last_name. ', '. $request->first_name;
+            $client->case_worker = $request->case_worker;
             $client->save();
 
             $client->services()->attach($request->services);
