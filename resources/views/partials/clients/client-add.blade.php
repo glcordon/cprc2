@@ -126,8 +126,8 @@
             </ul>
         </div>
        <div class="gf_clear gf_clear_complex"><br /></div>
-       <button class="btn btn-lg btn-primary" type="submit" name="add">Add Client</button>
-       <button class="btn btn-lg btn-primary" type="submit" name="add-create-new">Add And Create New </button>
+       <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
+       <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
     </li> 
     </form>
   
