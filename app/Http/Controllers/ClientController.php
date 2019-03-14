@@ -37,7 +37,7 @@ class ClientController extends Controller
     public function create()       
     {
 
-        $users = User::where('role_id', '3')->get();
+        $users = User::whereIn('role_id', [3,4])->get();
         $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users'));
 
