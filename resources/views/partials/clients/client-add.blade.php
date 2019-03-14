@@ -34,11 +34,11 @@
     <div class="gform_body"><ul id="gform_fields_4" class="gform_fields top_label form_sublabel_below description_below">
         <li id="field_4_1" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-        <div class="ginput_container ginput_container_text"><input autocomplete="off" name="first_name" id="input_4_1" type="text"  class="form-control" value="" class="medium" maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
+        <div class="ginput_container ginput_container_text"><input autocomplete="off"  required name="first_name" id="input_4_1" type="text"  class="form-control" value="" class="medium" maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
         <li id="field_4_2" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
         <div class="ginput_container ginput_container_text">
-        <input name="last_name" id="input_4_2" type="text"  class="form-control" value="" class="medium" tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false"></div>
+        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="" class="medium" tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false"></div>
         </li>
         <li id="field_4_3" class="gfield field_sublabel_below field_description_below gfield_visibility_visible">
         <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
