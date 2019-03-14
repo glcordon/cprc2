@@ -37,8 +37,10 @@ class ClientController extends Controller
      */
     public function create()       
     {
+
+        $users = User::get();
         $services = Services::orderBy('service_name', 'ASC')->get();
-        return view('partials.clients.client-add', compact('services'));
+        return view('partials.clients.client-add', compact('services','users'));
 
     }
 
