@@ -38,9 +38,9 @@
                                 @endif  --}}
                             </td>
                             <td>{{ $client->assignedTo->updated_at ?? ' - ' }}</td>
-                            <td>
-                                    <button class="btn btn-default"> View Profile</button>
-                                    <a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
+                            <td><a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
+                                    
+                                    <a href="#" class="btn btn-default">Edit</a>
                                     {{--  <button class="btn btn-primary"> View Notes</button>  --}}
                                     <a href="/delete-client/{{ $client->id }}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
                             </td>
