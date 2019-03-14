@@ -17,11 +17,16 @@
             @endif
           </li>
           <li class="nav-item">
-            @if(\Auth::user())
-              <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
-            @endif
-          </li>
-        </ul>
+              @if(\Auth::user())
+                <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
+              @endif
+            </li>
+            <li class="nav-item">
+                @if(\Voyager::can('visit-admin'))
+                  <a class="nav-link" href="/admin">Admin</a>
+                @endif
+              </li>
+            </ul>
          @if(\Auth::user())
         <form action="/admin/logout" method="POST">
           {{ csrf_field() }}
