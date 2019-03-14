@@ -32,7 +32,7 @@
                                 @endif
 
                             </td>
-                            <td>{{ $client->caseworker->name ?? ''}}
+                            <td>{{ $client->assignedTo->full_name ?? ''}}
                                 @if(!$client->assignedTo)
                                     <a href="#" class="btn btn-default">Assign Case Worker</a>
                                 @endif
