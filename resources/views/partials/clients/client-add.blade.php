@@ -37,6 +37,33 @@
     </div>
     </div>
 </div>
+                            
+<div class="form-group">
+    <div class="row">
+        <div class="col-6">
+                <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
+                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="" tabindex="22">                           
+        </div>
+        <div class="col-6">
+                <label for="input_4_14_2" id="input_4_14_2_label">Address Line 2</label>
+                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="" tabindex="23">
+                 
+        </div>
+        <div class="col-4">
+                <label for="input_4_14_3" id="input_4_14_3_label">City</label>
+                <input type="text"  class="form-control" name="city" id="input_4_14_3" value="" tabindex="24">
+                 
+        </div>
+        <div class="col-4">
+                <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
+                <input type="text"  class="form-control" name="state" id="input_4_14_4" value="" tabindex="26">
+        </div>
+        <div class="col-4">
+                <label for="input_4_14_5" id="input_4_14_5_label">ZIP / Postal Code</label>
+                <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="" tabindex="27">
+        </div>
+    </div>
+</div>
 <div class="form-group">
     <div class="row">
         <div class="col-4">
@@ -81,18 +108,7 @@
                     <option value="F">Female</option>
                     <option value="O">Prefer Not To Disclose</option>
                 </select>
-                <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
-                    <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="" tabindex="22">                           
-                    <label for="input_4_14_2" id="input_4_14_2_label">Address Line 2</label>
-                    <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="" tabindex="23">
-                      <label for="input_4_14_3" id="input_4_14_3_label">City</label>
-                     <input type="text"  class="form-control" name="city" id="input_4_14_3" value="" tabindex="24">
-                           <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
-                         <input type="text"  class="form-control" name="state" id="input_4_14_4" value="" tabindex="26">
-                  
-                            <label for="input_4_14_5" id="input_4_14_5_label">ZIP / Postal Code</label>
-                            <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="" tabindex="27">
-              
+                
                             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
                             <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="" tabindex="27">
                                 <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
