@@ -64,6 +64,7 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
+        $('.table').DataTable();
         $('.btn-danger').on('click', function(e){
             e.preventDefault();
             if(confirm('Are You Sure') == false)
