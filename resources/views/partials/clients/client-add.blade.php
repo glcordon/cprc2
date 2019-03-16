@@ -99,13 +99,12 @@
                     <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
                 @endforeach
             </ul>
-        </div>
        <div class="gf_clear gf_clear_complex"><br /></div>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
-    </form>
+        </form>
   
-</div>
+    </div>
 
      </div>
 
