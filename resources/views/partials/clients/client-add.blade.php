@@ -14,15 +14,12 @@
        <div class="row">
 
   <h1>Add A New Client</h1>
-<div class="col-md-12">
 
 <form method="post" enctype="multipart/form-data" id="gform_4" action="/client-store">
     {{ @csrf_field() }}
-    <div class="gform_heading">
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span>
-    </div>
-    <div class="gform_body">
+ 
         <label>Assign Caseworker:</label>
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
@@ -30,8 +27,6 @@
                 <option value="{{ $user->id }}">{{ $user->name }}</option>
             @endforeach
         </select>
-    </div>
-    <div class="gform_body"><ul id="gform_fields_4" class="gform_fields top_label form_sublabel_below description_below">
 
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
         <input autocomplete="off"  required name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
@@ -99,12 +94,9 @@
                     <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
                 @endforeach
             </ul>
-       <div class="gf_clear gf_clear_complex"><br /></div>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
         </form>
-  
-    </div>
 
      </div>
 
