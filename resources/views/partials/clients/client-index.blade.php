@@ -42,7 +42,7 @@
                                     
                                     <a href="#" class="btn btn-default">Edit</a>
                                     {{--  <button class="btn btn-primary"> View Notes</button>  --}}
-                                    <a href="/delete-client/{{ $client->id }}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
+                                    <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
                             </td>
                         </tr>
                     @endforeach
@@ -66,7 +66,7 @@
     $(document).ready(function(){
         $('.btn-danger').on('click', function(){
             e.preventDefault();
-            if(confirm('Are You Sure') !== true)
+            if(confirm('Are You Sure') == false)
             {
                 return false;
             }else{
