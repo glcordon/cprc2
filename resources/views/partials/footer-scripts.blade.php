@@ -1,7 +1,8 @@
  
-@stack('scripts')
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script> 
+@stack('scripts')
 <script>
  /*
    * LetterAvatar
