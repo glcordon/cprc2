@@ -27,16 +27,16 @@
         </select>
 
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-        <input autocomplete="off"  required name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
+        <input name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
         
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
-        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false"></div>
+        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
         
         <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
-        <input name="primary_phone" id="input_4_3" type="text"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false"></div></li>
+        <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
 
         <label class="gfield_label" for="input_4_4">Secondary Phone</label>
-        <input name="secondary_phone" id="input_4_4" type="text"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
+        <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
 
         <label class="gfield_label" for="input_4_4">Email Address</label>
         <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
@@ -45,7 +45,7 @@
         <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
             <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
             <option value="US Citizen">US Citizen</option><option value="Registered Alien">Registered Alien</option>
-            <option value="Veteran">Veteran</option></select></div></li>
+            <option value="Veteran">Veteran</option></select>
                 <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
                 <div class="ginput_container ginput_container_select">
                     <select class="form-control" name="citizenship" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
@@ -89,7 +89,7 @@
              <h5>Services</h5>
             <ul>
                 @foreach($services as $service)
-                    <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label></li>
+                    <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label>
                 @endforeach
             </ul>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
