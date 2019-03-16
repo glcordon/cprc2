@@ -8,7 +8,7 @@
  </head>
  
  <body style="margin-top:5.5em">
- @include('partials.header') 
+@include('partials.header') 
 @yield('content1')
  
 @include('partials.footer')

@@ -64,7 +64,7 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $('.btn-danger').on('click', function(){
+        $('.btn-danger').on('click', function(e){
             e.preventDefault();
             if(confirm('Are You Sure') == false)
             {
@@ -74,9 +74,6 @@
                 
                 return true;
             }
-        })
-        $('#assign_caseworker').on('click', function(){
-            
         });
     });
 </script>
