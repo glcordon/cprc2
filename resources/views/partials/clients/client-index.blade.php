@@ -9,6 +9,7 @@
             @if($clients->count() == 0)
             <div class="col-md-12">No Clients To List </div> 
             @endif
+       </div>
             <div class="row">
 
             
