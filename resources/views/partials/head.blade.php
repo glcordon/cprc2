@@ -10,6 +10,4 @@
 
 <!-- Bootstrap core CSS -->
 @stack('styles')
-
 <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-<script src="{{ asset('assets/js/bootstrap.js') }}"></script> 
