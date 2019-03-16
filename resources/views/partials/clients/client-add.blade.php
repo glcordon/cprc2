@@ -138,7 +138,7 @@
                 @foreach($services as $service)
                     <div class="form-check form-check-inline"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
                 @endforeach
-            <br>
+            <br><br>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
         </form>
