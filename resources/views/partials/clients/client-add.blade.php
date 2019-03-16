@@ -29,29 +29,36 @@
     <div class="row">
         <div class="col-6">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-        <input name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
-        
+        <input name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
     </div>
     <div class="col-6">
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
         <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
-        
     </div>
     </div>
-    
-        
-        
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
+            <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
+        </div>
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_4">Secondary Phone</label>
+            <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
+
+        </div>
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_4">Email Address</label>
+            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
+   
+        </div>
+    </div>
 </div>
         
-        <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
-        <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
-
-        <label class="gfield_label" for="input_4_4">Secondary Phone</label>
-        <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
-
-        <label class="gfield_label" for="input_4_4">Email Address</label>
-        <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
-   
+        
+        
+        
         <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
         <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
             <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
