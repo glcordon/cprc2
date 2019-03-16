@@ -40,7 +40,7 @@
 <div class="form-group">
     <div class="row">
         <div class="col-4">
-            <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
+            <label class="gfield_label" for="input_4_3">Primary Phone</label>
             <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
         </div>
         <div class="col-4">
@@ -51,7 +51,6 @@
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Email Address</label>
             <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
-   
         </div>
     </div>
 </div>
