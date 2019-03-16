@@ -66,7 +66,7 @@ class ClientController extends Controller
             $client->release_date = $request->release_date;
             $client->status = $request->status;
             $client->full_name = $request->last_name. ', '. $request->first_name;
-            $client->assigned_to = $request->case_worker;
+            $client->assigned_to = $request->caseworker;
             $client->save();
 
             $client->services()->attach($request->services);
