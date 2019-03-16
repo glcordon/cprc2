@@ -4,7 +4,7 @@
 <style>
     ul{list-style-type: none}
     .gfield_radio li, .gfield_checkbox li {display: inline-block; padding:0 10px;}
-    label{margin-top:20px;font-size: 1.6em}
+    label{margin-top:20px;font-size: 1.1em}
     .gfield_checkbox label, .gfield_radio label{font-size:1em; margin-top:10px;}
 </style>
 @endpush
