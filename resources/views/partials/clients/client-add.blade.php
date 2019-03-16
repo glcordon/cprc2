@@ -26,7 +26,8 @@
             @endforeach
         </select>
 <div class="form-group">
-    <div class="col-6">
+    <div class="row">
+        <div class="col-6">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
         <input name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
         
@@ -36,6 +37,8 @@
         <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
         
     </div>
+    </div>
+    
         
         
 </div>
