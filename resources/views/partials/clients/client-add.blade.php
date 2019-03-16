@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @push('styles')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <style>
     ul{list-style-type: none}
     .gfield_radio li, .gfield_checkbox li {display: inline-block; padding:0 10px;}
@@ -56,7 +57,7 @@
         </div>
         <div class="col-4">
                 <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
-                <input type="text"  class="form-control" name="state" id="input_4_14_4" value="" tabindex="26">
+                <input type="text" class="form-control" name="state" id="input_4_14_4" value="NC" tabindex="26">
         </div>
         <div class="col-4">
                 <label for="input_4_14_5" id="input_4_14_5_label">ZIP / Postal Code</label>
@@ -134,6 +135,7 @@
 
 @endsection
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
 $(document).ready(function(){
     $('input').attr('autocomplete','off');
