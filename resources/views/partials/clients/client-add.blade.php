@@ -25,12 +25,20 @@
                 <option value="{{ $user->id }}">{{ $user->name }}</option>
             @endforeach
         </select>
-
+<div class="form-group">
+    <div class="col-6">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
         <input name="first_name" id="input_4_1" type="text"  class="form-control" value=""  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
         
+    </div>
+    <div class="col-6">
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
         <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
+        
+    </div>
+        
+        
+</div>
         
         <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
         <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
