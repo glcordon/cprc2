@@ -9,6 +9,9 @@
             @if($clients->count() == 0)
             <div class="col-md-12">No Clients To List </div> 
             @endif
+            <div class="row">
+
+            
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -59,7 +62,7 @@
      </div>
 
    </div>
-
+</div>
 @endsection
 @push('scripts')
 <script>
