@@ -16,7 +16,7 @@
 <form method="post" enctype="multipart/form-data" id="gform_4" action="/client-store">
     {{ @csrf_field() }}
         <h3 class="gform_title">Intake Form</h3>
-        <span class="gform_description">Intake form for CP Re-entry Program!</span>
+        <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
  
         <label>Assign Caseworker:</label>
         <select name="caseworker" id="caseworker" class="form-control">
