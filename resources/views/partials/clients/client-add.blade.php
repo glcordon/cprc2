@@ -56,7 +56,8 @@
                     <option value="Government ID">Government ID</option>
                     <option value="No ID">No ID</option>
                 </select>
-                
+                <label class="gfield_label" for="input_4_6">Preferred Sex<span class="gfield_required">*</span></label>
+               
                 <select name="sex" id="sex" required="required" class="form-control">
                     <option value="">Select</option>
                     <option value="M">Male</option>
