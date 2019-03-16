@@ -11,8 +11,6 @@
 
      <div class="container" style="margin-top:4.5em">
 
-       <div class="row">
-
   <h1>Add A New Client</h1>
 
 <form method="post" enctype="multipart/form-data" id="gform_4" action="/client-store">
@@ -97,8 +95,6 @@
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
         </form>
-
-     </div>
 
    </div>
 
