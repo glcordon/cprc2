@@ -33,10 +33,10 @@
         <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
         
         <label class="gfield_label" for="input_4_3">Primary Phone</label><div class="ginput_container ginput_container_phone">
-        <input name="primary_phone" data-inputmask="'mask': '(999)999-9999'" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
+        <input name="primary_phone" data-inputmask="'mask': '(999)999-9999'" id="phone input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
 
         <label class="gfield_label" for="input_4_4">Secondary Phone</label>
-        <input name="secondary_phone" data-inputmask="'mask': '(999)999-9999'" id="input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
+        <input name="secondary_phone" data-inputmask="'mask': '(999)999-9999'" id="phone input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
 
         <label class="gfield_label" for="input_4_4">Email Address</label>
         <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
@@ -102,6 +102,8 @@
 @push('scripts')
 <script>
 $(document).ready(function(){
+    $("#phone").inputmask({"mask": "(999) 999-9999"});
+
     $('input').attr('autocomplete','off');
 });
 </script>
