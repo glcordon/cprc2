@@ -134,12 +134,10 @@
                             </select>
              <hr>
              <h5>Services</h5>
-             <div class="form-check form-check-inline">
+             
                 @foreach($services as $service)
-                    <input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label>
+                    <div class="form-check form-check-inline"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
                 @endforeach
-                <br>
-             </div>
             
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
