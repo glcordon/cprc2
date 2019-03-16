@@ -82,33 +82,45 @@
         </div>
     </div>
 </div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
+            <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
+                <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
+                <option value="US Citizen">US Citizen</option><option value="Registered Alien">Registered Alien</option>
+                <option value="Veteran">Veteran</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
+            <select class="form-control" name="citizenship" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
+                <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
+                <option value="US Drivers License">US Drivers License</option>
+                <option value="Birth Certificate">Birth Certificate</option>
+                <option value="Social Security Card">Social Security Card</option>
+                <option value="Government ID">Government ID</option>
+                <option value="No ID">No ID</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label class="gfield_label" for="input_4_6">Preferred Sex<span class="gfield_required">*</span></label>
+            
+            <select name="sex" id="sex" required="required" class="form-control">
+                <option value="">Select</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Prefer Not To Disclose</option>
+            </select>
+        </div>
+    </div>
+</div>      
         
         
         
-        
-        <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
-        <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
-            <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
-            <option value="US Citizen">US Citizen</option><option value="Registered Alien">Registered Alien</option>
-            <option value="Veteran">Veteran</option></select>
-                <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
-                <div class="ginput_container ginput_container_select">
-                    <select class="form-control" name="citizenship" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
-                    <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
-                    <option value="US Drivers License">US Drivers License</option>
-                    <option value="Birth Certificate">Birth Certificate</option>
-                    <option value="Social Security Card">Social Security Card</option>
-                    <option value="Government ID">Government ID</option>
-                    <option value="No ID">No ID</option>
-                </select>
-                <label class="gfield_label" for="input_4_6">Preferred Sex<span class="gfield_required">*</span></label>
-               
-                <select name="sex" id="sex" required="required" class="form-control">
-                    <option value="">Select</option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                    <option value="O">Prefer Not To Disclose</option>
-                </select>
+       
+                
+                
                 
                             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
                             <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="" tabindex="27">
@@ -122,11 +134,11 @@
                             </select>
              <hr>
              <h5>Services</h5>
-            <ul>
+            
                 @foreach($services as $service)
-                    <li><input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label>
+                    <input type="checkbox" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label for="service_{{ $service->id }}">{{ $service->service_name }}</label>
                 @endforeach
-            </ul>
+            
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
        <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">Add And Create New </button>
         </form>
