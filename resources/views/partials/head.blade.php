@@ -12,5 +12,4 @@
 @stack('styles')
 
 <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script> 
 <script src="{{ asset('assets/js/bootstrap.js') }}"></script> 
