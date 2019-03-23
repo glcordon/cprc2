@@ -15,7 +15,14 @@ class CreateReferralsTable extends Migration
     {
         Schema::create('referrals', function (Blueprint $table) {
             $table->increments('id');
+            
+            $table->string('title', 100);
+            $table->integer('service_id')->unsigned();
+            $table->integer('client_id')->unsigned();
+            $table->integer('caseworker_id')->unsigned();
+            $table->longText('body')->nullable()->default('text');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

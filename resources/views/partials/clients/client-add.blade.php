@@ -23,7 +23,7 @@
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}" {{ $user->id == $client->assigned_to ? 'selected="selected"' : '' }}>{{ $user->name }}</option>
             @endforeach
         </select>
 <div class="form-group">

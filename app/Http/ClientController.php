@@ -116,6 +116,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
+        $client = Client::find($id);
+        return view('partials.clients.client-add', compact('client'));
         //
     }
 
