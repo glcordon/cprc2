@@ -20,12 +20,12 @@
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
  
         <label>Assign Caseworker:</label>
-        <select name="caseworker" id="caseworker" class="form-control">
+        {{--  <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
                 <option value="{{ $user->id }}" {{ isset($client) ? ($user->id == $client->assigned_to ? 'selected="selected"' : '') : ''}}>{{ $user->name }}</option>
             @endforeach
-        </select>
+        </select>  --}}
 <div class="form-group">
     <div class="row">
         <div class="col-6">
