@@ -83,7 +83,7 @@
 </div>
 <div class="form-group">
     <div class="row">
-        {{--  <div class="col-4">
+        <div class="col-4">
             <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
             <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
                 <option value="" class="gf_placeholder">Your citizenship Status</option>
@@ -91,10 +91,10 @@
                 <option value="Registered Alien" {{ isset($client) ? ($client->citizenship == 'Registered Alien' ? 'selected="selected"' : '') : ''}}>Registered Alien</option>
                 <option value="Veteran" {{ isset($client) ? ($client->citizenship == 'Veteran' ? 'selected="selected"' : '') : ''}}>Veteran</option>
             </select>
-        </div>  --}}
+        </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
-            <select class="form-control" name="citizenship" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
+            <select class="form-control" name="form_of_id" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
                 <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
                 <option value="US Drivers License">US Drivers License</option>
                 <option value="Birth Certificate">Birth Certificate</option>

@@ -63,6 +63,8 @@ class ClientController extends Controller
             $client->primary_phone =$request->primary_phone;
             $client->secondary_phone = $request->secondary_phone;
             $client->email_address = $request->email;
+            $client->citizenship = $request->citizenship;
+            $client->form_of_id = $request->form_of_id;
             $client->sex = $request->preferred_sex;
             $client->release_date = $request->release_date;
             $client->status = $request->status;
