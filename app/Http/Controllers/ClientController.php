@@ -106,7 +106,8 @@ class ClientController extends Controller
     {
         $client = Client::find($id);
         $users = User::whereIn('role_id', [3,4])->get();
-        return view('partials.clients.client-add', compact('client', 'users'));
+        $services = Services::orderBy('service_name', 'ASC')->get();
+        return view('partials.clients.client-add', compact('client', 'users', 'services'));
         //
     }
 
