@@ -105,7 +105,8 @@ class ClientController extends Controller
     public function edit($id)
     {
         $client = Client::find($id);
-        return view('partials.clients.client-add', compact('client'));
+        $users = User::whereIn('role_id', [3,4])->get();
+        return view('partials.clients.client-add', compact('client', 'users'));
         //
     }
 
