@@ -13,8 +13,14 @@ class AddFieldsToClientTable extends Migration
      */
     public function up()
     {
-        Schema::table('client', function (Blueprint $table) {
+        Schema::table('clients', function (Blueprint $table) {
             //
+            
+            $table->string('citizenship', 100)->nullable(); 
+            $table->string('form_of_id', 100)->nullable(); 
+            
+            
+            
         });
     }
 
@@ -25,8 +31,11 @@ class AddFieldsToClientTable extends Migration
      */
     public function down()
     {
-        Schema::table('client', function (Blueprint $table) {
+        Schema::table('clients', function (Blueprint $table) {
             //
+            $table->dropColumn('citizenship');
+            $table->dropColumn('form_of_id');
+            
         });
     }
 }
