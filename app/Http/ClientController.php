@@ -114,9 +114,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    
+    public function editIt($id)
     {
-        dd($id);
         $client = Client::find($id);
         return view('partials.clients.client-add', compact('client'));
         //
