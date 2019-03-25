@@ -25,6 +25,12 @@
                 <option value="{{ $user->id }}" {{ isset($client) ? ($user->id == $client->assigned_to ? 'selected="selected"' : '') : ''}}>{{ $user->name }}</option>
             @endforeach
         </select>
+        <div class="form-group">
+           <div class="row"> <div class="col-12">
+                <input type="text" name="ncdps-id" class="form-control">
+            </div></div>
+            
+        </div>
 <div class="form-group">
     <div class="row">
         <div class="col-6">
@@ -37,7 +43,68 @@
     </div>
     </div>
 </div>
-                            
+<div class="form-group">
+    <div class="row">
+        <div class="col-4"><label for="maritial_status">Maritial Status</label>
+            <select name="maritial_status" id="maritial_status">
+                <option value="">Select One</option>
+                <option value="single">single</option>
+                <option value="married">married</option>
+                <option value="widowed">widowed</option>
+                <option value="separated">separated</option>
+                <option value="divorced">divorced</option>
+                <option value="domestic">domestic partner</option>
+                <option value="common_law">common law</option>
+            </select>
+        </div>
+        <div class="col-4"><label for="race"></label>
+            <select name="race" id="race">
+                <option value="">Select One</option>
+                <option value="african_american">African American</option>
+                <option value="asian">Asin</option>
+                <option value="bi-racial">Bi-Racial</option>
+                <option value="latino">Latino</option>
+                <option value="caucasian">Caucasian</option>
+                <option value="multi">Multi-Racial</option>
+                <option value="native-american">Native American</option>
+                <option value="hawiian">Hawiian/Pacific Outlander</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="col-4"><label for="ethnicity">ethnicity</label>
+            <select name="ethnicity" id="ethnicity">
+                <option value="">Select One</option>
+                <option value="hispanic">Hispanic</option>
+                <option value="non-hispanic">Non-Hispanic</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-4"><label for="education">Highest Level of Education</label>
+            <select name="education" id="education">
+                <option value="">Select One</option>
+            </select>
+        </div>
+        <div class="col-4"><label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}">
+                </div>
+        <div class="col-4"><label for="ethnicity">ethnicity</label>
+            <select name="ethnicity" id="ethnicity">
+                <option value="">Select One</option>
+                <option value="grade-school">Grade School</option>
+                <option value="some-high">Some High School</option>
+                <option value="diplom">High School Diploma</option>
+                <option value="high-school-equiv">High School Equivalent</option>
+                <option value="associates">Associates</option>
+                <option value="bachelors">Bachelors Degree</option>
+                <option value="grad">Grad School</option>
+                <option value="trade">Trade School</option>
+            </select>
+        </div>
+    </div>
+</div>                  
 <div class="form-group">
     <div class="row">
         <div class="col-6">
@@ -115,23 +182,17 @@
         </div>
     </div>
 </div>      
-        
-        
-        
-       
-                
-                
-                
-                            <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
-                            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
-                                <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
-            
-                            <select name="status" id="sex" class="form-control" required="required">
-                                <option value="">Select</option>
-                                <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
-                                <option value="inactive" {{ isset($client) ? ($client->status == 'inactive' ? 'selected="selected"' : '') : ''}}>Inactive</option>
-                                <option value="complete" {{ isset($client) ? ($client->status == 'complete' ? 'selected="selected"' : '') : ''}}>Complete</option>
-                            </select>
+
+            <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
+            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
+                <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
+
+            <select name="status" id="sex" class="form-control" required="required">
+                <option value="">Select</option>
+                <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
+                <option value="inactive" {{ isset($client) ? ($client->status == 'inactive' ? 'selected="selected"' : '') : ''}}>Inactive</option>
+                <option value="complete" {{ isset($client) ? ($client->status == 'complete' ? 'selected="selected"' : '') : ''}}>Complete</option>
+            </select>
              <hr>
              <h5>Services</h5>
              
