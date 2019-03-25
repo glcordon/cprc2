@@ -27,6 +27,7 @@
         </select>
         <div class="form-group">
            <div class="row"> <div class="col-12">
+               <label for="ncdps_id">NCDPS ID</label>
                 <input type="text" name="ncdps-id" class="form-control">
             </div></div>
             
