@@ -24,7 +24,7 @@ Route::get('/test', function(){return 'hey';});
 Route::get('/client', 'ClientController@index')->name('client.index');
 Route::get('/client/{id?}', 'ClientController@myCaseload')->name('client.myindex');
 Route::get('/client/{id}/edit', 'ClientController@edit')->name('client.edit');
-Route::post('/client/{id}/update', 'ClientController@update')->name('client.update');
+Route::post('/client/{id?}/update', 'ClientController@update')->name('client.update');
 Route::get('/client-add', 'ClientController@create')->name('client.create');
 Route::post('/client-store', 'ClientController@store')->name('client.store');
 Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contact');
