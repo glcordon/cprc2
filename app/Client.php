@@ -27,7 +27,7 @@ class Client extends Model
     }
     public function services()
     {
-        return $this->hasMany('App\Services', 'client_service', 'client_id', 'service_id');
+        return $this->belongsToMany('App\Services', 'client_service', 'client_id', 'service_id');
     }
     public function notes()
     {

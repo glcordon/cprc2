@@ -158,7 +158,7 @@ class ClientController extends Controller
     public function destroy($id)
     {
         $client = Client::find($id);
-        $client->services()->detatch();
+        $client->services()->detach();
         $client->delete();
         return redirect()->back()->withInput();
     }
