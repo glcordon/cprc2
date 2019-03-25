@@ -143,7 +143,7 @@ class ClientController extends Controller
             $client->assigned_to = $request->caseworker;
             $client->save();
 
-            $client->services()->attach($request->services);
+            $client->services()->sync($request->services);
             
 
         return redirect()->route('client.index');
