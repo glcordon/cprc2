@@ -13,7 +13,7 @@
      <div class="container" style="margin-top:4.5em">
 
   <h1>Add A New Client</h1>
-<form method="post" enctype="multipart/form-data" id="gform_4" action="{{ isset($client) ? '/client-update/'.$client->id : '/client-store' }}">
+<form method="post" enctype="multipart/form-data" id="gform_4" action="{{ isset($client) ? '/client/'.$client->id ./'update': '/client-store' }}">
     {{ @csrf_field() }}
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
