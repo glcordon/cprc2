@@ -13,19 +13,19 @@
      <div class="container" style="margin-top:4.5em">
 
   <h1>Add A New Client</h1>
-
+{{ dd('') }}
 <form method="post" enctype="multipart/form-data" id="gform_4" action="/client-store">
     {{ @csrf_field() }}
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
  
         <label>Assign Caseworker:</label>
-        {{--  <select name="caseworker" id="caseworker" class="form-control">
+        <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
                 <option value="{{ $user->id }}" {{ isset($client) ? ($user->id == $client->assigned_to ? 'selected="selected"' : '') : ''}}>{{ $user->name }}</option>
             @endforeach
-        </select>  --}}
+        </select>
 <div class="form-group">
     <div class="row">
         <div class="col-6">
