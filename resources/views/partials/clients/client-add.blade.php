@@ -13,7 +13,6 @@
      <div class="container" style="margin-top:4.5em">
 
   <h1>Add A New Client</h1>
-{{ dd('') }}
 <form method="post" enctype="multipart/form-data" id="gform_4" action="/client-store">
     {{ @csrf_field() }}
         <h3 class="gform_title">Intake Form</h3>
