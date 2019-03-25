@@ -33,7 +33,7 @@
     </div>
     <div class="col-6">
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
-        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value=""  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
+        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->last_name : ''}}"  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
     </div>
     </div>
 </div>
@@ -42,25 +42,25 @@
     <div class="row">
         <div class="col-6">
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
-                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="" tabindex="22">                           
+                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address1 : ''}}" tabindex="22">                           
         </div>
         <div class="col-6">
                 <label for="input_4_14_2" id="input_4_14_2_label">Address Line 2</label>
-                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="" tabindex="23">
+                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="{{ isset($client) ? $client->address2 : ''}}" tabindex="23">
                  
         </div>
         <div class="col-4">
                 <label for="input_4_14_3" id="input_4_14_3_label">City</label>
-                <input type="text"  class="form-control" name="city" id="input_4_14_3" value="" tabindex="24">
+                <input type="text"  class="form-control" name="city" id="input_4_14_3" value="{{ isset($client) ? $client->city : ''}}" tabindex="24">
                  
         </div>
         <div class="col-4">
                 <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
-                <input type="text" class="form-control" name="state" id="input_4_14_4" value="NC" tabindex="26">
+                <input type="text" class="form-control" name="state" id="input_4_14_4" value="{{ isset($client) ? $client->state : 'NC'}}" tabindex="26">
         </div>
         <div class="col-4">
                 <label for="input_4_14_5" id="input_4_14_5_label">ZIP / Postal Code</label>
-                <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="" tabindex="27">
+                <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="{{ isset($client) ? $client->zip : ''}}" tabindex="27">
         </div>
     </div>
 </div>
@@ -68,16 +68,16 @@
     <div class="row">
         <div class="col-4">
             <label class="gfield_label" for="input_4_3">Primary Phone</label>
-            <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value=""  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
+            <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value="{{ isset($client) ? $client->primary_phone : ''}}"  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Secondary Phone</label>
-            <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value=""  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
+            <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value="{{ isset($client) ? $client->secondary_phone : ''}}"  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
 
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Email Address</label>
-            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value=""  tabindex="4" placeholder="Email Address" aria-invalid="false">
+            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value="{{ isset($client) ? $client->email : ''}}""  tabindex="4" placeholder="Email Address" aria-invalid="false">
         </div>
     </div>
 </div>
