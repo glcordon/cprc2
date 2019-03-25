@@ -57,7 +57,7 @@
                 <option value="common_law">common law</option>
             </select>
         </div>
-        <div class="col-4"><label for="race"></label>
+        <div class="col-4"><label for="race">Race</label>
             <select name="race" id="race">
                 <option value="">Select One</option>
                 <option value="african_american">African American</option>
@@ -85,6 +85,14 @@
         <div class="col-4"><label for="education">Highest Level of Education</label>
             <select name="education" id="education">
                 <option value="">Select One</option>
+                <option value="grade-school">Grade School</option>
+                <option value="some-high">Some High School</option>
+                <option value="diplom">High School Diploma</option>
+                <option value="high-school-equiv">High School Equivalent</option>
+                <option value="associates">Associates</option>
+                <option value="bachelors">Bachelors Degree</option>
+                <option value="grad">Grad School</option>
+                <option value="trade">Trade School</option>
             </select>
         </div>
         <div class="col-4"><label for="dob">DOB</label>
