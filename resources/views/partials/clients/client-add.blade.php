@@ -42,11 +42,11 @@
     <div class="row">
         <div class="col-6">
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
-                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address1 : ''}}" tabindex="22">                           
+                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" tabindex="22">                           
         </div>
         <div class="col-6">
                 <label for="input_4_14_2" id="input_4_14_2_label">Address Line 2</label>
-                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="{{ isset($client) ? $client->address2 : ''}}" tabindex="23">
+                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="{{ isset($client) ? $client->address_2 : ''}}" tabindex="23">
                  
         </div>
         <div class="col-4">
@@ -77,7 +77,7 @@
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Email Address</label>
-            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value="{{ isset($client) ? $client->email : ''}}""  tabindex="4" placeholder="Email Address" aria-invalid="false">
+            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value="{{ isset($client) ? $client->email_address : ''}}""  tabindex="4" placeholder="Email Address" aria-invalid="false">
         </div>
     </div>
 </div>
