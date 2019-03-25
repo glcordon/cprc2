@@ -123,7 +123,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::find($id);
+            $client = Client::find($id);
             $client->first_name = $request->first_name; 
             $client->last_name = $request->last_name;
             $client->address_1 = $request->street_address; 
