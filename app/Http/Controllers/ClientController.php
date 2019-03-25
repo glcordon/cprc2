@@ -62,7 +62,7 @@ class ClientController extends Controller
             $client->zip = $request->zip;
             $client->primary_phone =$request->primary_phone;
             $client->secondary_phone = $request->secondary_phone;
-            $client->email = $request->email;
+            $client->email_address = $request->email;
             $client->sex = $request->preferred_sex;
             $client->release_date = $request->release_date;
             $client->status = $request->status;
