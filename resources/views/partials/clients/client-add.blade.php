@@ -123,7 +123,7 @@
                 
                 
                             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
-                            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="" tabindex="27">
+                            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
                                 <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             
                             <select name="status" id="sex" class="form-control" required="required">
