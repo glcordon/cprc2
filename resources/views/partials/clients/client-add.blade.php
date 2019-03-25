@@ -136,6 +136,7 @@
              <h5>Services</h5>
              
                 @foreach($services as $service)
+                {{ dd($client->services) }}
                     <div class="form-check form-check-inline" style="margin:3px 10px; display: -webkit-inline-box"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? ($client->services->id == $service->id ? 'checked="checked"' : '') : ''}}> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
                 @endforeach
             <br><br>
