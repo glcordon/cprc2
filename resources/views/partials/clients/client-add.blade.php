@@ -86,9 +86,10 @@
         <div class="col-4">
             <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
             <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
-                <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
-                <option value="US Citizen">US Citizen</option><option value="Registered Alien">Registered Alien</option>
-                <option value="Veteran">Veteran</option>
+                <option value="" class="gf_placeholder">Your citizenship Status</option>
+                <option value="US Citizen" {{ isset($client) ? ($client->citizenship == 'US Citizen' ? 'selected="selected"' : '') : ''}}>US Citizen</option>
+                <option value="Registered Alien" {{ isset($client) ? ($client->citizenship == 'Registered Alien' ? 'selected="selected"' : '') : ''}}>Registered Alien</option>
+                <option value="Veteran" {{ isset($client) ? ($client->citizenship == 'Veteran' ? 'selected="selected"' : '') : ''}}>Veteran</option>
             </select>
         </div>
         <div class="col-4">
