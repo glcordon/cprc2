@@ -96,11 +96,11 @@
             <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
             <select class="form-control" name="form_of_id" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
                 <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
-                <option value="US Drivers License">US Drivers License</option>
-                <option value="Birth Certificate">Birth Certificate</option>
-                <option value="Social Security Card">Social Security Card</option>
-                <option value="Government ID">Government ID</option>
-                <option value="No ID">No ID</option>
+                <option value="US Drivers License" {{ isset($client) ? ($client->form_of_id == 'US Drivers License' ? 'selected="selected"' : '') : ''}}>US Drivers License</option>
+                <option value="Birth Certificate" {{ isset($client) ? ($client->form_of_id == 'Birth Certificate' ? 'selected="selected"' : '') : ''}}>Birth Certificate</option>
+                <option value="Social Security Card" {{ isset($client) ? ($client->form_of_id == 'Social Security Card' ? 'selected="selected"' : '') : ''}}>Social Security Card</option>
+                <option value="Government ID" {{ isset($client) ? ($client->form_of_id == 'Government ID' ? 'selected="selected"' : '') : ''}}>Government ID</option>
+                <option value="No ID" {{ isset($client) ? ($client->form_of_id == 'No ID' ? 'selected="selected"' : '') : ''}}>No ID</option>
             </select>
         </div>
         <div class="col-4">
@@ -108,9 +108,9 @@
             
             <select name="sex" id="sex" required="required" class="form-control">
                 <option value="">Select</option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-                <option value="O">Prefer Not To Disclose</option>
+                <option value="M" {{ isset($client) ? ($client->sex == 'F' ? 'selected="selected"' : '') : ''}}>Male</option>
+                <option value="F" {{ isset($client) ? ($client->sex == 'M' ? 'selected="selected"' : '') : ''}}>Female</option>
+                <option value="O" {{ isset($client) ? ($client->sex == 'O' ? 'selected="selected"' : '') : ''}}>Prefer Not To Disclose</option>
             </select>
         </div>
     </div>
@@ -126,17 +126,17 @@
                             <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="" tabindex="27">
                                 <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             
-                            <select name="sex" id="sex" class="form-control" required="required">
+                            <select name="status" id="sex" class="form-control" required="required">
                                 <option value="">Select</option>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                                <option value="complete">Complete</option>
+                                <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
+                                <option value="inactive" {{ isset($client) ? ($client->status == 'inactive' ? 'selected="selected"' : '') : ''}}>Inactive</option>
+                                <option value="complete" {{ isset($client) ? ($client->status == 'complete' ? 'selected="selected"' : '') : ''}}>Complete</option>
                             </select>
              <hr>
              <h5>Services</h5>
              
                 @foreach($services as $service)
-                    <div class="form-check form-check-inline" style="margin:3px 10px; display: -webkit-inline-box"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}"> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
+                    <div class="form-check form-check-inline" style="margin:3px 10px; display: -webkit-inline-box"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? ($client->services->id == $service->id ? 'checked="checked"' : '') : ''}}> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
                 @endforeach
             <br><br>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">Add Client</button>
