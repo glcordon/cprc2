@@ -29,7 +29,7 @@ Route::get('/client-add', 'ClientController@create')->name('client.create');
 Route::post('/client-store', 'ClientController@store')->name('client.store');
 Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contact');
 
-Route::get('/delete-client/{id}', 'ClientController@destory');
+Route::get('/delete-client/{id}', 'ClientController@destroy');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
