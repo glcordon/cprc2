@@ -46,7 +46,7 @@
 <div class="form-group">
     <div class="row">
         <div class="col-4"><label for="maritial_status">Maritial Status</label>
-            <select name="maritial_status" id="maritial_status">
+            <select name="maritial_status" id="maritial_status" class="form-control">
                 <option value="">Select One</option>
                 <option value="single">single</option>
                 <option value="married">married</option>
@@ -58,7 +58,7 @@
             </select>
         </div>
         <div class="col-4"><label for="race">Race</label>
-            <select name="race" id="race">
+            <select name="race" id="race" class="form-control">
                 <option value="">Select One</option>
                 <option value="african_american">African American</option>
                 <option value="asian">Asin</option>
@@ -72,7 +72,7 @@
             </select>
         </div>
         <div class="col-4"><label for="ethnicity">ethnicity</label>
-            <select name="ethnicity" id="ethnicity">
+            <select name="ethnicity" id="ethnicity" class="form-control">
                 <option value="">Select One</option>
                 <option value="hispanic">Hispanic</option>
                 <option value="non-hispanic">Non-Hispanic</option>
@@ -82,8 +82,8 @@
 </div>
 <div class="form-group">
     <div class="row">
-        <div class="col-4"><label for="education">Highest Level of Education</label>
-            <select name="education" id="education">
+        <div class="col-6"><label for="education">Highest Level of Education</label>
+            <select name="education" id="education" class="form-control">
                 <option value="">Select One</option>
                 <option value="grade-school">Grade School</option>
                 <option value="some-high">Some High School</option>
@@ -95,22 +95,10 @@
                 <option value="trade">Trade School</option>
             </select>
         </div>
-        <div class="col-4"><label for="dob">DOB</label>
-            <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}">
+        <div class="col-6"><label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
                 </div>
-        <div class="col-4"><label for="ethnicity">ethnicity</label>
-            <select name="ethnicity" id="ethnicity">
-                <option value="">Select One</option>
-                <option value="grade-school">Grade School</option>
-                <option value="some-high">Some High School</option>
-                <option value="diplom">High School Diploma</option>
-                <option value="high-school-equiv">High School Equivalent</option>
-                <option value="associates">Associates</option>
-                <option value="bachelors">Bachelors Degree</option>
-                <option value="grad">Grad School</option>
-                <option value="trade">Trade School</option>
-            </select>
-        </div>
+        
     </div>
 </div>                  
 <div class="form-group">
