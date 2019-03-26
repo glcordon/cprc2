@@ -28,7 +28,7 @@
         <div class="form-group">
            <div class="row"> <div class="col-12">
                <label for="ncdps_id">NCDPS ID</label>
-                <input type="text" name="ncdps-id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
+                <input type="text" name="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
             </div></div>
             
         </div>
