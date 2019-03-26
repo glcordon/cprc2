@@ -16,8 +16,7 @@ class ReportController extends Controller
         $today = Carbon::now();
         $clients = Client::get();
         $totalActive = $clients->where('status', '1')->count();
-        dd($clients->services->where('service_name', 'Education'));
-        $data = ['title' => 'Welcome to HDTuto.com', 'today' => $today];
+        $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
         $pdf = PDF::loadView('make_pdf', $data);
   
         return $pdf->download('itsolutionstuff.pdf');
