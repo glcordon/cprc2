@@ -42,9 +42,9 @@
 	</tr>
 	<tr>
 		<td>Number of reentry clients:</td>
-		<td>{{ count($all) }}</td>
+		<td style="border:1px solid black">{{ count($all) }}</td>
 		<td>Active</td>
-		<td>{{ $totalActive }}</td>
+		<td> style="border:1px solid black"{{ $totalActive }}</td>
 	</tr>
 						
 </table>
