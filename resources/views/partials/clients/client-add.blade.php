@@ -28,7 +28,7 @@
         <div class="form-group">
            <div class="row"> <div class="col-12">
                <label for="ncdps_id">NCDPS ID</label>
-                <input type="text" name="ncdps-id" class="form-control">
+                <input type="text" name="ncdps-id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
             </div></div>
             
         </div>
@@ -36,11 +36,11 @@
     <div class="row">
         <div class="col-6">
         <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-        <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" tabindex="1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
+        <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" "1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
     </div>
     <div class="col-6">
         <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
-        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->last_name : ''}}"  tabindex="2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
+        <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->last_name : ''}}"  "2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
     </div>
     </div>
 </div>
@@ -106,20 +106,20 @@
     <div class="row">
         <div class="col-12">
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
-                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" tabindex="22">                           
+                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" "22">                           
         </div>
         <div class="col-4">
                 <label for="input_4_14_3" id="input_4_14_3_label">City</label>
-                <input type="text"  class="form-control" name="city" id="input_4_14_3" value="{{ isset($client) ? $client->city : ''}}" tabindex="24">
+                <input type="text"  class="form-control" name="city" id="input_4_14_3" value="{{ isset($client) ? $client->city : ''}}" "24">
                  
         </div>
         <div class="col-4">
                 <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
-                <input type="text" class="form-control" name="state" id="input_4_14_4" value="{{ isset($client) ? $client->state : 'NC'}}" tabindex="26">
+                <input type="text" class="form-control" name="state" id="input_4_14_4" value="{{ isset($client) ? $client->state : 'NC'}}" "26">
         </div>
         <div class="col-4">
                 <label for="input_4_14_5" id="input_4_14_5_label">ZIP / Postal Code</label>
-                <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="{{ isset($client) ? $client->zip : ''}}" tabindex="27">
+                <input type="text"  class="form-control" name="zip" id="input_4_14_5" value="{{ isset($client) ? $client->zip : ''}}" "27">
         </div>
     </div>
 </div>
@@ -127,16 +127,16 @@
     <div class="row">
         <div class="col-4">
             <label class="gfield_label" for="input_4_3">Primary Phone</label>
-            <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value="{{ isset($client) ? $client->primary_phone : ''}}"  tabindex="3" placeholder="Primary Phone Number" aria-invalid="false">
+            <input name="primary_phone" id="input_4_3" type="tel"  class="form-control" value="{{ isset($client) ? $client->primary_phone : ''}}"  "3" placeholder="Primary Phone Number" aria-invalid="false">
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Secondary Phone</label>
-            <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value="{{ isset($client) ? $client->secondary_phone : ''}}"  tabindex="4" placeholder="Secondary Phone Number" aria-invalid="false">
+            <input name="secondary_phone" id="input_4_4" type="tel"  class="form-control" value="{{ isset($client) ? $client->secondary_phone : ''}}"  "4" placeholder="Secondary Phone Number" aria-invalid="false">
 
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_4">Email Address</label>
-            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value="{{ isset($client) ? $client->email_address : ''}}"  tabindex="4" placeholder="Email Address" aria-invalid="false">
+            <input name="email" id="input_4_4" type="email" validate="email"  class="form-control" value="{{ isset($client) ? $client->email_address : ''}}"  "4" placeholder="Email Address" aria-invalid="false">
         </div>
     </div>
 </div>
@@ -144,7 +144,7 @@
     <div class="row">
         <div class="col-4">
             <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
-            <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" tabindex="5" aria-required="true" aria-invalid="false">
+            <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" "5" aria-required="true" aria-invalid="false">
                 <option value="" class="gf_placeholder">Your citizenship Status</option>
                 <option value="US Citizen" {{ isset($client) ? ($client->citizenship == 'US Citizen' ? 'selected="selected"' : '') : ''}}>US Citizen</option>
                 <option value="Registered Alien" {{ isset($client) ? ($client->citizenship == 'Registered Alien' ? 'selected="selected"' : '') : ''}}>Registered Alien</option>
@@ -153,7 +153,7 @@
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span></label>
-            <select class="form-control" name="form_of_id" id="input_4_6" class="medium gfield_select" tabindex="6" aria-required="true" aria-invalid="false">
+            <select class="form-control" name="form_of_id" id="input_4_6" class="medium gfield_select" "6" aria-required="true" aria-invalid="false">
                 <option value="" selected="selected" class="gf_placeholder">Your citizenship Status</option>
                 <option value="US Drivers License" {{ isset($client) ? ($client->form_of_id == 'US Drivers License' ? 'selected="selected"' : '') : ''}}>US Drivers License</option>
                 <option value="Birth Certificate" {{ isset($client) ? ($client->form_of_id == 'Birth Certificate' ? 'selected="selected"' : '') : ''}}>Birth Certificate</option>
@@ -176,7 +176,7 @@
 </div>      
 
             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
-            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
+            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" "27">
             <label for="released_from">Released From</label>
             <select name="released_from" id="released_from" class="form-control">
                 <option value="ncdps-prison" {{ isset($client) ? ($client->released_from == 'ncdps-prison' ? 'selected="selected"' : '') : ''}}>NCDPS Prison</option>
