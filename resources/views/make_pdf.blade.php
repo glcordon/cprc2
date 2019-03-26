@@ -5,12 +5,23 @@
 	<style>
 		body {text-align: center;}
 	</style>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 		<h1>North Carolina Local Reentry Council</h1>
 		<h2>Monthly Progress Report</h2>
 		<h3>Due by 15th of each Month</h3>
-<table>
+<table class="table table-striped">
 	<tr>
 		<td>Intermediary Agency:</td>
 		<td>CRAVEN PAMLICO</td>
