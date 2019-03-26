@@ -200,7 +200,7 @@
             <label for="supervisors-email">Email</label>
             <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
             <label for="supervision-level">Supervision Level</label>
-            <select name="supervision_level" id="supervision-level">
+            <select name="supervision_level" id="supervision-level" class="form-control">
                 <option value="">Select</option>
                 <option value="l1">L1</option>
                 <option value="l2">l2</option>
