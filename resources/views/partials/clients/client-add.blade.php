@@ -194,18 +194,23 @@
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
                     <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <label for="supervisors-phone">Phone</label>
                     <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <label for="supervisors-email">Email</label>
                     <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
                 </div>
+                <div class="col-3">
+                    <label for="supervisors-end-date">End Date</label>
+                    <input type="date" name="supervisors-end-date" id="supervisors-end-date" class="form-control">
+                </div>
+                            
             </div>
             <div class="row">
                 <div class="col-6">
