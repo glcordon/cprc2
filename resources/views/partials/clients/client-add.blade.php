@@ -199,7 +199,14 @@
             <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
             <label for="supervisors-email">Email</label>
             <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
-            
+            <label for="supervision-level">Supervision Level</label>
+            <select name="supervision_level" id="supervision-level">
+                <option value="">Select</option>
+                <option value="l1">L1</option>
+                <option value="l2">l2</option>
+                <option value="l3">l3</option>
+                <option value="unknown">Unknown</option>
+            </select>
             <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             <select name="status" id="sex" class="form-control" required="required">
                 <option value="">Select</option>
