@@ -12,7 +12,7 @@
 
      <div class="container" style="margin-top:4.5em">
 
-  <h1>Add A New Client</h1>
+  <h1>{{ isset($client) ? "Add A New " : 'Edit/View'}}Client</h1>
 <form method="post" enctype="multipart/form-data" id="gform_4" action="{{ isset($client) ? '/client/'.$client->id .'/update': '/client-store' }}">
     {{ @csrf_field() }}
         <h3 class="gform_title">Intake Form</h3>
