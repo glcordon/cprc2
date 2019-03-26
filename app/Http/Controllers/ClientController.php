@@ -51,7 +51,6 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $client = new Client;
             $client->first_name = $request->first_name; 
             $client->last_name = $request->last_name;
