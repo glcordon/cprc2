@@ -49,34 +49,34 @@
         <div class="col-4"><label for="maritial_status">Maritial Status</label>
             <select name="maritial_status" id="maritial_status" class="form-control">
                 <option value="">Select One</option>
-                <option value="single">single</option>
-                <option value="married">married</option>
-                <option value="widowed">widowed</option>
-                <option value="separated">separated</option>
-                <option value="divorced">divorced</option>
-                <option value="domestic">domestic partner</option>
-                <option value="common_law">common law</option>
+                <option value="single" {{ isset($client) ? ($client->maritial_status == 'single' ? 'selected="selected"' : '') : ''}}>single</option>
+                <option value="married" {{ isset($client) ? ($client->maritial_status == 'married' ? 'selected="selected"' : '') : ''}}>married</option>
+                <option value="widowed" {{ isset($client) ? ($client->maritial_status == 'widowed' ? 'selected="selected"' : '') : ''}}>widowed</option>
+                <option value="separated" {{ isset($client) ? ($client->maritial_status == 'separated' ? 'selected="selected"' : '') : ''}}>separated</option>
+                <option value="divorced" {{ isset($client) ? ($client->maritial_status == 'divorced' ? 'selected="selected"' : '') : ''}}>divorced</option>
+                <option value="domestic" {{ isset($client) ? ($client->maritial_status == 'domestic' ? 'selected="selected"' : '') : ''}}>domestic partner</option>
+                <option value="common_law" {{ isset($client) ? ($client->maritial_status == 'common_law' ? 'selected="selected"' : '') : ''}}>common law</option>
             </select>
         </div>
         <div class="col-4"><label for="race">Race</label>
             <select name="race" id="race" class="form-control">
                 <option value="">Select One</option>
-                <option value="african_american">African American</option>
-                <option value="asian">Asin</option>
-                <option value="bi-racial">Bi-Racial</option>
-                <option value="latino">Latino</option>
-                <option value="caucasian">Caucasian</option>
-                <option value="multi">Multi-Racial</option>
-                <option value="native-american">Native American</option>
-                <option value="hawiian">Hawiian/Pacific Outlander</option>
-                <option value="other">Other</option>
+                <option value="african_american" {{ isset($client) ? ($client->race == 'african_american' ? 'selected="selected"' : '') : ''}}>African American</option>
+                <option value="asian" {{ isset($client) ? ($client->race == 'asian' ? 'selected="selected"' : '') : ''}}>Asin</option>
+                <option value="bi_racial" {{ isset($client) ? ($client->race == 'bi_racial' ? 'selected="selected"' : '') : ''}}>Bi-Racial</option>
+                <option value="latino" {{ isset($client) ? ($client->race == 'latino' ? 'selected="selected"' : '') : ''}}>Latino</option>
+                <option value="caucasian" {{ isset($client) ? ($client->race == 'caucasian' ? 'selected="selected"' : '') : ''}}>Caucasian</option>
+                <option value="multi" {{ isset($client) ? ($client->race == 'multi' ? 'selected="selected"' : '') : ''}}>Multi-Racial</option>
+                <option value="native_american" {{ isset($client) ? ($client->race == 'native_american' ? 'selected="selected"' : '') : ''}}>Native American</option>
+                <option value="hawiian" {{ isset($client) ? ($client->race == 'hawiian' ? 'selected="selected"' : '') : ''}}>Hawiian/Pacific Outlander</option>
+                <option value="other" {{ isset($client) ? ($client->race == 'other' ? 'selected="selected"' : '') : ''}}>Other</option>
             </select>
         </div>
         <div class="col-4"><label for="ethnicity">ethnicity</label>
             <select name="ethnicity" id="ethnicity" class="form-control">
                 <option value="">Select One</option>
-                <option value="hispanic">Hispanic</option>
-                <option value="non-hispanic">Non-Hispanic</option>
+                <option value="hispanic" {{ isset($client) ? ($client->ethnicity == 'hispanic' ? 'selected="selected"' : '') : ''}}>Hispanic</option>
+                <option value="non-hispanic" {{ isset($client) ? ($client->ethnicity == 'non-hispanic' ? 'selected="selected"' : '') : ''}}>Non-Hispanic</option>
             </select>
         </div>
     </div>
@@ -86,14 +86,14 @@
         <div class="col-6"><label for="education">Highest Level of Education</label>
             <select name="education" id="education" class="form-control">
                 <option value="">Select One</option>
-                <option value="grade-school">Grade School</option>
-                <option value="some-high">Some High School</option>
-                <option value="diplom">High School Diploma</option>
-                <option value="high-school-equiv">High School Equivalent</option>
-                <option value="associates">Associates</option>
-                <option value="bachelors">Bachelors Degree</option>
-                <option value="grad">Grad School</option>
-                <option value="trade">Trade School</option>
+                <option value="grade-school" {{ isset($client) ? ($client->education == 'grade-school' ? 'selected="selected"' : '') : ''}}>Grade School</option>
+                <option value="some-high" {{ isset($client) ? ($client->education == 'some-high' ? 'selected="selected"' : '') : ''}}>Some High School</option>
+                <option value="diploma" {{ isset($client) ? ($client->education == 'diploma' ? 'selected="selected"' : '') : ''}}>High School Diploma</option>
+                <option value="high-school-equiv" {{ isset($client) ? ($client->education == 'high-school-equiv' ? 'selected="selected"' : '') : ''}}>High School Equivalent</option>
+                <option value="associates" {{ isset($client) ? ($client->education == 'associates' ? 'selected="selected"' : '') : ''}}>Associates</option>
+                <option value="bachelors" {{ isset($client) ? ($client->education == 'bachelors' ? 'selected="selected"' : '') : ''}}>Bachelors Degree</option>
+                <option value="grad" {{ isset($client) ? ($client->education == 'grad' ? 'selected="selected"' : '') : ''}}>Grad School</option>
+                <option value="trade" {{ isset($client) ? ($client->education == 'trade' ? 'selected="selected"' : '') : ''}}>Trade School</option>
             </select>
         </div>
         <div class="col-6"><label for="dob">DOB</label>
@@ -179,31 +179,31 @@
             <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
             <label for="released_from">Released From</label>
             <select name="released_from" id="released_from" class="form-control">
-                <option value="ncdps-prison">NCDPS Prison</option>
-                <option value="ncdps-parole">NCDPS Parole</option>
-                <option value="county-jail">County Jail</option>
-                <option value="another-state">Another State</option>
-                <option value="community-agency">Community Agency</option>
-                <option value="self">Self Referral</option>
-                <option value="relative">Relative</option>
+                <option value="ncdps-prison" {{ isset($client) ? ($client->released_from == 'ncdps-prison' ? 'selected="selected"' : '') : ''}}>NCDPS Prison</option>
+                <option value="ncdps-parole" {{ isset($client) ? ($client->released_from == 'ncdps-parole' ? 'selected="selected"' : '') : ''}}>NCDPS Parole</option>
+                <option value="county-jail" {{ isset($client) ? ($client->released_from == 'county-jail' ? 'selected="selected"' : '') : ''}}>County Jail</option>
+                <option value="another-state" {{ isset($client) ? ($client->released_from == 'another-state' ? 'selected="selected"' : '') : ''}}>Another State</option>
+                <option value="community-agency" {{ isset($client) ? ($client->released_from == 'community-agency' ? 'selected="selected"' : '') : ''}}>Community Agency</option>
+                <option value="self" {{ isset($client) ? ($client->released_from == 'self' ? 'selected="selected"' : '') : ''}}>Self Referral</option>
+                <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
             <div class="row">
                 <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
-                    <input type="text" name="supervisors_name" id="supervisors-name" class="form-control">
+                    <input type="text" name="supervisors_name" value="{{ isset($client) ? $client->supervisors_name : ''}}" id="supervisors-name" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-phone">Phone</label>
-                    <input type="text" name="supervisors_phone" id="supervisors-phone" class="form-control">
+                    <input type="text" name="supervisors_phone" value="{{ isset($client) ? $client->supervisors_phone : ''}}" id="supervisors-phone" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-email">Email</label>
-                    <input type="email" name="supervisors_email" id="supervisors-email" class="form-control">
+                    <input type="email" name="supervisors_email" value="{{ isset($client) ? $client->supervisors_email : ''}}" id="supervisors-email" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-end-date">End Date</label>
-                    <input type="date" name="supervisors_end_date" id="supervisors-end-date" class="form-control">
+                    <input type="date" name="supervisors_end_date" value="{{ isset($client) ? $client->supervisors_end_date : ''}}" id="supervisors-end-date" class="form-control">
                 </div>
                             
             </div>
@@ -212,17 +212,17 @@
                     <label for="supervision-level">Supervision Level</label>
                     <select name="supervision_level" id="supervision-level" class="form-control">
                         <option value="">Select</option>
-                        <option value="l1">L1</option>
-                        <option value="l2">l2</option>
-                        <option value="l3">l3</option>
-                        <option value="unknown">Unknown</option>
+                        <option value="l1" {{ isset($client) ? ($client->supervision_level == 'l1' ? 'selected="selected"' : '') : ''}}>L1</option>
+                        <option value="l2" {{ isset($client) ? ($client->supervision_level == 'l2' ? 'selected="selected"' : '') : ''}}>l2</option>
+                        <option value="l3" {{ isset($client) ? ($client->supervision_level == 'l3' ? 'selected="selected"' : '') : ''}}>l3</option>
+                        <option value="unknown" {{ isset($client) ? ($client->supervision_level == 'unknown' ? 'selected="selected"' : '') : ''}}>Unknown</option>
                     </select>
                 </div>
                 <div class="col-6">
                     <label for="sex-offender">Sex Offender</label>
                     <select name="sex_offender" id="sex-offender" class="form-control">
-                        <option value="no">No</option>
-                        <option value="yes">Yes</option>
+                        <option value="no" {{ isset($client) ? ($client->sex_offender == 'no' ? 'selected="selected"' : '') : ''}}>No</option>
+                        <option value="yes" {{ isset($client) ? ($client->sex_offender == 'yes' ? 'selected="selected"' : '') : ''}}>Yes</option>
                     </select>
                     <input type="text" name="county_registered" id="county-registerd" placeholder="If So What County" class="form-control">
                 </div>
