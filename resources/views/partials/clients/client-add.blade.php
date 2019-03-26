@@ -207,14 +207,26 @@
                     <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
                 </div>
             </div>
-             <label for="supervision-level">Supervision Level</label>
-            <select name="supervision_level" id="supervision-level" class="form-control">
-                <option value="">Select</option>
-                <option value="l1">L1</option>
-                <option value="l2">l2</option>
-                <option value="l3">l3</option>
-                <option value="unknown">Unknown</option>
-            </select>
+            <div class="row">
+                <div class="col-6">
+                    <label for="supervision-level">Supervision Level</label>
+                    <select name="supervision_level" id="supervision-level" class="form-control">
+                        <option value="">Select</option>
+                        <option value="l1">L1</option>
+                        <option value="l2">l2</option>
+                        <option value="l3">l3</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="sex-offender">Sex Offender</label>
+                    <select name="sex-offender" id="sex-offender" class="form-control">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+            
             <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             <select name="status" id="sex" class="form-control" required="required">
                 <option value="">Select</option>
