@@ -187,7 +187,7 @@
                 <option value="self" {{ isset($client) ? ($client->released_from == 'self' ? 'selected="selected"' : '') : ''}}>Self Referral</option>
                 <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
             </select>
-            <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
+            <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
             <div class="row">
                 <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
@@ -213,8 +213,8 @@
                     <select name="supervision_level" id="supervision-level" class="form-control">
                         <option value="">Select</option>
                         <option value="l1" {{ isset($client) ? ($client->supervision_level == 'l1' ? 'selected="selected"' : '') : ''}}>L1</option>
-                        <option value="l2" {{ isset($client) ? ($client->supervision_level == 'l2' ? 'selected="selected"' : '') : ''}}>l2</option>
-                        <option value="l3" {{ isset($client) ? ($client->supervision_level == 'l3' ? 'selected="selected"' : '') : ''}}>l3</option>
+                        <option value="l2" {{ isset($client) ? ($client->supervision_level == 'l2' ? 'selected="selected"' : '') : ''}}>L2</option>
+                        <option value="l3" {{ isset($client) ? ($client->supervision_level == 'l3' ? 'selected="selected"' : '') : ''}}>L3</option>
                         <option value="unknown" {{ isset($client) ? ($client->supervision_level == 'unknown' ? 'selected="selected"' : '') : ''}}>Unknown</option>
                     </select>
                 </div>
@@ -224,7 +224,7 @@
                         <option value="no" {{ isset($client) ? ($client->sex_offender == 'no' ? 'selected="selected"' : '') : ''}}>No</option>
                         <option value="yes" {{ isset($client) ? ($client->sex_offender == 'yes' ? 'selected="selected"' : '') : ''}}>Yes</option>
                     </select>
-                    <input type="text" name="county_registered" id="county-registerd" placeholder="If So What County" class="form-control">
+                    <input type="text" name="county_registered" id="county-registerd" value="{{ isset($client) ? $client->county_registered : ''}}" placeholder="If So What County" class="form-control">
                 </div>
             </div>
             
