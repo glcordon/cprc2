@@ -19,7 +19,7 @@
                                     <th>Client Name</th>
                                     <th>Services</th>
                                     <th>Assigned To</th>
-                                    <th>Date Assigned</th>
+                                    <th>Date Enrolled</th>
                                     <th><a href="/client-add" class="btn btn-primary">Add New</a> </th>
                                 </tr>
                             </thead>
@@ -36,12 +36,14 @@
                                             @endif
             
                                         </td>
-                                        <td>{{ $client->assignedTo->name ?? 'Not Assigned'}}
+                                        <td>{{ $client->assignedTo->name ?? 'Not Assigned'}}<br />
                                             {{--  @if(!$client->assignedTo)
                                                 <a href="#" id="assign_caseworker" class="btn btn-default">Assign Case Worker</a>
                                             @endif  --}}
                                         </td>
-                                        <td>{{ $client->assignedTo->updated_at ?? ' - ' }}</td>
+                                        <td>                                            
+                                            {{ $client->enrollment_date ?? ' - ' }}
+                                        </td>
                                         <td><a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
                                                 
                                                 <a href="/client/{{ $client->id }}/edit" class="btn btn-default">Edit</a>
