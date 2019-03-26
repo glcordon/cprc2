@@ -49,6 +49,7 @@
     <div class="card-column col-3">
         <div class="card">
          <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
+         <a href="/client/{{ $clients->id }}/edit" class="btn btn-default">Edit/View</a>
         <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
         <div class="card-body">
             <div class="card-text"> 
