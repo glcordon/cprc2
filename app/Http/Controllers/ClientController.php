@@ -80,6 +80,7 @@ class ClientController extends Controller
             $client->supervisors_end_date = $request->supervisors_end_date;
             $client->supervision_level = $request->supervision_level;
             $client->sex_offender = $request->sex_offender;
+            $client->county_registered = $request->county_registered;
             $client->released_from = $request->released_from;
             $client->under_supervision = $request->under_supervision;
             $client->save();
@@ -139,7 +140,6 @@ class ClientController extends Controller
             $client->first_name = $request->first_name; 
             $client->last_name = $request->last_name;
             $client->address_1 = $request->street_address; 
-            $client->address_2 = $request->s_treet_address;
             $client->city = $request->city;
             $client->state = $request->state;
             $client->zip = $request->zip;
@@ -153,6 +153,21 @@ class ClientController extends Controller
             $client->status = $request->status;
             $client->full_name = $request->last_name. ', '. $request->first_name;
             $client->assigned_to = $request->caseworker;
+            $client->ncdps_id = $request->ncdps_id;
+            $client->maritial_status = $request->maritial_status;           
+            $client->race = $request->race;
+            $client->ethnicity = $request->ethnicity;
+            $client->education = $request->education;
+            $client->dob = $request->dob;
+            $client->supervisors_name = $request->supervisors_name;
+            $client->supervisors_phone = $request->supervisors_phone;
+            $client->supervisors_email = $request->supervisors_email;
+            $client->supervisors_end_date = $request->supervisors_end_date;
+            $client->supervision_level = $request->supervision_level;
+            $client->sex_offender = $request->sex_offender;
+            $client->county_registered = $request->county_registered;
+            $client->released_from = $request->released_from;
+            $client->under_supervision = $request->under_supervision;
             $client->save();
 
             $client->services()->sync($request->services);
