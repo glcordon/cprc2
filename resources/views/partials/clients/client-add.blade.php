@@ -193,13 +193,21 @@
                 <option value="relative">Relative</option>
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
-            <br><label for="supervisor-name">Supervisors Name</label>
-            <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
-            <label for="supervisors-phone">Phone</label>
-            <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
-            <label for="supervisors-email">Email</label>
-            <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
-            <label for="supervision-level">Supervision Level</label>
+            <div class="row">
+                <div class="col-4">
+                    <label for="supervisor-name">Supervisors Name</label>
+                    <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label for="supervisors-phone">Phone</label>
+                    <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label for="supervisors-email">Email</label>
+                    <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
+                </div>
+            </div>
+             <label for="supervision-level">Supervision Level</label>
             <select name="supervision_level" id="supervision-level" class="form-control">
                 <option value="">Select</option>
                 <option value="l1">L1</option>
