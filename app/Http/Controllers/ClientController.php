@@ -51,31 +51,39 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $client = new Client;
-        $client->insert($request->except(['_token','caseworker','street_address','email', 'services', 'add']));
-        $client->assigned_to = $request->caseworker;
-        $client->address_1 = $request->street_address;
-        $client->email_address = $request->email;
-        $client->save();
-            // $client->first_name = $request->first_name; 
-            // $client->last_name = $request->last_name;
-            // $client->address_1 = $request->street_address; 
-            // $client->address_2 = $request->s_treet_address;
-            // $client->city = $request->city;
-            // $client->state = $request->state;
-            // $client->zip = $request->zip;
-            // $client->primary_phone =$request->primary_phone;
-            // $client->secondary_phone = $request->secondary_phone;
-            // $client->email_address = $request->email;
-            // $client->citizenship = $request->citizenship;
-            // $client->form_of_id = $request->form_of_id;
-            // $client->sex = $request->sex;
-            // $client->release_date = $request->release_date;
-            // $client->status = $request->status;
-            // $client->full_name = $request->last_name. ', '. $request->first_name;
-            // $client->assigned_to = $request->caseworker;
-            // $client->save();
+            $client->first_name = $request->first_name; 
+            $client->last_name = $request->last_name;
+            $client->address_1 = $request->street_address; 
+            $client->city = $request->city;
+            $client->state = $request->state;
+            $client->zip = $request->zip;
+            $client->primary_phone =$request->primary_phone;
+            $client->secondary_phone = $request->secondary_phone;
+            $client->email_address = $request->email;
+            $client->citizenship = $request->citizenship;
+            $client->form_of_id = $request->form_of_id;
+            $client->sex = $request->sex;
+            $client->release_date = $request->release_date;
+            $client->status = $request->status;
+            $client->full_name = $request->last_name. ', '. $request->first_name;
+            $client->assigned_to = $request->caseworker;
+            $client->ncdps_id = $request->ncdps_id;
+            $client->maritial_status = $request->maritial_status;           
+            $client->race = $request->race;
+            $client->ethnicity = $request->ethnicity;
+            $client->education = $request->education;
+            $client->dob = $request->dob;
+            $client->supervisors_name = $request->supervisors_name;
+            $client->supervisors_phone = $request->supervisors_phone;
+            $client->supervisors_email = $request->supervisors_email;
+            $client->supervisors_end_date = $request->supervisors_end_date;
+            $client->supervision_level = $request->supervision_level;
+            $client->sex_offender = $request->sex_offender;
+            $client->released_from = $request->released_from;
+            $client->under_supervision = $request->under_supervision;
+            $client->save();
 
             $client->services()->attach($request->services);
             
