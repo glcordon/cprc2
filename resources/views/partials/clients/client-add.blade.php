@@ -196,19 +196,19 @@
             <div class="row">
                 <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
-                    <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
+                    <input type="text" name="supervisors_name" id="supervisors-name" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-phone">Phone</label>
-                    <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
+                    <input type="text" name="supervisors_phone" id="supervisors-phone" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-email">Email</label>
-                    <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
+                    <input type="email" name="supervisors_email" id="supervisors-email" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="supervisors-end-date">End Date</label>
-                    <input type="date" name="supervisors-end-date" id="supervisors-end-date" class="form-control">
+                    <input type="date" name="supervisors_end_date" id="supervisors-end-date" class="form-control">
                 </div>
                             
             </div>
@@ -225,7 +225,7 @@
                 </div>
                 <div class="col-6">
                     <label for="sex-offender">Sex Offender</label>
-                    <select name="sex-offender" id="sex-offender" class="form-control">
+                    <select name="sex_offender" id="sex-offender" class="form-control">
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
