@@ -182,8 +182,25 @@
 
             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
             <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" tabindex="27">
-                <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
-
+            <label for="released_from">Released From</label>
+            <select name="released_from" id="released_from" class="form-control">
+                <option value="ncdps-prison">NCDPS Prison</option>
+                <option value="ncdps-parole">NCDPS Parole</option>
+                <option value="county-jail">County Jail</option>
+                <option value="another-state">Another State</option>
+                <option value="community-agency">Community Agency</option>
+                <option value="self">Self Referral</option>
+                <option value="relative">Relative</option>
+            </select>
+            <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
+            <label for="supervisor-name">Supervisors Name</label>
+            <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
+            <label for="supervisors-phone">Phone</label>
+            <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
+            <label for="supervisors-email">Email</label>
+            <input type="email" name="supervisors-email" id="supervisors-email" class="form-control">
+            
+            <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             <select name="status" id="sex" class="form-control" required="required">
                 <option value="">Select</option>
                 <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
