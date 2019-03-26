@@ -193,7 +193,7 @@
                 <option value="relative">Relative</option>
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision">
-            <label for="supervisor-name">Supervisors Name</label>
+            <br><label for="supervisor-name">Supervisors Name</label>
             <input type="text" name="supervisors-name" id="supervisors-name" class="form-control">
             <label for="supervisors-phone">Phone</label>
             <input type="text" name="supervisors-phone" id="supervisors-phone" class="form-control">
