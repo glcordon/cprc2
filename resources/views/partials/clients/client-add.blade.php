@@ -104,7 +104,7 @@
 </div>                  
 <div class="form-group">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12">
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
                 <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" tabindex="22">                           
         </div>
