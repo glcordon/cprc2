@@ -4,7 +4,7 @@
 	<title>Hi</title>
 </head>
 <body>
-	<h1>Info- {{ $title }}</h1>
+	<h1>Info- {{ $title }} - {{ $today }}</h1>
 	
 </body>
 </html>
