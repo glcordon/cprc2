@@ -169,6 +169,8 @@
                 <option value="">Select</option>
                 <option value="M" {{ isset($client) ? ($client->sex == 'F' ? 'selected="selected"' : '') : ''}}>Male</option>
                 <option value="F" {{ isset($client) ? ($client->sex == 'M' ? 'selected="selected"' : '') : ''}}>Female</option>
+                <option value="F" {{ isset($client) ? ($client->sex == 'TMF' ? 'selected="selected"' : '') : ''}}>Trans Male-Female</option>
+                <option value="F" {{ isset($client) ? ($client->sex == 'TFM' ? 'selected="selected"' : '') : ''}}>Trans Female-Male</option>
                 <option value="O" {{ isset($client) ? ($client->sex == 'O' ? 'selected="selected"' : '') : ''}}>Prefer Not To Disclose</option>
             </select>
         </div>
