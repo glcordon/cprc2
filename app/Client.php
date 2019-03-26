@@ -11,7 +11,7 @@ class Client extends Model
 
     protected $casts = ['assinged_to' => 'integer', 'client_services' => 'array'];
     protected $fillable = ['user_id', 'client_services', 'assigned_to'];
-    protected $dates = ['deleted_at'];
+    protected $dates = ['created_at', 'updated_at','deleted_at'];
 
     public function caseworker()
     {

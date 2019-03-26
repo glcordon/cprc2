@@ -53,7 +53,9 @@ class ClientController extends Controller
     {
         $client = new Client;
             $client->first_name = $request->first_name; 
+            $client->middle_name = $request->middle_name;
             $client->last_name = $request->last_name;
+            $client->suffix = $request->suffix;
             $client->address_1 = $request->street_address; 
             $client->city = $request->city;
             $client->state = $request->state;
@@ -138,7 +140,9 @@ class ClientController extends Controller
     {
             $client = Client::find($id);
             $client->first_name = $request->first_name; 
+            $client->middle_name = $request->middle_name;
             $client->last_name = $request->last_name;
+            $client->suffix = $request->suffix;
             $client->address_1 = $request->street_address; 
             $client->city = $request->city;
             $client->state = $request->state;
