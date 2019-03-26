@@ -208,7 +208,7 @@ class ClientController extends Controller
     public function myCaseload(int $id)
     {
 
-        $clients = Client::where('id', $id)->paginate('15');
+        $clients = Client::where('assigned_to', $id)->paginate('15');
         // return view('vendor.voyager.clients.browse');
         return view('partials.clients.client-index', compact('clients'));
     }
