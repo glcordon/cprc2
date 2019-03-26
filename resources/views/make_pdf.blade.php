@@ -4,7 +4,11 @@
 	<title>Hi</title>
 </head>
 <body>
-	<h1>Info- {{ $title }} - {{ $today }}</h1>
+		<h1>North Carolina Local Reentry Council</h1>
+		<h2>Monthly Progress Report</h2>
+		<h3>Due by 15th of each Month</h3>
+		
+		
 	
 </body>
 </html>
