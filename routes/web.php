@@ -33,5 +33,5 @@ Route::get('/delete-client/{id}', 'ClientController@destroy');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
-Route::get('/report-generate', 'ReportController@index');
+Route::get('/report-generate', 'ReportController@index')->name('pdf');
 });
