@@ -17,7 +17,7 @@
 		<td>Reporting Month/Year:</td>
 		<td></td>
 	</tr>
-	<tr>
+	<tr style="background-color:cornsilk">
 		<td colspan="4">Activity Summary</td>
 	</tr>
 	<tr>
