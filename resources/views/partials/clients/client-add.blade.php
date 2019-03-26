@@ -224,6 +224,7 @@
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
+                    <input type="text" name="county_registered" id="county-registerd" placeholder="If So What County" class="form-control">
                 </div>
             </div>
             
