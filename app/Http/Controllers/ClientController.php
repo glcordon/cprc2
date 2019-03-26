@@ -53,7 +53,7 @@ class ClientController extends Controller
     {
         // dd($request->all());
         $client = new Client;
-        $client->insert($request->except(['_token','caseworker','street_address','email']));
+        $client->insert($request->except(['_token','caseworker','street_address','email', 'services']));
         $client->assigned_to = $request->caseworker;
         $client->address_1 = $request->street_address;
         $client->email_address = $request->email;
