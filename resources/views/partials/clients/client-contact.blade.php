@@ -53,7 +53,6 @@
         <div class="card-body">
             <div class="card-text"> 
                     {{ $clients->address_1 }} <br>
-                    {{ $clients->address_2 ?? '' }} <br>
                     {{ $clients->city }}, {{ $clients->state }}, {{ $clients->zip }} <br>
                     <a href="tel:{{ $clients->primary_phone }}">{{ $clients->primary_phone }}</a><br />
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
