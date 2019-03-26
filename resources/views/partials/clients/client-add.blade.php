@@ -108,11 +108,6 @@
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
                 <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" tabindex="22">                           
         </div>
-        <div class="col-6">
-                <label for="input_4_14_2" id="input_4_14_2_label">Address Line 2</label>
-                <input type="text"  class="form-control" name="s treet_address" id="input_4_14_2" value="{{ isset($client) ? $client->address_2 : ''}}" tabindex="23">
-                 
-        </div>
         <div class="col-4">
                 <label for="input_4_14_3" id="input_4_14_3_label">City</label>
                 <input type="text"  class="form-control" name="city" id="input_4_14_3" value="{{ isset($client) ? $client->city : ''}}" tabindex="24">
