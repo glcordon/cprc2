@@ -21,7 +21,7 @@
             <div class="form-group">
                 <div class="row">
                     <label for="enrollment_date">Enrollment Date</label>
-                    <div class="col-12"><input type="date" name="enrollment_date" id="enrollment_date" class="form-control"></div>
+                    <div class="col-12"><input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control"></div>
                 </div>
             </div>
         </div>
