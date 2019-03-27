@@ -77,7 +77,7 @@
         <div class="col-4"><label for="race">Race</label>
             <select name="race" id="race" class="form-control">
                 <option value="">Select One</option>
-                <option value="african_american" {{ isset($client) ? ($client->race == 'african_american' ? 'selected="selected"' : '') : ''}}>African American/Black</option>
+                <option value="black" {{ isset($client) ? ($client->race == 'black' ? 'selected="selected"' : '') : ''}}>Black</option>
                 <option value="asian" {{ isset($client) ? ($client->race == 'asian' ? 'selected="selected"' : '') : ''}}>Asian</option>
                 <option value="bi_racial" {{ isset($client) ? ($client->race == 'bi_racial' ? 'selected="selected"' : '') : ''}}>Bi-Racial</option>
                 <option value="latino" {{ isset($client) ? ($client->race == 'latino' ? 'selected="selected"' : '') : ''}}>Latino</option>
@@ -88,7 +88,7 @@
                 <option value="other" {{ isset($client) ? ($client->race == 'other' ? 'selected="selected"' : '') : ''}}>Other</option>
             </select>
         </div>
-        <div class="col-4"><label for="ethnicity">ethnicity</label>
+        <div class="col-4"><label for="ethnicity">Ethnicity</label>
             <select name="ethnicity" id="ethnicity" class="form-control">
                 <option value="">Select One</option>
                 <option value="hispanic" {{ isset($client) ? ($client->ethnicity == 'hispanic' ? 'selected="selected"' : '') : ''}}>Hispanic</option>
