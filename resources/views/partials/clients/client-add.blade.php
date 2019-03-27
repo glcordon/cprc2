@@ -177,7 +177,7 @@
         <div class="col-4">
             <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span><br /> <small><em>Hold Control Key and Click to Select Multiple</em></small></label>
             <select multiple class="form-control" name="form_of_id[]" id="input_4_6" class="medium gfield_select" "6" aria-required="true" aria-invalid="false">
-                <option value="US Drivers License" {{ isset($client) ? (in_array('US Drivers License', json_decode($client->form_of_id) ? 'selected="selected"' : '') : ''}}>US Drivers License</option>
+                <option value="US Drivers License" {{ isset($client) ? (in_array('US Drivers License', json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>US Drivers License</option>
                 <option value="Birth Certificate" {{ isset($client) ? (in_array('Birth Certificate',json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>Birth Certificate</option>
                 <option value="Social Security Card" {{ isset($client) ? (in_array('Social Security Card',json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>Social Security Card</option>
                 <option value="Government ID" {{ isset($client) ? (in_array('Government ID',json_decode($client->form_of_id)) == 'Government ID' ? 'selected="selected"' : '') : ''}}>Government ID</option>
