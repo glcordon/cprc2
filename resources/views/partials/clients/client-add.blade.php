@@ -41,25 +41,27 @@
         </div>
         
 <div class="form-group">
-        <div class="row">
+    <div class="row">
+        <div class="col-12">
             <div class="col-3">
-            <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-            <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" "1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
-        </div>
-        <div class="row">
-                <div class="col-3">
-                <label class="gfield_label" for="input_4_1">Middle Name<span class="gfield_required">*</span></label>
-                <input name="middle_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->middle_name : ''}}"  maxlength="20" "1" placeholder="Middle Name" aria-required="true" aria-invalid="false"> 
+                <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
+                <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" "1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
             </div>
-        <div class="col-3">
-            <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
-            <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->last_name : ''}}"  "2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
-        </div>
-        <div class="col-3">
-                <label class="gfield_label" for="input_4_2">Suffix<span class="gfield_required">*</span></label>
-                <input name="suffix" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->suffix : ''}}"  "2" placeholder="Suffix" aria-required="true" aria-invalid="false">
+            <div class="col-3">
+                <label class="gfield_label" for="input_4_1">Middle Name<span class="gfield_required"></span></label>
+                <input name="middle_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->middle_name : ''}}"  maxlength="20" "1" placeholder="Middle Name" aria-invalid="false"> 
             </div>
+            <div class="col-3">
+                <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
+                <input name="last_name" required id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->last_name : ''}}"  "2" placeholder="Your Last Name" aria-required="true" aria-invalid="false">
+            </div>
+            <div class="col-3">
+                <label class="gfield_label" for="input_4_2">Suffix<span class="gfield_required"></span></label>
+                <input name="suffix" id="input_4_2" type="text"  class="form-control" value="{{ isset($client) ? $client->suffix : ''}}"  "2" placeholder="Suffix" aria-invalid="false">
+            </div>
+        </div>
     </div>
+</div>
 </div>
 <div class="form-group">
     <div class="row">
