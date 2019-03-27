@@ -193,7 +193,7 @@
 </div>      
 
             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
-            <input type="date" required="required"  class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" "27">
+            <input type="date" class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" "27">
             <label for="released_from">Released From</label>
             <select name="released_from" id="released_from" class="form-control">
                 <option value="ncdps-prison" {{ isset($client) ? ($client->released_from == 'ncdps-prison' ? 'selected="selected"' : '') : ''}}>NCDPS Prison</option>
@@ -203,6 +203,7 @@
                 <option value="community-agency" {{ isset($client) ? ($client->released_from == 'community-agency' ? 'selected="selected"' : '') : ''}}>Community Agency</option>
                 <option value="self" {{ isset($client) ? ($client->released_from == 'self' ? 'selected="selected"' : '') : ''}}>Self Referral</option>
                 <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
+                <option value="no-jail-time" {{ isset($client) ? ($client->released_from == 'no-jail-time' ? 'selected="selected"' : '') : ''}}>No Jail Time</option>
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
             <div class="row">
@@ -219,7 +220,7 @@
                     <input type="email" name="supervisors_email" value="{{ isset($client) ? $client->supervisors_email : ''}}" id="supervisors-email" class="form-control">
                 </div>
                 <div class="col-3">
-                    <label for="supervisors-end-date">End Date</label>
+                    <label for="supervisors-end-date">Supervisor End Date</label>
                     <input type="date" name="supervisors_end_date" value="{{ isset($client) ? $client->supervisors_end_date : ''}}" id="supervisors-end-date" class="form-control">
                 </div>
                             
