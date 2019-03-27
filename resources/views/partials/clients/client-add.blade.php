@@ -196,6 +196,7 @@
             <input type="date" class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" "27">
             <label for="released_from">Released From</label>
             <select name="released_from" id="released_from" class="form-control">
+                <option value="no-jail-time" {{ isset($client) ? ($client->released_from == 'no-jail-time' ? 'selected="selected"' : '') : ''}}>No Jail Time</option>
                 <option value="ncdps-prison" {{ isset($client) ? ($client->released_from == 'ncdps-prison' ? 'selected="selected"' : '') : ''}}>NCDPS Prison</option>
                 <option value="ncdps-parole" {{ isset($client) ? ($client->released_from == 'ncdps-parole' ? 'selected="selected"' : '') : ''}}>NCDPS Parole</option>
                 <option value="county-jail" {{ isset($client) ? ($client->released_from == 'county-jail' ? 'selected="selected"' : '') : ''}}>County Jail</option>
@@ -203,7 +204,6 @@
                 <option value="community-agency" {{ isset($client) ? ($client->released_from == 'community-agency' ? 'selected="selected"' : '') : ''}}>Community Agency</option>
                 <option value="self" {{ isset($client) ? ($client->released_from == 'self' ? 'selected="selected"' : '') : ''}}>Self Referral</option>
                 <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
-                <option value="no-jail-time" {{ isset($client) ? ($client->released_from == 'no-jail-time' ? 'selected="selected"' : '') : ''}}>No Jail Time</option>
             </select>
             <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
             <div class="row">
