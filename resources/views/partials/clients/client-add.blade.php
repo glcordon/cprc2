@@ -58,10 +58,10 @@
                 <label class="gfield_label" for="input_4_2">Suffix<span class="gfield_required"></span></label>
                 <select name="suffix" id="suffix" class="form-control">
                     <option value="">Select One</option>
-                    <option value="Jr" {{ isset($client) ? ($client->maritial_status == 'Jr' ? 'selected="selected"' : '') : ''}}>Jr</option>
-                    <option value="Sr" {{ isset($client) ? ($client->maritial_status == 'Sr' ? 'selected="selected"' : '') : ''}}>Sr</option>
-                    <option value="III" {{ isset($client) ? ($client->maritial_status == 'III' ? 'selected="selected"' : '') : ''}}>III</option>
-                    <option value="IV" {{ isset($client) ? ($client->maritial_status == 'IV' ? 'selected="selected"' : '') : ''}}>IV</option>
+                    <option value="Jr" {{ isset($client) ? ($client->suffix == 'Jr' ? 'selected="selected"' : '') : ''}}>Jr</option>
+                    <option value="Sr" {{ isset($client) ? ($client->suffix == 'Sr' ? 'selected="selected"' : '') : ''}}>Sr</option>
+                    <option value="III" {{ isset($client) ? ($client->suffix == 'III' ? 'selected="selected"' : '') : ''}}>III</option>
+                    <option value="IV" {{ isset($client) ? ($client->suffix == 'IV' ? 'selected="selected"' : '') : ''}}>IV</option>
                 </select>
                 
             </div>
