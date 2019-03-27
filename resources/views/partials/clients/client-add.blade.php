@@ -220,7 +220,7 @@
                     <input type="email" name="supervisors_email" value="{{ isset($client) ? $client->supervisors_email : ''}}" id="supervisors-email" class="form-control">
                 </div>
                 <div class="col-3">
-                    <label for="supervisors-end-date">Supervisor End Date</label>
+                    <label for="supervisors-end-date">Supervision End Date</label>
                     <input type="date" name="supervisors_end_date" value="{{ isset($client) ? $client->supervisors_end_date : ''}}" id="supervisors-end-date" class="form-control">
                 </div>
                             
@@ -251,6 +251,14 @@
                 <option value="">Select</option>
                 <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
                 <option value="inactive" {{ isset($client) ? ($client->status == 'inactive' ? 'selected="selected"' : '') : ''}}>Inactive</option>
+                <option value="Successfully Completed" {{ isset($client) ? ($client->status == 'Successfully Completed' ? 'selected="selected"' : '') : ''}}>Successfully Completed</option>
+                <option value="Non-compliant" {{ isset($client) ? ($client->status == 'Non-compliant' ? 'selected="selected"' : '') : ''}}>Non-compliant</option>
+                <option value="Moved Away" {{ isset($client) ? ($client->status == 'Moved Away' ? 'selected="selected"' : '') : ''}}>Moved Away</option>
+                <option value="quit" {{ isset($client) ? ($client->status == 'quit' ? 'selected="selected"' : '') : ''}}>Dropped Out (Quit)</option>
+                <option value="Re-Arrest" {{ isset($client) ? ($client->status == 'Re-Arrest' ? 'selected="selected"' : '') : ''}}>Re-Arrest</option>
+                <option value="Deceased" {{ isset($client) ? ($client->status == 'Deceased' ? 'selected="selected"' : '') : ''}}>Deceased</option>
+                <option value="No Contact" {{ isset($client) ? ($client->status == 'No Contact' ? 'selected="selected"' : '') : ''}}>No Contact</option>
+                <option value="Transferred" {{ isset($client) ? ($client->status == 'Transferred' ? 'selected="selected"' : '') : ''}}>Transferred</option>
                 <option value="complete" {{ isset($client) ? ($client->status == 'complete' ? 'selected="selected"' : '') : ''}}>Complete</option>
             </select>
              <hr>
