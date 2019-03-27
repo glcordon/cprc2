@@ -233,17 +233,22 @@
                             
             </div>
             <div class="row">
-                <div class="col-6">
-                    <label for="supervision-level">Supervision Level</label>
-                    <select name="supervision_level" id="supervision-level" class="form-control">
-                        <option value="">Select</option>
-                        <option value="l1" {{ isset($client) ? ($client->supervision_level == 'l1' ? 'selected="selected"' : '') : ''}}>L1</option>
-                        <option value="l2" {{ isset($client) ? ($client->supervision_level == 'l2' ? 'selected="selected"' : '') : ''}}>L2</option>
-                        <option value="l3" {{ isset($client) ? ($client->supervision_level == 'l3' ? 'selected="selected"' : '') : ''}}>L3</option>
-                        <option value="unknown" {{ isset($client) ? ($client->supervision_level == 'unknown' ? 'selected="selected"' : '') : ''}}>Unknown</option>
-                    </select>
+                <div class="col-4">
+                    <label for="charge">Charge</label>
+                    <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
+                        <label for="supervision-level">Supervision Level</label>
+                        <select name="supervision_level" id="supervision-level" class="form-control">
+                            <option value="">Select</option>
+                            <option value="l1" {{ isset($client) ? ($client->supervision_level == 'l1' ? 'selected="selected"' : '') : ''}}>L1</option>
+                            <option value="l2" {{ isset($client) ? ($client->supervision_level == 'l2' ? 'selected="selected"' : '') : ''}}>L2</option>
+                            <option value="l3" {{ isset($client) ? ($client->supervision_level == 'l3' ? 'selected="selected"' : '') : ''}}>L3</option>
+                            <option value="unknown" {{ isset($client) ? ($client->supervision_level == 'unknown' ? 'selected="selected"' : '') : ''}}>Unknown</option>
+                        </select>
+                    </div>
+                    
+                <div class="col-4">
                     <label for="sex-offender">Sex Offender</label>
                     <select name="sex_offender" id="sex-offender" class="form-control">
                         <option value="no" {{ isset($client) ? ($client->sex_offender == 'no' ? 'selected="selected"' : '') : ''}}>No</option>
