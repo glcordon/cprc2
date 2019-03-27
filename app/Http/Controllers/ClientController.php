@@ -51,6 +51,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $client = new Client;
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
