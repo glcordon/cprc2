@@ -19,7 +19,7 @@
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
         <div class="row">
             <div class="form-group">
-                <div class="row">
+                <div class="col-12">
                     <label for="enrollment_date">Enrollment Date</label>
                     <div class="col-12"><input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control"></div>
                 </div>
@@ -77,8 +77,8 @@
         <div class="col-4"><label for="race">Race</label>
             <select name="race" id="race" class="form-control">
                 <option value="">Select One</option>
-                <option value="african_american" {{ isset($client) ? ($client->race == 'african_american' ? 'selected="selected"' : '') : ''}}>African American</option>
-                <option value="asian" {{ isset($client) ? ($client->race == 'asian' ? 'selected="selected"' : '') : ''}}>Asin</option>
+                <option value="african_american" {{ isset($client) ? ($client->race == 'african_american' ? 'selected="selected"' : '') : ''}}>African American/Black</option>
+                <option value="asian" {{ isset($client) ? ($client->race == 'asian' ? 'selected="selected"' : '') : ''}}>Asian</option>
                 <option value="bi_racial" {{ isset($client) ? ($client->race == 'bi_racial' ? 'selected="selected"' : '') : ''}}>Bi-Racial</option>
                 <option value="latino" {{ isset($client) ? ($client->race == 'latino' ? 'selected="selected"' : '') : ''}}>Latino</option>
                 <option value="caucasian" {{ isset($client) ? ($client->race == 'caucasian' ? 'selected="selected"' : '') : ''}}>Caucasian</option>
