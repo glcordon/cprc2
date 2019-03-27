@@ -78,6 +78,7 @@ class ClientController extends Controller
             $client->education = $request->education;
             $client->dob = $request->dob;
             $client->supervisors_name = $request->supervisors_name;
+            $client->charge = $request->charge;
             $client->supervisors_phone = $request->supervisors_phone;
             $client->supervisors_email = $request->supervisors_email;
             $client->supervisors_end_date = $request->supervisors_end_date;
@@ -166,6 +167,7 @@ class ClientController extends Controller
             $client->education = $request->education;
             $client->dob = $request->dob;
             $client->supervisors_name = $request->supervisors_name;
+            $client->charge = $request->charge;
             $client->supervisors_phone = $request->supervisors_phone;
             $client->supervisors_email = $request->supervisors_email;
             $client->supervisors_end_date = $request->supervisors_end_date;
