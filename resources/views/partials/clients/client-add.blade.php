@@ -62,7 +62,6 @@
         </div>
     </div>
 </div>
-</div>
 <div class="form-group">
     <div class="row">
         <div class="col-4"><label for="maritial_status">Maritial Status</label>
