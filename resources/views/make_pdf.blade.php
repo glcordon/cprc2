@@ -50,7 +50,7 @@
 
 		</div>
 	</div>
-		<div class="row" style="background-color:#b3cde0;margin:0; color:black">
+		<div class="row" style="background-color:#b3cde0; color:black">
 			<div class="col-3">Enrolled:</div>
 			<div  style="border:1px solid black;" class="col-3">{{ count($all) }}</div>
 			<div class="col-3">Active</div>
