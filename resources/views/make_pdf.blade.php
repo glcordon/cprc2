@@ -31,6 +31,14 @@
 			<div class="col-3">Reporting Month/Year:</div>
 			<div class="col-3"></div>
 	</div>
+	<div class="row">
+		<div class="col-4">
+				Number of reentry clients:
+		</div>
+		<div class="col-8">
+			
+		</div>
+	</div>
 <table class="table table-striped">
 	</tr>
 	<tr style="background-color:#005b96; color:white">
