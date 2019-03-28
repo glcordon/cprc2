@@ -54,7 +54,7 @@ class ClientController extends Controller
         $client = new Client;
             if($request->form_of_id == null)
             {
-                $request->form_of_id = "";
+                $request->form_of_id = [""];
             }
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
@@ -148,7 +148,7 @@ class ClientController extends Controller
             $client = Client::find($id);
             if($request->form_of_id == null)
             {
-                $request->form_of_id = "";
+                $request->form_of_id = [""];
             }
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
