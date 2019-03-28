@@ -23,7 +23,7 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-4">
-			<img src="{{ asset('img/dps-logo.png') }}" alt="dps_logo">
+			<img src="https://www2.ncdps.gov/imgs/dps_logo_rgb_secondary1.25inWhtMarg-100dpi.png" alt="dps_logo">
 		</div>
 		<div class="col-8" style="text-align:center; border-bottom:2px solid blue;">
 			<h1>North Carolina Local Reentry Council</h1>
