@@ -41,6 +41,7 @@
 	<div class="col-12" style="background-color:#b3cde0;margin:0;">
 		Please enter the number of reentry clients for each category during the reporting period.
 	</div>
+	</div>
 	<div class="row">
 			<div class="col-4">
 					Number of reentry clients:
