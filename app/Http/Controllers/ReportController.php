@@ -18,16 +18,10 @@ class ReportController extends Controller
         $clients = Client::get();
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
-        $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        //return view('make_pdf', compact('clients', 'totalActive', 'all'));
-        $pdf = PDF::loadView('make_pdf', $data);
         $service = Service::get();
-        foreach( $service as $serv)
-        {
-            dump($serv->service_name);
-            dump($serv->client()->count());
-        }
-        dd('');
+        $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
+        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service'));
+        $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
     }
 }
