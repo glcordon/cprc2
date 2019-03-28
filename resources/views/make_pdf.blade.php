@@ -5,7 +5,7 @@
 	<style>
 		body {text-align: center;}
 		.col-2{margin:10px 0;}
-		.row{margin:10px 0;}
+		.row{margin:20px 0;}
 	</style>
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
