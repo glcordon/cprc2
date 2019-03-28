@@ -49,7 +49,7 @@
 		</div>
 		<div class="row">
 			<div class="col-3">Enrolled:</div>
-			<div  style="border:1px solid black; text-align:right"class="col-3">{{ count($all) }}</div>
+			<div  style="border:1px solid black;" class="col-3">{{ count($all) }}</div>
 			<div class="col-3">Active</div>
 			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
 		</div>
@@ -63,7 +63,7 @@
 			</div>
 			<div class="row">
 					@foreach($service as $serv)
-						<div class="col-2">{{ $serv->service_name }}</div>
+						<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 					@endforeach
 			</div>
