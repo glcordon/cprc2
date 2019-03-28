@@ -65,10 +65,13 @@
 		
 				</div>
 			</div>
-			<div class="row" style="background-color:#b3cde0;padding:10px; color:black">
-					@foreach($service as $serv)
-						<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
+					@foreach($service->chunk(6) as $chunk)
+						<div class="row" style="background-color:#b3cde0;padding:10px; color:black">
+						@foreach($chunk as $serv)
+							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
+							<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
+						@endforeach
+						</div>
 					@endforeach
 			</div>
 		</div>
