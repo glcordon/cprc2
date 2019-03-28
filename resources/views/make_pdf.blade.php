@@ -25,7 +25,7 @@
 			<h3>Due by 15th of each Month</h3>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" style="padding:40px">
 			<div class="col-3">Intermediary Agency:</div>
 			<div class="col-3">CRAVEN PAMLICO</div>
 			<div class="col-3">Reporting Month/Year:</div>
