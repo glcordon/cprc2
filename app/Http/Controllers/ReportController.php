@@ -24,7 +24,7 @@ class ReportController extends Controller
         $service = Service::get();
         foreach( $service as $serv)
         {
-            dump($serv->client());
+            dump($serv->client()->count());
         }
         dd('');
         return $pdf->download('itsolutionstuff.pdf');
