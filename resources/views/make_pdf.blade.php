@@ -65,7 +65,7 @@
 		
 				</div>
 			</div>
-			<div class="row" style="background-color:#b3cde0;margin:0; color:black">
+			<div class="row" style="background-color:#b3cde0; color:black">
 					@foreach($service as $serv)
 						<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
