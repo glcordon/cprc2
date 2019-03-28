@@ -19,19 +19,21 @@
 </head>
 <body>
 	<div class="row">
-		<div class="col-12" style="text-align:center;">
+		<div class="col-12" style="text-align:center; border-bottom:2px solid blue;">
 			<h1>North Carolina Local Reentry Council</h1>
 			<h2>Monthly Progress Report</h2>
 			<h3>Due by 15th of each Month</h3>
 		</div>
 	</div>
-		
+	<div class="row">
+		<div class="col-12">
+			<div class="col-3">Intermediary Agency:</div>
+			<div class="col-3">CRAVEN PAMLICO</div>
+			<div class="col-3">Reporting Month/Year:</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
 <table class="table table-striped">
-	<tr>
-		<td>Intermediary Agency:</td>
-		<td>CRAVEN PAMLICO</td>
-		<td>Reporting Month/Year:</td>
-		<td></td>
 	</tr>
 	<tr style="background-color:cornsilk">
 		<td colspan="4">Activity Summary</td>
