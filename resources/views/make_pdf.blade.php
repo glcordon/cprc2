@@ -62,12 +62,12 @@
 			</div>
 			<div class="row">
 					@foreach($service as $serv)
-						@if($loop->iteration % 4 == 0)
+						@if($loop->iteration/4 == 0)
 							<div class="row" style="background-color:#b3cde0; margin:10px;">
 						@endif
 								<div class="col-2">{{ $serv->service_name }}</div>
 								<div class="col-2">{{ $serv->client()->count() }}</div>
-						@if($service->count() % 4 == 0)
+						@if($service->count()/4 == 0)
 							</div>
 						@endif
 						
