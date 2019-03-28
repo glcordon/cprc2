@@ -43,13 +43,13 @@
 	</div>
 	</div>
 	<div class="row">
-			<div class="col-4">
-					Number of reentry clients:
-			</div>
-			<div class="col-8">
-	
-			</div>
+		<div class="col-4">
+				Number of reentry clients:
 		</div>
+		<div class="col-8">
+
+		</div>
+	</div>
 		<div class="row" style="background-color:#b3cde0;margin:0; color:black">
 			<div class="col-3">Enrolled:</div>
 			<div  style="border:1px solid black;" class="col-3">{{ count($all) }}</div>
@@ -66,11 +66,13 @@
 				</div>
 			</div>
 					@foreach($service->chunk(3) as $chunk)
-						<div class="row" style="background-color:#b3cde0; margin:15px 5px; color:black">
+						<div class="row" style="background-color:#b3cde0; margin:15px 0; color:black">
+							<div class="col-md-12">
 						@foreach($chunk as $serv)
 							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 							<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 						@endforeach
+						</div>
 						</div>
 					@endforeach
 			</div>
