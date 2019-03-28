@@ -26,12 +26,10 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-12">
 			<div class="col-3">Intermediary Agency:</div>
 			<div class="col-3">CRAVEN PAMLICO</div>
 			<div class="col-3">Reporting Month/Year:</div>
 			<div class="col-3"></div>
-		</div>
 	</div>
 <table class="table table-striped">
 	</tr>
