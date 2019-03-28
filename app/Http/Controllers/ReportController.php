@@ -24,6 +24,7 @@ class ReportController extends Controller
         $service = Service::get();
         foreach( $service as $serv)
         {
+            dump($serv->service_name);
             dump($serv->client()->count());
         }
         dd('');
