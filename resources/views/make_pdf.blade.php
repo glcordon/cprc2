@@ -63,7 +63,7 @@
 			<div class="row">
 					@foreach($service as $serv)
 						@if($service->count() % 6 == 0)
-							<div class="row">
+							<div class="row" style="background-color:#b3cde0; margin:10px;">
 						@endif
 								<div class="col-2">{{ $serv->service_name }}</div>
 								<div class="col-2">{{ $serv->client()->count() }}</div>
