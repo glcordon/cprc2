@@ -49,7 +49,7 @@
 		</div>
 		<div class="row">
 			<div class="col-3">Enrolled:</div>
-			<div  style="border:1px solid black"class="col-3">{{ count($all) }}</div>
+			<div  style="border:1px solid black; text-align:right"class="col-3">{{ count($all) }}</div>
 			<div class="col-3">Active</div>
 			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
 		</div>
