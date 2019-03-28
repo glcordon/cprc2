@@ -31,28 +31,22 @@
 			<div class="col-3">Reporting Month/Year:</div>
 			<div class="col-3"></div>
 	</div>
+	
+	<div class="row" style="background-color:#005b96; color:white">
+		<div class="col-12">Activity Summary</div>
+	</div>
+	<div class="row" style="background-color:#b3cde0;">
+		<div >Please enter the number of reentry clients for each category during the reporting period.</div>
+	</div>
 	<div class="row">
 		<div class="col-4">
 				Number of reentry clients:
 		</div>
 		<div class="col-8">
-			
+
 		</div>
 	</div>
-<table class="table table-striped">
-	</tr>
-	<tr style="background-color:#005b96; color:white">
-		<td colspan="4">Activity Summary</td>
-	</tr>
-	<tr style="background-color:#b3cde0;">
-		<td colspan="4">Please enter the number of reentry clients for each category during the reporting period.</td>
-	</tr>
-	<tr>
-		<td>Enrolled</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
+	
 	<tr>
 		<td>Number of reentry clients:</td>
 		<td style="border:1px solid black">{{ count($all) }}</td>
