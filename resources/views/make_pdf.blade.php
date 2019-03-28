@@ -38,7 +38,7 @@
 	<div class="row" style="background-color:#005b96; color:white; marign:0">
 		<div class="col-12">Activity Summary</div>
 	
-	<div class="col-12" style="background-color:#b3cde0;margin:0;">
+	<div class="col-12" style="background-color:#b3cde0;margin:0; color:black">
 		Please enter the number of reentry clients for each category during the reporting period.
 	</div>
 	</div>
@@ -50,7 +50,7 @@
 	
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="background-color:#b3cde0;margin:0; color:black">
 			<div class="col-3">Enrolled:</div>
 			<div  style="border:1px solid black;" class="col-3">{{ count($all) }}</div>
 			<div class="col-3">Active</div>
@@ -65,7 +65,7 @@
 		
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="background-color:#b3cde0;margin:0; color:black">
 					@foreach($service as $serv)
 						<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
