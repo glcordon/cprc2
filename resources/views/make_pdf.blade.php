@@ -46,13 +46,16 @@
 
 		</div>
 	</div>
-	
-	<tr>
-		<td>Number of reentry clients:</td>
-		<td style="border:1px solid black">{{ count($all) }}</td>
-		<td>Active</td>
-		<td style="border:1px solid black">{{ $totalActive }}</td>
-	</tr>
+	<div class="row">
+		<div class="col-3">Number of reentry clients:</div>
+		<div  style="border:1px solid black"class="col-3">{{ count($all) }}</div>
+		<div class="col-3">Active</div>
+		<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
+	</div>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
 						
 </table>
 
