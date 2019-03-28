@@ -52,6 +52,10 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $client = new Client;
+            if($request->form_of_id == null)
+            {
+                $request->form_of_id = "";
+            }
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
             $client->middle_name = $request->middle_name;
@@ -142,6 +146,10 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
             $client = Client::find($id);
+            if($request->form_of_id == null)
+            {
+                $request->form_of_id = "";
+            }
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
             $client->middle_name = $request->middle_name;
