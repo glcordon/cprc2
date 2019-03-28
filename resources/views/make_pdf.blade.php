@@ -53,7 +53,7 @@
 			<div class="col-3">Active</div>
 			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
 		</div>
-		<div class="content">
+		<div class="content" style="padding:20px;">
 			<div class="row">
 				<div class="col-4">
 						Number of clients that received supportive services:
