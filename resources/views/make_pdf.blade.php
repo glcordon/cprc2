@@ -53,7 +53,8 @@
 			<div class="col-3">Active</div>
 			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
 		</div>
-		<div class="row">
+		<div class="content">
+			<div class="row">
 				<div class="col-4">
 						Number of clients that received supportive services:
 				</div>
@@ -67,6 +68,8 @@
 						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 					@endforeach
 			</div>
+		</div>
+		
 					
 </body>
 </html>
