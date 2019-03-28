@@ -35,10 +35,10 @@
 			<div class="col-3"></div>
 	</div>
 	
-	<div class="row" style="background-color:#005b96; color:white">
+	<div class="row" style="background-color:#005b96; color:white; marign-bottom:0">
 		<div class="col-12">Activity Summary</div>
 	</div>
-	<div class="row" style="background-color:#b3cde0;">
+	<div class="row" style="background-color:#b3cde0;margin-top:0;">
 		<div >Please enter the number of reentry clients for each category during the reporting period.</div>
 	</div>
 	<div class="row">
