@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hi</title>
+	<title>Report</title>
 	<style>
 		body {text-align: center;}
 	</style>
@@ -18,9 +18,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-		<h1>North Carolina Local Reentry Council</h1>
-		<h2>Monthly Progress Report</h2>
-		<h3>Due by 15th of each Month</h3>
+	<div class="row">
+		<div class="col-12" style="text-align:center;">
+			<h1>North Carolina Local Reentry Council</h1>
+			<h2>Monthly Progress Report</h2>
+			<h3>Due by 15th of each Month</h3>
+		</div>
+	</div>
+		
 <table class="table table-striped">
 	<tr>
 		<td>Intermediary Agency:</td>
