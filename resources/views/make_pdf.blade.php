@@ -5,7 +5,7 @@
 	<style>
 		body {text-align: center;}
 		.col-2{margin:10px 0;}
-		.row{margin:20px 0;}
+		.row{margin:20px 0; padding: 5px;}
 	</style>
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -65,7 +65,7 @@
 		
 				</div>
 			</div>
-					@foreach($service->chunk(3) as $chunk)
+					@foreach($service->sortBy('service_name')->chunk(3) as $chunk)
 						<div class="row" style="background-color:#b3cde0;">
 						@foreach($chunk as $serv)
 							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
