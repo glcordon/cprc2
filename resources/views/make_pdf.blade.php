@@ -19,6 +19,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="container">
 	<div class="row">
 		<div class="col-12" style="text-align:center; border-bottom:2px solid blue;">
 			<h1>North Carolina Local Reentry Council</h1>
@@ -53,7 +54,7 @@
 			<div class="col-3">Active</div>
 			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
 		</div>
-		<div class="container">
+		
 			<div class="row">
 				<div class="col-4">
 						Number of clients that received supportive services:
