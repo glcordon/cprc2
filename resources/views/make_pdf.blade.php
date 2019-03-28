@@ -62,14 +62,8 @@
 			</div>
 			<div class="row">
 					@foreach($service as $serv)
-								<div class="col-2">{{ $serv->service_name }}</div>
-								<div class="col-2">{{ $serv->client()->count() }}</div>
-						@if($loop->iteration%6 == 0)
-							<div class="row">
-								<div class="col-md-12">hr</div>
-							</div>
-						@endif
-						
+						<div class="col-2">{{ $serv->service_name }}</div>
+						<div class="col-2">{{ $serv->client()->count() }}</div>
 					@endforeach
 			</div>
 					
