@@ -65,7 +65,7 @@
 		
 				</div>
 			</div>
-					@foreach($service->chunk(6) as $chunk)
+					@foreach($service->chunk(5) as $chunk)
 						<div class="row" style="background-color:#b3cde0;padding:10px; margin:5px 0; color:black">
 						@foreach($chunk as $serv)
 							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
