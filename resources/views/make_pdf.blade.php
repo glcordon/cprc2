@@ -63,7 +63,7 @@
 			<div class="row">
 					@foreach($service as $serv)
 						<div class="col-2">{{ $serv->service_name }}</div>
-						<div class="col-2">{{ $serv->client()->count() }}</div>
+						<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 					@endforeach
 			</div>
 					
