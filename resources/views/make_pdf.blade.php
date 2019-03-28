@@ -33,10 +33,10 @@
 	</div>
 <table class="table table-striped">
 	</tr>
-	<tr style="background-color:cornsilk">
+	<tr style="background-color:#005b96; color:white">
 		<td colspan="4">Activity Summary</td>
 	</tr>
-	<tr>
+	<tr style="background-color:#b3cde0;">
 		<td colspan="4">Please enter the number of reentry clients for each category during the reporting period.</td>
 	</tr>
 	<tr>
