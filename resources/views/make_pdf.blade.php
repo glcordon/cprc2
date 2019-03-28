@@ -66,7 +66,7 @@
 				</div>
 			</div>
 					@foreach($service->chunk(3) as $chunk)
-						<div class="row" style="background-color:#b3cde0;padding:10px; margin:5px 0; color:black">
+						<div class="row" style="background-color:#b3cde0; margin:15px 0; color:black">
 						@foreach($chunk as $serv)
 							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 							<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
