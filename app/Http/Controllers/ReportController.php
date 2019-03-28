@@ -16,6 +16,7 @@ class ReportController extends Controller
         $today = Carbon::now();
         $clients = Client::get();
         $totalActive = $clients->where('status', 'active')->count();
+        $all = $clients->all();
         $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive'));
         $pdf = PDF::loadView('make_pdf', $data);
