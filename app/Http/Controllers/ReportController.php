@@ -15,8 +15,10 @@ class ReportController extends Controller
     public function index(Request $request)
     {
         $today = Carbon::now();
-        $clients = Client::get();
-        dd($clients->services());
+        $clients = Client::whereHas('services', function ($query) {
+            $query->where('created_at', 'like', '2019');
+        })->get();
+        dd($clients->toArray());
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
         $service = Service::get();
