@@ -55,33 +55,8 @@
         <div class="modal-body">
           <form action="/report-generate" method="POST">
           {{ csrf_field() }}
-          <label for="note_date">Select Month and Year</label>
-          <select name="month" id="month" class="form-control">
-            <option value="">Select Month</option>
-            {{--  @for($i=1;$i<=12;$i++)
-            <option value="{{ $i }}">{{ $i }}</option>
-            @endfor  --}}
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08s">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <select name="year" id="year" class="form-control">
-            <option value="">Select Year</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-          </select>
+          <label for="note_date">Select Date within the Month and Year</label>
+          <input type="date" name="searchMonth" id="note-date" class="form-control">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
