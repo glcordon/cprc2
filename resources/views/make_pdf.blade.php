@@ -92,29 +92,29 @@
 				
 						</div>
 					</div>
-					<div class="row">
+					<div class="row" style="background-color:#b3cde0; color:black">
 						<div class="col-2">
 							Min Wage
 						</div>
-						<div class="col-1">
+						<div class="col-1" style="border:1px solid black;">
 
 						</div>
 						<div class="col-2">
 							Min Wage - $8.00
 						</div>
-						<div class="col-1">
+						<div class="col-1" style="border:1px solid black;">
 
 						</div>
 						<div class="col-2">
 							$9.01 - $10.00 
 						</div>
-						<div class="col-1">
+						<div class="col-1" style="border:1px solid black;">
 
 						</div>
 						<div class="col-2">
 							$10.00+
 						</div>
-						<div class="col-1">
+						<div class="col-1" style="border:1px solid black;">
 
 						</div>
 					</div>
