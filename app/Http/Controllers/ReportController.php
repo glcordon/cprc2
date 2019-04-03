@@ -16,6 +16,7 @@ class ReportController extends Controller
     {
         $today = Carbon::now();
         $clients = Client::get();
+        dd($clients->services);
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
         $service = Service::get();
