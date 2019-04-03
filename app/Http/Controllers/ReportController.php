@@ -18,7 +18,6 @@ class ReportController extends Controller
         $clients = Client::whereHas('services', function ($query) {
             $query->where('client_service.created_at', 'like', '2019%');
         })->get();
-        dd($clients->toArray());
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
         $service = Service::get();
