@@ -120,7 +120,7 @@
 					</div>
 					<div class="row">adadf
 						@foreach($service->sortBy('service_name') as $serv)
-							@if(strpos($serv->service_name,'Housing')=="0")
+							@if(strpos($serv->service_name,'Housing')==true)
 								<div class="col-2" style="text-align:right">{{ dump(strpos($serv->service_name,'Housing')) }}{{ $serv->service_name }}</div>
 								<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 							@endif
