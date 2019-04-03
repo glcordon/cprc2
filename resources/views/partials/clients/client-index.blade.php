@@ -21,6 +21,7 @@
                                     <th>Assigned To</th>
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
+                                    <th>Status</th>
                                     <th><a href="/client-add" class="btn btn-primary">Add New</a> </th>
                                 </tr>
                             </thead>
@@ -46,6 +47,7 @@
                                             {{ $client->enrollment_date ?? ' - ' }}
                                         </td>
                                         <td>{{ $client->notes->first()->created_at ?? '' }}</td>
+                                        <td>{{ $client->status }}</td>
                                         <td><a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
                                                 
                                                 <a href="/client/{{ $client->id }}/edit" class="btn btn-primary">Edit</a>
