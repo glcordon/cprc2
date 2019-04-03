@@ -22,7 +22,7 @@ Route::group(['middleware' => 'web'], function () {
 //Client Routes
 Route::get('/test', function(){return 'hey';});
 Route::get('/client', 'ClientController@index')->name('client.index');
-Route::get('/client/inactive/', 'ClientController@viewInactive')->name('client.viewInactive');
+Route::get('/client/inactive', 'ClientController@viewInactive')->name('client.viewInactive');
 Route::get('/client/{id}/my', 'ClientController@myCaseload')->name('client.myindex');
 Route::get('/client/{id}/edit', 'ClientController@edit')->name('client.edit');
 Route::post('/client/{id?}/update', 'ClientController@update')->name('client.update');
