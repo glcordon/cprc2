@@ -262,11 +262,10 @@
             <select name="status" id="sex" class="form-control" required="required">
                 <option value="">Select</option>
                 <option value="active" {{ isset($client) ? ($client->status == 'active' ? 'selected="selected"' : '') : ''}}>Active</option>
-                <option value="inactive" {{ isset($client) ? ($client->status == 'inactive' ? 'selected="selected"' : '') : ''}}>Inactive</option>
                 <option value="Successfully Completed" {{ isset($client) ? ($client->status == 'Successfully Completed' ? 'selected="selected"' : '') : ''}}>Successfully Completed</option>
                 <option value="Non-compliant" {{ isset($client) ? ($client->status == 'Non-compliant' ? 'selected="selected"' : '') : ''}}>Non-compliant</option>
                 <option value="Moved Away" {{ isset($client) ? ($client->status == 'Moved Away' ? 'selected="selected"' : '') : ''}}>Moved Away</option>
-                <option value="quit" {{ isset($client) ? ($client->status == 'quit' ? 'selected="selected"' : '') : ''}}>Dropped Out (Quit)</option>
+                <option value="Quit" {{ isset($client) ? ($client->status == 'Quit' ? 'selected="selected"' : '') : ''}}>Dropped Out (Quit)</option>
                 <option value="Re-Arrest" {{ isset($client) ? ($client->status == 'Re-Arrest' ? 'selected="selected"' : '') : ''}}>Re-Arrest</option>
                 <option value="Deceased" {{ isset($client) ? ($client->status == 'Deceased' ? 'selected="selected"' : '') : ''}}>Deceased</option>
                 <option value="No Contact" {{ isset($client) ? ($client->status == 'No Contact' ? 'selected="selected"' : '') : ''}}>No Contact</option>
