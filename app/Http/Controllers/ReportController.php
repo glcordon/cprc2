@@ -23,7 +23,7 @@ class ReportController extends Controller
         $all = $clients->all();
         $service = Service::get();
         $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service'));
+        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
         $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
     }
