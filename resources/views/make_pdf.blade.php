@@ -25,7 +25,7 @@
 		<div class="col-4">
 			<img src="https://www2.ncdps.gov/imgs/dps_logo_rgb_secondary1.25inWhtMarg-100dpi.png" alt="dps_logo">
 		</div>
-		<div class="col-8" style="text-align:center; border-bottom:2px solid blue;">
+		<div class="col-8" style="text-align:center;">
 			<h1>North Carolina Local Reentry Council</h1>
 			<h2>Monthly Progress Report</h2>
 			<h3>Due by 15th of each Month</h3>
