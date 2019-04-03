@@ -131,6 +131,12 @@
 						
 					@endforeach
 					</div>
+					<div class="row">
+						Number of Client Dismissals:
+					</div>
+					<div class="row">
+
+					</div>
 					</div>
 					
 
