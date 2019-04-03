@@ -118,7 +118,7 @@
 
 						</div>
 					</div>
-					<div class="row">
+					<div class="row" style="background-color:#b3cde0; color:black">
 
 						@foreach($service->sortBy('service_name') as $serv)
 							@if(strpos($serv->service_name,'Housing') === 0)
