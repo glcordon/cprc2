@@ -119,7 +119,7 @@
 						</div>
 					</div>
 					@foreach($service->sortBy('service_name') as $serv)
-							@if(strpos( $serv->service_name,'Housing')>0)
+							@if(strpos($serv->service_name,'Housing'))
 								<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 								<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 							@endif
