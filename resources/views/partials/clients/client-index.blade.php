@@ -59,7 +59,6 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan="4">{{ $clients->links() }}</td>
                                 </tr>
                             </tfoot>
                         </table>
