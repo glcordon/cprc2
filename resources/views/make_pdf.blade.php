@@ -35,7 +35,7 @@
 			<div class="col-3">Intermediary Agency:</div>
 			<div class="col-3" style="border:1px solid black;">CRAVEN PAMLICO</div>
 			<div class="col-3">Reporting Month/Year:</div>
-			<div class="col-3">{{ $thisDate->year }} {{ $thisDate->month }}</div>
+			<div class="col-3"> {{ $thisDate->month }}/{{ $thisDate->year }}</div>
 	</div>
 	
 	<div class="row" style="background-color:#005b96; color:white; marign:0">
