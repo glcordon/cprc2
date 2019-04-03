@@ -23,7 +23,7 @@
             </li>
             <li class="nav-item">
                 @if(\Auth::user())
-                  <a class="nav-link" href="/report-generate" target="_blank">Report</a>
+                  <a class="nav-link" href="#"  data-toggle="modal" data-target="#date_modal">Report</a>
                 @endif
               </li>
               </ul>
@@ -43,3 +43,28 @@
       </div>
 	</nav>
 </header>
+<div class="modal fade" id="date_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select Range</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label for="note_date">Select Month and Year</label>
+          <select name="month" id="month" class="form-control">
+            <option value="">Select Month</option>
+            @for($i=1;$i<=12;$i++)
+            <option value="{{ $i }}">{{ $i }}</option>
+            @endfor
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="save">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
