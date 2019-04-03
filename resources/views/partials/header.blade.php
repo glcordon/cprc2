@@ -53,6 +53,8 @@
           </button>
         </div>
         <div class="modal-body">
+          <form action="/generate-report">
+          
           <label for="note_date">Select Month and Year</label>
           <select name="month" id="month" class="form-control">
             <option value="">Select Month</option>
@@ -60,10 +62,19 @@
             <option value="{{ $i }}">{{ $i }}</option>
             @endfor
           </select>
+          <select name="year" id="ye">
+            <option value="">Select Year</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="save">Save changes</button>
+          <button type="submit" class="btn btn-primary" id="save">Save changes</button>
+        </form>
         </div>
       </div>
     </div>
