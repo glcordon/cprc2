@@ -27,10 +27,10 @@ class Client extends Model
     }
     public function services()
     {
-        return $this->belongsToMany('App\Services', 'client_service', 'client_id', 'service_id');
+        return $this->belongsToMany('App\Services', 'client_service', 'client_id', 'service_id')->withTimestamps();
     }
     public function notes()
     {
-        return $this->hasMany('App\Note')->orderBy('created_at', 'DESC');
+        return $this->hasMany('App\Note')->orderBy('created_at', 'DESC')->withTimestamps();
     }
 }
