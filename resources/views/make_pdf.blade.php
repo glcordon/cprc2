@@ -118,14 +118,11 @@
 
 						</div>
 					</div>
-					@foreach($service->sortBy('service_name')->chunk(3) as $chunk)
-						<div class="row" style="background-color:#b3cde0;">
-						@foreach($chunk as $serv)
+					@foreach($service->sortBy('service_name') as $serv)
 							@if(strpos('Housing', $serv->service_name)>0)
-							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-							<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
+								<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
+								<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 							@endif
-						@endforeach
 						</div>
 					@endforeach
 					
