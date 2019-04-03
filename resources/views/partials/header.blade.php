@@ -53,8 +53,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="/generate-report">
-          
+          <form action="/generate-report" method="POST">
+          {{ csrf_field }}
           <label for="note_date">Select Month and Year</label>
           <select name="month" id="month" class="form-control">
             <option value="">Select Month</option>

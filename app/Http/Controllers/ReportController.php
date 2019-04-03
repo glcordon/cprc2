@@ -15,9 +15,9 @@ class ReportController extends Controller
     public function index(Request $request)
     {
         $today = Carbon::now();
-        $thisMonth = $request->range;
-        $clients = Client::whereHas('services', function ($query) {
-            $query->where('client_service.created_at', 'like', '2019%');
+        $thisDate = $request->year.'-'.$request->month;
+        $clients = Client::whereHas('services', function ($query) use($thisDate) {
+            $query->where('client_service.created_at', 'like', '{$thisDate}%');
         })->get();
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
