@@ -77,14 +77,49 @@
 						</div>
 					@endforeach
 					<div class="row">
-							<div class="col-4">
-									Supportive Services Detail:
-							</div>
-							<div class="col-8">
-					
-							</div>
+						<div class="col-4">
+								Supportive Services Detail:
 						</div>
-					
+						<div class="col-8">
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+								Employment: Hourly Wage Ranges
+						</div>
+						<div class="col-8">
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1">
+							Min Wage
+						</div>
+						<div class="col-1">
+
+						</div>
+						<div class="col-1">
+							Min Wage - $8.00
+						</div>
+						<div class="col-1">
+
+						</div>
+						<div class="col-1">
+							$9.01 - $10.00 
+						</div>
+						<div class="col-1">
+
+						</div>
+						<div class="col-1">
+							$10.00+
+						</div>
+						<div class="col-1">
+
+						</div>
+					</div>
+
+								
 			</div>
 		</div>
 		
