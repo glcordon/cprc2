@@ -62,7 +62,7 @@
             <option value="{{ $i }}">{{ $i }}</option>
             @endfor
           </select>
-          <select name="year" id="ye">
+          <select name="year" id="year" class="form-control">
             <option value="">Select Year</option>
             <option value="2019">2019</option>
             <option value="2020">2020</option>
