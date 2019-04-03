@@ -135,15 +135,15 @@
 						Number of Client Dismissals:
 					</div>
 					<div class="row">
-						<div class="col-3">Successfully Completed</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Non-compliant</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Moved Away</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Dropped Out (Quit)</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Re-Arrest</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Deceased</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">No Contact</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Transferred</div><div class="col-3" style="border:1px solid black">
-						<div class="col-3">Complete</div><div class="col-3" style="border:1px solid black">
+						<div class="col-3">Successfully Completed</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Non-compliant</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Moved Away</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Dropped Out (Quit)</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Re-Arrest</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Deceased</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">No Contact</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Transferred</div><div class="col-3" style="border:1px solid black"></div>
+						<div class="col-3">Complete</div><div class="col-3" style="border:1px solid black"></div>
             
 					</div>
 					</div>
