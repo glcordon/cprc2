@@ -24,7 +24,14 @@ class ClientController extends Controller
     public function index()
     {
        
-        $clients = Client::paginate('15');
+        $clients = Client::where('status', 'active')->get();
+         // return view('vendor.voyager.clients.browse');
+        return view('partials.clients.client-index', compact('clients'));
+    }
+    public function viewInactive()
+    {
+       
+        $clients = Client::where('status','<>', 'active')->get();
          // return view('vendor.voyager.clients.browse');
         return view('partials.clients.client-index', compact('clients'));
     }
