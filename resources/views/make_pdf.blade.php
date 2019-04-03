@@ -21,7 +21,7 @@
 </head>
 <body>
 	<div class="container">
-	<div class="row" style="text-align:center; border-bottom:2px solid blue;">
+	<div class="row" style="text-align:center; border-bottom:2px solid #005b96;">
 		<div class="col-4">
 			<img src="https://www2.ncdps.gov/imgs/dps_logo_rgb_secondary1.25inWhtMarg-100dpi.png" alt="dps_logo">
 		</div>
