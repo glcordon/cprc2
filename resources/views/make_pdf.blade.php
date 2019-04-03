@@ -118,6 +118,9 @@
 
 						</div>
 					</div>
+					<div class="row">
+						Housing: Type
+					</div>
 					<div class="row" style="background-color:#b3cde0; color:black">
 
 						@foreach($service->sortBy('service_name') as $serv)
