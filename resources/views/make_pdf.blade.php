@@ -93,25 +93,25 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-1">
+						<div class="col-2">
 							Min Wage
 						</div>
 						<div class="col-1">
 
 						</div>
-						<div class="col-1">
+						<div class="col-2">
 							Min Wage - $8.00
 						</div>
 						<div class="col-1">
 
 						</div>
-						<div class="col-1">
+						<div class="col-2">
 							$9.01 - $10.00 
 						</div>
 						<div class="col-1">
 
 						</div>
-						<div class="col-1">
+						<div class="col-2">
 							$10.00+
 						</div>
 						<div class="col-1">
