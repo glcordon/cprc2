@@ -18,7 +18,7 @@
           </li>
           <li class="nav-item">
               @if(\Auth::user())
-                <a class="nav-link" href="/client/{{ \Auth::user()->id }}">My Caseload</a>
+                <a class="nav-link" href="/client/{{ \Auth::user()->id }}/my">My Caseload</a>
               @endif
             </li>
             <li class="nav-item">
