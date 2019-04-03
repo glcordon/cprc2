@@ -11,7 +11,9 @@
             @endif
        </div>
             <div class="row">
-                <a href="/client">View All Active<a> | <a href="/client/inactive">View all Inactive Clients</a>
+                <div class="col-12">
+                    <a href="/client">View All Active<a> | <a href="/client/inactive">View all Inactive Clients</a>
+                </div>
             <div class="col-12">
                     <table class="table table-striped table-hover">
                             <thead>
