@@ -23,7 +23,7 @@
             </li>
             <li class="nav-item">
                 @if(\Auth::user())
-                  <a class="nav-link" href="/report-generate">Report</a>
+                  <a class="nav-link" href="/report-generate" target="_blank">Report</a>
                 @endif
               </li>
               </ul>
