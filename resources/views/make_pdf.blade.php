@@ -125,10 +125,10 @@
 								<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
 								<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
 							@endif
-						</div>
+						
 					@endforeach
 					</div>
-					
+					</div>
 					
 
 								
