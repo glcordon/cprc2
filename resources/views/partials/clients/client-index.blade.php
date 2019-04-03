@@ -11,7 +11,7 @@
             @endif
        </div>
             <div class="row">
-                <div class="col-12 pull-right">
+                <div class="col-12" style="text-align:right">
                     <a href="/client">View All Active<a> | <a href="/client/inactive">View all Inactive Clients</a>
                 </div>
             <div class="col-12">
