@@ -16,6 +16,7 @@ class ReportController extends Controller
     {
         $today = Carbon::now();
         $thisDate = $request->year.'-'.$request->month;
+        dd($thisDate);
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
             $query->where('client_service.created_at', 'like', '{$thisDate}%');
         })->get();
