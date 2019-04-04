@@ -165,6 +165,7 @@ class ClientController extends Controller
             $client->address_1 = $request->street_address; 
             $client->city = $request->city;
             $client->state = $request->state;
+            $client->risk_level = $request->risk_level;
             $client->zip = $request->zip;
             $client->primary_phone =$request->primary_phone;
             $client->secondary_phone = $request->secondary_phone;
