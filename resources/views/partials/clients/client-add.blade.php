@@ -21,11 +21,11 @@
                 <div class="form-group">
                     <div class="col-6">
                         <label for="enrollment_date">Enrollment Date</label>
-                        <div><input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control"></div>
+                        <input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control">
                     </div>
                     <div class="col-6">
                         <label for="risk_level">Risk Level</label>
-                        <div><input type="text" value="{{ isset($client) ? $client->risk_level : ''}}" name="risk_level" id="risk_level" class="form-control"></div>
+                        <input type="text" value="{{ isset($client) ? $client->risk_level : ''}}" name="risk_level" id="risk_level" class="form-control">
                     </div>
                 </div>
                 </div>
