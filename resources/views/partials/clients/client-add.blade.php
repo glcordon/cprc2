@@ -19,19 +19,15 @@
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
         <div class="row">
                 <div class="form-group">
-                    <div class="col-12">
+                    <div class="col-6">
                         <label for="enrollment_date">Enrollment Date</label>
-                        <div class="col-12"><input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control"></div>
+                        <div><input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control"></div>
+                    </div>
+                    <div class="col-6">
+                        <label for="risk_level">Risk Level</label>
+                        <div><input type="text" value="{{ isset($client) ? $client->risk_level : ''}}" name="risk_level" id="risk_level" class="form-control"></div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                    <div class="form-group">
-                        <div class="col-12">
-                            <label for="risk_level">Risk Level</label>
-                            <div class="col-12"><input type="text" value="{{ isset($client) ? $client->risk_level : ''}}" name="risk_level" id="risk_level" class="form-control"></div>
-                        </div>
-                    </div>
                 </div>
                 <label>Assign Caseworker:</label>
         <select name="caseworker" id="caseworker" class="form-control">
