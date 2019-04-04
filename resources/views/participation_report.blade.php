@@ -54,7 +54,7 @@
                         <td></td>
                         <td>{{ $client->last_name }}</td>
                         <td>{{ $client->ncdps_id }}</td>
-                        <td></td>
+                        <td>{{ $client->risk_level }}</td>
                         <td>{{ $client->enrollment_date }}</td>
                         <td>{{ $client->status!=='active'?$client->updated_at:'' }}</td>
                     </tr>
