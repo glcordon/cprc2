@@ -24,8 +24,18 @@ class ReportController extends Controller
         $all = $clients->all();
         $service = Service::get();
         $data = ['today' => $today, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
+        // return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
         $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
+    }
+    public function participantReport(Request $request)
+    {
+        $thisDate = Carbon::parse($request->searchMonth);
+        // $clients = Client::whereHas('services', function ($query) use($thisDate) {
+        //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
+        // })->get();
+        $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->get();
+        return view('partcipation_report', compact('clients', 'thisDate'));
+         
     }
 }

@@ -135,7 +135,6 @@
 						Number of Client Dismissals:
 					</div>
 					<div class="row">
-
 						<div class="col-3">Successfully Completed</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3">Non-compliant</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3">Moved Away</div><div class="col-1" style="border:1px solid black"></div>
