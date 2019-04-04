@@ -35,7 +35,7 @@ class ReportController extends Controller
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
         $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->get();
-        return view('partcipation_report', compact('clients', 'thisDate'));
+        return view('participation_report', compact('clients', 'thisDate'));
          
     }
 }
