@@ -50,13 +50,14 @@
                 <th>Dismissal Date</th>
                 <tbody>
                     @foreach($clients as $client)
+                    {{ dump($client) }}
                     <tr>
                         <td>{{ $client->first_name }}</td>
                         <td></td>
                         <td>{{ $client->last_name }}</td>
                         <td>{{ $client->ncdps_id }}</td>
                         <td></td>
-                        <td>{{ $client->enrollemnt_date }}</td>
+                        <td>{{ $client->enrollment_date }}</td>
                         <td>{{ $client->status!=='active'?$client->updated_at:'' }}</td>
                     </tr>
                     @endforeach
