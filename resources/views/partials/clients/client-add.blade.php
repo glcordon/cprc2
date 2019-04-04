@@ -18,7 +18,6 @@
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
         <div class="row">
-                <div class="form-group">
                     <div class="col-6">
                         <label for="enrollment_date">Enrollment Date</label>
                         <input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control">
@@ -27,7 +26,6 @@
                         <label for="risk_level">Risk Level</label>
                         <input type="text" value="{{ isset($client) ? $client->risk_level : ''}}" name="risk_level" id="risk_level" class="form-control">
                     </div>
-                </div>
                 </div>
                 <label>Assign Caseworker:</label>
         <select name="caseworker" id="caseworker" class="form-control">
