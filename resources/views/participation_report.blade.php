@@ -50,7 +50,6 @@
                 <th>Dismissal Date</th>
                 <tbody>
                     @foreach($clients as $client)
-                    {{ dump($client) }}
                     <tr>
                         <td>{{ $client->first_name }}</td>
                         <td></td>
