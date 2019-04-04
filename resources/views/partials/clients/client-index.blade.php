@@ -21,6 +21,7 @@
                                     <th>Client Name</th>
                                     <th>Services</th>
                                     <th>Assigned To</th>
+                                    <th>Risk</th>
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
                                     <th>Status</th>
@@ -45,6 +46,7 @@
                                                 <a href="#" id="assign_caseworker" class="btn btn-default">Assign Case Worker</a>
                                             @endif  --}}
                                         </td>
+                                        <td>{{ $client->risk_level }}</td>
                                         <td>                                            
                                             {{ $client->enrollment_date ?? ' - ' }}
                                         </td>
