@@ -66,9 +66,9 @@ class ClientController extends Controller
             $client->enrollment_date = $request->enrollment_date;
             $client->first_name = $request->first_name; 
             $client->middle_name = $request->middle_name;
-            $client->last_name = $request->last_name;
             $client->suffix = $request->suffix;
             $client->address_1 = $request->street_address; 
+            $client->risk_level = $request->risk_level;
             $client->city = $request->city;
             $client->state = $request->state;
             $client->zip = $request->zip;
