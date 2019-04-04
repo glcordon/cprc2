@@ -27,8 +27,7 @@
 		</div>
 		<div class="col-8" style="text-align:center;">
 			<h1>North Carolina Local Reentry Council</h1>
-			<h2>Monthly Progress Report</h2>
-			<h3>Due by 15th of each Month</h3>
+			<h2>Participation Roster</h2>
 		</div>
 	</div>
 	<div class="row" style="padding:10px; line-height:30px">
