@@ -25,9 +25,9 @@
                     <div class="col-6">
                         <label for="risk_level">Risk Level</label>
                         <select name="risk_level" id="risk_level" class="form-control">
-                            <option value="Low" {{ isset($client) ? ($user->id == $client->risk_level ? 'selected="selected"' : '') : ''}}>Low</option>
-                            <option value="Medium" {{ isset($client) ? ($user->id == $client->risk_level ? 'selected="selected"' : '') : ''}}>Medium</option>
-                            <option value="High" {{ isset($client) ? ($user->id == $client->risk_level ? 'selected="selected"' : '') : ''}}>High</option>
+                            <option value="Low" {{ isset($client) ? ($client->risk_level == 'Low' ? 'selected="selected"' : '') : ''}}>Low</option>
+                            <option value="Medium" {{ isset($client) ? ($client->risk_level == 'Medium' ? 'selected="selected"' : '') : ''}}>Medium</option>
+                            <option value="High" {{ isset($client) ? ($client->risk_level == 'High' ? 'selected="selected"' : '') : ''}}>High</option>
                         </select>
                     </div>
                 </div>
