@@ -19,7 +19,7 @@ class ReportController extends Controller
         // $clients = Client::whereHas('services', function ($query) use($thisDate) {
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
-        $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->get();
+        $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year)->get();
         $totalActive = $clients->where('status', 'active')->count();
         $all = $clients->all();
         $service = Service::get();
@@ -34,7 +34,7 @@ class ReportController extends Controller
         // $clients = Client::whereHas('services', function ($query) use($thisDate) {
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
-        $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->get();
+        $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year)->get();
         return view('participation_report', compact('clients', 'thisDate'));
          
     }
