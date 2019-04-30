@@ -235,7 +235,7 @@
                 return true;
             }
         });
-        $('#save').on('click', function(e){
+        $(document).on('click','#save', function(e){
             let card = '<div class="card col-12">'+$('#input_type').val()+'</div>'
             var note = $('#note').val();
             var title = $('#input_title').val();
