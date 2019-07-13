@@ -49,11 +49,11 @@
     <div class="card-column col-3">
         <div class="card">
          <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
+         <a href="/client/{{ $clients->id }}/edit" class="btn btn-default">Edit/View</a>
         <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
         <div class="card-body">
             <div class="card-text"> 
                     {{ $clients->address_1 }} <br>
-                    {{ $clients->address_2 ?? '' }} <br>
                     {{ $clients->city }}, {{ $clients->state }}, {{ $clients->zip }} <br>
                     <a href="tel:{{ $clients->primary_phone }}">{{ $clients->primary_phone }}</a><br />
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
@@ -77,7 +77,10 @@
                 <div class="col-6">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Add New Touch Point
-                        </button>            
+                        </button>   
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#referralModal">
+                                Create Referral
+                            </button>            
                 </div>
                 <div class="col-6">Last Contact: @if($last_contact !=''){{ $last_contact->toDateTimeString() ?? '' }}@endif</div>
                 <div class="touchpoint col-12"></div>
@@ -144,6 +147,36 @@
     </div>
   </div>
 </div>
+<!-- Modal referral Service-->
+<div class="modal fade" id="addReferral" tabindex="-1" role="dialog" aria-labelledby="serviceModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Referral</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
+        <select name="service_name" id="service_name" class="form-control">
+            <option value="">Select A Service</option>
+           
+            @foreach($otherServices as $service)
+            
+            <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
+            @endforeach
+        </select><br>
+        {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveService" data-dismiss="modal"  data-target="#exampleModal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal Add Touchpoint-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -168,7 +201,7 @@
         </select>
         <label for="note_date">Date of Service</label>
         <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}">
-        <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>
+        <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>
         <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>
         <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
             <option value="">Select A Service</option>
@@ -202,7 +235,7 @@
                 return true;
             }
         });
-        $('#save').on('click', function(e){
+        $(document).on('click','#save', function(e){
             let card = '<div class="card col-12">'+$('#input_type').val()+'</div>'
             var note = $('#note').val();
             var title = $('#input_title').val();

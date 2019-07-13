@@ -22,13 +22,19 @@ Route::group(['middleware' => 'web'], function () {
 //Client Routes
 Route::get('/test', function(){return 'hey';});
 Route::get('/client', 'ClientController@index')->name('client.index');
-Route::get('/client/{id?}', 'ClientController@myCaseload')->name('client.myindex');
+Route::get('/client/inactive', 'ClientController@viewInactive')->name('client.viewInactive');
+Route::get('/client/{id}/my', 'ClientController@myCaseload')->name('client.myindex');
+Route::get('/client/{id}/edit', 'ClientController@edit')->name('client.edit');
+Route::post('/client/{id?}/update', 'ClientController@update')->name('client.update');
 Route::get('/client-add', 'ClientController@create')->name('client.create');
 Route::post('/client-store', 'ClientController@store')->name('client.store');
 Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contact');
 
-Route::get('/delete-client/{id}', 'ClientController@destory');
+Route::get('/delete-client/{id}', 'ClientController@destroy');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
+Route::get('/report-generate', 'ReportController@index')->name('pdf');
+Route::post('/report-generate', 'ReportController@index')->name('pdf_post');
+Route::post('/participation-report', 'ReportController@participantReport')->name('participation_report');
 });

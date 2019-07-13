@@ -11,9 +11,7 @@
             @endif
        </div>
             <div class="row">
-                <div class="col-12" style="text-align:right">
-                    <a href="/client">View All Active<a> | <a href="/client/inactive">View all Inactive Clients</a>
-                </div>
+
             <div class="col-12">
                     <table class="table table-striped table-hover">
                             <thead>
@@ -21,7 +19,6 @@
                                     <th>Client Name</th>
                                     <th>Services</th>
                                     <th>Assigned To</th>
-                                    <th>Risk</th>
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
                                     <th>Status</th>
@@ -46,7 +43,6 @@
                                                 <a href="#" id="assign_caseworker" class="btn btn-default">Assign Case Worker</a>
                                             @endif  --}}
                                         </td>
-                                        <td>{{ $client->risk_level }}</td>
                                         <td>                                            
                                             {{ $client->enrollment_date ?? ' - ' }}
                                         </td>
@@ -63,6 +59,7 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <td colspan="4">{{ $clients->links() }}</td>
                                 </tr>
                             </tfoot>
                         </table>

@@ -61,7 +61,7 @@ class NoteController extends Controller
         $new_note->client_id = $client_id;
         $new_note->service_id = $request['service_id'];
         $new_note->save();
-        echo $request->all();
+        return $request->all();
     }
 
     /**
