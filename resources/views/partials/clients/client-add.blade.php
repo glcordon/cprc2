@@ -226,7 +226,7 @@
                 <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
             </select>
             <hr>
-            <div class="col-4">
+            <div class="col-12">
                     <label for="charge">Offense</label>
                     <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
                 </div>
@@ -253,7 +253,7 @@
 
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-6">
                         <label for="supervision-level">Supervision Level</label>
                         <select name="supervision_level" id="supervision-level" class="form-control">
                             <option value="">Select</option>
@@ -264,7 +264,7 @@
                         </select>
                     </div>
 
-                <div class="col-4">
+                <div class="col-6">
                     <label for="sex-offender">Sex Offender</label>
                     <select name="sex_offender" id="sex_offender" class="form-control">
                         <option value="no" {{ isset($client) ? ($client->sex_offender == 'no' ? 'selected="selected"' : '') : ''}}>No</option>
