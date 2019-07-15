@@ -82,7 +82,7 @@
                     &nbsp;
                 </div>
                   <div class="container bg-gray-100 pt-1 px-1">
-                     @yield('content')
+                     @yield('content1')
                   </div>
                </div>
 
