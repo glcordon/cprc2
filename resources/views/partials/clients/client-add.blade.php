@@ -249,7 +249,7 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <label for="charge">Charge</label>
+                    <label for="charge">Offense</label>
                     <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
                 </div>
                 <div class="col-4">
