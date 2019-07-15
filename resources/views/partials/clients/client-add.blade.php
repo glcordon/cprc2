@@ -232,7 +232,7 @@
                 </div>
                 
             <label for="under_supervision">Under Supervision</label> &nbsp; <input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
-            <div id="under_supervision_section" style="display:none">
+            <div id="under_supervision_section">
                 <div class="row">
                 <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
@@ -385,14 +385,14 @@ $(document).ready(function(){
         $('#county_registerd').show();
        }
     })
-    $('input#under_supervision').on('click', function(){
-        if($(this).prop("checked"))
-    {
-        $('#under_supervision_section').show();
-    }else{
-        $('#under_supervision_section').hide();
-    }
-    })
+//    $('input#under_supervision').on('click', function(){
+//        if($(this).prop("checked"))
+//    {
+//        $('#under_supervision_section').show();
+//    }else{
+//        $('#under_supervision_section').hide();
+//    }
+//    })
 
 });
 </script>
