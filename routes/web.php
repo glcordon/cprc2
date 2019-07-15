@@ -11,7 +11,7 @@
 |
 */
 Auth::routes();
-Route::get('/', function(){return view('welcome');});
+Route::get('/', 'ClientController@index')->name('client.index');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
