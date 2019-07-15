@@ -89,7 +89,7 @@
                <!--Sidebar-->
                <div class="w-full md:w-1/5 bg-gray-900 md:bg-gray-900 px-2 text-center fixed bottom-0 md:pt-8 md:top-0 md:left-0 h-16 md:h-screen md:border-r-4 md:border-gray-600">
                 <h1 class="text-white pb-6">RECIDIWORX</h1>
-                    @include('partials.menu')
+                    @include('partials.nav')
                </div>
             </div>
          </body>
