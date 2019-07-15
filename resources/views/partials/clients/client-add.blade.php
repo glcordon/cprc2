@@ -231,7 +231,7 @@
                     <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
                 </div>
                 
-            <label for="under_supervision">Under Supervision</label> &nbsp; <input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
+            <label for="under_supervision">Under Supervision</label> &nbsp; <input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? (($client->under_supervision == 'on' || $client->supervision_level !== '') ? 'checked="checked"' : '') : ''}}>
             <div id="under_supervision_section" style="display:none">
                 <div class="row">
                 <div class="col-3">
