@@ -305,7 +305,7 @@
 @endsection
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<script>
+
 <script>
                         $(document).ready(function(){
                             $('input').on('blur', function(){
@@ -373,6 +373,7 @@
                         return age;
                     }
                 </script>
+<script>
 $(document).ready(function(){
     $('input').attr('autocomplete','off');
     $('select[name=sex_offender]').on('change', function(){
