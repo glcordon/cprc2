@@ -111,7 +111,7 @@
                     </p>
                   </div>
                   <div class="card-footer text-muted">
-                      {{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}
+                      {{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()->invert, false) }}
                   </div>
                 </div>
               @endforeach
