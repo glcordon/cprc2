@@ -37,7 +37,7 @@ class ReportController extends Controller
                         $xo->push($s->toArray()['service_name']);
                     }
                 }
-                dump($xo);
+                dump($key);
                 $numberOfServices->put($key, $xo);
             
            } 
