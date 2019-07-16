@@ -72,7 +72,7 @@
 						<div class="row" style="background-color:#b3cde0;">
 						@foreach($chunk as $serv)
 							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-							<div style="border:1px solid black"  class="col-2">{{ $serviceCount[$serv->service_name] }}</div>
+							<div style="border:1px solid black"  class="col-2">{{ dd($serviceCount[$serv->service_name]) }}{{ $serv->client()->count() }}</div>
 						@endforeach
 						</div>
 					@endforeach
