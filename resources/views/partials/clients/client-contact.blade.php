@@ -59,8 +59,8 @@
                     <a href="tel:{{ $clients->primary_phone }}">{{ $clients->primary_phone }}</a><br />
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
                     <small><em>Created: {{ $clients->updated_at->toDateTimeString() }}</em></small>
-                    @if($client->jobs)
-                      @foreach ($client->jobs as $job)
+                    @if($clients->jobs)
+                      @foreach ($clients->jobs as $job)
                         {{ dump($job) }}
                           
                       @endforeach
