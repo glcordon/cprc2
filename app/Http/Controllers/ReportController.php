@@ -23,7 +23,7 @@ class ReportController extends Controller
         $activeClients = $clients->where('status', 'active');
         $totalActive = $activeClients->count();
         $all = $clients->all();
-        dd($activeClients->service);
+        dd($activeClients->services);
 
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
