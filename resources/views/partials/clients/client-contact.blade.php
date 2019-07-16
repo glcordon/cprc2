@@ -357,7 +357,12 @@
               })
               .done(function(data){
                 console.log(data);
-                
+                $('.jobs_div').prependTo(`
+                ${data.job_name} | <div id="delete" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                ${data.job_address} <br>
+                <small><em> Salary Code: ${data.salary} </em></small> <br>
+              <small><em> Start Date:${data.start_date}</em></small> <br>
+                `)
               });
             
         });
