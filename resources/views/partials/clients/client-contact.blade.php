@@ -59,10 +59,11 @@
                     <a href="tel:{{ $clients->primary_phone }}">{{ $clients->primary_phone }}</a><br />
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
                     <small><em>Created: {{ $clients->updated_at->toDateTimeString() }}</em></small>
-                    <div class="jobs_div">
+                    
                       @if($clients->jobs)
                       <hr>
                         Current Job(s) <br>
+                        <div class="jobs_div">
                         @foreach ($clients->jobs as $job)
                         <span>
                           {{ $job->job_name }} | <div id="delete_this" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
@@ -360,7 +361,7 @@
               })
               .done(function(data){
                 console.log(data.job_name);
-                let update = $('<span> ' + data["job_name"] + ' | <div id="delete" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>' 
+                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>' 
                 + data["job_address"] +' <br><small><em> Salary Code: ' 
                 + data["salary"] +' </em></small> <br><small><em> Start Date:' 
                 + data["start_date"] +'</em></small> <br></span>')
