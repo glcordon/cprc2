@@ -60,8 +60,11 @@
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
                     <small><em>Created: {{ $clients->updated_at->toDateTimeString() }}</em></small>
                     @if($clients->jobs)
+                      Current Job(s)
                       @foreach ($clients->jobs as $job)
-                        {{ dump($job) }}
+                        {{ $job->job_name }} <br>
+                        {{ $job->job_salary }} <br>
+
                           
                       @endforeach
                     @endif
