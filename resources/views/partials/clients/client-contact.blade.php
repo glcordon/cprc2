@@ -41,6 +41,9 @@
             text-decoration: underline;
             font-weight: 700;
         }
+        .service{
+          padding:10px;
+        }
 </style>
    <div class="album text-muted">
 
