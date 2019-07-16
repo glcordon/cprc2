@@ -96,13 +96,28 @@
               <h3>Services</h3>
             <div class="card-body flex">
               @foreach($services as $srv)
-              <div class="service">{{ $srv['service_name'] ?? '' }} | 
-                Expiration:
-                @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
-                  Expired
-                @else 
-                  {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
-                @endif 
+              <div class="card text-center">
+                  <div class="card-header">
+                    Featured
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $srv['service_name'] ?? '' }} </h5>
+                    <p class="card-text">
+                        Expiration:
+                        @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                          Expired
+                        @else 
+                          {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                        @endif 
+                    </p>
+                  </div>
+                  <div class="card-footer text-muted">
+                      {{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()) }}
+                  </div>
+                </div>
+              <div class="service">
+                | 
+                
               </div>
               @endforeach
             </div>
