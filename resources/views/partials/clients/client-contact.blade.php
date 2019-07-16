@@ -64,7 +64,7 @@
                       @foreach ($clients->jobs as $job)
                         {{ $job->job_name }} <br>
                         {{ $job->job_address }} <br>
-                        <small><em> {{ $job->salary }} </em></small> <br>
+                        <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
                       <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
                       @endforeach
                     @endif
