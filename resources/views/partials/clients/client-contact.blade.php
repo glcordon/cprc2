@@ -94,7 +94,6 @@
               @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
                 Expired
               @endif 
-              {{  }} 
             </div>
             @endforeach
             </div>
