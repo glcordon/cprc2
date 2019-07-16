@@ -357,9 +357,7 @@
               })
               .done(function(data){
                 console.log(data);
-                $('select#service_name  option:selected').hide();
-                $('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
-                // $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
+                
               });
             
         });
