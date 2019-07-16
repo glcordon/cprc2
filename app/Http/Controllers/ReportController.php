@@ -26,9 +26,9 @@ class ReportController extends Controller
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
-            dump($serv->countBy());
+            dump($serv);
            } 
-       }
+       } 
 
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
