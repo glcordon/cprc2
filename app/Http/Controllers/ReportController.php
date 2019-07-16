@@ -29,7 +29,7 @@ class ReportController extends Controller
        { 
            $xo = collect([]);
            foreach($ac->services->groupBy('service_name') as $key => $serv){
-               
+               dd($serv);
                 foreach($serv as $s)
                 {
                     if($key == $s->toArray()['service_name'])
