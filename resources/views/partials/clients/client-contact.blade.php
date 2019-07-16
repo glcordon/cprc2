@@ -63,7 +63,9 @@
                       Current Job(s)
                       @foreach ($clients->jobs as $job)
                         {{ $job->job_name }} <br>
-                        {{ $job->job_salary }} <br>
+                        {{ $job->job_address }} <br>
+                        {{ $job->salary }} <br>
+                        {{ $job->start_date }} <br>
 
                           
                       @endforeach
