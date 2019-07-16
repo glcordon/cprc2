@@ -31,7 +31,7 @@ class ReportController extends Controller
        });
        dd($numberOfServices->map(function($service, $key){
          $service->filter(function($x) use($key){
-               return [$key => $x->count()];
+               return [$key => $x];
            });
        })->toArray());
         $service = Service::get();
