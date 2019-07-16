@@ -87,9 +87,9 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            <div class="card-title"><h3>Services</h3>
+            <div class="card-title flex"><h3>Services</h3>
             @foreach($services as $srv)
-            {{ $srv['service_name'] ?? '' }}, 
+            <div class="service">{{ $srv['service_name'] ?? '' }} | Expiration: {{ $clients->enrollment_date }} </div>
             @endforeach
             </div>
             <div class="row">
