@@ -190,8 +190,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" name="job_name" id="job_name" value="">
-        <input type="text" class="form-control" name="job_city" id="job_city" value="">
+        <input type="text" class="form-control" name="job_name" id="job_name" placeholder="Job Name" value=""><br>
+        <input type="text" class="form-control" name="job_zip" id="job_address" placeholder="Job Address" value=""><br>
+        <input type="text" class="form-control" name="job_city" id="job_city" placeholder="Job City" value=""><br>
+        <input type="text" class="form-control" name="job_zip" id="job_zip" placeholder="Job Zip" value=""><br>
         <input type="hidden" class="form-control" name="client_id" id="client_id" value="{{ $clients->id }}">
         <select name="job_salary" id="job_salary" class="form-control">
             <option value="">Select A Salary Range</option>
