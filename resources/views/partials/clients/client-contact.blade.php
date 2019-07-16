@@ -115,10 +115,6 @@
                       {{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()) }}
                   </div>
                 </div>
-              <div class="service">
-                | 
-                
-              </div>
               @endforeach
             </div>
             </div>
