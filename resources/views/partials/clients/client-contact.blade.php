@@ -50,7 +50,7 @@
         {
           padding-left:27px;
         }
-        .card-title, .card-header{margin-bottom:0}
+        .card-title, .card-header{margin-bottom:0, padding:0}
 </style>
    <div class="album text-muted">
 
