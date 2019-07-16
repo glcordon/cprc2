@@ -117,6 +117,7 @@
      </div>
 
    </div> 
+@push('modals')
 <!-- Modal Add Service-->
 <div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="serviceModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -220,6 +221,7 @@
     </div>
   </div>
 </div>
+@endpush
 @endsection
 @push('scripts')
 <script>
