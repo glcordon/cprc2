@@ -23,12 +23,18 @@ class ReportController extends Controller
         $activeClients = Client::where('status', 'active')->with('services')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
-       foreach($activeClients as $ac)
-       {
-           foreach($ac->services->groupBy('service_name') as $key => $serv){
-            dump($key);
-           } 
-       } 
+
+        $collection = $activeClients->mapWithKeys(function($item){
+            return $item->services;
+        });
+        dd($collection);
+    //    foreach($activeClients as $ac)
+    //    {
+           
+    //        foreach($ac->services->groupBy('service_name') as $key => $serv){
+    //         dump($key);
+    //        } 
+    //    } 
 
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
