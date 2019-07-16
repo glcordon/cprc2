@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Client;
 use App\User;
+use App\Job;
 use App\ClientProfile;
 use App\Services;
 use Illuminate\Support\Facades\Auth;
