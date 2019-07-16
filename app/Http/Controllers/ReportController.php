@@ -27,16 +27,9 @@ class ReportController extends Controller
        foreach($activeClients as $ac)
        { 
            
-           foreach($ac->services->groupBy('service_name') as $key => $serv){
-            foreach($serv as $s)
-            {
-                if($key == $s->toArray()['service_name'])
-                {
-                    $numberOfServices->put($key, $s->toArray()['service_name']);
-                }
-            }  
-            
-           } 
+          $numberOfServices->push($ac->services->groupBy('service_name')->map(function ($people) {
+            return $people->count();
+            }));
        } 
        dd($numberOfServices->flip());
         $service = Service::get();
