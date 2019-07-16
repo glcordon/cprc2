@@ -24,8 +24,8 @@ class ReportController extends Controller
         $totalActive = $activeClients->count();
         $all = $clients->all();
 
-        $collection = $activeClients->mapWithKeys(function($item){
-            return $item->services;
+        $collection = $activeClients->mapToGroups(function($item, $key){
+            return $item->services['service_name'];
         });
         dd($collection);
     //    foreach($activeClients as $ac)
