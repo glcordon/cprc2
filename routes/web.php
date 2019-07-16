@@ -29,7 +29,7 @@ Route::post('/client/{id?}/update', 'ClientController@update')->name('client.upd
 Route::get('/client-add', 'ClientController@create')->name('client.create');
 Route::post('/client-store', 'ClientController@store')->name('client.store');
 Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contact');
-
+Route::post('/client/add-job', 'ClientController@updateJob')->name('client.updateJob');
 Route::get('/delete-client/{id}', 'ClientController@destroy');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
@@ -37,4 +37,5 @@ Route::post('/add-service', 'ClientController@addService');
 Route::get('/report-generate', 'ReportController@index')->name('pdf');
 Route::post('/report-generate', 'ReportController@index')->name('pdf_post');
 Route::post('/participation-report', 'ReportController@participantReport')->name('participation_report');
+
 });

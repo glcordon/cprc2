@@ -204,7 +204,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="saveService" data-dismiss="modal"  data-target="#exampleModal">Save changes</button>
+        <button type="button" class="btn btn-primary" id="saveJobData" data-dismiss="modal"  data-target="#exampleModal">Save changes</button>
       </div>
     </div>
   </div>
@@ -296,6 +296,25 @@
         });
 
         $('#saveService').on('click', function(e){
+            e.preventDefault();
+            let service_id = $('select#service_name').val();
+            var service_name = $('select#service_name  option:selected').text();
+            var token = "{{ @csrf_token() }}";
+            var client_id = $('#client_id').val();
+            $.ajax({
+                method: "POST",
+                url: "/add-service",
+                data: { _token:token, service_id: service_id, client_id: client_id}
+              })
+              .done(function(data){
+                console.log(data);
+                $('select#service_name  option:selected').hide();
+                $('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
+                // $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
+              });
+            
+        });
+        $('#saveJobData').on('click', function(e){
             e.preventDefault();
             let service_id = $('select#service_name').val();
             var service_name = $('select#service_name  option:selected').text();
