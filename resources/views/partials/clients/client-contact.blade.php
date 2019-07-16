@@ -192,12 +192,12 @@
         <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
         <select name="job_salary" id="job_salary" class="form-control">
             <option value="">Select A Salary Range</option>
-                      
             <option value="min">Minimum Wage</option>
             <option value="minTo8">Up to $8.99</option>
             <option value="upTo10">Up to $10.00</option>
             <option value="over10">Over $10.00</option>
         </select><br>
+        <input type="date" name="job_start_date" id="job_start_date" placeholder="Enter Start Date">
         {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
         
       </div>
