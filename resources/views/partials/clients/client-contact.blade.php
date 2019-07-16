@@ -65,7 +65,7 @@
                         {{ $job->job_name }} <br>
                         {{ $job->job_address }} <br>
                         {{ $job->salary }} <br>
-                        {{ $job->start_date }} <br>
+                      <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
                       @endforeach
                     @endif
                 
