@@ -89,7 +89,13 @@
         <div class="col-12 card padding-bottom-3">
             <div class="card-title flex"><h3>Services</h3>
             @foreach($services as $srv)
-            <div class="service">{{ $srv['service_name'] ?? '' }} | Expiration: {{ \Carbon\Carbon::now()->diffInDays($clients->enrollment_date) }} </div>
+            <div class="service">{{ $srv['service_name'] ?? '' }} | 
+              Expiration:
+              @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                Expired
+              @endif 
+              {{  }} 
+            </div>
             @endforeach
             </div>
             <div class="row">
