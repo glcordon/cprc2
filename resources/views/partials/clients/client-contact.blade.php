@@ -190,8 +190,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="text" name="job_name" id="job_name">
-        <input type="text" name="job_city" id="job_city">
+        <input type="text" name="job_name" id="job_name" value="">
+        <input type="text" name="job_city" id="job_city" value="">
         <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
         <select name="job_salary" id="job_salary" class="form-control">
             <option value="">Select A Salary Range</option>
