@@ -94,7 +94,7 @@
               @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
                 Expired
               @else 
-                {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration) }}
+                {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString();  }}
               @endif 
             </div>
             @endforeach
