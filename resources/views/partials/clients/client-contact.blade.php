@@ -111,7 +111,11 @@
                     </p>
                   </div>
                   <div class="card-footer text-muted">
-                      ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                    @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false)<0 )
+                      Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                    @else
+
+                    @endif
                   </div>
                 </div>
               @endforeach
