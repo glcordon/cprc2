@@ -179,11 +179,11 @@
   </div>
 </div>
 <!-- Modal referral Service-->
-<div class="modal fade" id="addReferral" tabindex="-1" role="dialog" aria-labelledby="serviceModal" aria-hidden="true">
+<div class="modal fade" id="addJobModal" tabindex="-1" role="dialog" aria-labelledby="addJobModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Referral</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Job Data</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
