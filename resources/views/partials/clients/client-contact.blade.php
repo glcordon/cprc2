@@ -383,7 +383,7 @@
             })
             .done(function(data){
               console.log(data)
-              this_div.parent.fadeOut()
+              this_div.parent().fadeOut().remove()
             })
         })
     });
