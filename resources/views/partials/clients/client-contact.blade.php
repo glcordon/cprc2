@@ -46,6 +46,10 @@
           border:1px solid #ccc;
           margin:10px;
         }
+        #title_type
+        {
+          padding-left:10px;
+        }
 </style>
    <div class="album text-muted">
 
