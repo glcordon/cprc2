@@ -381,6 +381,7 @@
               id:id,
             })
             .done(function(data){
+              console.log(data)
               this_div.parent.fadeOut()
             })
         })

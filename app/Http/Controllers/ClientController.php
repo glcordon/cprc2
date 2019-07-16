@@ -251,10 +251,13 @@ class ClientController extends Controller
         $job->salary = $request->salary;
         
         $client = $client->jobs()->save($job);
-
-        
         return $job;
         
+    }
+    public function deleteJob(Request $request)
+    {
+        Job::find($request->id)->delete();
+        return "done";
     }
 }
 
