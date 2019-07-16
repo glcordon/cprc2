@@ -31,7 +31,7 @@ class ReportController extends Controller
        });
        dd($numberOfServices->map(function($service){
            return $service;
-       })->groupBy('service_name')->flatten(1));
+       }));
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
