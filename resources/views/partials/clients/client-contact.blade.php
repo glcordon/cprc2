@@ -328,13 +328,14 @@
             var start_date = $('#start_date').val();
             var job_zip = $('#job_zip').val();
             var job_city = $('#job_city').val();
+            var id = $('#client_id').val();
             var token = "{{ @csrf_token() }}";
             $.ajax({
                 method: "POST",
                 url: "/client/add-job",
                 data: { 
                   _token:token, 
-                  id:this_id, 
+                  id:id, 
                   job_city: job_city, 
                   job_zip: job_zip, 
                   start_date: start_date, 
