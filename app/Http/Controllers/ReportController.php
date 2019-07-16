@@ -30,8 +30,8 @@ class ReportController extends Controller
             }));
        });
           
-       dd($numberOfServices->map(function($service){
-           return $service->count();
+       dd($numberOfServices->map(function($service, $key){
+           return $key;
        }));
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
