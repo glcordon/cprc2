@@ -20,7 +20,7 @@ class ReportController extends Controller
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
-        $client = $clientsQuery->get();
+        $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
         $totalActive = $activeClients->count();
