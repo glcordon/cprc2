@@ -24,7 +24,7 @@ class ReportController extends Controller
         $totalActive = $activeClients->count();
         $all = $clients->all();
         $numberOfServices = collect([]);
-       $ac = $activeClients->map(function($ac) use($numberOfServices){
+       $ac = $activeClients->filter(function($ac) use($numberOfServices){
            $numberOfServices->push($ac->services->groupBy('service_name')->map(function ($people, $key) {
             return $key;
             }));
