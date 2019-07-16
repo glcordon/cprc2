@@ -96,7 +96,7 @@
               <h3>Services</h3>
             <div class="card-body flex">
               @foreach($services as $srv)
-              <div class="service">{{ $srv['service_name'] ?? '' }} | 
+              <div class="service col-6">{{ $srv['service_name'] ?? '' }} | 
                 Expiration:
                 @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
                   Expired
