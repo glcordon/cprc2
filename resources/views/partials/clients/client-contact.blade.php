@@ -48,7 +48,7 @@
        <div class="row" style="margin-top:4.5em">
     <div class="card-column col-3">
         <div class="card">
-          <input type="hidden" name="this_id" value="{{ $client->id }}">
+          <input type="hidden" name="this_id" value="{{ $clients->id }}">
          <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
          <a href="/client/{{ $clients->id }}/edit" class="btn btn-default">Edit/View</a>
         <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
