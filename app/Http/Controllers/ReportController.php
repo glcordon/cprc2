@@ -29,7 +29,7 @@ class ReportController extends Controller
             return $people->count();
             }));
        });
-          
+          dd($activeClients);
        dd($numberOfServices->map(function($service){
            return $service;
        }));
