@@ -64,10 +64,13 @@
                       <hr>
                         Current Job(s) <br>
                         @foreach ($clients->jobs as $job)
-                          {{ $job->job_name }} | <div id="delete" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                        <span>
+                          {{ $job->job_name }} | <div id="delete" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
                           {{ $job->job_address }} <br>
                           <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
                         <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
+
+                        </span>
                         @endforeach
                       @endif
                     </div>
