@@ -356,7 +356,7 @@
                   job_address: job_address}
               })
               .done(function(data){
-                $(data['job_name'] + ' | <div id="delete" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                $(data['job_name'] + ' | <div id="delete" id="'+data['id']+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
                 ' + data['job_address'] +' <br>
                 <small><em> Salary Code: ' + data['salary'] +' </em></small> <br>
               <small><em> Start Date:' + data['start_date'] +'</em></small> <br>
