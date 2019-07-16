@@ -21,7 +21,7 @@ class ReportController extends Controller
         // })->get();
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $client = $clientsQuery->get();
-        $inactiveClients = $clientsQuery->where('status', 'active')->get();
+        $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         dd($inactiveClients);
         $activeClients = Client::where('status', 'active')->with('services')->get();
         $totalActive = $activeClients->count();
