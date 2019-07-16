@@ -31,7 +31,7 @@ class ReportController extends Controller
        });
        dd($numberOfServices->map(function($service){
            return $service->map(function($x){
-               return $x->count();
+               return $x;
            });
        })->toArray());
         $service = Service::get();
