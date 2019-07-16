@@ -65,7 +65,7 @@
                         Current Job(s) <br>
                         @foreach ($clients->jobs as $job)
                         <span>
-                          {{ $job->job_name }} | <div id="delete" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                          {{ $job->job_name }} | <div id="delete_this" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
                           {{ $job->job_address }} <br>
                           <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
                         <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
@@ -368,6 +368,22 @@
               });
             
         });
+        $(document).on('click', '#delete_this', function(e){
+          e.preventDefault();
+          var this_div = $(this);
+          var id = $(this).attr('this_id');
+          var token = "{{ @csrf_token() }}";
+          $.ajax({
+            method: "POST",
+            url: "/client/delete-job",
+            data: { 
+              _token:token, 
+              id:id,
+            })
+            .done(function(data){
+              this_div.parent.fadeOut()
+            })
+        })
     });
 
       //  });

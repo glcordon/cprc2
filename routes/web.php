@@ -30,6 +30,7 @@ Route::get('/client-add', 'ClientController@create')->name('client.create');
 Route::post('/client-store', 'ClientController@store')->name('client.store');
 Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contact');
 Route::post('/client/add-job', 'ClientController@updateJob')->name('client.updateJob');
+Route::post('/client/delete-job', 'ClientController@deleteJob')->name('client.deleteJob');
 Route::get('/delete-client/{id}', 'ClientController@destroy');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
