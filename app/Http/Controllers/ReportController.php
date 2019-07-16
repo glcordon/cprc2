@@ -34,7 +34,7 @@ class ReportController extends Controller
                 {
                     if($key == $s->toArray()['service_name'])
                     {
-                        $$xo->push($s->toArray()['service_name']);
+                        $xo->push($s->toArray()['service_name']);
                     }
                 }  
                 $numberOfServices->put($key, $xo);
