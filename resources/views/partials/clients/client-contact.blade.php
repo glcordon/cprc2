@@ -92,7 +92,7 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            <div class="card-title flex">
+            <div class="card-title">
               <h3>Services</h3>
             <div class="card-body flex">
               @foreach($services as $srv)
