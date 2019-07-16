@@ -30,7 +30,7 @@ class ReportController extends Controller
             }));
        });
        dd($numberOfServices->filter(function($service, $key){
-         return [$key];
+         return $service == $key;
        })->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
