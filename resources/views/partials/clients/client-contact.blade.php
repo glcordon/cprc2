@@ -379,6 +379,7 @@
             data: { 
               _token:token, 
               id:id,
+            }
             })
             .done(function(data){
               console.log(data)
