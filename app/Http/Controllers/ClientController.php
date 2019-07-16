@@ -248,7 +248,7 @@ class ClientController extends Controller
         $job->job_city = $request->job_city;
         $job->job_zip = $request->job_zip;
         $job->start_date = $request->start_date;
-        $job->salaryy = $request->salary;
+        $job->salary = $request->salary;
         
         $client = $client->jobs()->save($job);
 
