@@ -30,7 +30,7 @@ class ReportController extends Controller
             $numberOfServices->push($key);
            } 
        } 
-       dd($numberOfServices);
+       dd($numberOfServices->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
