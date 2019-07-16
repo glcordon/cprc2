@@ -29,11 +29,11 @@ class ReportController extends Controller
             return $key;
             }));
        });
-       dd($numberOfServices->map(function($service){
-           return $service->map(function($x){
-               return $x;
+       dd($numberOfServices->map(function($service, $key){
+         $service->filter(function($x) use($key){
+               return [$key => $x->count()];
            });
-       })->flip()->toArray());
+       })->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
