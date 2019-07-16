@@ -355,8 +355,8 @@
                   job_name: job_name, 
                   job_address: job_address}
               })
-              .done(function(response){
-                console.log(response.data);
+              .done(function(data){
+                console.log(data.job_name);
                 $('.jobs_div').prependTo(`
                 ${data.job_name} | <div id="delete" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
                 ${data.job_address} <br>
