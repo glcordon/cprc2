@@ -189,7 +189,12 @@
         </button>
       </div>
       <div class="modal-body">
-        Job Data
+        <select name="job_salary" id="job_salary">
+            <option value="">Select One</option>
+            <option value="min">Minimum Wage</option>
+            <option value="upTo8">Between Minimum and $9.00</option>
+            <option value="between9and10">$9.01 - $10.00</option>
+            <option value="over10">$10.00+</option>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
