@@ -361,7 +361,7 @@
                 ' + data['job_address'] +' <br>
                 <small><em> Salary Code: ' + data['salary'] +' </em></small> <br>
               <small><em> Start Date:' + data['start_date'] +'</em></small> <br>
-                ').prependTo('.jobs_div')
+                ').prependTo('.jobs_div');
               });
             
         });
