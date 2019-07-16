@@ -30,10 +30,10 @@ class ReportController extends Controller
             $numberOfServices->push($key);
            } 
        } 
-       dd(array_count_values($numberOfServices->sort()->toArray()));
+       $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
+        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'serviceCount', 'thisDate'));
         $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
     }
