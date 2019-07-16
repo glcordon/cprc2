@@ -333,8 +333,8 @@
             e.preventDefault();
             var job_name = $('#job_name').val();
             var job_address = $('#job_address').val();
-            var salary = $('#salary').val();
-            var start_date = $('#start_date').val();
+            var salary = $('#job_salary').val();
+            var start_date = $('#job_start_date').val();
             var job_zip = $('#job_zip').val();
             var job_city = $('#job_city').val();
             var id = $('#client_id').val();
