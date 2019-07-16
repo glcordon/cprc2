@@ -152,7 +152,7 @@ class ClientController extends Controller
            return 'done';
         }
     }
-    public function addJob($id, Request $request)
+    public function updateJob($id, Request $request)
     {
         $client = Client::find($id);
  
