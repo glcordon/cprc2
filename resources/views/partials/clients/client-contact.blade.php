@@ -74,7 +74,7 @@
                         </span>
                         @endforeach
                         @else
-                        <small><em>No Job Listed</em></small>
+                        <small><em>No Job Listed</em></small> 
                       @endif
                     </div>
                 
