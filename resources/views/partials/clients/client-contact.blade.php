@@ -48,6 +48,7 @@
        <div class="row" style="margin-top:4.5em">
     <div class="card-column col-3">
         <div class="card">
+          <input type="hidden" name="this_id" value="{{ $client->id }}">
          <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
          <a href="/client/{{ $clients->id }}/edit" class="btn btn-default">Edit/View</a>
         <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
@@ -189,6 +190,8 @@
         </button>
       </div>
       <div class="modal-body">
+        <input type="text" name="job_name" id="job_name">
+        <input type="text" name="job_city" id="job_city">
         <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
         <select name="job_salary" id="job_salary" class="form-control">
             <option value="">Select A Salary Range</option>
@@ -257,6 +260,7 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
+      const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
             if(confirm('Are You Sure') !== true)
@@ -316,14 +320,25 @@
         });
         $('#saveJobData').on('click', function(e){
             e.preventDefault();
-            let service_id = $('select#service_name').val();
-            var service_name = $('select#service_name  option:selected').text();
+            var job_name = $('#job_name').val();
+            var job_address = $('#job_address').val();
+            var salary = $('#salary').val();
+            var start_date = $('#start_date').val();
+            var job_zip = $('#job_zip').val();
+            var job_city = $('#job_city').val();
             var token = "{{ @csrf_token() }}";
-            var client_id = $('#client_id').val();
             $.ajax({
                 method: "POST",
-                url: "/add-service",
-                data: { _token:token, service_id: service_id, client_id: client_id}
+                url: "/client/add-job",
+                data: { 
+                  _token:token, 
+                  id:this_id, 
+                  job_city: job_city, 
+                  job_zip: job_zip, 
+                  start_date: start_date, 
+                  salary: salary, 
+                  job_name: job_name, 
+                  job_address: job_address}
               })
               .done(function(data){
                 console.log(data);
