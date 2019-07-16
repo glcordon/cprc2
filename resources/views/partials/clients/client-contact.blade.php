@@ -92,17 +92,20 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            <div class="card-title flex"><h3>Services</h3>
-            @foreach($services as $srv)
-            <div class="service">{{ $srv['service_name'] ?? '' }} | 
-              Expiration:
-              @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
-                Expired
-              @else 
-                {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
-              @endif 
+            <div class="card-title flex">
+              <h3>Services</h3>
+            <div class="card-body flex">
+              @foreach($services as $srv)
+              <div class="service">{{ $srv['service_name'] ?? '' }} | 
+                Expiration:
+                @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                  Expired
+                @else 
+                  {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                @endif 
+              </div>
+              @endforeach
             </div>
-            @endforeach
             </div>
             <div class="row">
                 <div class="col-6">
