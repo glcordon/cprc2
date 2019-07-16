@@ -183,23 +183,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Referral</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add New Job Data</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
-        <select name="service_name" id="service_name" class="form-control">
-            <option value="">Select A Service</option>
-           
-            @foreach($otherServices as $service)
-            
-            <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
-            @endforeach
-        </select><br>
-        {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
-        
+        Job Data
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
