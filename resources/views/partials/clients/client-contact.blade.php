@@ -78,7 +78,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Add New Touch Point
                         </button>   
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addReferral">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#referralModal">
                                 Add Job Data
                             </button>            
                 </div>
