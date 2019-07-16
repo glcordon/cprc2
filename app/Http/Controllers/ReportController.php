@@ -25,12 +25,12 @@ class ReportController extends Controller
         $all = $clients->all();
         $numberOfServices = collect([]);
        $ac = $activeClients->map(function($ac){
-           ($ac->services->groupBy('service_name')->map(function ($people) {
+           $ac->services->groupBy('service_name')->map(function ($people) {
             return $people->count();
-            }));
+            });
        });
           
-       dd($numberOfServices);
+       dd($ac);
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
