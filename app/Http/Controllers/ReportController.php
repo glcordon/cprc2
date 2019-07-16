@@ -30,7 +30,10 @@ class ReportController extends Controller
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             foreach($serv as $s)
             {
-                dump($s->toArray()['service_name']);
+                if($key == $s->toArray()['service_name'])
+                {
+                    $numberOfServices->put($key, $s->toArray()['service_name']);
+                }
             }  
             
            } 
