@@ -30,7 +30,7 @@ class ReportController extends Controller
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             foreach($serv as $s)
             {
-                dump($s);
+                dump($s->all());
             }  
             
            } 
