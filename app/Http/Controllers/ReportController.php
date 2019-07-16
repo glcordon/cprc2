@@ -25,7 +25,7 @@ class ReportController extends Controller
         $all = $clients->all();
        foreach($activeClients as $ac)
        {
-           dump($ac->services);
+           dump($ac->services->groupBy('service_name'));
        }
 
         $service = Service::get();
