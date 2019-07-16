@@ -48,7 +48,7 @@
         }
         #title_type
         {
-          padding-left:10px;
+          padding-left:27px;
         }
 </style>
    <div class="album text-muted">
