@@ -25,10 +25,14 @@ class ReportController extends Controller
         $all = $clients->all();
         $numberOfServices = collect([]);
        foreach($activeClients as $ac)
-       {
+       { 
+           
            foreach($ac->services->groupBy('service_name') as $key => $serv){
-               dump($serv->all());
-            $numberOfServices->push($key);
+            foreach($serv as $s)
+            {
+                dump($s);
+            }  
+            
            } 
        } 
        dd($numberOfServices->flip());
