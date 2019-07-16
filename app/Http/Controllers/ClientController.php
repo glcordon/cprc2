@@ -237,7 +237,7 @@ class ClientController extends Controller
     {
         
     }
-    public function updateJob($id, Request $request)
+    public function updateJob(Request $request)
     {
         $client = Client::find($id);
  
