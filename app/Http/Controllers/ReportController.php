@@ -26,9 +26,9 @@ class ReportController extends Controller
         $numberOfServices = collect([]);
        $ac = $activeClients->map(function($ac) use($numberOfServices){
            $numberOfServices->push($ac->services->groupBy('service_name')->map(function ($people, $key) {
-            return $key->count();
+            return $people->count();
             }));
-       });
+       })
           
        dd($numberOfServices);
         $service = Service::get();
