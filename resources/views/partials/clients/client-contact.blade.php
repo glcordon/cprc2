@@ -96,7 +96,7 @@
               <h3>Services</h3>
             <div class="card-body flex">
               @foreach($services as $srv)
-              <div class="card text-center">
+              <div class="card text-center col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <div class="card-header">
                     <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
                   </div>
