@@ -27,8 +27,7 @@ class ReportController extends Controller
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
-               dd($serv);
-            $numberOfServices->put($key, $serv->service_name);
+            $numberOfServices->push($key);
            } 
        } 
        dd($numberOfServices);
