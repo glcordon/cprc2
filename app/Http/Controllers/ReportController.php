@@ -27,19 +27,21 @@ class ReportController extends Controller
         $count = 0;
        foreach($activeClients as $ac)
        { 
-           
+           $xo = collect([]);
            foreach($ac->services->groupBy('service_name') as $key => $serv){
-            foreach($serv as $s)
-            {
-                if($key == $s->toArray()['service_name'])
+               
+                foreach($serv as $s)
                 {
-                    $numberOfServices->put($key, $s->toArray()['service_name']);
-                }
-            }  
+                    if($key == $s->toArray()['service_name'])
+                    {
+                        $$xo->push($s->toArray()['service_name']);
+                    }
+                }  
+                $numberOfServices->put($key, $xo);
             
            } 
        } 
-       dd($numberOfServices->flip());
+       dd($numberOfServices);
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
