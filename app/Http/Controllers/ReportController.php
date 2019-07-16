@@ -26,7 +26,7 @@ class ReportController extends Controller
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $serv){
-            dump($serv);
+            dump($serv->service_name);
            } 
        }
 
