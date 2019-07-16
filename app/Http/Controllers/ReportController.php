@@ -20,18 +20,26 @@ class ReportController extends Controller
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
         $clients = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year)->get();
-        $activeClients = Client::where('status', 'active')->withCount('services')->get();
+        $activeClients = Client::where('status', 'active')->with('services')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
         $numberOfServices = collect([]);
-       $ac = $activeClients->filter(function($ac) use($numberOfServices){
-           $numberOfServices->push($ac->services->groupBy('service_name')->map(function ($people, $key) {
-            return $key;
-            }));
-       });
-       dd($numberOfServices->filter(function($service, $key){
-         return $service == $key;
-       })->toArray());
+        $count = 0;
+       foreach($activeClients as $ac)
+       { 
+           
+           foreach($ac->services->groupBy('service_name') as $key => $serv){
+            foreach($serv as $s)
+            {
+                if($key == $s->toArray()['service_name'])
+                {
+                    $numberOfServices->put($key, $s->toArray()['service_name']);
+                }
+            }  
+            
+           } 
+       } 
+       dd($numberOfServices->flip());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'thisDate'));
