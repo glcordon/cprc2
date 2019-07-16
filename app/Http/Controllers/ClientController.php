@@ -253,7 +253,7 @@ class ClientController extends Controller
         $client = $client->jobs()->save($job);
 
         
-        return response()->json([$job, 200]);
+        return $job;
         
     }
 }
