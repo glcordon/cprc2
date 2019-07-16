@@ -22,7 +22,6 @@ class ReportController extends Controller
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $client = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
-        dd($inactiveClients);
         $activeClients = Client::where('status', 'active')->with('services')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
@@ -36,7 +35,7 @@ class ReportController extends Controller
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'serviceCount', 'thisDate'));
+        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'inactiveClients', 'serviceCount', 'thisDate'));
         $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
     }
