@@ -16,7 +16,6 @@
             left: 29px;
             width: 2px;
             height: 100%;
-            z-index: 10;
         }
         ul.timeline > li {
             margin: 20px 0;
@@ -32,7 +31,6 @@
             left: 20px;
             width: 20px;
             height: 20px;
-            z-index: 10;
         }
         a#title_type
         {
