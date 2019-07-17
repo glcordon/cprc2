@@ -319,7 +319,7 @@
                     data: { _token:token, ncdpsId: ncdpsId}
                   })
                   .done(function(data){
-                    console.log(data);
+                    console.log(data.length);
                     if(data.length > 0){
                         $('#user_does_exist').show()
                     }else{
