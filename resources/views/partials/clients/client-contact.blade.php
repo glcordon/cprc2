@@ -350,7 +350,7 @@
 @push('scripts')
 <script type="text/javascript">
 
-  $('.timepicker').datetimepicker({
+  $('#datetimepicker3').datetimepicker({
 
       format: 'LT'
 
