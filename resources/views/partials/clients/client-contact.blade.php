@@ -247,6 +247,7 @@
       </div>
       <div class="modal-body">
         <input type="text" class="form-control" name="job_name" id="job_name" placeholder="Job Name" value=""><br>
+        <input type="text" class="form-control" name="job_phone" id="job_phone" placeholder="Job Phone Number" value=""><br>
         <input type="text" class="form-control" name="job_zip" id="job_address" placeholder="Job Address" value=""><br>
         <input type="text" class="form-control" name="job_city" id="job_city" placeholder="Job City" value=""><br>
         <input type="text" class="form-control" name="job_zip" id="job_zip" placeholder="Job Zip" value=""><br>
@@ -415,6 +416,7 @@
             e.preventDefault();
             var job_name = $('#job_name').val();
             var job_address = $('#job_address').val();
+            var job_phone = $('#job_phone').val();
             var salary = $('#job_salary').val();
             var start_date = $('#job_start_date').val();
             var job_zip = $('#job_zip').val();
@@ -426,7 +428,8 @@
                 url: "/client/add-job",
                 data: { 
                   _token:token, 
-                  id:id, 
+                  id:id,
+                  job_phone:job_phone,
                   job_city: job_city, 
                   job_zip: job_zip, 
                   start_date: start_date, 
@@ -436,7 +439,8 @@
               })
               .done(function(data){
                 console.log(data.job_name);
-                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>' 
+                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>Phone: ' 
+                + data["job_phone"] +' <br><small><em> Salary Code: ' 
                 + data["job_address"] +' <br><small><em> Salary Code: ' 
                 + data["salary"] +' </em></small> <br><small><em> Start Date:' 
                 + data["start_date"] +'</em></small> <br></span>')
