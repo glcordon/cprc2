@@ -96,25 +96,25 @@
 						<div class="col-2" style="text-align:right">
 							Min Wage
 						</div>
-						<div class="col-1" style="border:1px solid black;">
+						<div class="col-1" style="border:1px solid black; padding-top:10px;">
 							{{ $jobCount['min'] ?? 0 }}
 						</div>
 						<div class="col-2" style="text-align:right">
 							Min Wage - $8.00
 						</div>
-						<div class="col-1" style="border:1px solid black;">
+						<div class="col-1" style="border:1px solid black; padding-top:10px;">
 							{{ $jobCount['minTo8'] ?? 0 }}
 						</div>
 						<div class="col-2" style="text-align:right">
 							$9.01 - $10.00 
 						</div>
-						<div class="col-1" style="border:1px solid black;">
+						<div class="col-1" style="border:1px solid black; padding-top:10px;">
 							{{ $jobCount['minTo10'] ?? 0 }}
 						</div>
 						<div class="col-2" style="text-align:right">
 							$10.00+
 						</div>
-						<div class="col-1" style="border:1px solid black;">
+						<div class="col-1" style="border:1px solid black; padding-top:10px;">
 							{{ $jobCount['over10'] ?? 0 }}
 						</div>
 					</div>
