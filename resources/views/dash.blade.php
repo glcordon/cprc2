@@ -73,7 +73,6 @@
 			</h1>
 		</div>
 	</div>
-	<h3>My Caseload</h3>
 	<div class="row">
 		
 		<div class="col-md-12">
