@@ -87,15 +87,14 @@
 				<span class="count-name">Currently Active</span>
 			  </div>
 			</div>
-		
-			
-		  </div>
+	</div>
+
 		
 			<div class="row">
-				<div class="col-4">
+				<div class="col-8">
 						Number of clients that received supportive services:
 				</div>
-				<div class="col-8">
+				<div class="col-4">
 		
 				</div>
 			</div>
