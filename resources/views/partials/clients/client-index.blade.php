@@ -31,7 +31,9 @@
                             <tbody>
                                 @foreach($clients as $client)
                                     <tr>
-                                        <td>{{ $client->last_name ?? ''}}, {{ $client->first_name ?? ''}}</td>
+                                        <td>{{ $client->last_name ?? ''}}, {{ $client->first_name ?? ''}}
+                                            <br><small><em>{{ $client->ncdps_id ?? ''}}</em></small>
+                                        </td>
                                         <td>
                                             {{-- {{ dump($client->services) }} --}}
                                             @if(isset($client->services))
