@@ -46,7 +46,7 @@ class ReportController extends Controller
            } 
            
        } 
-       dd($inactiveClients->groupBy('status')); 
+       dd($inactiveClients->pluck('status')); 
        $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
