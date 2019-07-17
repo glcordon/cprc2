@@ -126,7 +126,7 @@
 				
 						</div>
 					</div>
-					<div class="row" style="background-color:#b3cde0; color:black; padding:20px">
+					<div class="row" style="background-color:#eee; color:black; padding:20px">
 						<div class="col-2" style="text-align:right">
 							Min Wage
 						</div>
@@ -153,9 +153,9 @@
 						</div>
 					</div>
 					<div class="row">
-						Housing: Type
+						<h5>Housing: Type</h5>
 					</div>
-					<div class="row" style="background-color:#b3cde0; color:black">
+					<div class="row" style="background-color:#ccc color:black; padding:20px;">
 
 						@foreach($service->sortBy('service_name') as $serv)
 							@if(strpos($serv->service_name,'Housing') === 0)
