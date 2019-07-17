@@ -319,7 +319,7 @@
                     data: { _token:token, ncdpsId: ncdpsId}
                   })
                   .done(function(data){
-                    console.log(data.length);
+                    console.log(data);
                     if(data){
                         $('#user_does_exist').show()
                     }else{
@@ -365,7 +365,6 @@
                     priorsfactor = 2
                 }
                 var riskfactor = agefactor + offensefactor + priorsfactor;
-                console.log(riskfactor)
                 if(riskfactor >= 5)
                 {
                     $('#risk_level').val('High');
