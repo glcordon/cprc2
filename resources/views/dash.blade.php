@@ -79,15 +79,15 @@
 		</div>
 	</div>
 	<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-6">
 			  <div class="card-counter primary">
 				<i class="fa fa-code-fork"></i>
-				<span class="count-numbers">{{ count($all) }}<</span>
+				<span class="count-numbers">{{ count($all) }}</span>
 				<span class="count-name">Enrolled This Month</span>
 			  </div>
 			</div>
 		
-			<div class="col-md-3">
+			<div class="col-md-6">
 			  <div class="card-counter success">
 				<i class="fa fa-database"></i>
 				<span class="count-numbers">{{ $totalActive }}</span>
