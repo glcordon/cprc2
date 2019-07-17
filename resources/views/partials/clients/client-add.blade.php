@@ -327,7 +327,7 @@
                     if(data.first_name){
                         $('#user_does_exist').show()
                     }else{
-                        $('#user_does_exist').show()
+                        $('#user_does_exist').hide()
                     }
                     });
             });
