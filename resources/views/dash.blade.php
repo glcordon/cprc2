@@ -120,13 +120,13 @@
 					
 					<div class="row">
 						<div class="col-4">
-								Employment: Hourly Wage Ranges
+								<h5>Employment: Hourly Wage Ranges</h5>
 						</div>
 						<div class="col-8">
 				
 						</div>
 					</div>
-					<div class="row" style="background-color:#b3cde0; color:black">
+					<div class="row" style="background-color:#b3cde0; color:black; padding:20px">
 						<div class="col-2" style="text-align:right">
 							Min Wage
 						</div>
@@ -166,7 +166,7 @@
 					@endforeach
 					</div>
 					<div class="row">
-						Number of Client Dismissals:
+						<h5>Number of Client Dismissals:</h5>
 					</div>
 					<div class="row">
 						<div class="col-3 text-right">Successfully Completed</div><div class="col-1" style="border:1px solid black">
