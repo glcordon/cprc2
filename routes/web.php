@@ -11,7 +11,7 @@
 |
 */
 Auth::routes();
-Route::get('/', 'ClientController@index')->name('client.index');
+Route::get('/', 'ReportController@dashboard')->name('dashboard');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
