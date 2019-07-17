@@ -26,7 +26,7 @@
                                     <th>Last Contact</th>
                                     <th>Status</th>
                                     <th>
-                                        @can('add', $clients)
+                                        @can('add', $client)
                                             <a href="/client-add" class="btn btn-primary">Add New</a>
                                         @endcan
                                     </th>
