@@ -102,10 +102,10 @@
 						<div class="row">
 						@foreach($chunk as $serv)
 						<div class="col-md-2">
-								<div class="card-counter success">
+								<div class="card-counter primary">
 								  <i class="fa fa-database"></i>
-								  <span class="count-numbers">{{ $serv->service_name }}</span>
-								  <span class="count-name">{{ $serviceCount[$serv->service_name] ?? '0' }}</span>
+								  <span class="count-numbers">{{ $serviceCount[$serv->service_name] ?? '0' }}</span>
+								  <span class="count-name">{{ $serv->service_name }}</span>
 								</div>
 							  </div>
 							
