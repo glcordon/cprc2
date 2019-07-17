@@ -53,9 +53,7 @@
                 <input type="text" name="ncdps_id" id="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
                 <div class="alert alert-warning alert-dismissible fade show" role="alert" id="user_does_exist" style="display:none">
                     This user exists
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+                    
                 </div>
             </div></div>
 
