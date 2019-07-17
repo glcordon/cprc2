@@ -44,7 +44,7 @@
 			position: absolute;
 			right: 35px;
 			top: 20px;
-			font-size: 32px;
+			font-size: 6em;
 			display: block;
 		  }
 		
