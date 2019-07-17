@@ -19,15 +19,18 @@ class ReportController extends Controller
         // $clients = Client::whereHas('services', function ($query) use($thisDate) {
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
+        $start = new Carbon('first day of this month');
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
+        $inactiveClients = Client::where('status','<>', 'active')->with('services')->wherePivot('updated_at', '>=', $start)->get();
         $jobClients = Client::where('status', 'active')->with('jobs')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
         $numberOfServices = collect([]);
         $numberOfJobs = collect([]);
+        dd($inactiveClients);
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
