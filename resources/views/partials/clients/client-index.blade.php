@@ -26,8 +26,8 @@
                                     <th>Last Contact</th>
                                     <th>Status</th>
                                     <th>
-                                        @can('add', $clients)
-                                        <a href="/client-add" class="btn btn-primary">Add New</a>
+                                        @can('add', $client)
+                                            <a href="/client-add" class="btn btn-primary">Add New</a>
                                         @endcan
                                     </th>
                                 </tr>
@@ -59,15 +59,15 @@
                                         <td>{{ $client->notes->first()->created_at ?? '' }}</td>
                                         <td>{{ $client->status }}</td>
                                         <td>
-                                                @can('update', $clients)
+                                                @can('update', $client)
                                                     <a href="/client/contact/{{ $client->id }}" class="btn-success btn btn-sm">Touch</a>
                                                 @endcan
                                                 
-                                                @can('edit', $clients)
+                                                @can('edit', $client)
                                                     <a href="/client/{{ $client->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
                                                 @endcan
                                                 {{--  <button class="btn btn-primary"> View Notes</button>  --}}
-                                                @can('delete', $clients) 
+                                                @can('delete', $client) 
                                                     <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
                                                 @endcan
                                         </td>
