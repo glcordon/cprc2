@@ -135,20 +135,38 @@
 						Number of Client Dismissals:
 					</div>
 					<div class="row">
-						<div class="col-3 text-right">Successfully Completed</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Non-compliant</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Moved Away</div><div class="col-1" style="border:1px solid black"></div>
+						<div class="col-3 text-right">Successfully Completed</div><div class="col-1" style="border:1px solid black">
+							{{ $inactiveCount['Successfully Completed'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Non-compliant</div><div class="col-1" style="border:1px solid black">
+								{{ $inactiveCount['Non-compliant'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Moved Away</div><div class="col-1" style="border:1px solid black">
+								{{ $inactiveCount['Moved Away'] ?? '0' }}
+						</div>
 					</div>
 					<div class="row">
 						
-						<div class="col-3 text-right">Dropped Out (Quit)</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Re-Arrest</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Deceased</div><div class="col-1" style="border:1px solid black"></div>
+						<div class="col-3 text-right">Dropped Out (Quit)</div><div class="col-1" style="border:1px solid black">
+								{{ $inactiveCount['Quit'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Re-Arrest</div><div class="col-1" style="border:1px solid black">
+								{{ $inactiveCount['Re-Arrest'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Deceased</div><div class="col-1" style="border:1px solid black">
+							{{ $inactiveCount['Deceased'] ?? '0' }}
+						</div>
 					</div>
 					<div class="row">
-						<div class="col-3 text-right">No Contact</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Transferred</div><div class="col-1" style="border:1px solid black"></div>
-						<div class="col-3 text-right">Complete</div><div class="col-1" style="border:1px solid black"></div>
+						<div class="col-3 text-right">No Contact</div><div class="col-1" style="border:1px solid black">
+							{{ $inactiveCount['No Contact'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Transferred</div><div class="col-1" style="border:1px solid black">
+							{{ $inactiveCount['Transferred'] ?? '0' }}
+						</div>
+						<div class="col-3 text-right">Complete</div><div class="col-1" style="border:1px solid black">
+							{{ $inactiveCount['complete'] ?? '0' }}
+						</div>
 					</div>
 					</div>
 					

@@ -46,12 +46,12 @@ class ReportController extends Controller
            } 
            
        } 
-       dd(array_count_values($inactiveClients->pluck('status')->toArray())); 
+       $inactiveCount = array_count_values($inactiveClients->pluck('status')->toArray()); 
        $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
-        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service','jobCount', 'inactiveClients', 'serviceCount', 'thisDate'));
+        return view('make_pdf', compact('clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount', 'thisDate'));
         $pdf = PDF::loadView('make_pdf', $data);
         return $pdf->download('itsolutionstuff.pdf');
     }
