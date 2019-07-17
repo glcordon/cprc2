@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content1')
+<div class="container">
 <div class="row">
 		<div class="col-12">Activity Summary</div>
 	
-	<div class="col-12" style="background-color:#b3cde0;margin:0; color:black">
-		Please enter the number of reentry clients for each category during the reporting period.
-	</div>
 	</div>
 	<div class="row">
 		<div class="col-4">
@@ -137,6 +135,8 @@
 								
 			</div>
 		</div>
+	
+	</div>
 		
 					
 @endsection
