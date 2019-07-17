@@ -46,6 +46,10 @@ class ClientController extends Controller
     {
 
         $users = User::whereIn('role_id', [3,4])->get();
+        foreach($users as $user)
+        {
+            dump($this->calculateCaseload($user->id));
+        }
         $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users'));
 
@@ -268,6 +272,12 @@ class ClientController extends Controller
     {
         $user = Client::where('ncdps_id', $request->ncdpsId)->first();
         return $user;
+    }
+
+    public function calculateCaseload($id)
+    {
+        $caseload = User::find($id);
+        dd($caseload->users);
     }
 }
 
