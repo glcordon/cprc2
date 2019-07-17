@@ -73,13 +73,14 @@
 			</h1>
 		</div>
 	</div>
+	<h3>My Caseload</h3>
 	<div class="row">
-		<h3>My Caseload</h3>
-		<div class="col-md-6">
+		
+		<div class="col-md-12">
 			<div class="card-counter primary">
 				<i class="fa fa-code-fork"></i>
 				<span class="count-numbers">{{ count($myCaseload) }}</span>
-				<span class="count-name">My Caseload</span>
+				<span class="count-name"><a class="nav-link" href="/client/{{ \Auth::user()->id }}/my">My Active Caseload</a></span>
 			</div>
 		</div>
 	</div>
