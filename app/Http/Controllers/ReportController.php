@@ -89,7 +89,8 @@ class ReportController extends Controller
         $numberOfServices = collect([]);
         $numberOfJobs = collect([]);
         $numberOfInactiveServices = collect([]);
-
+        $myCaseload = $activeClients->where('assigned_to', $id)->where('status', 'active');
+        dd($myCaseload);
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
