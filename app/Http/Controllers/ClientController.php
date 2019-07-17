@@ -48,8 +48,10 @@ class ClientController extends Controller
         $users = User::whereIn('role_id', [3,4])->get();
         foreach($users as $user)
         {
-            dump($this->calculateCaseload($user->id));
+            $users->caseLoad = $this->calculateCaseload($user->id);
         }
+        $users = $users->sortBy('caseLoad');
+        dd($users);
         $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users'));
 
