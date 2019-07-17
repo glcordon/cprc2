@@ -26,7 +26,7 @@
                                     <th>Last Contact</th>
                                     <th>Status</th>
                                     <th>
-                                        @can('add', $clients)
+                                        @can('edit', $clients)
                                             <a href="/client-add" class="btn btn-primary">Add New</a>
                                         @endcan
                                     </th>
@@ -59,7 +59,7 @@
                                         <td>{{ $client->notes->first()->created_at ?? '' }}</td>
                                         <td>{{ $client->status }}</td>
                                         <td>
-                                                @can('update', $client)
+                                                @can('edit', $client)
                                                     <a href="/client/contact/{{ $client->id }}" class="btn-success btn btn-sm">Touch</a>
                                                 @endcan
                                                 
