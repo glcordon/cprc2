@@ -319,6 +319,8 @@
                   })
                   .done(function(data){
                     console.log(data);
+                    if(data.length > 0)
+                        alert('This user exists');
                     });
             });
             $('input').on('blur', function(){
