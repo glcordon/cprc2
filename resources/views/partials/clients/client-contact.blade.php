@@ -299,14 +299,9 @@
         </select>
         <label for="note_date">Date of Service</label>
         <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}">
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker3'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-time"></span>
-                </span>
-            </div>
-        </div>
+        <strong>Timepicker:</strong>
+
+      <input class="timepicker form-control" type="text">
         <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>
         <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>
         <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
@@ -350,7 +345,7 @@
 @push('scripts')
 <script type="text/javascript">
 
-  $('#datetimepicker3').datetimepicker({
+  $('.timepicker').datetimepicker({
 
       format: 'LT'
 
