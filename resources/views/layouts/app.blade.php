@@ -83,7 +83,7 @@
                 <div class="topbar w-full bg-gray-500 text-white p-4 shadow-sm">
                     &nbsp;
                 </div>
-                  <div class="container bg-gray-100 px-1">
+                  <div class="container bg-gray-100">
                      @yield('content1')
                   </div>
                </div>
