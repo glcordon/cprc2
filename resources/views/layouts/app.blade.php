@@ -22,6 +22,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .dataTables_filter input{border:1px solid #ccc; padding:10px;}
+    </style>
     @stack('styles')
 </head>
     <body class="bg-gray-100 font-sans leading-normal tracking-normal">
