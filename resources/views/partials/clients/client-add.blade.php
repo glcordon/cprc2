@@ -40,7 +40,7 @@
                         </select>
                     </div>
                 </div>
-                <label>Assign Caseworker:</label>Suggested: {{  }}
+                <label>Assign Caseworker:</label>Suggested:
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
