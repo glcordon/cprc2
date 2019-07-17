@@ -80,10 +80,11 @@
                         <div class="jobs_div">
                         @foreach ($clients->jobs as $job)
                         <span>
-                          {{ $job->job_name }} | <div id="delete_this" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
-                          {{ $job->job_address }} <br>
-                          <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
-                        <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
+                          {{ $job->job_name ?? ''}} | <div id="delete_this" this_id="{{ $job->id ?? ''}}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                          Phone: {{ $job->job_phone ?? ''}} <br>
+                          {{ $job->job_address ?? ''}} <br>
+                          <small><em> Salary Code: {{ $job->salary ?? ''}} </em></small> <br>
+                        <small><em> Start Date:{{ $job->start_date ?? ''}}</em></small> <br>
 
                         </span>
                         @endforeach
