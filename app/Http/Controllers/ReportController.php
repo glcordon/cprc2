@@ -42,8 +42,9 @@ class ReportController extends Controller
            } 
            
        } 
-       dd($numberOfJobs);
+       $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
+       dd($jobCount);
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
         return view('make_pdf', compact('clients', 'totalActive', 'all', 'service', 'inactiveClients', 'serviceCount', 'thisDate'));
