@@ -1,5 +1,5 @@
 <header class="col-md-12 sticky navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="display:flex;color:white;background-color:black; height:auto;">
-	<div class="col-md-4 display-4">Recidiworx</div>
+	<div class="col-md-4 display-4"><a href="/">Recidiworx</a></div>
 	<nav class="col-md-8" style="color:white">
 		<div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
