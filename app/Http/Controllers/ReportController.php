@@ -26,12 +26,17 @@ class ReportController extends Controller
         $totalActive = $activeClients->count();
         $all = $clients->all();
         $numberOfServices = collect([]);
+        $numberOfJobs = collect([]);
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             $numberOfServices->push($key);
            } 
+           foreach($ac->jobs->groupBy('service_name') as $key => $serv){
+            $numberOfJobs->push($key);
+           } 
        } 
+       dd($numberOfJobs);
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
         // $data = ['today' => $today,'thisDate' =>$thisDate, 'service' => $service, 'totalActive' => $totalActive, 'all' => $clients->all()];
