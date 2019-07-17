@@ -24,7 +24,7 @@ class ReportController extends Controller
         $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
-        $inactiveClients = Client::where('status','<>', 'active')->with('services')->wherePivot('updated_at', '>=', $start)->get();
+        $inactiveClients = Client::where('status','<>', 'active')->with('services')->get();
         $jobClients = Client::where('status', 'active')->with('jobs')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
