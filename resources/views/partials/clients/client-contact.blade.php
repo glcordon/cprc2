@@ -300,6 +300,7 @@
                 <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
             @endforeach
         </select>
+        <label for="duration">Duration:</label>
         <select name="duration" id="duration" class="form-control">
           <option value="30">30 Minutes</option>
           <option value="60">60 Minutes</option>
@@ -318,6 +319,7 @@
           <option value="450">7.5 Hours</option>
           <option value="480">8 Hours</option>
         </select>
+        <br>
         <textarea name="note" id="note" cols="30" rows="10" class="form-control" placeholder="Enter Notes"></textarea>
 
       </div>
