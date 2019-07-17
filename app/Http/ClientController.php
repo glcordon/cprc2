@@ -152,5 +152,23 @@ class ClientController extends Controller
            return 'done';
         }
     }
+    public function updateJob($id, Request $request)
+    {
+        $client = Client::find($id);
+ 
+        $job = new Job;
+        $job->job_name = $request->job_name;
+        $job->job_address = $request->job_address;
+        $job->job_city = $request->job_city;
+        $job->job_zip = $request->job_zip;
+        $job->start_date = $request->start_date;
+        $job->salaryy = $request->salary;
+        
+        $client = $client->jobs()->save($job);
+
+        
+        return response()->json([$job, 200]);
+        
+    }
 }
 

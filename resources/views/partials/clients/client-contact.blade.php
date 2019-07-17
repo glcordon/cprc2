@@ -41,6 +41,18 @@
             text-decoration: underline;
             font-weight: 700;
         }
+        .service{
+          padding:10px;
+          border:1px solid #ccc;
+          margin:10px;
+        }
+        #title_type
+        {
+          padding-left:27px;
+        }
+        .card-title, .card-header{
+          margin-bottom:0; padding:0
+        }
 </style>
    <div class="album text-muted">
 
@@ -48,9 +60,10 @@
        <div class="row" style="margin-top:4.5em">
     <div class="card-column col-3">
         <div class="card">
+          <input type="hidden" name="this_id" value="{{ $clients->id }}">
          <img class="round" width="150" height="150" avatar="{{ $clients->first_name ?? ''}} {{ $clients->last_name ?? ''}}">
          <a href="/client/{{ $clients->id }}/edit" class="btn btn-default">Edit/View</a>
-        <div class="card-title success"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
+        <div class="card-title success" style="text-align:center"><h1>{{ $clients->last_name ?? ''}}, {{ $clients->first_name ?? ''}}</h1></div>
         <div class="card-body">
             <div class="card-text"> 
                     {{ $clients->address_1 }} <br>
@@ -58,6 +71,24 @@
                     <a href="tel:{{ $clients->primary_phone }}">{{ $clients->primary_phone }}</a><br />
                     <a href="mailTo:{{ $clients->email }}">{{ $clients->email }}</a>
                     <small><em>Created: {{ $clients->updated_at->toDateTimeString() }}</em></small>
+                    
+                      @if($clients->jobs)
+                      <hr>
+                        Current Job(s) <br>
+                        <div class="jobs_div">
+                        @foreach ($clients->jobs as $job)
+                        <span>
+                          {{ $job->job_name }} | <div id="delete_this" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                          {{ $job->job_address }} <br>
+                          <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
+                        <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
+
+                        </span>
+                        @endforeach
+                        @else
+                        <small><em>No Job Listed</em></small> 
+                      @endif
+                    </div>
                 
             </div>
             <div class="card-footer">
@@ -68,18 +99,42 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            <div class="card-title"><h3>Services</h3>
-            @foreach($services as $srv)
-            {{ $srv['service_name'] ?? '' }}, 
-            @endforeach
+            <div class="card-title">
+              <h3>Services</h3>
+            <div class="card-body flex">
+              @foreach($services as $srv)
+              <div class="card text-center" style="width:45%; margin:10px;">
+                  <div class="card-header">
+                    <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">
+                        Expiration:
+                        @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                          Expired
+                        @else 
+                          {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                        @endif 
+                    </p>
+                  </div>
+                  <div class="card-footer text-muted">
+                    @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
+                      Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                    @else
+
+                    @endif
+                  </div>
+                </div>
+              @endforeach
+            </div>
             </div>
             <div class="row">
                 <div class="col-6">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Add New Touch Point
                         </button>   
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#referralModal">
-                                Create Referral
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
+                                Add Job Data
                             </button>            
                 </div>
                 <div class="col-6">Last Contact: @if($last_contact !=''){{ $last_contact->toDateTimeString() ?? '' }}@endif</div>
@@ -117,6 +172,7 @@
      </div>
 
    </div> 
+@push('modals')
 <!-- Modal Add Service-->
 <div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="serviceModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -177,6 +233,41 @@
     </div>
   </div>
 </div>
+<!-- Modal referral Service-->
+<div class="modal fade" id="addJobModal" tabindex="-1" role="dialog" aria-labelledby="addJobModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Job Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" name="job_name" id="job_name" placeholder="Job Name" value=""><br>
+        <input type="text" class="form-control" name="job_zip" id="job_address" placeholder="Job Address" value=""><br>
+        <input type="text" class="form-control" name="job_city" id="job_city" placeholder="Job City" value=""><br>
+        <input type="text" class="form-control" name="job_zip" id="job_zip" placeholder="Job Zip" value=""><br>
+        <input type="hidden" class="form-control" name="client_id" id="client_id" value="{{ $clients->id }}">
+        <select name="job_salary" id="job_salary" class="form-control">
+            <option value="">Select A Salary Range</option>
+            <option value="min">Minimum Wage</option>
+            <option value="minTo8">Up to $8.99</option>
+            <option value="upTo10">Up to $10.00</option>
+            <option value="over10">Over $10.00</option>
+        </select><br>
+        Start Date: <br>
+        <input type="date" name="job_start_date" id="job_start_date" class="form-control" placeholder="Enter Start Date">
+        {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveJobData" data-dismiss="modal"  data-target="#exampleModal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal Add Touchpoint-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -220,10 +311,12 @@
     </div>
   </div>
 </div>
+@endpush
 @endsection
 @push('scripts')
 <script>
     $(document).ready(function(){
+      const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
             if(confirm('Are You Sure') !== true)
@@ -281,6 +374,57 @@
               });
             
         });
+        $('#saveJobData').on('click', function(e){
+            e.preventDefault();
+            var job_name = $('#job_name').val();
+            var job_address = $('#job_address').val();
+            var salary = $('#job_salary').val();
+            var start_date = $('#job_start_date').val();
+            var job_zip = $('#job_zip').val();
+            var job_city = $('#job_city').val();
+            var id = $('#client_id').val();
+            var token = "{{ @csrf_token() }}";
+            $.ajax({
+                method: "POST",
+                url: "/client/add-job",
+                data: { 
+                  _token:token, 
+                  id:id, 
+                  job_city: job_city, 
+                  job_zip: job_zip, 
+                  start_date: start_date, 
+                  salary: salary, 
+                  job_name: job_name, 
+                  job_address: job_address}
+              })
+              .done(function(data){
+                console.log(data.job_name);
+                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>' 
+                + data["job_address"] +' <br><small><em> Salary Code: ' 
+                + data["salary"] +' </em></small> <br><small><em> Start Date:' 
+                + data["start_date"] +'</em></small> <br></span>')
+                $(update).prependTo('.jobs_div')
+              });
+            
+        });
+        $(document).on('click', '#delete_this', function(e){
+          e.preventDefault();
+          var this_div = $(this);
+          var id = $(this).attr('this_id');
+          var token = "{{ @csrf_token() }}";
+          $.ajax({
+            method: "POST",
+            url: "/client/delete-job",
+            data: { 
+              _token:token, 
+              id:id,
+            }
+            })
+            .done(function(data){
+              console.log(data)
+              this_div.parent().fadeOut().remove()
+            })
+        })
     });
 
       //  });

@@ -18,11 +18,20 @@
         <h3 class="gform_title">Intake Form</h3>
         <span class="gform_description">Intake form for CP Re-entry Program!</span><br><br>
         <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <label for="enrollment_date">Enrollment Date</label>
                         <input type="date" value="{{ isset($client) ? $client->enrollment_date : ''}}" name="enrollment_date" id="enrollment_date" class="form-control">
                     </div>
-                    <div class="col-6">
+                     <div class="col-3"><label for="dob">DOB</label>
+                        <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
+                    </div>
+                    <div class="col-3"><label for="first_offence_age">First Offence Age</label>
+                        <input type="number" min="8" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
+                    </div>
+                    <div class="col-3"><label for="number_of_priors">Number of Priors</label>
+                        <input type="number" min="8" max="98" id="number_of_priors" name="number_of_priors" value="{{ isset($client) ? $client->number_of_priors : ''}}" class="form-control">
+                    </div>
+                    <div class="col-12">
                         <label for="risk_level">Risk Level</label>
                         <select name="risk_level" id="risk_level" class="form-control">
                             <option value="Low" {{ isset($client) ? ($client->risk_level == 'Low' ? 'selected="selected"' : '') : ''}}>Low</option>
@@ -43,18 +52,18 @@
                <label for="ncdps_id">NCDPS ID</label>
                 <input type="text" name="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
             </div></div>
-            
+
         </div>
-        
+
 <div class="form-group">
     <div class="row">
             <div class="col-3">
                 <label class="gfield_label" for="input_4_1">First Name<span class="gfield_required">*</span></label>
-                <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" "1" placeholder="Your First Name" aria-required="true" aria-invalid="false"> 
+                <input name="first_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->first_name : ''}}"  maxlength="20" "1" placeholder="Your First Name" aria-required="true" aria-invalid="false">
             </div>
             <div class="col-3">
                 <label class="gfield_label" for="input_4_1">Middle Name<span class="gfield_required"></span></label>
-                <input name="middle_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->middle_name : ''}}"  maxlength="20" "1" placeholder="Middle Name" aria-invalid="false"> 
+                <input name="middle_name" id="input_4_1" type="text"  class="form-control" value="{{ isset($client) ? $client->middle_name : ''}}"  maxlength="20" "1" placeholder="Middle Name" aria-invalid="false">
             </div>
             <div class="col-3">
                 <label class="gfield_label" for="input_4_2">Last Name<span class="gfield_required">*</span></label>
@@ -69,7 +78,7 @@
                     <option value="III" {{ isset($client) ? ($client->suffix == 'III' ? 'selected="selected"' : '') : ''}}>III</option>
                     <option value="IV" {{ isset($client) ? ($client->suffix == 'IV' ? 'selected="selected"' : '') : ''}}>IV</option>
                 </select>
-                
+
             </div>
     </div>
 </div>
@@ -125,22 +134,20 @@
                 <option value="trade" {{ isset($client) ? ($client->education == 'trade' ? 'selected="selected"' : '') : ''}}>Trade School</option>
             </select>
         </div>
-        <div class="col-6"><label for="dob">DOB</label>
-            <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
-                </div>
-        
+       
+
     </div>
-</div>                  
+</div>
 <div class="form-group">
     <div class="row">
         <div class="col-12">
                 <label for="input_4_14_1" id="input_4_14_1_label">Street Address</label>
-                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" "22">                           
+                <input type="text"  class="form-control" name="street_address" id="input_4_14_1" value="{{ isset($client) ? $client->address_1 : ''}}" "22">
         </div>
         <div class="col-4">
                 <label for="input_4_14_3" id="input_4_14_3_label">City</label>
                 <input type="text"  class="form-control" name="city" id="input_4_14_3" value="{{ isset($client) ? $client->city : ''}}" "24">
-                 
+
         </div>
         <div class="col-4">
                 <label for="input_4_14_4" id="input_4_14_4_label">State / Province / Region</label>
@@ -173,7 +180,7 @@
     <div class="row">
         <div class="col-4">
             <label class="gfield_label" for="input_4_5">Citizenship Status<span class="gfield_required">*</span></label>
-            <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" "5" aria-required="true" aria-invalid="false">
+            <select class="form-control" name="citizenship" id="input_4_5" class="medium gfield_select" aria-required="true" aria-invalid="false">
                 <option value="" class="gf_placeholder">Your citizenship Status</option>
                 <option value="US Citizen" {{ isset($client) ? ($client->citizenship == 'US Citizen' ? 'selected="selected"' : '') : ''}}>US Citizen</option>
                 <option value="Registered Alien" {{ isset($client) ? ($client->citizenship == 'Registered Alien' ? 'selected="selected"' : '') : ''}}>Registered Alien</option>
@@ -182,7 +189,7 @@
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_6">What Forms of ID do you posess?<span class="gfield_required">*</span><br /> <small><em>Hold Control Key and Click to Select Multiple</em></small></label>
-            <select multiple class="form-control" name="form_of_id[]" id="input_4_6" class="medium gfield_select" "6" aria-required="true" aria-invalid="false">
+            <select multiple class="form-control" name="form_of_id[]" id="input_4_6" class="medium gfield_select" aria-required="true" aria-invalid="false">
                 <option value="US Drivers License" {{ isset($client) ? (in_array('US Drivers License', json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>US Drivers License</option>
                 <option value="Birth Certificate" {{ isset($client) ? (in_array('Birth Certificate',json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>Birth Certificate</option>
                 <option value="Social Security Card" {{ isset($client) ? (in_array('Social Security Card',json_decode($client->form_of_id)) ? 'selected="selected"' : '') : ''}}>Social Security Card</option>
@@ -192,7 +199,7 @@
         </div>
         <div class="col-4">
             <label class="gfield_label" for="input_4_6">Preferred Sex<span class="gfield_required">*</span></label>
-            
+
             <select name="sex" id="sex" required="required" class="form-control">
                 <option value="">Select</option>
                 <option value="M" {{ isset($client) ? ($client->sex == 'F' ? 'selected="selected"' : '') : ''}}>Male</option>
@@ -203,7 +210,7 @@
             </select>
         </div>
     </div>
-</div>      
+</div>
 
             <label for="input_4_14_5" id="input_4_14_5_label">Release Date *</label>
             <input type="date" class="form-control" name="release_date" id="input_4_14_5" value="{{ isset($client) ? $client->release_date : ''}}" "27">
@@ -218,8 +225,15 @@
                 <option value="self" {{ isset($client) ? ($client->released_from == 'self' ? 'selected="selected"' : '') : ''}}>Self Referral</option>
                 <option value="relative" {{ isset($client) ? ($client->released_from == 'relative' ? 'selected="selected"' : '') : ''}}>Relative</option>
             </select>
-            <label for="under_supervision">Under Supervision</label><input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
-            <div class="row">
+            <hr>
+            <div class="col-12">
+                    <label for="charge">Offense</label>
+                    <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
+                </div>
+                
+            <label for="under_supervision">Under Supervision</label> &nbsp; <input type="checkbox" name="under_supervision" id="under_supervision" {{ isset($client) ? ($client->under_supervision == 'on' ? 'checked="checked"' : '') : ''}}>
+            <div id="under_supervision_section">
+                <div class="row">
                 <div class="col-3">
                     <label for="supervisor-name">Supervisors Name</label>
                     <input type="text" name="supervisors_name" value="{{ isset($client) ? $client->supervisors_name : ''}}" id="supervisors-name" class="form-control">
@@ -236,14 +250,10 @@
                     <label for="supervisors-end-date">Supervision End Date</label>
                     <input type="date" name="supervisors_end_date" value="{{ isset($client) ? $client->supervisors_end_date : ''}}" id="supervisors-end-date" class="form-control">
                 </div>
-                            
+
             </div>
             <div class="row">
-                <div class="col-4">
-                    <label for="charge">Charge</label>
-                    <input name="charge" id="charge" value="{{ isset($client) ? $client->charge : ''}}" class="form-control" required>
-                </div>
-                <div class="col-4">
+                <div class="col-6">
                         <label for="supervision-level">Supervision Level</label>
                         <select name="supervision_level" id="supervision-level" class="form-control">
                             <option value="">Select</option>
@@ -253,17 +263,19 @@
                             <option value="unknown" {{ isset($client) ? ($client->supervision_level == 'unknown' ? 'selected="selected"' : '') : ''}}>Unknown</option>
                         </select>
                     </div>
-                    
-                <div class="col-4">
+
+                <div class="col-6">
                     <label for="sex-offender">Sex Offender</label>
-                    <select name="sex_offender" id="sex-offender" class="form-control">
+                    <select name="sex_offender" id="sex_offender" class="form-control">
                         <option value="no" {{ isset($client) ? ($client->sex_offender == 'no' ? 'selected="selected"' : '') : ''}}>No</option>
                         <option value="yes" {{ isset($client) ? ($client->sex_offender == 'yes' ? 'selected="selected"' : '') : ''}}>Yes</option>
                     </select>
-                    <input type="text" name="county_registered" id="county-registerd" value="{{ isset($client) ? $client->county_registered : ''}}" placeholder="If So What County" class="form-control">
+                    <input type="text" style="display:none" name="county_registered" id="county_registerd" value="{{ isset($client) ? $client->county_registered : ''}}" placeholder="If So What County" class="form-control">
                 </div>
             </div>
-            
+
+            </div>
+            <hr>
             <label class="gfield_label" for="input_4_6">Status <span class="gfield_required">*</span></label>
             <select name="status" id="sex" class="form-control" required="required">
                 <option value="">Select</option>
@@ -280,7 +292,7 @@
             </select>
              <hr>
              <h5>Services</h5>
-             
+
                 @foreach($services as $service)
                     <div class="form-check form-check-inline" style="margin:3px 10px; display: -webkit-inline-box"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? (in_array($service->id, $client->services->pluck('id')->toArray()) ? 'checked="checked"' : '') : ''}}> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
                 @endforeach
@@ -294,9 +306,94 @@
 @endsection
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script>
+                        $(document).ready(function(){
+                            $('input').on('blur', function(){
+                                var age = getBirthday();
+                                var firstOffense = $("#first_offence_age").val()
+                                var numberPriors = $("#number_of_priors").val()
+                                var agefactor = 0;
+                                var offensefactor = 0;
+                                var priorsfactor = 0;
+                                if(age <= 27)
+                                {
+                                   agefactor = 2;
+                                }else if(age > 27 && age <= 35)
+                                {
+                                    agefactor = 1
+                                }else{
+                                    agefactor = 0
+                                }
+
+                                if(firstOffense <= 17)
+                                {
+                                    offensefactor = 2;
+                                }else if(firstOffense > 17 && firstOffense <= 23)
+                                {
+                                    offensefactor = 1
+                                }else{
+                                    offensefactor = 0
+                                }
+
+                                
+                                if(numberPriors <= 1)
+                                {
+                                    priorsfactor = 0;
+                                }else if(numberPriors > 1 && numberPriors <= 5)
+                                {
+                                    priorsfactor = 1
+                                }else{
+                                    priorsfactor = 2
+                                }
+                                var riskfactor = agefactor + offensefactor + priorsfactor;
+                                console.log(riskfactor)
+                                if(riskfactor >= 5)
+                                {
+                                    $('#risk_level').val('High');
+                                }
+                                else if(riskfactor == 4 || riskfactor == 3)
+                                {
+                                    $('#risk_level').val('Medium');
+                                }
+                                
+                                else
+                                {
+                                    $('#risk_level').val('Low');
+                                }
+
+                                
+                            });
+                        })
+                    function getBirthday()
+                    {
+                        let dob = $("#dob").val()
+                        dob = new Date(dob);
+                        var today = new Date();
+                        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+                        return age;
+                    }
+                </script>
 <script>
 $(document).ready(function(){
     $('input').attr('autocomplete','off');
+    $('select[name=sex_offender]').on('change', function(){
+        $('#county_registerd').hide();
+        $('#county_registerd').val('');
+       if($(this).val() == 'yes')
+       {
+        $('#county_registerd').show();
+       }
+    })
+//    $('input#under_supervision').on('click', function(){
+//        if($(this).prop("checked"))
+//    {
+//        $('#under_supervision_section').show();
+//    }else{
+//        $('#under_supervision_section').hide();
+//    }
+//    })
+
 });
 </script>
 @endpush

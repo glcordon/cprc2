@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Client;
 use App\User;
+use App\Job;
 use App\ClientProfile;
 use App\Services;
 use Illuminate\Support\Facades\Auth;
@@ -99,6 +100,8 @@ class ClientController extends Controller
             $client->county_registered = $request->county_registered;
             $client->released_from = $request->released_from;
             $client->under_supervision = $request->under_supervision;
+            $client->number_of_priors = $request->number_of_priors;
+            $client->first_offence_age = $request->first_offence_age;
             $client->save();
 
             $client->services()->attach($request->services);
@@ -194,6 +197,8 @@ class ClientController extends Controller
             $client->county_registered = $request->county_registered;
             $client->released_from = $request->released_from;
             $client->under_supervision = $request->under_supervision;
+            $client->number_of_priors = $request->number_of_priors;
+            $client->first_offence_age = $request->first_offence_age;
             $client->save();
 
             $client->services()->sync($request->services);
@@ -236,6 +241,27 @@ class ClientController extends Controller
     public function assignCaseWorker(Request $request)
     {
         
+    }
+    public function updateJob(Request $request)
+    {
+        $client = Client::find($request->id);
+ 
+        $job = new Job;
+        $job->job_name = $request->job_name;
+        $job->job_address = $request->job_address;
+        $job->job_city = $request->job_city;
+        $job->job_zip = $request->job_zip;
+        $job->start_date = $request->start_date;
+        $job->salary = $request->salary;
+        
+        $client = $client->jobs()->save($job);
+        return $job;
+        
+    }
+    public function deleteJob(Request $request)
+    {
+        Job::find($request->id)->delete();
+        return "done";
     }
 }
 
