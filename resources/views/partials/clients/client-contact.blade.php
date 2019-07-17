@@ -299,7 +299,24 @@
             @foreach($services as $srv)
                 <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
             @endforeach
-            
+        </select>
+        <select name="duration" id="duration" class="form-control">
+          <option value="30">30 Minutes</option>
+          <option value="60">60 Minutes</option>
+          <option value="90">90 Minutes</option>
+          <option value="120">120 minutes</option>
+          <option value="150">2.5 hours</option>
+          <option value="180">3 Hours</option>
+          <option value="210">3.5 Hours</option>
+          <option value="240">4 Hours</option>
+          <option value="270">4.5 Hours</option>
+          <option value="300">5 Hours</option>
+          <option value="330">5.5 Hours</option>
+          <option value="360">6 Hours</option>
+          <option value="390">6.5 Hours</option>
+          <option value="420">7 Hours</option>
+          <option value="450">7.5 Hours</option>
+          <option value="480">8 Hours</option>
         </select>
         <textarea name="note" id="note" cols="30" rows="10" class="form-control" placeholder="Enter Notes"></textarea>
 
