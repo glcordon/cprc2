@@ -25,8 +25,8 @@
                      <div class="col-3"><label for="dob">DOB</label>
                         <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
                     </div>
-                    <div class="col-3"><label for="first_offence_age">First Offence Age</label>
-                        <input type="number" min="8" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
+                    <div class="col-3"><label for="first_offence_age">Age When Committed First Offense</label>
+                        <input type="number" min="0" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
                     </div>
                     <div class="col-3"><label for="number_of_priors">Number of Priors</label>
                         <input type="number" min="8" max="98" id="number_of_priors" name="number_of_priors" value="{{ isset($client) ? $client->number_of_priors : ''}}" class="form-control">
@@ -40,7 +40,7 @@
                         </select>
                     </div>
                 </div>
-                <label>Assign Caseworker:</label>
+                <label>Assign Caseworker:</label>Suggested: {{  }}
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
