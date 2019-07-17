@@ -75,11 +75,11 @@
                     </ul>
                 </div>
             </div>
-        </nav> --}}
+        </nav> --}} @include('partials.header')
             <div class="flex md:flex-row-reverse flex-wrap">
 
                <!--Main Content-->
-               <div class="w-full md:w-4/5 bg-gray-100">
+               <div class="w-full md:full bg-gray-100">
                 <div class="topbar w-full bg-gray-500 text-white p-4 shadow-sm">
                     &nbsp;
                 </div>
@@ -89,9 +89,9 @@
                </div>
 
                <!--Sidebar-->
-               <div class="w-full md:w-1/5 bg-gray-900 md:bg-gray-900 px-2 text-center fixed bottom-0 md:pt-8 md:top-0 md:left-0 h-16 md:h-screen md:border-r-4 md:border-gray-600">
+               {{--  <div class="w-full md:w-1/5 bg-gray-900 md:bg-gray-900 px-2 text-center fixed bottom-0 md:pt-8 md:top-0 md:left-0 h-16 md:h-screen md:border-r-4 md:border-gray-600">
                 <h1 class="text-white pb-6">RECIDIWORX</h1>
-                    @include('partials.header')
+                     --}}
                </div>
             </div>
          </body>
