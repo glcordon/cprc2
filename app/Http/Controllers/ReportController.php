@@ -23,19 +23,24 @@ class ReportController extends Controller
         $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
+        $jobClients = Client::where('status', 'active')->with('jobs')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
         $numberOfServices = collect([]);
         $numberOfJobs = collect([]);
        foreach($activeClients as $ac)
        {
-           dump($ac->jobs);
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             $numberOfServices->push($key);
            } 
-           foreach($ac->jobs as $key => $serv){
+           
+       } 
+       foreach($jobClients as $ac)
+       {
+        foreach($ac->jobs as $key => $serv){
             $numberOfJobs->push($key);
            } 
+           
        } 
        dd($numberOfJobs);
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
