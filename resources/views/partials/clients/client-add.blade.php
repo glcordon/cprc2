@@ -309,7 +309,7 @@
 
 <script>
         $(document).ready(function(){
-            $('#ncdps_id').on('keyUp', function(){
+            $('#ncdps_id').on('blur', function(){
                 var token = "{{ @csrf_token() }}";
                 var ncdpsId = $(this).val();
                 $.ajax({
