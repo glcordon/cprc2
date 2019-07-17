@@ -51,9 +51,9 @@ class ClientController extends Controller
             $user->caseLoad = $this->calculateCaseload($user->id);
         }
         $users = $users->sortBy('caseLoad');
-        $suggestdCaseworker = $users->where('caseLoad', $users->min('caseLoad'))->random()->name;
+        $suggestedCaseworker = $users->where('caseLoad', $users->min('caseLoad'))->random()->name;
         $services = Services::orderBy('service_name', 'ASC')->get();
-        return view('partials.clients.client-add', compact('services','users', 'suggesteCaseworkder'));
+        return view('partials.clients.client-add', compact('services','users', 'suggestedCaseworkder'));
 
     }
 
