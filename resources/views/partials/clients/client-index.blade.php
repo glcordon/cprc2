@@ -26,8 +26,9 @@
                                     <th>Last Contact</th>
                                     <th>Status</th>
                                     <th>
+                                        @can('add', \App\Client)
                                             <a href="/client-add" class="btn btn-primary">Add New</a>
-                                        
+                                        @endcan
                                     </th>
                                 </tr>
                             </thead>
