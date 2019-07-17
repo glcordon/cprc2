@@ -23,7 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-        .dataTables_filter input{border:1px solid #ccc; padding:10px;}
+        .dataTables_filter input{border:1px solid #ccc; padding:3px;}
     </style>
     @stack('styles')
 </head>
