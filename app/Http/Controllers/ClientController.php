@@ -277,7 +277,23 @@ class ClientController extends Controller
     public function calculateCaseload($id)
     {
         $caseload = Client::select('risk_level')->where('assigned_to', $id)->where('status', 'active')->get();
-        return($caseload);
+        $count = 0;
+        foreach($caseload as $case)
+        {
+            if($case['risk_level'] == 'Low')
+            {
+                $count++;
+            }
+            if($case['risk_level'] == 'Medium')
+            {
+                $count += 2;
+            }
+            if($case['risk_level'] == 'High')
+            {
+                $count += 3;
+            }
+        }
+        return($count);
     }
 }
 
