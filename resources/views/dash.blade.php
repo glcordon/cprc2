@@ -92,28 +92,27 @@
 		
 			<div class="row">
 				<div class="col-8">
-						Number of clients that received supportive services:
+						<h3>Number of clients that received supportive services:</h3>
 				</div>
 				<div class="col-4">
 		
 				</div>
 			</div>
 					@foreach($service->sortBy('service_name')->chunk(3) as $chunk)
-						<div class="row" style="background-color:#b3cde0;">
+						<div class="row">
 						@foreach($chunk as $serv)
-							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-							<div style="border:1px solid black"  class="col-2">{{ $serviceCount[$serv->service_name] ?? '0' }}</div>
+						<div class="col-md-2">
+								<div class="card-counter success">
+								  <i class="fa fa-database"></i>
+								  <span class="count-numbers">{{ $serv->service_name }}</span>
+								  <span class="count-name">{{ $serviceCount[$serv->service_name] ?? '0' }}</span>
+								</div>
+							  </div>
+							
 						@endforeach
 						</div>
 					@endforeach
-					<div class="row">
-						<div class="col-4">
-								Supportive Services Detail:
-						</div>
-						<div class="col-8">
-				
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="col-4">
 								Employment: Hourly Wage Ranges
