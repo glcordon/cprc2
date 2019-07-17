@@ -38,7 +38,7 @@ class ReportController extends Controller
        foreach($jobClients as $ac)
        {
         foreach($ac->jobs->groupBy('salary') as $key => $serv){
-            $numberOfJobs->push($serv);
+            $numberOfJobs->push($key);
            } 
            
        } 
