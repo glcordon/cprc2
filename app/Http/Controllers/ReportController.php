@@ -89,7 +89,7 @@ class ReportController extends Controller
         $numberOfServices = collect([]);
         $numberOfJobs = collect([]);
         $numberOfInactiveServices = collect([]);
-        $myCaseload = $activeClients->where('assigned_to', $id)->where('status', 'active');
+        $myCaseload = $activeClients->where('assigned_to', Auth::user()->id)->where('status', 'active');
         dd($myCaseload);
        foreach($activeClients as $ac)
        {
