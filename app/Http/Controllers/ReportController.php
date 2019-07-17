@@ -105,7 +105,7 @@ class ReportController extends Controller
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
 
-        return view('dashboard', compact('clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount', 'thisDate'));
+        return view('dash', compact('clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount', 'thisDate'));
 
     }
 }
