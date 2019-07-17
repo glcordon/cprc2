@@ -24,7 +24,7 @@ class ReportController extends Controller
         $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
-        $inactiveClients = Client::where('status','<>', 'active')->with('services')->get();
+        $inactiveClients = Client::where('status','<>', 'active')->where('updated_at', '>=', $start)->get();
         $jobClients = Client::where('status', 'active')->with('jobs')->get();
         $totalActive = $activeClients->count();
         $all = $clients->all();
@@ -32,17 +32,6 @@ class ReportController extends Controller
         $numberOfJobs = collect([]);
         $numberOfInactiveServices = collect([]);
 
-       foreach($numberOfInactiveServices as $ac)
-       {
-           foreach($ac->services->groupBy('service_name') as $key => $serv){
-            if(strpos($serv->service_name,'Housing') === 0)
-            {
-                $numberOfInactiveServices->push($key);
-            }
-            
-           } 
-           
-       } 
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
@@ -57,7 +46,7 @@ class ReportController extends Controller
            } 
            
        } 
-       dd($numberOfInactiveServices);
+       dd($inactiveClients);
        $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
