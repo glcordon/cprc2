@@ -51,7 +51,7 @@ class ClientController extends Controller
             $users->caseLoad = $this->calculateCaseload($user->id);
         }
         $users = $users->sortBy('caseLoad');
-        dd($users);
+        dd($users->caseLoad);
         $services = Services::orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users'));
 
