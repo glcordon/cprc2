@@ -377,11 +377,16 @@
             var service_id = $('#service_id').val();
             var note_date = $('#note_date').val();
             var start_time = $('#start_time').val();
-            
+            var duration = $('#duration').val();
+            if(note == '' || title == '' || start_time == '' || duration == '' || service_id == '')
+            {
+              alert('All fields are required');
+              return false;
+            }
             $.ajax({
                 method: "POST",
                 url: "/add-note",
-                data: { start_time:start_time, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
+                data: { duration:duration, start_time:start_time, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
               })
               .done(function(data){
                 console.log(data);

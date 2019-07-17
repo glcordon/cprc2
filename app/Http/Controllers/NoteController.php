@@ -40,13 +40,13 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->start_time;
-        $note_date = Carbon::parse($request['note_date']. ' '.$hr.':'.$request['min'].":00 ", 'America/Toronto');
+        $note_date = Carbon::parse($request['note_date']. ' '.$request->start_time, 'America/Toronto');
         $type = $request['type'];
         $note = '<h2>'. $request['title'] . '</h2>' . $request['note'];
         $client_id = $request['client_id'];
        // $user_id = Auth::user()->id;
         $new_note = new Note;
+        $new_note->duration = $request->duration;
         $new_note->note = $note;
         $new_note->contact_type = $type;
         $new_note->note_date =  $note_date;
