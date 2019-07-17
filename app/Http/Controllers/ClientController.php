@@ -267,7 +267,12 @@ class ClientController extends Controller
     public function findUser(Request $request)
     {
         $user = Client::where('ncdps_id', $request->ncdpsId)->first();
-        return $user;
+        if($user)
+        {
+            return $user;
+        }else{
+            return "none";
+        }
     }
 }
 
