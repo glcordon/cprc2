@@ -32,7 +32,7 @@ class ReportController extends Controller
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             $numberOfServices->push($key);
            } 
-           foreach($ac->jobs->groupBy('service_name') as $key => $serv){
+           foreach($ac->jobs as $key => $serv){
             $numberOfJobs->push($key);
            } 
        } 
