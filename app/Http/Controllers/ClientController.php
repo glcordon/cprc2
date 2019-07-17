@@ -277,7 +277,7 @@ class ClientController extends Controller
     public function calculateCaseload($id)
     {
         $caseload = User::find($id);
-        dd($caseload->users);
+        return $caseload->users();
     }
 }
 
