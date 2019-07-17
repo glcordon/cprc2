@@ -248,6 +248,7 @@ class ClientController extends Controller
  
         $job = new Job;
         $job->job_name = $request->job_name;
+        $job->job_phone = $request->job_phone;
         $job->job_address = $request->job_address;
         $job->job_city = $request->job_city;
         $job->job_zip = $request->job_zip;
