@@ -66,16 +66,24 @@
 </style>
 @section('content1')
 <div class="container">
-<div class="row" style="margin-top:2.5em">
+	<div class="row" style="margin-top:2.5em">
 		<div class="col-12">
-		<h1>
-			Current Activity Summary for This Month
-		</h1>
-			
+			<h1>
+				Current Activity Summary for This Month
+			</h1>
 		</div>
-	
 	</div>
-	
+	<div class="row">
+		<h3>My Caseload</h3>
+		<div class="col-md-6">
+			<div class="card-counter primary">
+				<i class="fa fa-code-fork"></i>
+				<span class="count-numbers">{{ count($myCaseload) }}</span>
+				<span class="count-name">My Caseload</span>
+			</div>
+		</div>
+		@endforeach
+	</div>
 	<div class="row">
 			<div class="col-md-6">
 			  <div class="card-counter primary">

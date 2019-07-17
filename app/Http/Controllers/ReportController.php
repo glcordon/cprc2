@@ -90,7 +90,6 @@ class ReportController extends Controller
         $numberOfJobs = collect([]);
         $numberOfInactiveServices = collect([]);
         $myCaseload = $activeClients->where('assigned_to', auth()->user()->id)->where('status', 'active');
-        dd($myCaseload);
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
@@ -110,7 +109,7 @@ class ReportController extends Controller
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
 
-        return view('dash', compact('clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount', 'thisDate'));
+        return view('dash', compact('myCaseload','clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount', 'thisDate'));
 
     }
 }
