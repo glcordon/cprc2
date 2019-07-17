@@ -381,7 +381,7 @@
             $.ajax({
                 method: "POST",
                 url: "/add-note",
-                data: { hr: hr, min:min, am_pm:am_pm, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
+                data: { start_time:start_time, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
               })
               .done(function(data){
                 console.log(data);
