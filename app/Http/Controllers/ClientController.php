@@ -266,7 +266,7 @@ class ClientController extends Controller
     }
     public function findUser(Request $request)
     {
-        $user = Client::where('ncdps_id', $request->ncdpsId)->get();
+        $user = Client::where('ncdps_id', '=', $request->ncdpsId)->get();
         return $user;
     }
 }
