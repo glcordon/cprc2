@@ -277,7 +277,7 @@ class ClientController extends Controller
     public function calculateCaseload($id)
     {
         $caseload = Client::select('risk_level')->where('user_id', $id)->get();
-        dd($caseload->pluck('risk_level'));
+        return($caseload->pluck('risk_level'));
     }
 }
 
