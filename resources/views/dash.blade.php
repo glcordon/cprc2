@@ -5,7 +5,7 @@
 			margin: 5px;
 			padding: 20px 10px;
 			background-color: #fff;
-			height: 100px;
+			height: 190px;
 			border-radius: 5px;
 			transition: .3s linear all;
 		  }
