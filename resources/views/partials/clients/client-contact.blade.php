@@ -46,10 +46,7 @@
           border:1px solid #ccc;
           margin:10px;
         }
-        #title_type
-        {
-          padding-left:27px;
-        }
+        
         .card-title, .card-header{
           margin-bottom:0; padding:0
         }
