@@ -323,8 +323,8 @@
                     data: { _token:token, ncdpsId: ncdpsId}
                   })
                   .done(function(data){
-                    console.log(data.data);
-                    if(data){
+                    console.log(data);
+                    if(data.first_name){
                         $('#user_does_exist').show()
                     }else{
                         $('#user_does_exist').show()
