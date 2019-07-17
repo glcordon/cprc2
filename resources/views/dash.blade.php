@@ -82,7 +82,6 @@
 				<span class="count-name">My Caseload</span>
 			</div>
 		</div>
-		@endforeach
 	</div>
 	<div class="row">
 			<div class="col-md-6">
