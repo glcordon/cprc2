@@ -320,7 +320,7 @@
                   })
                   .done(function(data){
                     console.log(data.length);
-                    if(data.length > 0){
+                    if(data){
                         $('#user_does_exist').show()
                     }else{
                         $('#user_does_exist').show()
