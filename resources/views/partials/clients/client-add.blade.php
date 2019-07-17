@@ -50,7 +50,7 @@
         <div class="form-group">
            <div class="row"> <div class="col-12">
                <label for="ncdps_id">NCDPS ID</label>
-                <input type="text" name="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
+                <input type="text" name="ncdps_id" id="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
             </div></div>
 
         </div>
@@ -308,72 +308,84 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 <script>
-                        $(document).ready(function(){
-                            $('input').on('blur', function(){
-                                var age = getBirthday();
-                                var firstOffense = $("#first_offence_age").val()
-                                var numberPriors = $("#number_of_priors").val()
-                                var agefactor = 0;
-                                var offensefactor = 0;
-                                var priorsfactor = 0;
-                                if(age <= 27)
-                                {
-                                   agefactor = 2;
-                                }else if(age > 27 && age <= 35)
-                                {
-                                    agefactor = 1
-                                }else{
-                                    agefactor = 0
-                                }
+        $(document).ready(function(){
+            $('#ncdps_id').on('keyUp', function(){
+                var token = "{{ @csrf_token() }}";
+                var ncdpsId = $(this).val();
+                $.ajax({
+                    method: "POST",
+                    url: "/find-user",
+                    data: { _token:token, ncdpsId: ncdpsId}
+                  })
+                  .done(function(data){
+                    console.log(data);
+                    });
+            });
+            $('input').on('blur', function(){
+                var age = getBirthday();
+                var firstOffense = $("#first_offence_age").val()
+                var numberPriors = $("#number_of_priors").val()
+                var agefactor = 0;
+                var offensefactor = 0;
+                var priorsfactor = 0;
+                if(age <= 27)
+                {
+                    agefactor = 2;
+                }else if(age > 27 && age <= 35)
+                {
+                    agefactor = 1
+                }else{
+                    agefactor = 0
+                }
 
-                                if(firstOffense <= 17)
-                                {
-                                    offensefactor = 2;
-                                }else if(firstOffense > 17 && firstOffense <= 23)
-                                {
-                                    offensefactor = 1
-                                }else{
-                                    offensefactor = 0
-                                }
+                if(firstOffense <= 17)
+                {
+                    offensefactor = 2;
+                }else if(firstOffense > 17 && firstOffense <= 23)
+                {
+                    offensefactor = 1
+                }else{
+                    offensefactor = 0
+                }
 
-                                
-                                if(numberPriors <= 1)
-                                {
-                                    priorsfactor = 0;
-                                }else if(numberPriors > 1 && numberPriors <= 5)
-                                {
-                                    priorsfactor = 1
-                                }else{
-                                    priorsfactor = 2
-                                }
-                                var riskfactor = agefactor + offensefactor + priorsfactor;
-                                console.log(riskfactor)
-                                if(riskfactor >= 5)
-                                {
-                                    $('#risk_level').val('High');
-                                }
-                                else if(riskfactor == 4 || riskfactor == 3)
-                                {
-                                    $('#risk_level').val('Medium');
-                                }
-                                
-                                else
-                                {
-                                    $('#risk_level').val('Low');
-                                }
+                
+                if(numberPriors <= 1)
+                {
+                    priorsfactor = 0;
+                }else if(numberPriors > 1 && numberPriors <= 5)
+                {
+                    priorsfactor = 1
+                }else{
+                    priorsfactor = 2
+                }
+                var riskfactor = agefactor + offensefactor + priorsfactor;
+                console.log(riskfactor)
+                if(riskfactor >= 5)
+                {
+                    $('#risk_level').val('High');
+                }
+                else if(riskfactor == 4 || riskfactor == 3)
+                {
+                    $('#risk_level').val('Medium');
+                }
+                
+                else
+                {
+                    $('#risk_level').val('Low');
+                }
 
-                                
-                            });
-                        })
-                    function getBirthday()
-                    {
-                        let dob = $("#dob").val()
-                        dob = new Date(dob);
-                        var today = new Date();
-                        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-                        return age;
-                    }
-                </script>
+                
+            });
+        })
+    function getBirthday()
+    {
+        let dob = $("#dob").val()
+        dob = new Date(dob);
+        var today = new Date();
+        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+        return age;
+    }
+</script>
 <script>
 $(document).ready(function(){
     $('input').attr('autocomplete','off');

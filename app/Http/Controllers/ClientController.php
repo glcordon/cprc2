@@ -264,5 +264,10 @@ class ClientController extends Controller
         Job::find($request->id)->delete();
         return "done";
     }
+    public function findUser(Request $request)
+    {
+        $user = Client::where('ncdps_id', 'like', '%'.$request->ncdpsId.'%')->get();
+        return $user;
+    }
 }
 
