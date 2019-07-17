@@ -51,6 +51,7 @@
            <div class="row"> <div class="col-12">
                <label for="ncdps_id">NCDPS ID</label>
                 <input type="text" name="ncdps_id" id="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
+                <span class="warning" id="user_does_exist" style="display:none">This user exists</span>
             </div></div>
 
         </div>
@@ -319,8 +320,11 @@
                   })
                   .done(function(data){
                     console.log(data);
-                    if(data.length > 0)
-                        alert('This user exists');
+                    if(data.length > 0){
+                        $('#user_does_exist').show()
+                    }else{
+                        $('#user_does_exist').show()
+                    }
                     });
             });
             $('input').on('blur', function(){
