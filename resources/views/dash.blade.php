@@ -5,7 +5,7 @@
 <div class="row" style="margin-top:2.5em">
 		<div class="col-12">
 		<h1>
-			Current Activity Summary
+			Current Activity Summary for This Month
 		</h1>
 			
 		</div>
