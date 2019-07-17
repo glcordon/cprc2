@@ -43,7 +43,7 @@
                 <label>Assign Caseworker:</label>
                 @if(!isset($client))
                     <small><em>
-                        Suggested Caseworker: {{ $suggestedCaseworkder }}
+                        Suggested Caseworker: {{ $suggestedCaseworker }}
                     </em></small>
                 @endif
         <select name="caseworker" id="caseworker" class="form-control">
