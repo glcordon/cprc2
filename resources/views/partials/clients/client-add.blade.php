@@ -40,7 +40,11 @@
                         </select>
                     </div>
                 </div>
-                <label>Assign Caseworker:</label>Suggested:
+                <label>Assign Caseworker:</label>
+                @if(!isset($client))
+                <small><em>
+                    Suggested Caseworker: {{ $suggesteCaseworkder }}
+                </em></small>
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
