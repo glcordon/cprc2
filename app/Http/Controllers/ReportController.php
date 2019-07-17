@@ -37,6 +37,7 @@ class ReportController extends Controller
        } 
        foreach($jobClients as $ac)
        {
+           dump($ac->jobs);
         foreach($ac->jobs as $key => $serv){
             $numberOfJobs->push($serv);
            } 
