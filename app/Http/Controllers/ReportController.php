@@ -29,6 +29,7 @@ class ReportController extends Controller
         $numberOfJobs = collect([]);
        foreach($activeClients as $ac)
        {
+           dump($ac->jobs);
            foreach($ac->services->groupBy('service_name') as $key => $serv){
             $numberOfServices->push($key);
            } 
