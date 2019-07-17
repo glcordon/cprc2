@@ -298,8 +298,8 @@
             <option value="Other Contact">Other - Leave Details In Note</option>
         </select>
         <label for="note_date">Date of Service</label>
-        <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}">
-        <strong>Timepicker:</strong>
+        <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}"> <br>
+        Start Time:
 
       <input class="timepicker form-control" name="start_time" id="start_time" type="text">
         {{--  <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>  --}}
