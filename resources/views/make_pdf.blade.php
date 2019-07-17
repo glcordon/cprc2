@@ -138,9 +138,14 @@
 						<div class="col-3 text-right">Successfully Completed</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Non-compliant</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Moved Away</div><div class="col-1" style="border:1px solid black"></div>
+					</div>
+					<div class="row">
+						
 						<div class="col-3 text-right">Dropped Out (Quit)</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Re-Arrest</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Deceased</div><div class="col-1" style="border:1px solid black"></div>
+					</div>
+					<div class="row">
 						<div class="col-3 text-right">No Contact</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Transferred</div><div class="col-1" style="border:1px solid black"></div>
 						<div class="col-3 text-right">Complete</div><div class="col-1" style="border:1px solid black"></div>
