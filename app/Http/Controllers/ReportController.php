@@ -30,7 +30,19 @@ class ReportController extends Controller
         $all = $clients->all();
         $numberOfServices = collect([]);
         $numberOfJobs = collect([]);
-        dd($inactiveClients);
+        $numberOfInactiveServices = collect([]);
+
+       foreach($numberOfInactiveServices as $ac)
+       {
+           foreach($ac->services->groupBy('service_name') as $key => $serv){
+            if(strpos($serv->service_name,'Housing') === 0)
+            {
+                $numberOfInactiveServices->push($key);
+            }
+            
+           } 
+           
+       } 
        foreach($activeClients as $ac)
        {
            foreach($ac->services->groupBy('service_name') as $key => $serv){
@@ -45,6 +57,7 @@ class ReportController extends Controller
            } 
            
        } 
+       dd($numberOfInactiveServices);
        $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());
         $service = Service::get();
