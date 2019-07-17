@@ -54,6 +54,13 @@
           margin-bottom:0; padding:0
         }
 </style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>  
+
+
    <div class="album text-muted">
 
      <div class="container">
@@ -292,6 +299,9 @@
         </select>
         <label for="note_date">Date of Service</label>
         <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}">
+        <strong>Timepicker:</strong>
+
+      <input class="timepicker form-control" type="text">
         <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>
         <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>
         <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
@@ -333,8 +343,18 @@
 @endpush
 @endsection
 @push('scripts')
+<script type="text/javascript">
+
+  $('.timepicker').datetimepicker({
+
+      format: 'HH:mm:ss'
+
+  }); 
+
+</script> 
 <script>
     $(document).ready(function(){
+      
       const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
