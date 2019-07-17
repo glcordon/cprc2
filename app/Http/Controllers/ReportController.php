@@ -74,7 +74,7 @@ class ReportController extends Controller
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
         $start = new Carbon('first day of this month');
-        $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
+        $clientsQuery = Client::select('*');
         $clients = $clientsQuery->get();
         $inactiveClients = $clientsQuery->where('status', '<>', 'active')->get();
         $activeClients = Client::where('status', 'active')->with('services')->get();
