@@ -50,6 +50,7 @@ class ClientController extends Controller
         {
             $user->caseLoad = $this->calculateCaseload($user->id);
         }
+        dd($users);
         $users = $users->sortBy('caseLoad');
         $suggestdCaseworker = $users->where('caseload', $users->min('caseload'))->random()->first();
         dd($users->min('caseload'));
