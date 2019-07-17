@@ -57,7 +57,7 @@ class ReportController extends Controller
     }
     public function participantReport(Request $request)
     {
-        $thisDate = Carbon::parse($request->searchMonth);
+        $thisDate = Carbon::now();
         // $clients = Client::whereHas('services', function ($query) use($thisDate) {
         //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
         // })->get();
