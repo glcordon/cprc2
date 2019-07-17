@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content1')
-<div class="row" style="background-color:#005b96; color:white; marign:0">
+<div class="row" style="background-color:#005b96; color:white;">
 		<div class="col-12">Activity Summary</div>
 	
 	<div class="col-12" style="background-color:#b3cde0;margin:0; color:black">
