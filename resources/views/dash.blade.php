@@ -3,7 +3,12 @@
 @section('content1')
 <div class="container">
 <div class="row" style="margin-top:2.5em">
-		<div class="col-12">Activity Summary</div>
+		<div class="col-12">
+		<h1>
+			Current Activity Summary
+		</h1>
+			
+		</div>
 	
 	</div>
 	<div class="row">
