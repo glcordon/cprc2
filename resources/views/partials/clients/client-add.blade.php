@@ -313,6 +313,10 @@
             $('#ncdps_id').on('blur', function(){
                 var token = "{{ @csrf_token() }}";
                 var ncdpsId = $(this).val();
+                if(ncdpsId == '')
+                {
+                    return false;
+                }
                 $.ajax({
                     method: "POST",
                     url: "/find-user",
