@@ -80,7 +80,7 @@
 			<div class="card-counter primary">
 				<i class="fa fa-code-fork"></i>
 				<span class="count-numbers">{{ count($myCaseload) }}</span>
-				<span class="count-name"><a class="nav-link" href="/client/{{ \Auth::user()->id }}/my">My Active Caseload</a></span>
+				<span class="count-name"><a class="nav-link" style="color:white" href="/client/{{ \Auth::user()->id }}/my">My Active Caseload</a></span>
 			</div>
 		</div>
 	</div>
