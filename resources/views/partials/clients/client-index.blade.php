@@ -25,7 +25,7 @@
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
                                     <th>Status</th>
-                                    <th>
+                                    <th style="width:15%">
                                             <a href="/client-add" class="btn btn-primary">Add New</a>
                                     </th>
                                 </tr>
