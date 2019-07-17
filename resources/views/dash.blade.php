@@ -51,7 +51,7 @@
 		  .card-counter .count-name{
 			position: absolute;
 			right: 35px;
-			top: 65px;
+			top: 145px;
 			font-style: italic;
 			text-transform: capitalize;
 			opacity: 0.5;
