@@ -25,7 +25,11 @@
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
                                     <th>Status</th>
-                                    <th><a href="/client-add" class="btn btn-primary">Add New</a> </th>
+                                    <th>
+                                        @can('add', $client)
+                                        <a href="/client-add" class="btn btn-primary">Add New</a>
+                                        @endcan
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,12 +58,17 @@
                                         </td>
                                         <td>{{ $client->notes->first()->created_at ?? '' }}</td>
                                         <td>{{ $client->status }}</td>
-                                        <td><a href="/client/contact/{{ $client->id }}" class="btn-success btn btn-sm">Touch</a>
+                                        <td>
+                                                @can('update', $client)
+                                                    <a href="/client/contact/{{ $client->id }}" class="btn-success btn btn-sm">Touch</a>
+                                                @endcan
                                                 
-                                                <a href="/client/{{ $client->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
+                                                @can('edit', $client)
+                                                    <a href="/client/{{ $client->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
+                                                @endcan
                                                 {{--  <button class="btn btn-primary"> View Notes</button>  --}}
-                                               @can('delete', $client) 
-                                                <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
+                                                @can('delete', $client) 
+                                                    <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
                                                 @endcan
                                         </td>
                                     </tr>
