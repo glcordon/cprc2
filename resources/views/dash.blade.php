@@ -98,10 +98,10 @@
 		
 				</div>
 			</div>
-					@foreach($service->sortBy('service_name')->chunk(6) as $chunk)
+					@foreach($service->sortBy('service_name')->chunk(3) as $chunk)
 						<div class="row">
 						@foreach($chunk as $serv)
-						<div class="col-md-2">
+						<div class="col-md-4">
 								<div class="card-counter info">
 								  <i class="fa fa-database"></i>
 								  <span class="count-numbers">{{ $serviceCount[$serv->service_name] ?? '0' }}</span>
