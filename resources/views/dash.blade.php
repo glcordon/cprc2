@@ -70,14 +70,7 @@
 		</div>
 	
 	</div>
-	<div class="row">
-		<div class="col-4">
-				Number of reentry clients:
-		</div>
-		<div class="col-8">
-
-		</div>
-	</div>
+	
 	<div class="row">
 			<div class="col-md-6">
 			  <div class="card-counter primary">
