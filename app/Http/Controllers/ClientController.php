@@ -100,6 +100,8 @@ class ClientController extends Controller
             $client->county_registered = $request->county_registered;
             $client->released_from = $request->released_from;
             $client->under_supervision = $request->under_supervision;
+            $client->number_of_priors = $request->number_of_priors;
+            $client->first_offence_age = $request->first_offence_age;
             $client->save();
 
             $client->services()->attach($request->services);
@@ -195,6 +197,8 @@ class ClientController extends Controller
             $client->county_registered = $request->county_registered;
             $client->released_from = $request->released_from;
             $client->under_supervision = $request->under_supervision;
+            $client->number_of_priors = $request->number_of_priors;
+            $client->first_offence_age = $request->first_offence_age;
             $client->save();
 
             $client->services()->sync($request->services);

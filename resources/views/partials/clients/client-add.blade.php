@@ -26,10 +26,10 @@
                         <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
                     </div>
                     <div class="col-3"><label for="first_offence_age">First Offence Age</label>
-                        <input type="number" min="8" max="98" id="first_offence_age" name="first_offence_age" class="form-control">
+                        <input type="number" min="8" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
                     </div>
                     <div class="col-3"><label for="number_of_priors">Number of Priors</label>
-                        <input type="number" min="8" max="98" id="number_of_priors" name="number_of_priors" class="form-control">
+                        <input type="number" min="8" max="98" id="number_of_priors" name="number_of_priors" value="{{ isset($client) ? $client->number_of_priors : ''}}" class="form-control">
                     </div>
                     <div class="col-12">
                         <label for="risk_level">Risk Level</label>
