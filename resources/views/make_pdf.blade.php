@@ -92,7 +92,6 @@
 				
 						</div>
 					</div>
-					{{ dd($jobCount) }}
 					<div class="row" style="background-color:#b3cde0; color:black">
 						<div class="col-2" style="text-align:right">
 							Min Wage
