@@ -48,7 +48,7 @@ class ClientController extends Controller
         $users = User::whereIn('role_id', [3,4])->get();
         foreach($users as $user)
         {
-            $users->caseLoad = $this->calculateCaseload($user->id);
+            $user->caseLoad = $this->calculateCaseload($user->id);
         }
         $users = $users->sortBy('caseLoad');
         dd($users->caseLoad);
