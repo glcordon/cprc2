@@ -20,7 +20,7 @@
         }
         ul.timeline > li {
             margin: 20px 0;
-            padding-left: 20px;
+            padding-left: 40px;
         }
         ul.timeline > li:before {
             content: ' ';
