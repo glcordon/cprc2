@@ -16,11 +16,11 @@
               <a class="nav-link" href="/client">View Clients</a>
             @endif
           </li>
-          <li class="nav-item">
+          {{--  <li class="nav-item">
               @if(\Auth::user())
                 <a class="nav-link" href="/client/{{ \Auth::user()->id }}/my">My Caseload</a>
               @endif
-            </li>
+            </li>  --}}
             <li class="nav-item">
                 @if(\Auth::user())
                   <a class="nav-link" href="#"  data-toggle="modal" data-target="#date_modal">Progress Report</a>
