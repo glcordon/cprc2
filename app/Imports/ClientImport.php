@@ -15,6 +15,7 @@ class ClientImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
+        dd($row);
         return new Client([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
