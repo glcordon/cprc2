@@ -306,7 +306,7 @@ class ClientController extends Controller
 
     public function clientUpload(Request $request)
     {
-        dd($request->all());
+        dd($request->excel_file);
     }
 }
 
