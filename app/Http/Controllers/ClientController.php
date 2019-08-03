@@ -10,6 +10,8 @@ use App\ClientProfile;
 use App\Services;
 use Illuminate\Support\Facades\Auth;
 use App\ClientService;
+use App\Imports\ClientImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ClientController extends Controller
 {
@@ -300,6 +302,11 @@ class ClientController extends Controller
     public function showUploadForm()
     {
         return view('partials.clients.client-upload');
+    }
+
+    public function clientUpload(Request $request)
+    {
+        dd($request->all());
     }
 }
 
