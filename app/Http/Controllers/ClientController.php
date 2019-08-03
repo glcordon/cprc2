@@ -297,5 +297,9 @@ class ClientController extends Controller
         }
         return($count);
     }
+    public function showUploadForm()
+    {
+        return view('partials.clients.client-upload');
+    }
 }
 

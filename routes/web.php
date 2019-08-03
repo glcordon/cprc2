@@ -33,6 +33,8 @@ Route::post('/client/add-job', 'ClientController@updateJob')->name('client.updat
 Route::post('/client/delete-job', 'ClientController@deleteJob')->name('client.deleteJob');
 Route::get('/delete-client/{id}', 'ClientController@destroy');
 Route::post('/find-user', 'ClientController@findUser')->name('client.findUser');
+Route::post('/client-upload', 'ClientController@clientUpload')->name('client.upload');
+Route::get('/client-upload', 'ClientController@showUploadForm')->name('client.uploadForm');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
