@@ -25,11 +25,11 @@
                      <div class="col-3"><label for="dob">DOB</label>
                         <input type="date" name="dob" id="dob" value="{{ isset($client) ? $client->dob : ''}}" class="form-control">
                     </div>
-                    <div class="col-3"><label for="first_offence_age">First Offence Age</label>
-                        <input type="number" min="8" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
+                    <div class="col-3"><label for="first_offence_age"> <small>Age When Committed First Offense</small> </label>
+                        <input type="number" min="16" max="98" id="first_offence_age" name="first_offence_age" value="{{ isset($client) ? $client->first_offence_age : ''}}" class="form-control">
                     </div>
                     <div class="col-3"><label for="number_of_priors">Number of Priors</label>
-                        <input type="number" min="8" max="98" id="number_of_priors" name="number_of_priors" value="{{ isset($client) ? $client->number_of_priors : ''}}" class="form-control">
+                        <input type="number" min="0" max="98" id="number_of_priors" name="number_of_priors" value="{{ isset($client) ? $client->number_of_priors : ''}}" class="form-control">
                     </div>
                     <div class="col-12">
                         <label for="risk_level">Risk Level</label>
@@ -41,6 +41,11 @@
                     </div>
                 </div>
                 <label>Assign Caseworker:</label>
+                @if(!isset($client))
+                    <small><em>
+                        Suggested Caseworker: {{ $suggestedCaseworker }}
+                    </em></small>
+                @endif
         <select name="caseworker" id="caseworker" class="form-control">
             <option value="">Select Caseworker</option>
             @foreach($users as $user)
@@ -50,7 +55,11 @@
         <div class="form-group">
            <div class="row"> <div class="col-12">
                <label for="ncdps_id">NCDPS ID</label>
-                <input type="text" name="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
+                <input type="text" name="ncdps_id" id="ncdps_id" value="{{ isset($client) ? $client->ncdps_id : ''}}"  class="form-control">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" id="user_does_exist" style="display:none">
+                    This user exists
+                    
+                </div>
             </div></div>
 
         </div>
@@ -294,11 +303,16 @@
              <h5>Services</h5>
 
                 @foreach($services as $service)
-                    <div class="form-check form-check-inline" style="margin:3px 10px; display: -webkit-inline-box"><input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? (in_array($service->id, $client->services->pluck('id')->toArray()) ? 'checked="checked"' : '') : ''}}> <label  class="form-check-label" for="service_{{ $service->id }}">{{ $service->service_name }}</label></div>
+                    <div class="form-check form-check-inline flex" style="margin:3px 10px; display: -webkit-inline-box">
+                        <input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? (in_array($service->id, $client->services->pluck('id')->toArray()) ? 'checked="checked"' : '') : ''}}> 
+                        <label  class="form-check-label" for="service_{{ $service->id }}">
+                            {{ $service->service_name }}<br /> <small><em>Duration: {{ $service->service_duration ?? '' }} Days</em></small>
+                        </label>
+                    </div>
                 @endforeach
             <br><br>
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">{{ !isset($client) ? "Add A New Client" : 'Update ' .$client->last_name. ', ' .$client->first_name}}</button>
-       <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">{{ !isset($client) ? "Add A New Client" : 'Update ' .$client->last_name. ', ' .$client->first_name}} And Create New </button>
+       {{--  <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">{{ !isset($client) ? "Add A New Client" : 'Update ' .$client->last_name. ', ' .$client->first_name}} And Create New </button>  --}}
         </form>
 
    </div>
@@ -308,72 +322,92 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 <script>
-                        $(document).ready(function(){
-                            $('input').on('blur', function(){
-                                var age = getBirthday();
-                                var firstOffense = $("#first_offence_age").val()
-                                var numberPriors = $("#number_of_priors").val()
-                                var agefactor = 0;
-                                var offensefactor = 0;
-                                var priorsfactor = 0;
-                                if(age <= 27)
-                                {
-                                   agefactor = 2;
-                                }else if(age > 27 && age <= 35)
-                                {
-                                    agefactor = 1
-                                }else{
-                                    agefactor = 0
-                                }
-
-                                if(firstOffense <= 17)
-                                {
-                                    offensefactor = 2;
-                                }else if(firstOffense > 17 && firstOffense <= 23)
-                                {
-                                    offensefactor = 1
-                                }else{
-                                    offensefactor = 0
-                                }
-
-                                
-                                if(numberPriors <= 1)
-                                {
-                                    priorsfactor = 0;
-                                }else if(numberPriors > 1 && numberPriors <= 5)
-                                {
-                                    priorsfactor = 1
-                                }else{
-                                    priorsfactor = 2
-                                }
-                                var riskfactor = agefactor + offensefactor + priorsfactor;
-                                console.log(riskfactor)
-                                if(riskfactor >= 5)
-                                {
-                                    $('#risk_level').val('High');
-                                }
-                                else if(riskfactor == 4 || riskfactor == 3)
-                                {
-                                    $('#risk_level').val('Medium');
-                                }
-                                
-                                else
-                                {
-                                    $('#risk_level').val('Low');
-                                }
-
-                                
-                            });
-                        })
-                    function getBirthday()
-                    {
-                        let dob = $("#dob").val()
-                        dob = new Date(dob);
-                        var today = new Date();
-                        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-                        return age;
+        $(document).ready(function(){
+            $('#ncdps_id').on('blur', function(){
+                var token = "{{ @csrf_token() }}";
+                var ncdpsId = $(this).val();
+                if(ncdpsId == '')
+                {
+                    return false;
+                }
+                $.ajax({
+                    method: "POST",
+                    url: "/find-user",
+                    data: { _token:token, ncdpsId: ncdpsId}
+                  })
+                  .done(function(data){
+                    console.log(data);
+                    if(data.first_name){
+                        $('#user_does_exist').show()
+                    }else{
+                        $('#user_does_exist').hide()
                     }
-                </script>
+                    });
+            });
+            $('input').on('blur', function(){
+                var age = getBirthday();
+                var firstOffense = $("#first_offence_age").val()
+                var numberPriors = $("#number_of_priors").val()
+                var agefactor = 0;
+                var offensefactor = 0;
+                var priorsfactor = 0;
+                if(age <= 27)
+                {
+                    agefactor = 2;
+                }else if(age > 27 && age <= 35)
+                {
+                    agefactor = 1
+                }else{
+                    agefactor = 0
+                }
+
+                if(firstOffense <= 17)
+                {
+                    offensefactor = 2;
+                }else if(firstOffense > 17 && firstOffense <= 23)
+                {
+                    offensefactor = 1
+                }else{
+                    offensefactor = 0
+                }
+
+                
+                if(numberPriors <= 1)
+                {
+                    priorsfactor = 0;
+                }else if(numberPriors > 1 && numberPriors <= 5)
+                {
+                    priorsfactor = 1
+                }else{
+                    priorsfactor = 2
+                }
+                var riskfactor = agefactor + offensefactor + priorsfactor;
+                if(riskfactor >= 5)
+                {
+                    $('#risk_level').val('High');
+                }
+                else if(riskfactor == 4 || riskfactor == 3)
+                {
+                    $('#risk_level').val('Medium');
+                }
+                
+                else
+                {
+                    $('#risk_level').val('Low');
+                }
+
+                
+            });
+        })
+    function getBirthday()
+    {
+        let dob = $("#dob").val()
+        dob = new Date(dob);
+        var today = new Date();
+        var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+        return age;
+    }
+</script>
 <script>
 $(document).ready(function(){
     $('input').attr('autocomplete','off');

@@ -33,8 +33,6 @@ class Client extends Model
     {
         return $this->hasMany('App\Note')->orderBy('created_at', 'DESC');
     }
-    
-    
     public function jobs()
     {
         return $this->hasMany('App\Job');

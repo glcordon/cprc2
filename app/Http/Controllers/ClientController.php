@@ -46,8 +46,14 @@ class ClientController extends Controller
     {
 
         $users = User::whereIn('role_id', [3,4])->get();
+        foreach($users as $user)
+        {
+            $user->caseLoad = $this->calculateCaseload($user->id);
+        }
+        $users = $users->sortBy('caseLoad');
+        $suggestedCaseworker = $users->where('caseLoad', $users->min('caseLoad'))->random()->name;
         $services = Services::orderBy('service_name', 'ASC')->get();
-        return view('partials.clients.client-add', compact('services','users'));
+        return view('partials.clients.client-add', compact('services','users', 'suggestedCaseworker'));
 
     }
 
@@ -248,6 +254,7 @@ class ClientController extends Controller
  
         $job = new Job;
         $job->job_name = $request->job_name;
+        $job->job_phone = $request->job_phone;
         $job->job_address = $request->job_address;
         $job->job_city = $request->job_city;
         $job->job_zip = $request->job_zip;
@@ -262,6 +269,33 @@ class ClientController extends Controller
     {
         Job::find($request->id)->delete();
         return "done";
+    }
+    public function findUser(Request $request)
+    {
+        $user = Client::where('ncdps_id', $request->ncdpsId)->first();
+        return $user;
+    }
+
+    public function calculateCaseload($id)
+    {
+        $caseload = Client::select('risk_level')->where('assigned_to', $id)->where('status', 'active')->get();
+        $count = 0;
+        foreach($caseload as $case)
+        {
+            if($case['risk_level'] == 'Low')
+            {
+                $count++;
+            }
+            if($case['risk_level'] == 'Medium')
+            {
+                $count += 2;
+            }
+            if($case['risk_level'] == 'High')
+            {
+                $count += 3;
+            }
+        }
+        return($count);
     }
 }
 

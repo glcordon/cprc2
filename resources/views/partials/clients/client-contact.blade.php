@@ -16,11 +16,10 @@
             left: 29px;
             width: 2px;
             height: 100%;
-            z-index: 400;
         }
         ul.timeline > li {
             margin: 20px 0;
-            padding-left: 20px;
+            padding-left: 45px;
         }
         ul.timeline > li:before {
             content: ' ';
@@ -32,7 +31,6 @@
             left: 20px;
             width: 20px;
             height: 20px;
-            z-index: 400;
         }
         a#title_type
         {
@@ -46,14 +44,18 @@
           border:1px solid #ccc;
           margin:10px;
         }
-        #title_type
-        {
-          padding-left:27px;
-        }
+        
         .card-title, .card-header{
           margin-bottom:0; padding:0
         }
 </style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>  
+
+
    <div class="album text-muted">
 
      <div class="container">
@@ -78,10 +80,11 @@
                         <div class="jobs_div">
                         @foreach ($clients->jobs as $job)
                         <span>
-                          {{ $job->job_name }} | <div id="delete_this" this_id="{{ $job->id }}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
-                          {{ $job->job_address }} <br>
-                          <small><em> Salary Code: {{ $job->salary }} </em></small> <br>
-                        <small><em> Start Date:{{ $job->start_date }}</em></small> <br>
+                          {{ $job->job_name ?? ''}} | <div id="delete_this" this_id="{{ $job->id ?? ''}}" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>
+                          Phone: {{ $job->job_phone ?? ''}} <br>
+                          {{ $job->job_address ?? ''}} <br>
+                          <small><em> Salary Code: {{ $job->salary ?? ''}} </em></small> <br>
+                        <small><em> Start Date:{{ $job->start_date ?? ''}}</em></small> <br>
 
                         </span>
                         @endforeach
@@ -245,6 +248,7 @@
       </div>
       <div class="modal-body">
         <input type="text" class="form-control" name="job_name" id="job_name" placeholder="Job Name" value=""><br>
+        <input type="text" class="form-control" name="job_phone" id="job_phone" placeholder="Job Phone Number" value=""><br>
         <input type="text" class="form-control" name="job_zip" id="job_address" placeholder="Job Address" value=""><br>
         <input type="text" class="form-control" name="job_city" id="job_city" placeholder="Job City" value=""><br>
         <input type="text" class="form-control" name="job_zip" id="job_zip" placeholder="Job Zip" value=""><br>
@@ -291,16 +295,38 @@
             <option value="Other Contact">Other - Leave Details In Note</option>
         </select>
         <label for="note_date">Date of Service</label>
-        <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}">
-        <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>
-        <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>
+        <input type="date" name="note_date" id="note_date" class="form-control" required value="{{ \Carbon\Carbon::now() ?? '' }}"> <br>
+        Start Time:
+
+      <input class="timepicker form-control" name="start_time" id="start_time" type="text"> <br>
+        {{--  <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>  --}}
+        {{--  <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>  --}}
         <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
             <option value="">Select A Service</option>
             @foreach($services as $srv)
                 <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
             @endforeach
-            
         </select>
+        <label for="duration">Duration:</label>
+        <select name="duration" id="duration" class="form-control">
+          <option value="30">30 Minutes</option>
+          <option value="60">60 Minutes</option>
+          <option value="90">90 Minutes</option>
+          <option value="120">120 minutes</option>
+          <option value="150">2.5 hours</option>
+          <option value="180">3 Hours</option>
+          <option value="210">3.5 Hours</option>
+          <option value="240">4 Hours</option>
+          <option value="270">4.5 Hours</option>
+          <option value="300">5 Hours</option>
+          <option value="330">5.5 Hours</option>
+          <option value="360">6 Hours</option>
+          <option value="390">6.5 Hours</option>
+          <option value="420">7 Hours</option>
+          <option value="450">7.5 Hours</option>
+          <option value="480">8 Hours</option>
+        </select>
+        <br>
         <textarea name="note" id="note" cols="30" rows="10" class="form-control" placeholder="Enter Notes"></textarea>
 
       </div>
@@ -314,8 +340,18 @@
 @endpush
 @endsection
 @push('scripts')
+<script type="text/javascript">
+
+  $('.timepicker').datetimepicker({
+
+      format: 'LT'
+
+  }); 
+
+</script> 
 <script>
     $(document).ready(function(){
+      
       const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
@@ -337,14 +373,17 @@
             var client_id = $('#client_id').val();
             var service_id = $('#service_id').val();
             var note_date = $('#note_date').val();
-            var hr =  $('#hr').val();
-            var min =  $('#min').val();
-            var am_pm =  $('#am_pm').val();
-            
+            var start_time = $('#start_time').val();
+            var duration = $('#duration').val();
+            if(note == '' || title == '' || start_time == '' || duration == '' || service_id == '')
+            {
+              alert('All fields are required');
+              return false;
+            }
             $.ajax({
                 method: "POST",
                 url: "/add-note",
-                data: { hr: hr, min:min, am_pm:am_pm, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
+                data: { duration:duration, start_time:start_time, note_date: note_date, note: note, type: type, _token: token, service_id: service_id, title: title, client_id: client_id },
               })
               .done(function(data){
                 console.log(data);
@@ -378,6 +417,7 @@
             e.preventDefault();
             var job_name = $('#job_name').val();
             var job_address = $('#job_address').val();
+            var job_phone = $('#job_phone').val();
             var salary = $('#job_salary').val();
             var start_date = $('#job_start_date').val();
             var job_zip = $('#job_zip').val();
@@ -389,7 +429,8 @@
                 url: "/client/add-job",
                 data: { 
                   _token:token, 
-                  id:id, 
+                  id:id,
+                  job_phone:job_phone,
                   job_city: job_city, 
                   job_zip: job_zip, 
                   start_date: start_date, 
@@ -399,7 +440,8 @@
               })
               .done(function(data){
                 console.log(data.job_name);
-                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>' 
+                let update = $('<span> ' + data["job_name"] + ' | <div id="delete_this" this_id="'+data["id"]+'" class="btn btn-sm danger" style="font-weight:900; color:red">X</div> <br>Phone: ' 
+                + data["job_phone"] +' <br><small><em> Salary Code: ' 
                 + data["job_address"] +' <br><small><em> Salary Code: ' 
                 + data["salary"] +' </em></small> <br><small><em> Start Date:' 
                 + data["start_date"] +'</em></small> <br></span>')

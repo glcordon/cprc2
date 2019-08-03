@@ -11,7 +11,7 @@
 |
 */
 Auth::routes();
-Route::get('/', 'ClientController@index')->name('client.index');
+Route::get('/', 'ReportController@dashboard')->name('dashboard');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
@@ -32,6 +32,7 @@ Route::get('/client/contact/{id}', 'ClientController@show')->name('client.contac
 Route::post('/client/add-job', 'ClientController@updateJob')->name('client.updateJob');
 Route::post('/client/delete-job', 'ClientController@deleteJob')->name('client.deleteJob');
 Route::get('/delete-client/{id}', 'ClientController@destroy');
+Route::post('/find-user', 'ClientController@findUser')->name('client.findUser');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');

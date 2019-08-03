@@ -3,7 +3,7 @@
 @section('content1')
 
      <div class="container">
-       <div class="row" style="margin-top:4.5em">
+       <div class="row" style="margin-top:0.5em">
 
          <h1>List all Clients <small><em>({{ $clients->count() }})</em></small></h1>
             @if($clients->count() == 0)
@@ -25,13 +25,17 @@
                                     <th>Date Enrolled</th>
                                     <th>Last Contact</th>
                                     <th>Status</th>
-                                    <th><a href="/client-add" class="btn btn-primary">Add New</a> </th>
+                                    <th style="width:15%">
+                                            <a href="/client-add" class="btn btn-primary">Add New</a>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($clients as $client)
                                     <tr>
-                                        <td>{{ $client->last_name ?? ''}}, {{ $client->first_name ?? ''}}</td>
+                                        <td>{{ $client->last_name ?? ''}}, {{ $client->first_name ?? ''}}
+                                            <br><small><em>{{ $client->ncdps_id ?? ''}}</em></small>
+                                        </td>
                                         <td>
                                             {{-- {{ dump($client->services) }} --}}
                                             @if(isset($client->services))
@@ -52,11 +56,18 @@
                                         </td>
                                         <td>{{ $client->notes->first()->created_at ?? '' }}</td>
                                         <td>{{ $client->status }}</td>
-                                        <td><a href="/client/contact/{{ $client->id }}" class="btn-success btn">Touch</a>
+                                        <td>
+                                                @can('edit', $client)
+                                                    <a href="/client/contact/{{ $client->id }}" class="btn-success btn btn-sm">Touch</a>
+                                                @endcan
                                                 
-                                                <a href="/client/{{ $client->id }}/edit" class="btn btn-primary">Edit</a>
+                                                @can('edit', $client)
+                                                    <a href="/client/{{ $client->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
+                                                @endcan
                                                 {{--  <button class="btn btn-primary"> View Notes</button>  --}}
-                                                <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
+                                                @can('delete', $client) 
+                                                    <a href="/delete-client/{{ $client->id }}" id="delete" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-remove"><strong> X </strong></span></a>
+                                                @endcan
                                         </td>
                                     </tr>
                                 @endforeach
