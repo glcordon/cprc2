@@ -29,7 +29,7 @@ class ClientImport implements ToModel, WithHeadingRow
         "email_address" => $row['email'] ?? '',
         "primary_phone" => $row['telephone'] ?? '',
         "secondary_phone" => $row['telephone_2'] ?? '',
-        "is_active" => $row['1'] ?? '',
+        "is_active" => 1 ?? '',
         "created_at" => \Carbon\Carbon::now() ?? '',
         "updated_at" => \Carbon\Carbon::now() ?? '',
         "deleted_at" => '',
