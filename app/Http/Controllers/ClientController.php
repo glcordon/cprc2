@@ -26,7 +26,6 @@ class ClientController extends Controller
     }
     public function index()
     {
-       dd(Client::get());
         $clients = Client::where('status', 'active')->get();
          // return view('vendor.voyager.clients.browse');
         return view('partials.clients.client-index', compact('clients'));
