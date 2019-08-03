@@ -16,7 +16,7 @@ class ClientImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
 
-        dd($row->enrollment_date->format('Y-m-d'));
+        dd($row['enrollment_date']->format('Y-m-d'));
         return new Client([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
