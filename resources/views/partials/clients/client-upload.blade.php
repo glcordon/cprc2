@@ -4,7 +4,7 @@
 
      <div class="container">
        <div class="row" style="margin-top:0.5em">
-        <form action="/upload_file" method="POST" enctype="multipart/form-data">
+        <form action="/client-upload" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <label for="excel_file"></label>
             <input type="file" name="excel_file" id="excel_file" class="excel_file">
