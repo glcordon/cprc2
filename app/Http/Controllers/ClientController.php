@@ -308,9 +308,8 @@ class ClientController extends Controller
     {
 
         $path = $request->file('excel_file')->store('csvs');
+        Excel::import(new ClientImport, $path);
 
-
-        dd($path);
     }
 }
 
