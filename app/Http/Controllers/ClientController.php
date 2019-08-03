@@ -306,7 +306,11 @@ class ClientController extends Controller
 
     public function clientUpload(Request $request)
     {
-        dd($request->excel_file);
+
+        $path = $request->file('excel_file')->store('csvs');
+
+
+        dd($path);
     }
 }
 
