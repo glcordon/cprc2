@@ -16,7 +16,7 @@ class ClientImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
 
-        dd($row['enrollment_date']->format('Y-m-d'));
+        dd(Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date'])));
         return new Client([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
@@ -47,7 +47,7 @@ class ClientImport implements ToModel, WithHeadingRow
         "race" => $row['race'] ?? '',
         "ethnicity" => $row['ethnicity'] ?? '',
         "education" => $row['level_of_education'] ?? '',
-        "dob" => $row['dob'] ?? '',
+        "dob" => Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dob'])) ?? '',
         // "supervisors_name" => $row[''] ?? '',
         // "supervisors_phone" => $row[''] ?? '',
         // "supervisors_email" => $row[''] ?? '',
@@ -58,7 +58,7 @@ class ClientImport implements ToModel, WithHeadingRow
         // "released_from" => $row[''] ?? '',
         // "under_supervision" => $row[''] ?? '',
         // "middle_name" => $row[''] ?? '',
-        "enrollment_date" => $row['enrollment_date'] ?? '',
+        "enrollment_date" => Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date'])) ?? '',
         "suffix" => explode(' ', $row['name'])[1] ?? '',
         "charge" => 'testing',
         // "risk_level" => $row[''] ?? '',
