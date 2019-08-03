@@ -34,7 +34,7 @@ class ClientImport implements ToModel, WithHeadingRow
         "updated_at" => \Carbon\Carbon::now() ?? '',
         "deleted_at" => '',
         "case_worker" => '',
-        "assigned_to" => $row['assigned_to'] ?? '',
+        "assigned_to" => $row['assigned_to'] ?? '14',
         "user_id" => null,
         "address_2" => $row['address_2'] ?? '',
         "sex" => $row['gender'][0] ?? '',
