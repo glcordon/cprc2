@@ -309,7 +309,7 @@ class ClientController extends Controller
 
         $path = $request->file('excel_file')->store('csvs');
         Excel::import(new ClientImport, $path);
-        return Client::where("assigned_to", "14");
+        return Client::where("assigned_to", "14")->get();
     }
 }
 
