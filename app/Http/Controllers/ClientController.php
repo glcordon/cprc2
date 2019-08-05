@@ -306,8 +306,8 @@ class ClientController extends Controller
     public function clientUpload(Request $request)
     {
 
-       $collection =  Excel::import(new clientImport,request()->file('file'));
         $path = $request->file('excel_file')->store('csvs');
+        $collection = (new ClientImport)->toArray($path, \Maatwebsite\Excel\Excel::XLS);
         dd($collection);
         // Excel::import(new ClientImport, $path);
         return Client::where("assigned_to", "14")->get();
