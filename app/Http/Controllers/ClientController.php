@@ -343,7 +343,7 @@ class ClientController extends Controller
             $client->education = $row['level_of_education'] ?? '';
             $client->dob = $this->convertExcelDate($row['dob']) ?? '';
             $client->number_of_priors = $row['of_priors'] ?? null;
-            $client->first_offence_age = $row['age_at_1stoffense'] ?? '';
+            $client->first_offence_age = $row['age_at_1stoffense'] ?? null;
             $client->charge = 'testing';
             $client->save();
             
