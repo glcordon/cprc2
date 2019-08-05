@@ -317,7 +317,7 @@ class ClientController extends Controller
             {
                 $request->form_of_id = [""];
             }
-            $client->enrollment_date = $this->convertExcelDate($row['dob']) ?? '';
+            $client->enrollment_date = $this->convertExcelDate($row['enrollmentdate']) ?? '';
             $client->first_name = explode(' ', $row['name'])[0] ?? ''; 
             $client->last_name = explode(' ', $row['name'])[1] ?? '';
             $client->suffix =  explode(' ', $row['name'])[2] ?? '';
