@@ -313,9 +313,7 @@ class ClientController extends Controller
         return(collect($hello)->map(function($item){
             $EXCEL_DATE = $item['dob'];
             $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
-            $EXCEL_DATE = 25569 + ($UNIX_DATE / 86400);
-            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
-            return gmdate("d-m-Y H:i:s", $UNIX_DATE);
+            return gmdate("d-m-Y", $UNIX_DATE);
            
         })
         );
