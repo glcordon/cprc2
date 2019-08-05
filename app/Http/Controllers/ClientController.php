@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\ClientService;
 use App\Imports\ClientImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
@@ -306,6 +307,7 @@ class ClientController extends Controller
     public function clientUpload(Request $request)
     {
 
+        Excel::import(new clientImport,request()->file('file'));
         $path = $request->file('excel_file')->store('csvs');
         $collection = (new ClientImport)->toArray($path);
         dd($collection);
