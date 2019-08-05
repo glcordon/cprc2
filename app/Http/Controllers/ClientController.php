@@ -312,42 +312,41 @@ class ClientController extends Controller
 
         foreach($clients as $row)
         {
-            Client::create([
-                "first_name" => explode(' ', $row['name'])[0] ?? '',
-                "last_name" => explode(' ', $row['name'])[1] ?? '',
-                "address_1" =>  explode(',', $row['address'])[0] ?? '',
-                "city" => explode(',', $row['address'])[1] ?? '',
-                "zip" => explode(',', $row['address'])[2] ?? '',
-                "email_address" => $row['email'] ?? '',
-                "primary_phone" => $row['telephone'] ?? '',
-                "secondary_phone" => $row['telephone_2'] ?? '',
-                "is_active" => 1 ?? '',
-                "created_at" => \Carbon\Carbon::now() ?? '',
-                "updated_at" => \Carbon\Carbon::now() ?? '',
-                "deleted_at" => null,
-                "case_worker" => '',
-                "assigned_to" => $row['assigned_to'] ?? '14',
-                "user_id" => null,
-                "address_2" => $row['address_2'] ?? '',
-                "sex" => $row['gender'][0] ?? '',
-                "release_date" => $row['release_date'] ?? '',
-                "status" => $row['status'] ?? '',
-                "state" => $row['state'] ?? '',
-                "full_name" => $row['name'] ?? '',
-                "citizenship" => $row['citizenship'] ?? '',
-                "form_of_id" => [],
-                "ncdps_id" => $row['opus'] ?? '',
-                "maritial_status" => $row['marital_status'] ?? '',
-                "race" => $row['race'] ?? '',
-                "ethnicity" => $row['ethnicity'] ?? '',
-                "education" => $row['level_of_education'] ?? '',
-                "dob" => $this->convertExcelDate($row['dob']) ?? '',
-                "enrollment_date" => $this->convertExcelDate($row['enrollmentdate']) ?? '',
-                "suffix" => explode(' ', $row['name'])[1] ?? '',
-                "charge" => 'testing',
-                "first_offence_age" => $row['age_at_1stoffense'] ?? '',
-                "number_of_priors" => $row['of_priors'] ?? ''
-            ]);
+            $client = new Client;
+            if($request->form_of_id == null)
+            {
+                $request->form_of_id = [""];
+            }
+            $client->enrollment_date = $this->convertExcelDate($row['dob']) ?? '';
+            $client->first_name = explode(' ', $row['name'])[0] ?? ''; 
+            $client->last_name = explode(' ', $row['name'])[1] ?? '';
+            $client->suffix =  explode(' ', $row['name'])[1] ?? '';
+            $client->address_1 = explode(',', $row['address'])[0] ?? ''; 
+            $client->risk_level = '';
+            $client->city = explode(',', $row['address'])[1] ?? '';
+            $client->state = $request->state;
+            $client->zip = explode(',', $row['address'])[2] ?? '';
+            $client->primary_phone = $row['telephone'] ?? '';
+            $client->secondary_phone = $row['telephone_2'] ?? '';
+            $client->email_address = $row['email'] ?? '';
+            $client->citizenship = $row['citizenship'] ?? '';
+            $client->form_of_id = json_encode($request->form_of_id);
+            $client->sex = $row['gender'][0] ?? '';
+            $client->release_date =  $this->convertExcelDate($row['release_date']) ?? '';
+            $client->status = $row['status'] ?? '';
+            $client->full_name = $row['name'] ?? '';
+            $client->assigned_to = $row['assigned_to'] ?? '14';
+            $client->ncdps_id = $row['opus'] ?? '';
+            $client->maritial_status = $row['marital_status'] ?? '';           
+            $client->race = $row['race'] ?? '';
+            $client->ethnicity = $row['ethnicity'] ?? '';
+            $client->education = $row['level_of_education'] ?? '';
+            $client->dob = $this->convertExcelDate($row['dob']) ?? '';
+            $client->number_of_priors = $row['of_priors'] ?? '';
+            $client->first_offence_age = $row['age_at_1stoffense'] ?? '';
+            $client->charge = 'testing';
+            $client->save();
+            
         }
 
         return(collect($clients)->map(function($item){
