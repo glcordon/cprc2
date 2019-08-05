@@ -363,7 +363,7 @@ class ClientController extends Controller
     {
             $EXCEL_DATE = $date;
             $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
-            return gmdate("d-m-Y", $UNIX_DATE);
+            return gmdate("Y-m-d", $UNIX_DATE);
     }
 }
 
