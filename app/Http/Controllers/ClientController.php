@@ -325,7 +325,7 @@ class ClientController extends Controller
             $client->risk_level = '';
             $client->city = explode(',', $row['address'])[1] ?? null;
             $client->state = explode(',', $row['address'])[2] ?? null;
-            $client->zip = explode(',', $row['address'])[3] ?? null;
+            $client->zip = null;
             $client->primary_phone = $row['telephone'] ?? '';
             $client->secondary_phone = $row['telephone_2'] ?? '';
             $client->email_address = $row['email'] ?? '';
