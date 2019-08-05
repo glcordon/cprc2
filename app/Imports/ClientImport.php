@@ -18,10 +18,15 @@ class ClientImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         
-        $enrollment_date = '';
+        $enrollment_date = \Carbon\Carbon::now();
+        $dob = \Carbon\Carbon::now();
         if(array_key_exists('enrollment_date', $row)){
             $enrollment_date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date']);
         }
+        if(array_key_exists('dob', $row)){
+            $dob = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dob']);
+        }
+        
         return new Client([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
