@@ -6,8 +6,9 @@ use App\Client;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\ToCollection;
 
-class ClientImport implements ToModel, WithHeadingRow
+class ClientImport implements ToCollection, WithHeadingRow
 {
     use Importable;
     /**
