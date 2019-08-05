@@ -308,12 +308,13 @@ class ClientController extends Controller
 
         $path = $request->file('excel_file')->store('csvs');
         
-        $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
+        $client = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
 
         return(collect($hello)->map(function($item){
-            return $this->convertExcelDate($item['dob']);
+            return $item;
+                return $this->convertExcelDate($item['dob']);
            
-        })
+            })
         );
 
         return Client::where("assigned_to", "14")->get();
