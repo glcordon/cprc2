@@ -310,7 +310,7 @@ class ClientController extends Controller
         
         $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX);
 
-        dd($hello->flatten(1)->toArray());
+        return($hello->flatten(1)->toArray());
         return Client::where("assigned_to", "14")->get();
     }
 }
