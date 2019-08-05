@@ -311,7 +311,12 @@ class ClientController extends Controller
         $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
 
         return(collect($hello)->map(function($item){
-            return $item['dob'];
+            $EXCEL_DATE = $item['dob'];
+            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
+            $EXCEL_DATE = 25569 + ($UNIX_DATE / 86400);
+            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
+            return gmdate("d-m-Y H:i:s", $UNIX_DATE);
+           
         })
         );
 
