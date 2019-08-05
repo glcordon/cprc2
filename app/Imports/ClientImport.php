@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\Importable;
 
 class ClientImport implements ToModel, WithHeadingRow
 {
-    use importable;
+    use Importable;
     /**
     * @param array $row
     *
