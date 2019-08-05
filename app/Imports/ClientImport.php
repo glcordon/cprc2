@@ -19,6 +19,7 @@ class ClientImport implements ToModel, WithHeadingRow
         if(array_key_exists('enrollment_date', $row)){
             $enrollment_date = \Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date']));
         }
+        dd(explode(' ', $row['name'])[0] );
         return new Client([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
