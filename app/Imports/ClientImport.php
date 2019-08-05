@@ -16,9 +16,10 @@ class ClientImport implements ToCollection, WithHeadingRow
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function collection(array $row)
+    public function collection(Collection $row)
     {
-        
+        foreach ($rows as $row) 
+        {
         $enrollment_date = \Carbon\Carbon::now();
         $dob = \Carbon\Carbon::now();
         if(array_key_exists('enrollment_date', $row)){
@@ -28,7 +29,7 @@ class ClientImport implements ToCollection, WithHeadingRow
             $dob = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dob']);
         }
         
-        return new Client([
+        Client::create([
             //
         "first_name" => explode(' ', $row['name'])[0] ?? '',
         "last_name" => explode(' ', $row['name'])[1] ?? '',
@@ -76,5 +77,6 @@ class ClientImport implements ToCollection, WithHeadingRow
         "first_offence_age" => $row['age_at_first_offense'] ?? '',
         "number_of_priors" => $row['of_priors'] ?? '',
         ]);
+        }
     }
 }
