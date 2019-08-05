@@ -17,9 +17,12 @@ class ClientImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
+        $timezone = 'UTC';
+        \PhpOffice\PhpSpreadsheet\Shared\Date::setDefaultTimezone($timezone);
+        
         $enrollment_date = '';
         if(array_key_exists('enrollment_date', $row)){
-            $enrollment_date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date']);
+            $enrollment_date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['enrollment_date'], $timezone);
         }
         return new Client([
             //
@@ -51,7 +54,7 @@ class ClientImport implements ToModel, WithHeadingRow
         "race" => $row['race'] ?? '',
         "ethnicity" => $row['ethnicity'] ?? '',
         "education" => $row['level_of_education'] ?? '',
-        "dob" => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dob']) ?? '',
+        "dob" => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['dob'], $timezone) ?? '',
         // "supervisors_name" => $row[''] ?? '',
         // "supervisors_phone" => $row[''] ?? '',
         // "supervisors_email" => $row[''] ?? '',
