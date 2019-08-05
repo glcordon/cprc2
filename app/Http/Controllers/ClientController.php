@@ -311,7 +311,7 @@ class ClientController extends Controller
         $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
 
         return(collect($hello)->map(function($item){
-            $this->convertExcelDate($item['dob']);
+            return $this->convertExcelDate($item['dob']);
            
         })
         );
