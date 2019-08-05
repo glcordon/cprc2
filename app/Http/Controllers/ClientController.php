@@ -308,9 +308,9 @@ class ClientController extends Controller
 
         $path = $request->file('excel_file')->store('csvs');
         
-        $hello = (new ClientImport)->toArray($path, 'local', \Maatwebsite\Excel\Excel::XLSX);
+        $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX);
 
-        dd($hello->flatten(1));
+        dd($hello->flatten(1)->toArray());
         return Client::where("assigned_to", "14")->get();
     }
 }
