@@ -332,7 +332,7 @@ class ClientController extends Controller
             $client->citizenship = $row['citizenship'] ?? '';
             $client->form_of_id = json_encode($request->form_of_id);
             $client->sex = $row['gender'][0] ?? '';
-            $client->release_date =  '';
+            $client->release_date =  null;
             $client->status = $row['status'] ?? '';
             $client->full_name = $row['name'] ?? '';
             $client->assigned_to = $row['assigned_to'] ?? '14';
