@@ -320,7 +320,7 @@ class ClientController extends Controller
             $client->enrollment_date = $this->convertExcelDate($row['dob']) ?? '';
             $client->first_name = explode(' ', $row['name'])[0] ?? ''; 
             $client->last_name = explode(' ', $row['name'])[1] ?? '';
-            $client->suffix =  explode(' ', $row['name'])[1] ?? '';
+            $client->suffix =  explode(' ', $row['name'])[2] ?? '';
             $client->address_1 = explode(',', $row['address'])[0] ?? ''; 
             $client->risk_level = '';
             $client->city = explode(',', $row['address'])[1] ?? null;
