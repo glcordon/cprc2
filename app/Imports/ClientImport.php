@@ -16,7 +16,7 @@ class ClientImport implements ToCollection, WithHeadingRow
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function model(array $row)
+    public function collection(array $row)
     {
         
         $enrollment_date = \Carbon\Carbon::now();
