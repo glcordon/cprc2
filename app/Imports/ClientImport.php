@@ -5,9 +5,11 @@ namespace App\Imports;
 use App\Client;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\Importable;
 
 class ClientImport implements ToModel, WithHeadingRow
 {
+    use importable;
     /**
     * @param array $row
     *
