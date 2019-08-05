@@ -311,14 +311,19 @@ class ClientController extends Controller
         $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
 
         return(collect($hello)->map(function($item){
-            $EXCEL_DATE = $item['dob'];
-            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
-            return gmdate("d-m-Y", $UNIX_DATE);
+            $this->convertExcelDate($item['dob']);
            
         })
         );
 
         return Client::where("assigned_to", "14")->get();
+    }
+
+    public function convertExcelDate($date)
+    {
+            $EXCEL_DATE = $date;
+            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
+            return gmdate("d-m-Y", $UNIX_DATE);
     }
 }
 
