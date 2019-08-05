@@ -342,7 +342,7 @@ class ClientController extends Controller
                 "ethnicity" => $row['ethnicity'] ?? '',
                 "education" => $row['level_of_education'] ?? '',
                 "dob" => $this->convertExcelDate($row['dob']) ?? '',
-                "enrollment_date" => $this->convertExcelDate($row['enrollment_date']) ?? '',
+                "enrollment_date" => $this->convertExcelDate($row['enrollmentdate']) ?? '',
                 "suffix" => explode(' ', $row['name'])[1] ?? '',
                 "charge" => 'testing',
                 "first_offence_age" => $row['age_at_1stoffense'] ?? '',
