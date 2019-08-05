@@ -308,9 +308,9 @@ class ClientController extends Controller
 
         $path = $request->file('excel_file')->store('csvs');
         
-        $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1);
+        $hello = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
 
-        return($hello->map(function($item){
+        return(collect($hello)->map(function($item){
             return $item->dob;
         })
         );
