@@ -41,5 +41,5 @@ Route::post('/add-service', 'ClientController@addService');
 Route::get('/report-generate', 'ReportController@index')->name('pdf');
 Route::post('/report-generate', 'ReportController@index')->name('pdf_post');
 Route::post('/participation-report', 'ReportController@participantReport')->name('participation_report');
-
+route::get('/ap/report', 'AccountsPayableController@index');
 });
