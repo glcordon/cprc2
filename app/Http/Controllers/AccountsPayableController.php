@@ -20,9 +20,10 @@ class AccountsPayableController extends Controller
     {
         $today = Carbon::now();
         $thisDate = Carbon::parse($request->searchMonth);
-        // $clients = Client::whereHas('services', function ($query) use($thisDate) {
-        //     $query->whereMonth('client_service.created_at','=', $thisDate->month);
-        // })->get();
+        $clients = Client::whereHas('services', function ($query) use($today) {
+            $query->whereMonth('client_service.created_at','=', $today->month);
+        })->get();
+        return $clients;
         $start = new Carbon('first day of this month');
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $clients = $clientsQuery->get();
