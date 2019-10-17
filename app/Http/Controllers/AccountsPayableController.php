@@ -25,8 +25,9 @@ class AccountsPayableController extends Controller
         })->with('services')->get();
         $clientData = $clients->map(function($x){
             $serviceData = collect($x->services)->map(function($y){
-                $pivotData = collect(($y->pivot)->toArray())->map(function($z){
-                        return $z->updated_at;
+                $pd = $y->pivot->toArray();
+                $pivotData = collect($pd)->map(function($z){
+                        return $z;
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
@@ -36,7 +37,7 @@ class AccountsPayableController extends Controller
                'service'=>$serviceData];
         });
 
-        return $clientData->toJson();
+        dd($clientData);
         $start = new Carbon('first day of this month');
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $clients = $clientsQuery->get();
