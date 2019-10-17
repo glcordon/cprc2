@@ -1,3 +1,3 @@
 @foreach($clientData as $client)
-{{ $first }}, {{ $last }} <br /> {{ $service }} <hr>
+{{ $client->first }}, {{ $client->last }} <br /> {{ $client->service }} <hr>
 @endforeach
