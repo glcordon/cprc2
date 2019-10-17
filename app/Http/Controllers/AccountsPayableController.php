@@ -27,7 +27,7 @@ class AccountsPayableController extends Controller
            return [
                'first'=>$x->first_name, 
                'last'=>$x->last_name, 
-               'service'=>$x->services['service_name']];
+               'service'=>$x->services];
         });
 
         return $clientData->toArray();
