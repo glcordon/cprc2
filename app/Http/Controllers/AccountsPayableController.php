@@ -30,7 +30,7 @@ class AccountsPayableController extends Controller
                'service'=>$x->services];
         });
 
-        return $clientData->toArray();
+        return $clientData->toJson();
         $start = new Carbon('first day of this month');
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $clients = $clientsQuery->get();
