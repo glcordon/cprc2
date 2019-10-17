@@ -26,7 +26,7 @@ class AccountsPayableController extends Controller
         $clientData = $clients->map(function($x){
             $serviceData = collect($x->services)->map(function($y){
                 $pd = $y->pivot;
-                $pivotData = collect($pd)->flatMap(function($z){
+                $pivotData = collect($pd)->map(function($z){
                         return $z;
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
@@ -37,7 +37,7 @@ class AccountsPayableController extends Controller
                'service'=>$serviceData];
         });
 
-        dd($clientData);
+        return $clientData;
         $start = new Carbon('first day of this month');
         $clientsQuery = Client::whereMonth('enrollment_date','=', $thisDate->month)->whereYear('enrollment_date', '=', $thisDate->year);
         $clients = $clientsQuery->get();
