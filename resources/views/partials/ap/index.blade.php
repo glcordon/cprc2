@@ -2,9 +2,7 @@
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 @foreach($client['service'] as $cs)
     {{ $cs['service_name'] }} 
-    @foreach($cs['pivot'] as $key=>$piv)
-        {{ $key }}<br />
-    @endforeach
+   {{ $cs['pivot']['updated_at'] }}
 @endforeach
 <hr>
 @endforeach
