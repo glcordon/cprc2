@@ -23,7 +23,8 @@ class AccountsPayableController extends Controller
         $clients = Client::whereHas('services', function ($query) use($today) {
             $query->whereMonth('client_service.created_at','=', Carbon::now()->subMonth()->month);
         })->with('services')->get();
-        $clientData = $clients->map(function($x){
+        dd($clients);
+        $clientData = $clients->map(function($x){ 
             $serviceData = collect($x->services)->map(function($y){
                 $pd = collect($y->pivot)->toArray();
                 $pivotData = collect($pd)->map(function($z){
