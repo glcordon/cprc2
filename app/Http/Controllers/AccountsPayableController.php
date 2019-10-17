@@ -29,7 +29,7 @@ class AccountsPayableController extends Controller
                 $pivotData = collect($pd)->map(function($z){
                         return $z;
                 });
-               return['service_name' => $y->service_name, 'pivot' => $pivotData->created_at]; 
+               return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
            return [
                'first'=>$x->first_name, 
