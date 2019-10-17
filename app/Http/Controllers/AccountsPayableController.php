@@ -25,11 +25,9 @@ class AccountsPayableController extends Controller
         })->with('services')->get();
         $clientData = $clients->map(function($x){
             $serviceData = collect($x->services)->map(function($y){
-                $pd = $y->pivot;
+                $pd = collect($y->pivot)->toJson();
                 $pivotData = collect($pd)->map(function($z){
-                        return $z->map(function($map){
-                            return $map->updated_at;
-                        });
+                        return $z;
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
