@@ -3,7 +3,7 @@
 @foreach($client['service'] as $cs)
     {{ $cs['service_name'] }} 
     @foreach($cs['pivot'] as $piv)
-        {{ $piv['created_at'] }}
+        {{ dd($piv) }}
     @endforeach
 @endforeach
 <hr>
