@@ -24,7 +24,10 @@ class AccountsPayableController extends Controller
             $query->whereMonth('client_service.created_at','=', Carbon::now()->subMonth()->month);
         })->with('services')->get();
         $clientData = $clients->map(function($x){
-           return [$x->first_name, $x->last_name, $x->services];
+           return [
+               'first'=>$x->first_name, 
+               'last'=>$x->last_name, 
+               'service'=>$x->services->service_name];
         });
 
         return $clientData->toArray();
