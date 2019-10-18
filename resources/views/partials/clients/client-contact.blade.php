@@ -303,7 +303,7 @@
         {{--  <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>  --}}
         <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
             <option value="">Select A Service</option>
-            @foreach($services as $srv)
+            @foreach($otherServices as $srv)
                 <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
             @endforeach
         </select>
