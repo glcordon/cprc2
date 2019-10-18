@@ -140,7 +140,7 @@
                             +Service
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
-                                +Data
+                                +Job Data
                             </button>            
                 </div>
                 <div class="col-6">Last Contact: @if($last_contact !=''){{ $last_contact->toDateTimeString() ?? '' }}@endif</div>
