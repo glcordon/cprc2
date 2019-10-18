@@ -293,8 +293,14 @@
                   <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
               @endforeach
             </select>
-            Date Authorized:<input type="date" name="service_date" id="service_date" class="form-control">
-            Amount Authorized $<input type="number" value="0.00" name="amount_authorized" id="amount_authorized" class="form-control">
+            <div class="form-group">
+              <label>Date Authorized:</label>
+              <input type="date" name="service_date" id="service_date" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Amount Authorized $</label>
+              <input type="number" value="0.00" name="amount_authorized" id="amount_authorized" class="form-control">
+            </div>
             <div class="form-group">
               <label for="service_notes">Additional Info</label>
               <textarea class="form-control" name="service_notes" id="service_notes" rows="3"></textarea>
