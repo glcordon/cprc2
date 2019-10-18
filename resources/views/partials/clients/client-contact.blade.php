@@ -134,13 +134,13 @@
             <div class="row">
                 <div class="col-6">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Add New Touch Point
+                            +Touch Point
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servicesModal">
-                            Add New Service
+                            +Service
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
-                                Add Job Data
+                                +Data
                             </button>            
                 </div>
                 <div class="col-6">Last Contact: @if($last_contact !=''){{ $last_contact->toDateTimeString() ?? '' }}@endif</div>
