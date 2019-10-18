@@ -136,6 +136,9 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             Add New Touch Point
                         </button>   
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servicesModal">
+                            Add New Service
+                        </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
                                 Add Job Data
                             </button>            
@@ -272,7 +275,32 @@
     </div>
   </div>
 </div>
-@dump($services)
+{{--  Add Services Modal  --}}
+<div class="modal fade" id="servicesModal" tabindex="-1" role="dialog" aria-labelledby="servicesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Touch Point</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
+            <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
+              <option value="">Select A Service</option>
+              @foreach($otherServices as $srv)
+                  <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <!-- Modal Add Touchpoint-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -301,12 +329,7 @@
       <input class="timepicker form-control" name="start_time" id="start_time" type="text"> <br>
         {{--  <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>  --}}
         {{--  <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>  --}}
-        <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
-            <option value="">Select A Service</option>
-            @foreach($otherServices as $srv)
-                <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
-            @endforeach
-        </select>
+        
         <label for="duration">Duration:</label>
         <select name="duration" id="duration" class="form-control">
           <option value="30">30 Minutes</option>
