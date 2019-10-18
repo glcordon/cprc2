@@ -293,8 +293,15 @@
                   <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
               @endforeach
             </select>
-            Date:<input type="date" name="service_date" id="service_date" class="form-control">
+            Date Authorized:<input type="date" name="service_date" id="service_date" class="form-control">
             Amount Authorized $<input type="number" value="0.00" name="amount_authorized" id="amount_authorized" class="form-control">
+            <div class="form-group">
+              <label for="service_notes">Additional Info</label>
+              <p class="form-text text-muted">
+                Add additional information about service, i.e. voucher, bus pass, gas card, etc.
+              </p>
+              <textarea class="form-control" name="service_notes" id="service_notes" rows="3"></textarea>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
