@@ -293,6 +293,8 @@
                   <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
               @endforeach
             </select>
+            Date:<input type="date" name="service_date" id="service_date" class="form-control">
+            Amount Authorized $<input type="text" name="amount_authorized" id="amount_authorized" class="form-control">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
