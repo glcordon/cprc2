@@ -131,7 +131,7 @@ class ClientController extends Controller
         $services = $clients->services;
         $additional_service = Services::get();
         $allServices = collect($additional_service->toArray());
-        $otherServices = $additional_service->diff($services)->toArray();
+        $otherServices = $additional_service->diff($services)->sortBy('service_name')->toArray();
         $notes = $clients->notes;
         $last_contact = $clients->notes->first()->created_at ?? '';
         // dd(Services::select('id', 'service_name')->pluck('id'));
