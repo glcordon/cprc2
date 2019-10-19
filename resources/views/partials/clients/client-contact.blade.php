@@ -428,7 +428,7 @@
         $('#saveServices').on('click', function(e){
             e.preventDefault();
             var parentModal = $(this).parent().parent()
-            var service_id = parentModal.find('select option:selected').val())
+            var service_id = parentModal.find('select option:selected').val()
             var service_name = $('select#service_name  option:selected').text()
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
