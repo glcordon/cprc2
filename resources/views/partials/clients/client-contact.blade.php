@@ -96,12 +96,8 @@
                       <h3>Services</h3>
                     <div class="card-body">
                       @foreach($services as $srv)
-                      <div class="card text-center" style="width:45%; margin:10px;">
-                          <div class="card-header">
                             <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
-                          </div>
-                          <div class="card-body">
-                            <p class="card-text">
+                            <p>
                                 Expiration:
                                 @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
                                   Expired
@@ -109,15 +105,11 @@
                                   {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
                                 @endif 
                             </p>
-                          </div>
-                          <div class="card-footer text-muted">
                             @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
                               Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
                             @else
         
                             @endif
-                          </div>
-                        </div>
                       @endforeach
                     </div>
                     </div>
