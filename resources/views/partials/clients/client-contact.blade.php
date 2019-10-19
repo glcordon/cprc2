@@ -429,9 +429,7 @@
             e.preventDefault();
             var parentModal = $(this).parent().parent()
             var service_id = parentModal.find('select option:selected').val())
-            var service_name = $('select#service_name  option:selected').text();
-            return false;
-
+            var service_name = $('select#service_name  option:selected').text()
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             $.ajax({
@@ -441,8 +439,8 @@
               })
               .done(function(data){
                 console.log(data);
-                $('select#service_name  option:selected').hide();
-                $('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
+                //$('select#service_name  option:selected').hide();
+                //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
                 // $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
               });
             
