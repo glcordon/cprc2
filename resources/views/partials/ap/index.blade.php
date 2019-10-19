@@ -8,8 +8,9 @@
 
 @foreach($clientData as $client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
+<table>
 @foreach($client['service'] as $cs)
-    <table>
+    
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>
@@ -21,8 +22,9 @@
                     class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
         </tr>
-    </table>
+    
       
 @endforeach
+</table>
 <hr>
 @endforeach
