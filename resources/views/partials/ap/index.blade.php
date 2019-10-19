@@ -11,7 +11,6 @@
       <label for="">Date Authorized</label>
       <input type="date"
         class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
-      <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
 @endforeach
 <hr>
