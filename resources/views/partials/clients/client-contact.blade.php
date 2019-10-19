@@ -429,13 +429,23 @@
             e.preventDefault();
             var parentModal = $(this).parent().parent()
             var service_id = parentModal.find('select option:selected').val()
-            var service_name = $('select#service_name  option:selected').text()
+            var auth_price = parentModal.find('#amount_authorized').val()
+            var auth_date = parentModal.find('#service_date').val()
+            var notes = parentModal.find('#service_notes').val()
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             $.ajax({
                 method: "POST",
                 url: "/add-service",
-                data: { _token:token, service_id: service_id, client_id: client_id}
+                data: { 
+                  _token:token, 
+                  service_id: service_id, 
+                  client_id: client_id,
+                  service_id:service_id,
+                  auth_price:auth_price,
+                  auth_date:auth_date,
+                  notes:notes,
+                }
               })
               .done(function(data){
                 console.log(data);
