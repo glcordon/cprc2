@@ -102,9 +102,8 @@
             <div class="card-title">
               <h4>Services</h4>
               @foreach($services as $srv)
-                    <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
+                    <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
                     <p>
-                      <a href="#">View</a>
                         Expiration:
                         @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
                           Expired
