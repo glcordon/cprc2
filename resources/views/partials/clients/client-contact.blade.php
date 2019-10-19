@@ -442,8 +442,8 @@
                   service_id: service_id, 
                   client_id: client_id,
                   service_id:service_id,
-                  auth_price:auth_price,
-                  auth_date:auth_date,
+                  authorized_price:auth_price,
+                  date_authorized:auth_date,
                   notes:notes,
                 }
               })
