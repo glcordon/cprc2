@@ -25,7 +25,7 @@
     
       
 @endforeach
-<tr colspan="4"><button id="updateClient" data-id="{{ $client['id'] }}">Update</button></tr>
+<tr><td colspan="4"><button id="updateClient" data-id="{{ $client['id'] }}">Update</button></td></tr>
 </table>
 <hr>
 @endforeach
