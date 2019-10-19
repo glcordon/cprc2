@@ -406,7 +406,7 @@
             var note_date = $('#note_date').val();
             var start_time = $('#start_time').val();
             var duration = $('#duration').val();
-            if(note == '' || title == '' || start_time == '' || duration == '' || service_id == '')
+            if(note == '' || title == '' || start_time == '' || duration == '')
             {
               alert('All fields are required');
               return false;
@@ -439,7 +439,6 @@
                 url: "/add-service",
                 data: { 
                   _token:token, 
-                  service_id: service_id, 
                   client_id: client_id,
                   service_id:service_id,
                   authorized_price:auth_price,
