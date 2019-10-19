@@ -1,3 +1,7 @@
+<strong>Transition/Reentry Support Form</strong><br>						
+Eastern Carolina Council of Government	<br>							
+Invoice # 402.{{ Carbon\Carbon::nowf()->year }}.{{ Carbon\Carbon::nowf()->month }}	<br>						
+1/1/19-1/31/19			<br>					
 @foreach($clientData as $client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 @foreach($client['service'] as $cs)
