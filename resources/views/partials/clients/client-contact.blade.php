@@ -98,8 +98,7 @@
                 
             </div>
             <div class="card-title">
-              <h3>Services</h3>
-            <div class="card-body">
+              <h4>Services</h4>
               @foreach($services as $srv)
                     <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
                     <p>
@@ -116,7 +115,6 @@
 
                     @endif</p>
               @endforeach
-            </div>
             </div>
         </div>
         </div>
