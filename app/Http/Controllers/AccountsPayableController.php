@@ -32,6 +32,7 @@ class AccountsPayableController extends Controller
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
            return [
+               'id'=>$x->id,
                'first'=>$x->first_name, 
                'last'=>$x->last_name, 
                'service'=>$serviceData];
