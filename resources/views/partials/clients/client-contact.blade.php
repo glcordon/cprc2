@@ -303,7 +303,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveService">Save changes</button>
+            <button type="button" class="btn btn-primary" id="saveServices">Save changes</button>
           </div>
         </div>
       </div>
@@ -424,7 +424,7 @@
                // });
         });
 
-        $('#saveService').on('click', function(e){
+        $('#saveServices').on('click', function(e){
             e.preventDefault();
             console.log('#addServicesModal').find('select#service_name')
             let service_id = $('select#service_name').val();
