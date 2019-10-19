@@ -231,6 +231,7 @@ class ClientController extends Controller
     {
         if($request)
         {
+            return $request->all();
             $client = Client::find($request->client_id);
            ClientService::updateOrCreate(['service_id' => $request->service_id, 'client_id' => $client->id]);
            return 'done';

@@ -427,10 +427,11 @@
 
         $('#saveServices').on('click', function(e){
             e.preventDefault();
-            console.log($(this).parent().parent().find('select option:selected').val())
-            return false;
-            let service_id = $('select#service_name').val();
+            var parentModal = $(this).parent().parent()
+            var service_id = parentModal.find('select option:selected').val())
             var service_name = $('select#service_name  option:selected').text();
+            return false;
+
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             $.ajax({
