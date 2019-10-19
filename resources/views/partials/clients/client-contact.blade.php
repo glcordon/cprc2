@@ -426,7 +426,8 @@
 
         $('#saveServices').on('click', function(e){
             e.preventDefault();
-            console.log($('#addServicesModal').find('select#service_name'))
+            console.log($('#addServicesModal').find('select#service_name option:selected').text())
+            return false;
             let service_id = $('select#service_name').val();
             var service_name = $('select#service_name  option:selected').text();
             var token = "{{ @csrf_token() }}";
