@@ -5,46 +5,11 @@
     1/1/19-1/31/19<br>
     <br>
 </div>
-<table>
-    <thead>
-        <th>Client's Name</th>
-        <th colspan="2">Contract Services</th>
-        <th colspan="2">Supplies</th>
-        <th colspan="2">Training</th>
-        <th>Other</th>
-        <th>TOTAL</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Total</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Total</td>
-        </tr>
-        @foreach($clientData as $client)
-            @foreach($client['service'] as $cs)
-        <tr>
-            <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td>{{ $cs['pivot']['authorized_price'] ?? '0.00'}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-            @endforeach
-        @endforeach
-    </tbody>
-</table>
 
-    {{--  {{ $cs['service_name'] }} 
+@foreach($clientData as $client)
+{{ $client['first'] }}, {{ $client['last'] }} <br /> 
+@foreach($client['service'] as $cs)
+    {{ $cs['service_name'] }}
     <div class="form-group">
       <label for="">$</label>
       <input type="text"
@@ -55,5 +20,6 @@
       <input type="date"
         class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
     </div>
-
-<hr> --}}
+@endforeach
+<hr>
+@endforeach
