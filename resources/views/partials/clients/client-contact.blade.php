@@ -427,7 +427,7 @@
 
         $('#saveServices').on('click', function(e){
             e.preventDefault();
-            console.log($(this).parent().parent().html())
+            console.log($(this).parent().html())
             return false;
             let service_id = $('select#service_name').val();
             var service_name = $('select#service_name  option:selected').text();
