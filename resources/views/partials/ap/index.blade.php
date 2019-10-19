@@ -30,7 +30,7 @@
             @foreach($client['service'] as $cs)
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td><{{ $cs['pivot']['authorized_price'] ?? '0.00'}}/td>
+            <td>{{ $cs['pivot']['authorized_price'] ?? '0.00'}}</td>
             <td></td>
             <td></td>
             <td></td>
