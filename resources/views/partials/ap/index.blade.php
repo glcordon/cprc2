@@ -7,6 +7,7 @@
 </div>
 
 @foreach($clientData as $client)
+@dd($client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 @foreach($client['service'] as $cs)
     {{ $cs['service_name'] }}
