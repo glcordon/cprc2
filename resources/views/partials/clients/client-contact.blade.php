@@ -94,7 +94,7 @@
                     </div>
                     <div class="card-title">
                       <h3>Services</h3>
-                    <div class="card-body flex">
+                    <div class="card-body">
                       @foreach($services as $srv)
                       <div class="card text-center" style="width:45%; margin:10px;">
                           <div class="card-header">
