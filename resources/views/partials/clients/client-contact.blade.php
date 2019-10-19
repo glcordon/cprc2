@@ -95,27 +95,28 @@
                     
             </div>
             <div class="card-footer">
-              <div class="card-title">
-                <h3>Services</h3>
-              <div class="card-body">
-                @foreach($services as $srv)
-                      <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
-                      <p>
-                          Expiration:
-                          @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
-                            Expired
-                          @else 
-                            {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
-                          @endif 
-                      
-                      @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
-                        Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
-                      @else
-  
-                      @endif</p>
-                @endforeach
-              </div>
-              </div>
+                
+            </div>
+            <div class="card-title">
+              <h3>Services</h3>
+            <div class="card-body">
+              @foreach($services as $srv)
+                    <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
+                    <p>
+                        Expiration:
+                        @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                          Expired
+                        @else 
+                          {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                        @endif 
+                    
+                    @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
+                      Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                    @else
+
+                    @endif</p>
+              @endforeach
+            </div>
             </div>
         </div>
         </div>
