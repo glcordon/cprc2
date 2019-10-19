@@ -9,15 +9,20 @@
 @foreach($clientData as $client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 @foreach($client['service'] as $cs)
-    <div class="form-group" style="padding:5px 0">
-      {{ $cs['service_name'] }}
-        <label for="">$</label>
-      <input type="text"
-        class="form-control" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
-      <label for="">Date Authorized</label>
-      <input type="date"
-        class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
-    </div>
+    <table>
+        <tr>
+            <td>{{ $cs['service_name'] }}</td>
+            <td><label for="">$</label>
+                <input type="text"
+                class="form-control" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
+            </td>
+            <td><label for="">Date Authorized</label>
+                <input type="date"
+                    class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
+            </td>
+        </tr>
+    </table>
+      
 @endforeach
 <hr>
 @endforeach
