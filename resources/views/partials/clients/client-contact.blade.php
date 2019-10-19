@@ -276,7 +276,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="addServicesModal">
           <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
             <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
               <option value="">Select A Service</option>
@@ -426,6 +426,7 @@
 
         $('#saveService').on('click', function(e){
             e.preventDefault();
+            console.log('#addServicesModal').find('select#service_name')
             let service_id = $('select#service_name').val();
             var service_name = $('select#service_name  option:selected').text();
             var token = "{{ @csrf_token() }}";
