@@ -34,3 +34,4 @@
 </table>
 <hr>
 @endforeach
+@endsection
