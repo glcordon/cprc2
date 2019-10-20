@@ -21,11 +21,12 @@
                 <input type="date"
                     class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
+            <td colspan="4"><button id="updateClient" data-id="{{ $client['id'] }}">Update</button></td>
         </tr>
     
       
 @endforeach
-<tr><td colspan="4"><button id="updateClient" data-id="{{ $client['id'] }}">Update</button></td></tr>
+<tr></tr>
 </table>
 <hr>
 @endforeach
