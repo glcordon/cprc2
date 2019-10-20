@@ -52,7 +52,7 @@ class AccountsPayableController extends Controller
     }
     public function updateService(Request $request)
     {
-        
+        return 'found';
     }
 
     /**
