@@ -37,16 +37,18 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        let client_id = $(this).attr('data-id')
-        let service_id = $(this).attr('service-id')
-        var token = "{{ @csrf_token() }}"
-        axios.post('/ap/update-service', {
-            _token:token,
-            client_id: client_id,
-            service_id: service_id,
-        })
-        .then(response =>{
-            console.log(response.data)
+        $('#updateClient').on('click', function(){
+            let client_id = $(this).attr('data-id')
+            let service_id = $(this).attr('service-id')
+            var token = "{{ @csrf_token() }}"
+            axios.post('/ap/update-service', {
+                _token:token,
+                client_id: client_id,
+                service_id: service_id,
+            })
+            .then(response =>{
+                console.log(response.data)
+            })
         })
     });
 </script>
