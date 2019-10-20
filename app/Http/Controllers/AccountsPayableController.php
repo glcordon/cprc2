@@ -50,7 +50,10 @@ class AccountsPayableController extends Controller
         return $clients;
          
     }
-
+    public function updateService(Request $request)
+    {
+        
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <div style="text-align:center">
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
@@ -21,7 +22,7 @@
                 <input type="date"
                     class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
-            <td colspan="4"><button id="updateClient" data-id="{{ $client['id'] }}">Update</button></td>
+            <td colspan="4"><button id="updateClient" data-id="{{ $cs['pivot']['id'] }}">Update</button></td>
         </tr>
     
       
