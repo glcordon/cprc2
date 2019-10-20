@@ -12,7 +12,7 @@
 
 @foreach($clientData as $client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
-<table>
+<table class="table table-striped">
 @foreach($client['service'] as $cs)
     
         <tr>
