@@ -12,18 +12,16 @@
 
 @foreach($clientData as $client)
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
-<table class="table table-striped">
+<table class="table table-sm table-striped">
 @foreach($client['service'] as $cs)
     
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>
-                <input type="text"
-                class="form-control" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
+                <input type="text" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
             </td>
             <td><label for="">Date Authorized</label>
-                <input type="date"
-                    class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
+                <input type="date" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
             <td colspan="4"><button id="updateClient" data-id="{{ $client['id']}}">Update</button></td>
         </tr>
