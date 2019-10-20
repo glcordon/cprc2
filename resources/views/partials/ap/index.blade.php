@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('content1')
+
 <div style="text-align:center">
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
@@ -11,7 +14,7 @@
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 <table>
 @foreach($client['service'] as $cs)
-    
+    @dump( $cs['pivot'])
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>
@@ -31,3 +34,4 @@
 </table>
 <hr>
 @endforeach
+@endsection
