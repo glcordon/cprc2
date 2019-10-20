@@ -14,7 +14,7 @@
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 <table>
 @foreach($client['service'] as $cs)
-    @dump( $cs['pivot'])
+    @dd( $cs['pivot'])
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>
