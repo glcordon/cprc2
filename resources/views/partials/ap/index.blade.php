@@ -14,7 +14,7 @@
 {{ $client['first'] }}, {{ $client['last'] }} <br /> 
 <table>
 @foreach($client['service'] as $cs)
-    @dd( $cs['pivot'])
+    
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>
@@ -25,7 +25,7 @@
                 <input type="date"
                     class="form-control" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
-            <td colspan="4"><button id="updateClient" data-id="{{ $cs['pivot']['id'] }}">Update</button></td>
+            <td colspan="4"><button id="updateClient" data-id="{{ $client['id']}}">Update</button></td>
         </tr>
     
       
@@ -34,4 +34,3 @@
 </table>
 <hr>
 @endforeach
-@endsection
