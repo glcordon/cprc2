@@ -42,5 +42,7 @@ Route::get('/report-generate', 'ReportController@index')->name('pdf');
 Route::post('/report-generate', 'ReportController@index')->name('pdf_post');
 Route::post('/participation-report', 'ReportController@participantReport')->name('participation_report');
 Route::get('/ap/report', 'AccountsPayableController@index');
+Route::post('/ap/get-month', 'AccountsPayableController@index');
 Route::post('/ap/update-service', 'AccountsPayableController@updateService');
+
 });
