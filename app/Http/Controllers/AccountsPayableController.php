@@ -52,8 +52,10 @@ class AccountsPayableController extends Controller
     }
     public function updateService(Request $request)
     {
-        return ClientService::find($request->pivot_id)
-        ->update([['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
+        $client_service =  ClientService::find($request->pivot_id);
+        $client_service->date_authorized = $request->date_authorized;
+        $client_service->authorized_price = $request->authorized_price;
+        $client_service->save();
         // --- couldnt get the  sync to work right so I just used the id to update the model directly -- //
         // $client = Client::find($request->client_id);
         // $services = $client->services->filter(function($data) use($request){
@@ -61,7 +63,7 @@ class AccountsPayableController extends Controller
         // });
         // return $services['pivot'];
         // $client->services()->attach([$request->service_id =>['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
-        return $client->services;
+        return $client_service;
     }
 
     /**
