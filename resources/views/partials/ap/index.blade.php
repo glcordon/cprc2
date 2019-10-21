@@ -31,7 +31,7 @@
     <br>
 </div>
 <div class="col-12 text-right">
-    <button class="btn-raised mr-0">Export</button>
+    <button class="btn btn-sm btn-dark mr-0">Export</button>
 </div>
 
 @foreach($clientData as $client)
