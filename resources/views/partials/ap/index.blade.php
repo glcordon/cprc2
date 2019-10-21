@@ -37,7 +37,7 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $('#updateClient').on('click', function(){
+        $(document).on('click','#updateClient', function(){
             let client_id = $(this).attr('data-id')
             let service_id = $(this).attr('service-id')
             var authorized_price = $(this).parent().parent().find('#authorized_price').val()
