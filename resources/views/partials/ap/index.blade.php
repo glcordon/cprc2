@@ -80,7 +80,7 @@
         })
         $(document).on('click', '#deleteThis', function(){
             let id = $(this).attr('data-id')
-            axios.get('/ap/'+id+'delete/')
+            axios.get('/ap/'+id+'/delete/')
             .then(response =>{
                 $(this).parent().parent().fadeOut()
             })
