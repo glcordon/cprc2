@@ -25,7 +25,6 @@ class AccountsPayableController extends Controller
            $thisDate = Carbon::parse($request->searchMonth); 
         }
         
-        
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
             $query->whereMonth('client_service.date_authorized','=', $thisDate->month);
         })->with('services')->get();
