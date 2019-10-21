@@ -79,6 +79,7 @@
             })
             .then(response =>{
                 console.log(response.data)
+                $(this).removeClass('btn-primary').addClass(btn-success)
             })
         })
         $(document).on('click', '#deleteThis', function(){
