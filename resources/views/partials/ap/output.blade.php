@@ -5,7 +5,7 @@
     1/1/19-1/31/19<br>
     <br>
 </div>
-<table>
+<table style="margin:0 auto">
     <thead>
         <th>Client's Name</th>
         <th colspan="2">Contract Services</th>
