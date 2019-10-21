@@ -56,7 +56,7 @@ class AccountsPayableController extends Controller
         $services = $client->services->filter(function($data) use($request){
             return $data->pivot->service_id == $request->service_id;
         });
-        return $services;
+        return $services->pivot;
         $client->services()->attach([$request->service_id =>['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
         return $client->services;
     }
