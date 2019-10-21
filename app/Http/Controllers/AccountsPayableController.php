@@ -53,7 +53,7 @@ class AccountsPayableController extends Controller
     public function updateService(Request $request)
     {
         $client = Client::find($request->client_id);
-        $client->services()->sync([$request->service_id =>['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
+        $client->services()->attach([$request->service_id =>['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
         return $client->services;
     }
 
