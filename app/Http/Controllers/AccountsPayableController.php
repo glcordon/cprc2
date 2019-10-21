@@ -19,14 +19,14 @@ class AccountsPayableController extends Controller
      */
     public function index(Request $request)
     {
-        $thisDate = Carbon::now();
+        $thisDate = Carbon::now()->month;
         if($request->search_month)
         {
-           $thisDate = Carbon::parse($request->searchMonth); 
+           $thisDate = $request->searchMonth; 
         }
         
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
-            $query->whereMonth('client_service.date_authorized','=', $thisDate->month);
+            $query->whereMonth('client_service.date_authorized','=', $thisDate);
         })->with('services')->get();
         $clientData = $clients->map(function($x){ 
             $serviceData = collect($x->services)->map(function($y){

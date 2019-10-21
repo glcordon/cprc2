@@ -6,7 +6,7 @@
 <br>
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
-        <select name="search_month" id="Search Month">
+        <select name="searchMonth" id="Search Month">
             <option value="">Select Month</option>
             <option value="1">Jan</option>
             <option value="2">Feb</option>
