@@ -52,7 +52,7 @@ class AccountsPayableController extends Controller
     }
     public function updateService(Request $request)
     {
-        return ClientService::where(['service_id'=>$request->service_id, 'client_id'=>$request->client_id])->first()
+        return ClientService::find($request->pivot_id)
         ->update([['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price]]);
         // --- couldnt get the  sync to work right so I just used the id to update the model directly -- //
         // $client = Client::find($request->client_id);
