@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Client;
+use App\ClientService;
 use App\Service;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
@@ -52,6 +53,7 @@ class AccountsPayableController extends Controller
     }
     public function updateService(Request $request)
     {
+        return ClientService::where(['date_authorized'=>$request->date_authorized, 'authorized_price'=>$request->authorized_price])->first();
         $client = Client::find($request->client_id);
         $services = $client->services->filter(function($data) use($request){
             return $data->pivot->service_id == $request->service_id;
