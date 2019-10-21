@@ -6,6 +6,7 @@
 <br>
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
+        @csrf
         <select name="searchMonth" id="Search Month">
             <option value="">Select Month</option>
             <option value="1">Jan</option>
