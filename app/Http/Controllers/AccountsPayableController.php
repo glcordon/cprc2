@@ -99,6 +99,24 @@ class AccountsPayableController extends Controller
     public function show($id)
     {
         //
+        $clients = Client::whereHas('services', function ($query) use($id) {
+            $query->whereMonth('client_service.date_authorized','=', $id);
+        })->with('services')->get();
+        $clientData = $clients->map(function($x){ 
+            $serviceData = collect($x->services)->map(function($y){
+                $pd = collect($y->pivot)->toArray();
+                $pivotData = collect($pd)->map(function($z){
+                        return $z;
+                });
+               return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
+            });
+           return [
+               'id'=>$x->id,
+               'first'=>$x->first_name, 
+               'last'=>$x->last_name, 
+               'service'=>$serviceData];
+        });
+        return view('partials.ap.output', compact('clientData'));
     }
 
     /**
