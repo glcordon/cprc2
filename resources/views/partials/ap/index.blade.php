@@ -46,7 +46,7 @@
             </td>
             <td colspan="4">
                 <button id="updateClient" service-id="{{ $cs['pivot']['service_id'] }}" data-id="{{ $cs['pivot']['id']}}">Update</button>
-                <button data-id="{{ $cs['pivot']['id']}}" id="deleteThis" class="danger">X</button>
+                <button data-id="{{ $cs['pivot']['id']}}" id="deleteThis" class="btn btn-danger">X</button>
             </td>
         </tr>
     
