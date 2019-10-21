@@ -31,7 +31,7 @@
     <br>
 </div>
 <div class="col-12 text-right">
-    <button class="btn btn-sm btn-dark mr-0" data-id="{{ $thisDate }}">Export</button>
+    <a href="/ap/{{ $thisDate }}/export" class="btn btn-sm btn-dark mr-0">Export</a>
 </div>
 
 @foreach($clientData as $client)
