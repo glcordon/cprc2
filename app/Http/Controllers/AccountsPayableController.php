@@ -133,5 +133,7 @@ class AccountsPayableController extends Controller
     public function destroy($id)
     {
         //
+        ClientService::find($id)->delete();
+        return 'success';
     }
 }

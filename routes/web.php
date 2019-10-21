@@ -44,5 +44,5 @@ Route::post('/participation-report', 'ReportController@participantReport')->name
 Route::get('/ap/report', 'AccountsPayableController@index');
 Route::post('/ap/get-month', 'AccountsPayableController@index');
 Route::post('/ap/update-service', 'AccountsPayableController@updateService');
-
+Route::post('/ap/{id}/delete/', 'AccountsPayableController@destroy');
 });
