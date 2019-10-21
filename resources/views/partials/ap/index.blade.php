@@ -30,7 +30,7 @@
     {{ Carbon\Carbon::create()->month($thisDate)->startOfMonth()->format('m/d/Y') }} - {{ Carbon\Carbon::create()->month($thisDate)->endOfMonth()->format('m/d/Y')  }}<br>
     <br>
 </div>
-
+<button class="btn-raised">Export</button>
 @foreach($clientData as $client)
 <h4>{{ $client['first'] }}, {{ $client['last'] }}</h4>
 <table class="table table-sm table-striped">
