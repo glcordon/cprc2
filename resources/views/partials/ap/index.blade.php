@@ -32,7 +32,7 @@
 </div>
 
 @foreach($clientData as $client)
-{{ $client['first'] }}, {{ $client['last'] }} <br /> 
+<h4>{{ $client['first'] }}, {{ $client['last'] }}</h4>
 <table class="table table-sm table-striped">
 @foreach($client['service'] as $cs)
     
