@@ -44,7 +44,7 @@
             <td><label for="">Date Authorized</label>
                 <input type="date" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
-            <td colspan="4"><button id="updateClient" service-id="{{ $cs['pivot']['service_id'] }}" data-id="{{ $cs['pivot']['id']}}">Update</button><span class="fas fa-remove"></span></td>
+            <td colspan="4"><button id="updateClient" service-id="{{ $cs['pivot']['service_id'] }}" data-id="{{ $cs['pivot']['id']}}">Update</button><<i class="fas fa-minus-square"></i></td>
         </tr>
     
       
