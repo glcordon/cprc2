@@ -7,12 +7,12 @@
 </div>
 <table style="margin:0 auto; width:75%">
     <thead>
-        <th>Client's Name</th>
-        <th colspan="2">Contract Services</th>
-        <th colspan="2">Supplies</th>
-        <th colspan="2">Training</th>
-        <th>Other</th>
-        <th>TOTAL</th>
+        <th style="border:1px solid black; padding:10px;">Client's Name</th>
+        <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services</th>
+        <th style="border:1px solid black; padding:10px;" colspan="2">Supplies</th>
+        <th style="border:1px solid black; padding:10px;" colspan="2">Training</th>
+        <th style="border:1px solid black; padding:10px;">Other</th>
+        <th style="border:1px solid black; padding:10px;">TOTAL</th>
     </thead>
     <tbody>
         <tr>
