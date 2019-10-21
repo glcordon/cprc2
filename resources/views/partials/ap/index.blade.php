@@ -40,11 +40,15 @@
         $('#updateClient').on('click', function(){
             let client_id = $(this).attr('data-id')
             let service_id = $(this).attr('service-id')
+            var authorized_price = $(this).parent().parent().find('#authorized_price').val()
+            var date_authorized = $(this).parent().parent().find('#date_authorized').val()
             var token = "{{ @csrf_token() }}"
             axios.post('/ap/update-service', {
                 _token:token,
                 client_id: client_id,
                 service_id: service_id,
+                authorized_price:authorized_price,
+                date_authorized:date_authorized,
             })
             .then(response =>{
                 console.log(response.data)
