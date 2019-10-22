@@ -31,7 +31,7 @@
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
-                @if($client['service']['contract'])
+                @if(count($client['service']['contract']))
                 <table style="width:100%;">
                     @foreach($client['service']['contract'] as $contract)
                     <tr>
@@ -43,7 +43,7 @@
                 @endif
             </td>
             <td colspan="2"> 
-                @if($client['service']['supplies'])
+                @if(count($client['service']['supplies']))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
@@ -55,7 +55,7 @@
                 @endif
             </td>
             <td colspan="2">
-                @if($client['service']['training'])
+                @if(count($client['service']['training']))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
@@ -67,7 +67,7 @@
                 @endif
             </td>
             <td>
-                @if($client['service']['other'])
+                @if(count($client['service']['other']))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
