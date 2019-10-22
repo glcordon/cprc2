@@ -5,7 +5,7 @@
     1/1/19-1/31/19<br>
     <br>
 </div>
-${{ $grandTotal ?? '0.00' }}
+
 <table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
         <th style="border:1px solid black; padding:10px;">Client's Name</th>
@@ -79,6 +79,9 @@ ${{ $grandTotal ?? '0.00' }}
             
         @endforeach
     </tbody>
+    <tfoot>
+        <tr colspan="10" style="text-align:right">${{ $grandTotal ?? '0.00' }}</tr>
+    </tfoot>
 </table>
 
     {{--  {{ $cs['service_name'] }} 
