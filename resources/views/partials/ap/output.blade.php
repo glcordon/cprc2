@@ -43,7 +43,7 @@
                     </table>
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" colspan="2"> 
+            <td style="border-bottom:1px solid #333" colspan="2" valign="top"> 
                 @if(array_key_exists('service', $client['service']->toArray()))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
@@ -55,7 +55,7 @@
                 </table> 
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" colspan="2">
+            <td style="border-bottom:1px solid #333" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
@@ -67,21 +67,21 @@
                 </table>
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333">
+            <td style="border-bottom:1px solid #333" valign="top">
                 @if(array_key_exists('other', $client['service']->toArray()))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333">${{ $client['total'] }}</td>
+            <td style="border-bottom:1px solid #333" valign="top">${{ $client['total'] }}</td>
         </tr>
             
         @endforeach
     </tbody>
     <tr>
     <tfoot>
-        <td colspan="9" style="text-align:right">${{ $grandTotal ?? '0.00' }}</td></tr>
+        <td colspan="9" valign="top" style="text-align:right">${{ $grandTotal ?? '0.00' }}</td></tr>
     </tfoot>
 </table>
 
