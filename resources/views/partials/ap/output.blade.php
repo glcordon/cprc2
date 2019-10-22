@@ -79,8 +79,9 @@
             
         @endforeach
     </tbody>
+    <tr colspan="10" style="text-align:right">${{ $grandTotal ?? '0.00' }}</tr>
     <tfoot>
-        <tr colspan="10" style="text-align:right">${{ $grandTotal ?? '0.00' }}</tr>
+        
     </tfoot>
 </table>
 
