@@ -5,6 +5,7 @@
     1/1/19-1/31/19<br>
     <br>
 </div>
+${{ $grandTotal ?? '0.00' }}
 <table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
         <th style="border:1px solid black; padding:10px;">Client's Name</th>
@@ -73,7 +74,7 @@
                     @endforeach
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333">{{ $client['total'] }}</td>
+            <td style="border-bottom:1px solid #333">${{ $client['total'] }}</td>
         </tr>
             
         @endforeach
