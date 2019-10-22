@@ -67,11 +67,11 @@
                 @endif
             </td>
             <td>
-                @if(array_key_exists('other',$client['service']['other']))
+                {{--  @if(array_key_exists('other', $client['service']['other']))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
-                @endif
+                @endif  --}}
             </td>
             <td></td>
         </tr>
