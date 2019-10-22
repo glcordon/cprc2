@@ -34,7 +34,6 @@
                 <table>
                     @foreach($client['service']['contract'] as $contract)
                     <tr>
-                        @dump($contract)
                         <td>${{ $contract['pivot']['authorized_price'] }}</td>
                         <td>${{ $client['short_code'] ?? ''}}</td>
                     </tr> 
