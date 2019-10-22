@@ -31,7 +31,7 @@
            
         <tr>
             <td style="border-bottom:1px solid #333">{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td style="border-bottom:1px solid #333" colspan="2">
+            <td style="border-bottom:1px solid #333" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
