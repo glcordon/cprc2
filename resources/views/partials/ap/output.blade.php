@@ -43,7 +43,7 @@
                 @endif
             </td>
             <td colspan="2"> 
-                @if(count($client['service']['services'])>=1)
+                @if(count($client['service']['service'])>=1)
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
