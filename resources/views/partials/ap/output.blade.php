@@ -16,7 +16,7 @@
         <th style="border:1px solid black; padding:10px;">TOTAL</th>
     </thead>
     <tbody>
-        <tr>
+        <tr style="padding:5px 0">
             <td>Total</td>
             <td>$Amount</td>
             <td>Code</td>
