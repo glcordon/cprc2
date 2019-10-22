@@ -36,7 +36,7 @@
                     <tr>
                         @dump($contract)
                         <td>${{ $contract['pivot']['authorized_price'] }}</td>
-                        <td>${{ $client['service']['short_code'] ?? ''}}</td>
+                        <td>${{ $client['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                     
