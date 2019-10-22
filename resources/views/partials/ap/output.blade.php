@@ -33,11 +33,11 @@
             <td style="border-bottom:1px solid #999">{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
-                    <table cellspacing="0" style="width:100%;">
+                    <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
-                            <td width="70%" style="border:1px solid #999">${{ $contract['pivot']['authorized_price'] }}</td>
-                            <td style="border:1px solid #999">{{ $contract['short_code'] ?? ''}}</td>
+                            <td width="70%">${{ $contract['pivot']['authorized_price'] }}</td>
+                            <td>{{ $contract['short_code'] ?? ''}}</td>
                         </tr> 
                         @endforeach
                     </table>
@@ -45,11 +45,11 @@
             </td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top"> 
                 @if(array_key_exists('service', $client['service']->toArray()))
-                <table cellspacing="0" style="width:100%;">
+                <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
-                        <td style="border:1px solid #999" width="70%">${{ $supplies['pivot']['authorized_price'] }}</td>
-                        <td style="border:1px solid #999">{{ $supplies['short_code'] ?? ''}}</td>
+                        <td width="70%">${{ $supplies['pivot']['authorized_price'] }}</td>
+                        <td>{{ $supplies['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                 </table> 
@@ -57,17 +57,17 @@
             </td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
-                <table cellspacing="0" style="width:100%;"> 
+                <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
-                        <td style="border:1px solid #999" width="70%">${{ $training['pivot']['authorized_price'] }}</td>
-                        <td style="border:1px solid #999">{{ $training['short_code'] ?? ''}}</td>
+                        <td width="70%">${{ $training['pivot']['authorized_price'] }}</td>
+                        <td>{{ $training['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                 </table>
                 @endif
             </td>
-            <td style="border:1px solid #999" valign="top">
+            <td style="border-bottom:1px solid #999" valign="top">
                 @if(array_key_exists('other', $client['service']->toArray()))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
