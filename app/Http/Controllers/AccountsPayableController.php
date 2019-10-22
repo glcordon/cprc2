@@ -111,7 +111,7 @@ class AccountsPayableController extends Controller
                return['service_name' => $y->service_name, 'service_type'=>$y->service_type, 'short_code'=>$y->short_code, 'pivot' => $pivotData]; 
             });
             $total = $serviceData->map(function($sum){
-                return $sum->pivot->authorized_amount;
+                return $sum['pivot']['authorized_amount'];
             });
            return [
                'id'=>$x->id,
