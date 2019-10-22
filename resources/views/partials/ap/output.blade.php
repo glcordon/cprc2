@@ -32,7 +32,7 @@
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
                 @dump($client)
-                @if(array_key_exists('contract', $client['service']))
+                @if( $client['service']->contains('contract'))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
