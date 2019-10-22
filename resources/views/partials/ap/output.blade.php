@@ -28,7 +28,7 @@
         </tr>
         @foreach($clientData as $client)
            
-        <tr>
+        <tr style="border-bottom:1px solid black">
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
                 @if(array_key_exists('contract', $client['service']->toArray()))
