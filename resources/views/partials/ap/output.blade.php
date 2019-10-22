@@ -41,12 +41,33 @@
                     
                 </table> 
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="2"> 
+                <table style="width:100%;">
+                    @foreach($client['service']['supplies'] as $supplies)
+                    <tr>
+                        <td>${{ $supplies['pivot']['authorized_price'] }}</td>
+                        <td>{{ $supplies['short_code'] ?? ''}}</td>
+                    </tr> 
+                    @endforeach
+                    
+                </table> 
+            </td>
+            <td colspan="2"> 
+                <table style="width:100%;">
+                    @foreach($client['service']['training'] as $training)
+                    <tr>
+                        <td>${{ $training['pivot']['authorized_price'] }}</td>
+                        <td>{{ $training['short_code'] ?? ''}}</td>
+                    </tr> 
+                    @endforeach
+                    
+                </table> 
+            </td>
+            <td>
+                    @foreach($client['service']['other'] as $other)
+                    ${{ $other['pivot']['authorized_price'] }}
+                    @endforeach
+            </td>
             <td></td>
         </tr>
             
