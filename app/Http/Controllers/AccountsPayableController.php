@@ -109,7 +109,7 @@ class AccountsPayableController extends Controller
                         return $z;
                 });
                return['service_name' => $y->service_name, 'short_code'=>$y->short_code, 'pivot' => $pivotData]; 
-            });
+            })->groupBy('service_type');
            return [
                'id'=>$x->id,
                'first'=>$x->first_name, 
