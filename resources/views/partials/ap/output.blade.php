@@ -30,8 +30,8 @@
         @foreach($clientData as $client)
            
         <tr>
-            <td style="border-bottom:1px solid #333">{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td style="border-bottom:1px solid #333" colspan="2" valign="top">
+            <td style="border-bottom:1px solid #999">{{ $client['last'] }}, {{ $client['first'] }}</td>
+            <td style="border-bottom:1px solid #999" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
@@ -43,7 +43,7 @@
                     </table>
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" colspan="2" valign="top"> 
+            <td style="border-bottom:1px solid #999" colspan="2" valign="top"> 
                 @if(array_key_exists('service', $client['service']->toArray()))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
@@ -55,7 +55,7 @@
                 </table> 
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" colspan="2" valign="top">
+            <td style="border-bottom:1px solid #999" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
@@ -67,14 +67,14 @@
                 </table>
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" valign="top">
+            <td style="border-bottom:1px solid #999" valign="top">
                 @if(array_key_exists('other', $client['service']->toArray()))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333" valign="top">${{ $client['total'] }}</td>
+            <td style="border-bottom:1px solid #999" valign="top">${{ $client['total'] }}</td>
         </tr>
             
         @endforeach
