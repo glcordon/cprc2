@@ -30,10 +30,16 @@
            
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td>  
-                @foreach($client['service']['contract'] as $contract)
-                 ${{ $contract['pivot']['authorized_price'] }}
-                @endforeach
+            <td colspan="2"> 
+                <table>
+                    @foreach($client['service']['contract'] as $contract)
+                    <tr>
+                        <td>${{ $contract['pivot']['authorized_price'] }}</td>
+                        <td>${{ $client['service']['short_code'] }}</td>
+                    </tr> 
+                    @endforeach
+                    
+                </table> 
             </td>
             <td></td>
             <td></td>
