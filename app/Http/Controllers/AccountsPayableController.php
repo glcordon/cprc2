@@ -116,6 +116,7 @@ class AccountsPayableController extends Controller
                'last'=>$x->last_name, 
                'service'=>$serviceData];
         });
+        dd($clientData);
         return view('partials.ap.output', compact('clientData'));
     }
 
