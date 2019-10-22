@@ -5,7 +5,7 @@
     1/1/19-1/31/19<br>
     <br>
 </div>
-<table style="margin:0 auto; width:75%">
+<table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
         <th style="border:1px solid black; padding:10px;">Client's Name</th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services</th>
@@ -28,8 +28,8 @@
         </tr>
         @foreach($clientData as $client)
            
-        <tr style="border-bottom:1px solid black">
-            <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
+        <tr>
+            <td style="border-bottom:1px solid black">{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
