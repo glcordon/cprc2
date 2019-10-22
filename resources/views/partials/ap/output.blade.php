@@ -31,7 +31,7 @@
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2"> 
-                <table>
+                <table style="width:100%;">
                     @foreach($client['service']['contract'] as $contract)
                     <tr>
                         <td>${{ $contract['pivot']['authorized_price'] }}</td>
