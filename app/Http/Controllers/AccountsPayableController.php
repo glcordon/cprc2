@@ -112,7 +112,7 @@ class AccountsPayableController extends Controller
             });
             $total = $serviceData->map(function($sum){
                 return $sum['pivot']['authorized_price'];
-            });
+            })->sum();
            return [
                'id'=>$x->id,
                'first'=>$x->first_name, 
