@@ -73,7 +73,7 @@
                     @endforeach
                 @endif
             </td>
-            <td style="border-bottom:1px solid #333"></td>
+            <td style="border-bottom:1px solid #333">{{ $client['total'] }}</td>
         </tr>
             
         @endforeach
