@@ -113,16 +113,22 @@ class AccountsPayableController extends Controller
             $total = $serviceData->map(function($sum){
                 return $sum['pivot']['authorized_price'];
             })->sum();
+            $serviceTotals = $serviceData->groupBy('service_type')->map(function($key, $data){
+                $sum = $data->authorized_price;
+                return [$key => $sum];
+            }); 
            return [
                'id'=>$x->id,
                'first'=>$x->first_name, 
                'last'=>$x->last_name, 
                 'total' => $total,
+                'service_totals' => $serviceTotals,
                 'service'=>$serviceData->groupBy('service_type')];
         });
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
         })->sum();
+        dd($clientData);
         return view('partials.ap.output', compact('clientData', 'grandTotal'));
     }
 
