@@ -43,7 +43,7 @@
                 @endif
             </td>
             <td colspan="2"> 
-                @if(array_key_exista('supplies', $client['service']))
+                @if(array_key_exists('supplies', $client['service']))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
