@@ -31,7 +31,7 @@
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
-                @if(count($client['service']['contract'])>=1)
+                @if(array_key_exists('contract', $client['service']))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
@@ -55,7 +55,7 @@
                 @endif
             </td>
             <td colspan="2">
-                @if(count($client['service']['training'])>=1)
+                @if(array_key_exists('training',$client['service']))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
@@ -67,7 +67,7 @@
                 @endif
             </td>
             <td>
-                @if(count($client['service']['other'])>=1)
+                @if(array_key_exists('other', $client['service']))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
