@@ -31,6 +31,7 @@
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
+                @dump($client)
                 @if(array_key_exists('contract', $client['service']))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
