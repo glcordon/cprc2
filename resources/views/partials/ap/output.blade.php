@@ -31,12 +31,10 @@
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
-                @dump($client)
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
-                            @dump($contract)
                             <td>${{ $contract['pivot']['authorized_price'] }}</td>
                             <td>{{ $contract['short_code'] ?? ''}}</td>
                         </tr> 
@@ -45,7 +43,7 @@
                 @endif
             </td>
             <td colspan="2"> 
-                @if(array_key_exists('service', $client['service']))
+                @if(array_key_exists('service', $client['service']->toArray()))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
@@ -57,7 +55,7 @@
                 @endif
             </td>
             <td colspan="2">
-                @if(array_key_exists('training',$client['service']))
+                @if(array_key_exists('training',$client['service']->toArray()))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
@@ -69,7 +67,7 @@
                 @endif
             </td>
             <td>
-                @if(array_key_exists('other', $client['service']))
+                @if(array_key_exists('other', $client['service']->toArray()))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
