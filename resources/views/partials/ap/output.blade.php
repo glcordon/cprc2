@@ -29,7 +29,7 @@
         @foreach($clientData as $client)
             @foreach($client['service'] as $cs)
         <tr>
-            @dump($cs)
+            @dump($client)
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td> 
 
