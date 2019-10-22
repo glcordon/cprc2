@@ -32,18 +32,18 @@
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td colspan="2">
                 @if(count($client['service']['contract']))
-                <table style="width:100%;">
-                    @foreach($client['service']['contract'] as $contract)
-                    <tr>
-                        <td>${{ $contract['pivot']['authorized_price'] }}</td>
-                        <td>{{ $contract['short_code'] ?? ''}}</td>
-                    </tr> 
-                    @endforeach
-                </table>
+                    <table style="width:100%;">
+                        @foreach($client['service']['contract'] as $contract)
+                        <tr>
+                            <td>${{ $contract['pivot']['authorized_price'] }}</td>
+                            <td>{{ $contract['short_code'] ?? ''}}</td>
+                        </tr> 
+                        @endforeach
+                    </table>
                 @endif
             </td>
             <td colspan="2"> 
-                @if(count($client['service']['supplies']))
+                @if(array_key_exista('supplies', $client['service']))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
