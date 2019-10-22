@@ -27,14 +27,15 @@
             <td>Total</td>
         </tr>
         @foreach($clientData as $client)
-            @foreach($client['service'] as $cs)
+           
         <tr>
-            @dump($client)
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td> 
-
+            <td>  
+                @foreach($client['service']['contract'] as $contract)
+                 @dump($contract)
+                @endforeach
             </td>
-            <td> {{ $cs['short_code'] ?? ''}}</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -42,7 +43,7 @@
             <td></td>
             <td></td>
         </tr>
-            @endforeach
+            
         @endforeach
     </tbody>
 </table>
