@@ -30,7 +30,8 @@
            
         <tr>
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td colspan="2"> 
+            <td colspan="2">
+                @if($client['service']['contract'])
                 <table style="width:100%;">
                     @foreach($client['service']['contract'] as $contract)
                     <tr>
@@ -38,10 +39,11 @@
                         <td>{{ $contract['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
-                    
-                </table> 
+                </table>
+                @endif
             </td>
             <td colspan="2"> 
+                @if($client['service']['supplies'])
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
@@ -49,24 +51,27 @@
                         <td>{{ $supplies['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
-                    
                 </table> 
+                @endif
             </td>
-            <td colspan="2"> 
-                <table style="width:100%;">
+            <td colspan="2">
+                @if($client['service']['training'])
+                <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
                         <td>${{ $training['pivot']['authorized_price'] }}</td>
                         <td>{{ $training['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
-                    
-                </table> 
+                </table>
+                @endif
             </td>
             <td>
+                @if($client['service']['other'])
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
+                @endif
             </td>
             <td></td>
         </tr>
