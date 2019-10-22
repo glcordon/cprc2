@@ -32,7 +32,7 @@
             <td>{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td>  
                 @foreach($client['service']['contract'] as $contract)
-                 @dump($contract)
+                 ${{ $contract['pivot']['authorized_price'] }}
                 @endforeach
             </td>
             <td></td>
