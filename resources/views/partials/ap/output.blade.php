@@ -16,16 +16,16 @@
         <th style="border:1px solid black; padding:10px;">TOTAL</th>
     </thead>
     <tbody>
-        <tr style="padding:5px 0">
-            <td>Total</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Code</td>
-            <td>$Amount</td>
-            <td>Total</td>
+        <tr>
+            <td style="padding:5px 0">Total</td>
+            <td style="padding:5px 0">$Amount</td>
+            <td style="padding:5px 0">Code</td>
+            <td style="padding:5px 0">$Amount</td>
+            <td style="padding:5px 0">Code</td>
+            <td style="padding:5px 0">$Amount</td>
+            <td style="padding:5px 0">Code</td>
+            <td style="padding:5px 0">$Amount</td>
+            <td style="padding:5px 0">Total</td>
         </tr>
         @foreach($clientData as $client)
            
