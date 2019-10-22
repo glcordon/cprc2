@@ -43,7 +43,7 @@
                 @endif
             </td>
             <td colspan="2"> 
-                {{--  @if(count($client['service']['service'])>=1)
+                @if(array_key_exists('service', $client['service']))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
@@ -52,7 +52,7 @@
                     </tr> 
                     @endforeach
                 </table> 
-                @endif  --}}
+                @endif
             </td>
             <td colspan="2">
                 @if(count($client['service']['training'])>=1)
