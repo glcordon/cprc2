@@ -125,7 +125,7 @@ class AccountsPayableController extends Controller
                 'service_totals' => $serviceTotals,
                 'service'=>$serviceData->groupBy('service_type')];
         });
-        dd($clientData->pivot);
+        dd($clientData);
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
         })->sum();
