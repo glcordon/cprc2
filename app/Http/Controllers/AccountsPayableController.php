@@ -17,7 +17,7 @@ class AccountsPayableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request=null)
+    public function index(Request $request)
     {
         dump($request);
         $thisDate = Carbon::now()->month;
