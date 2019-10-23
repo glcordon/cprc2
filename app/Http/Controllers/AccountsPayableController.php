@@ -121,19 +121,19 @@ class AccountsPayableController extends Controller
                 'total' => $total,
                 'service'=>$serviceData->groupBy('service_type')];
         });
-        dd($clientData->map(function($x){
-            return $x['service'];
-        })->map(function($x){
-            return $x->flatten(1);
-        })
-        ->map(function($x)
-        {
-            return $x->groupBy('service_type');
-        })
-        );
-        $grandTotal = $clientData->map(function($total){
-            return $total['total'];
-        })->sum();
+        // dd($clientData->map(function($x){
+        //     return $x['service'];
+        // })->map(function($x){
+        //     return $x->flatten(1);
+        // })
+        // ->map(function($x)
+        // {
+        //     return $x->groupBy('service_type');
+        // })
+        // );
+        // $grandTotal = $clientData->map(function($total){
+        //     return $total['total'];
+        // })->sum();
         return view('partials.ap.output', compact('clientData', 'grandTotal'));
     }
 
