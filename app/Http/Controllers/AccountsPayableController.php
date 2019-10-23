@@ -131,9 +131,9 @@ class AccountsPayableController extends Controller
         //     return $x->groupBy('service_type');
         // })
         // );
-        // $grandTotal = $clientData->map(function($total){
-        //     return $total['total'];
-        // })->sum();
+        $grandTotal = $clientData->map(function($total){
+            return $total['total'];
+        })->sum();
         return view('partials.ap.output', compact('clientData', 'grandTotal'));
     }
 
