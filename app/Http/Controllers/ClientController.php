@@ -11,6 +11,7 @@ use App\Services;
 use Illuminate\Support\Facades\Auth;
 use App\ClientService;
 use App\Imports\ClientImport;
+use App\Service;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ClientController extends Controller
