@@ -104,7 +104,7 @@
               <div class="service_div">
 
                 @foreach($services as $srv)
-                @dd($srv)
+                @dd($srv->pivot)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
                      <hr />
                       {{--  <p>
