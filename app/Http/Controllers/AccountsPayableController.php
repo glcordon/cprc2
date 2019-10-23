@@ -24,7 +24,7 @@ class AccountsPayableController extends Controller
         {
            $thisDate = $request->searchMonth; 
         }
-        
+
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
             $query->whereMonth('date_authorized','=', $thisDate);
         })->with('services')->get();
@@ -42,7 +42,6 @@ class AccountsPayableController extends Controller
                'last'=>$x->last_name, 
                'service'=>$serviceData];
         });
-        dd($clientData);
         return view('partials.ap.index', compact('clientData','thisDate'));
     }
     public function participantReport(Request $request)
