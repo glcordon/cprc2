@@ -24,6 +24,7 @@ class AccountsPayableController extends Controller
         {
            $thisDate = $request->searchMonth; 
         }
+        
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
             $query->whereMonth('date_authorized','=', $thisDate);
         })->with('services')->get();
