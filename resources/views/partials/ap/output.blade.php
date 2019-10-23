@@ -44,7 +44,7 @@
                 @endif
             </td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top"> 
-                @if(array_key_exists('service', $client['service']->toArray()))
+                @if(array_key_exists('supplies', $client['service']->toArray()))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
