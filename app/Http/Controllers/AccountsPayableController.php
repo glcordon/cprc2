@@ -114,7 +114,7 @@ class AccountsPayableController extends Controller
                 return $sum['pivot']['authorized_price'];
             })->sum();
             $serviceTotals = $serviceData->groupBy('service_type')->map(function($key, $data){
-                $sum = $key['data']['pivot'];
+                $sum = $key[$data]['pivot'];
                 return [$sum];
             }); 
            return [
