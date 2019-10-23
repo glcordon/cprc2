@@ -115,7 +115,7 @@ class AccountsPayableController extends Controller
             })->sum();
             $serviceTotals = $serviceData->groupBy('service_type')->map(function($key, $data){
                 $sum = $data;
-                return $key;
+                return $data;
             }); 
            return [
                'id'=>$x->id,
