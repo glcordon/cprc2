@@ -458,12 +458,20 @@
                 <p>${data['date_authorized']}</p>
                 `)
                 console.log(data);
+                clearForm()
                 //$('select#service_name  option:selected').hide();
                 //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
                 //$('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
               });
             
         });
+        function clearForm()
+        {
+          $('select#service_id').val('');
+          $('input#service_date').val('')
+          $('input#amount_authorized').val('0.00')
+          $('textarea#service_notes').val('')
+        }
         $('#saveJobData').on('click', function(e){
             e.preventDefault();
             var job_name = $('#job_name').val();
