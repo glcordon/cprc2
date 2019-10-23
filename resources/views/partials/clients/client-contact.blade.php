@@ -104,6 +104,7 @@
               <div class="service_div">
 
                 @foreach($services as $srv)
+                @dd($srv)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
                      <hr />
                       {{--  <p>
@@ -454,7 +455,7 @@
               .done(function(data){
                 $('.service_div').prepend(`
                 <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
-                <hr />
+                <p>${data['date_authorized']}</p>
                 `)
                 console.log(data);
                 //$('select#service_name  option:selected').hide();
