@@ -31,7 +31,7 @@ class AccountsPayableController extends Controller
             $serviceData = collect($x->services)->map(function($y){
                 $pd = collect($y->pivot)->toArray();
                 $pivotData = collect($pd)->map(function($z){
-                        return $z;
+                        return $z->toArray();
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
