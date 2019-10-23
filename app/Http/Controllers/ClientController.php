@@ -239,7 +239,9 @@ class ClientController extends Controller
             'date_authorized' => $request->date_authorized,
             'notes' => $request->notes,
                ]);
-           return $client->services;
+           return [
+               'service_name' => Service::find($request->service_id)->service_name,
+           ];
         }
     }
 
