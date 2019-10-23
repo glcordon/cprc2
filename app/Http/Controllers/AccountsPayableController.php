@@ -126,7 +126,7 @@ class AccountsPayableController extends Controller
         })->map(function($x){
             return $x->flatten(1);
         })
-        ->map(function($x)
+        ->flatMap(function($x)
         {
             return $x->groupBy('service_type');
         })
