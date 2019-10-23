@@ -128,7 +128,7 @@ class AccountsPayableController extends Controller
         })
         ->map(function($x)
         {
-            return $x;
+            return $x->all();
         })
         );
         $grandTotal = $clientData->map(function($total){
