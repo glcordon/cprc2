@@ -123,13 +123,13 @@ class AccountsPayableController extends Controller
         });
         dd($clientData->map(function($x){
             return $x['service'];
-        })->map(function($x){
-            return $x->flatten(1);
+        })->flatMap(function($x){
+            return $x;
         })
-        ->flatMap(function($x)
-        {
-            return $x->groupBy('service_type');
-        })
+        // ->map(function($x)
+        // {
+        //     return $x->groupBy('service_type');
+        // })
         );
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
