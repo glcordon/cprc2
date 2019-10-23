@@ -22,7 +22,7 @@
             <option value="11">Nov</option>
             <option value="12">Dec</option>
         </select>
-        <button type="submit">Switch Month</button>
+        <button class="btn btn-xs btn-dark" type="submit">Switch Month</button>
     </form>
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
