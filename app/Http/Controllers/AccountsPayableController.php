@@ -19,7 +19,6 @@ class AccountsPayableController extends Controller
      */
     public function index(Request $request)
     {
-        dump($request->all());
         $thisDate = Carbon::now()->month;
         if($request)
         {
@@ -32,7 +31,7 @@ class AccountsPayableController extends Controller
             $serviceData = collect($x->services)->map(function($y){
                 $pd = collect($y->pivot)->toArray();
                 $pivotData = collect($pd)->flatMap(function($z){
-                        return $z->date_authorized;
+                        return $z['date_authorized'];
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
