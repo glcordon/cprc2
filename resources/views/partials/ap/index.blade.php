@@ -35,11 +35,10 @@
 </div>
 
 @foreach($clientData as $client)
-@dump($client)
 <h4>{{ $client['first'] }}, {{ $client['last'] }}</h4>
 <table class="table table-sm table-striped">
 @foreach($client['service'] as $cs)
-  @dd($cs)  
+    
         <tr>
             <td>{{ $cs['service_name'] }}</td>
             <td><label for="">$</label>

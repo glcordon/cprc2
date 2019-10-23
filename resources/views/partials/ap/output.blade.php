@@ -8,7 +8,7 @@
 
 <table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
-        <th style="border:1px solid black; padding:10px;">Client's Name</th>
+        <th style="border:1px solid black; padding:10px;">Client Name</th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services</th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Supplies</th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Training</th>
@@ -28,7 +28,7 @@
             <td style="padding:5px 0; border-bottom:1px solid #ccc">Total</td>
         </tr>
         @foreach($clientData as $client)
-           
+           @dd($client)
         <tr>
             <td style="border-bottom:1px solid #999">{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top">
