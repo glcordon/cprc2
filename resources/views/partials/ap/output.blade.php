@@ -66,14 +66,14 @@
                 </table>
                 @endif
             </td>
-            <td style="border-bottom:1px solid #999" valign="top">
+            <td style="padding:5px; border:1px solid #999;" valign="top">
                 @if(array_key_exists('other', $client['service']->toArray()))
                     @foreach($client['service']['other'] as $other)
                     ${{ $other['pivot']['authorized_price'] }}
                     @endforeach
                 @endif
             </td>
-            <td style="border-bottom:1px solid #999" valign="top">${{ $client['total'] }}</td>
+            <td style="padding:5px; border:1px solid #999;" valign="top">${{ $client['total'] }}</td>
         </tr>
             
         @endforeach
