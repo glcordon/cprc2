@@ -122,7 +122,7 @@ class AccountsPayableController extends Controller
                 'service'=>$serviceData->groupBy('service_type')];
         });
         dd($clientData->map(function($x){
-            return $x->service;
+            return $x['service'];
         }));
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
