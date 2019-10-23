@@ -239,7 +239,7 @@ class ClientController extends Controller
             'date_authorized' => $request->date_authorized,
             'notes' => $request->notes,
                ]);
-           return $client;
+           return $client->service;
         }
     }
 
