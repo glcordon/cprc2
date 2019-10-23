@@ -29,8 +29,8 @@
         </tr>
         @foreach($clientData as $client)
         <tr>
-            <td style="border:1px solid #999;">{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td style="border:1px solid #999;" colspan="2" valign="top">
+            <td style="padding:5px; border:1px solid #999;">{{ $client['last'] }}, {{ $client['first'] }}</td>
+            <td style="padding:5px; border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
@@ -42,7 +42,7 @@
                     </table>
                 @endif
             </td>
-            <td style="border:1px solid #999;" colspan="2" valign="top"> 
+            <td style="padding:5px; border:1px solid #999;" colspan="2" valign="top"> 
                 @if(array_key_exists('supplies', $client['service']->toArray()))
                 <table style="width:100%;">
                     @foreach($client['service']['supplies'] as $supplies)
@@ -54,7 +54,7 @@
                 </table> 
                 @endif
             </td>
-            <td style="border:1px solid #999;" colspan="2" valign="top">
+            <td style="padding:5px; border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
