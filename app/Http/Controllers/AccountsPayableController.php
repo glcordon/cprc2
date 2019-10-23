@@ -26,13 +26,13 @@ class AccountsPayableController extends Controller
            $thisDate = $request->searchMonth; 
         }
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
-            $query->whereMonth('client_service.date_authorized','<>', $thisDate);
+            $query->whereMonth('client_service.date_authorized','=', $thisDate);
         })->with('services')->get();
         $clientData = $clients->map(function($x){ 
             $serviceData = collect($x->services)->map(function($y){
                 $pd = collect($y->pivot)->toArray();
                 $pivotData = collect($pd)->map(function($z){
-                        return $z;
+                        return $z['date_authorized'];
                 });
                return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
             });
