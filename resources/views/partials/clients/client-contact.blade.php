@@ -451,7 +451,10 @@
                 }
               })
               .done(function(data){
-                //$('.service_div').prepend()
+                $('.service_div').prepend(`
+                <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
+                <p>${data['pivot']}</p>
+                `)
                 console.log(data);
                 //$('select#service_name  option:selected').hide();
                 //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
