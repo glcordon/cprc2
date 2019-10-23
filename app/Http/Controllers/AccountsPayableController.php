@@ -20,7 +20,7 @@ class AccountsPayableController extends Controller
     public function index(Request $request)
     {
         $thisDate = Carbon::now()->month;
-        if($request->searchMonth)
+        if($request)
         {
            $thisDate = $request->searchMonth; 
         }
