@@ -110,9 +110,9 @@ class AccountsPayableController extends Controller
                 });
                return['service_name' => $y->service_name, 'service_type'=>$y->service_type, 'short_code'=>$y->short_code, 'pivot' => $pivotData]; 
             });
-            // $total = $serviceData->map(function($sum){
-            //     return $sum['pivot']['authorized_price'];
-            // })->sum();
+            $total = $serviceData->map(function($sum){
+                return $sum['pivot']['authorized_price'];
+            })->sum();
             // $serviceTotals = $serviceData->groupBy('service_type')->map(function($key, $data){
             //     $sum = $data;
             //     return [$key => $sum];
@@ -121,7 +121,7 @@ class AccountsPayableController extends Controller
                'id'=>$x->id,
                'first'=>$x->first_name, 
                'last'=>$x->last_name, 
-                // 'total' => $total,
+                'total' => $total,
                 // 'service_totals' => $serviceTotals,
                 'service'=>$serviceData->groupBy('service_type')];
         });
