@@ -28,7 +28,6 @@
             <td style="padding:5px 0; border-bottom:1px solid #ccc">Total</td>
         </tr>
         @foreach($clientData as $client)
-           @dump($client)
         <tr>
             <td style="border-bottom:1px solid #999">{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td style="border-bottom:1px solid #999" colspan="2" valign="top">
