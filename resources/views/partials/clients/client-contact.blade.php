@@ -101,22 +101,25 @@
             <hr>
             <div class="card-title">
               <h4>Services</h4>
-              @foreach($services as $srv)
-                    <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
-                    <p>
-                        Expiration:
-                        @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
-                          Expired
-                        @else 
-                          {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
-                        @endif 
-                    
-                    @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
-                      Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
-                    @else
-                    @endif</p>
-                   
-              @endforeach
+              <div class="service_div">
+
+                @foreach($services as $srv)
+                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
+                      <p>
+                          Expiration:
+                          @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                            Expired
+                          @else 
+                            {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                          @endif 
+                      
+                      @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
+                        Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                      @else
+                      @endif</p>
+                     
+                @endforeach
+              </div>
             </div>
         </div>
         </div>
@@ -448,10 +451,11 @@
                 }
               })
               .done(function(data){
+                $('.service_div').prepent()
                 console.log(data);
                 //$('select#service_name  option:selected').hide();
                 //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
-                // $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
+                $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
               });
             
         });
