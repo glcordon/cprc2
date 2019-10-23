@@ -121,7 +121,7 @@ class AccountsPayableController extends Controller
                'id'=>$x->id,
                'first'=>$x->first_name, 
                'last'=>$x->last_name, 
-                'total' => $total,
+                // 'total' => $total,
                 // 'service_totals' => $serviceTotals,
                 'service'=>$serviceData->groupBy('service_type')];
         });
