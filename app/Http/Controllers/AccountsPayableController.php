@@ -123,6 +123,8 @@ class AccountsPayableController extends Controller
         });
         dd($clientData->map(function($x){
             return $x['service'];
+        })->map(function($x){
+            return $x;
         }));
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
