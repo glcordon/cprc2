@@ -114,7 +114,7 @@ class AccountsPayableController extends Controller
                 return Carbon::parse($y['pivot']['date_authorized'])->month == $id;
             });
             $serviceData = $service->map(function($y){
-                $pd = collect($y->pivot)->toArray();
+                $pd = collect($y['pivot'])->toArray();
                 $pivotData = collect($pd)->map(function($z){
                         return $z;
                 });
