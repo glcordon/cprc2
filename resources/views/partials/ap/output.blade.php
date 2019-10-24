@@ -10,14 +10,14 @@
     <thead>
         <th style="border:1px solid black; padding:10px;">Client Name</th>
         <th style="border:1px solid black; padding:10px 0;" valign="top" colspan="2">Contract Services<hr />
-            <div style="text-align:left; font-weight:normal; padding:5px;">
+            <div style="text-align:left; font-weight:normal; padding:5px 10px">
             H=Housing<br />	
             T=Transportation (Private)	<br />
             C=Child Care	<br />
             </div>
         </th>
         <th style="border:1px solid black; padding:10px 0;" valign="top" colspan="2">Supplies<hr />
-            <div style="text-align:left; font-weight:normal; padding:5px;">
+            <div style="text-align:left; font-weight:normal; padding:5px 10px">
                     T= Transportation (Public)	<br />
                     U=Uniforms (Work/School)	<br />
                     W/S=Work/School Related Items	<br />
@@ -26,7 +26,7 @@
             </div>
         </th>
         <th style="border:1px solid black; padding:10px 0;" valign="top" colspan="2">Training<hr />
-             <div style="text-align:left; font-weight:normal; padding:5px;">
+             <div style="text-align:left; font-weight:normal; padding:5px 10px">
                     T=Tuition	<br />
                     B=Books	<br />
                     F=Fees	<br />
