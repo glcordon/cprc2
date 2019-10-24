@@ -9,15 +9,29 @@
 <table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
         <th style="border:1px solid black; padding:10px;">Client Name</th>
-        <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services
+        <th style="border:1px solid black; padding:10px;" valign="top" colspan="2">Contract Services
             <div style="text-align:left; font-weight:normal;">
             H=Housing<br />	
             T=Transportation (Private)	<br />
             C=Child Care	<br />
             </div>
         </th>
-        <th style="border:1px solid black; padding:10px;" colspan="2">Supplies</th>
-        <th style="border:1px solid black; padding:10px;" colspan="2">Training</th>
+        <th style="border:1px solid black; padding:10px;" valign="top" colspan="2">Supplies
+            <div style="text-align:left; font-weight:normal;">
+                    T= Transportation (Public)	<br />
+                    U=Uniforms (Work/School)	<br />
+                    W/S=Work/School Related Items	<br />
+                    P=Personal Protective Equipment	<br />
+                    B=Basic Needs	<br />
+            </div>
+        </th>
+        <th style="border:1px solid black; padding:10px;" valign="top" colspan="2">Training
+             <div style="text-align:left; font-weight:normal;">
+                    T=Tuition	<br />
+                    B=Books	<br />
+                    F=Fees	<br />
+             </div>
+        </th>
         <th style="border:1px solid black; padding:10px;">Other</th>
         <th style="border:1px solid black; padding:10px;">TOTAL</th>
     </thead>
