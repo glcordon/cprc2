@@ -51,13 +51,13 @@
         @foreach($clientData as $client)
         <tr>
             <td style="padding:5px; border:1px solid #999;">{{ $client['last'] }}, {{ $client['first'] }}</td>
-            <td style="padding:5px; border:1px solid #999;" colspan="2" valign="top">
+            <td style="border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
                     <table style="width:100%;">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
-                            <td width="70%">${{ $contract['pivot']['authorized_price'] }}</td>
-                            <td>{{ $contract['short_code'] ?? ''}}</td>
+                            <td width="70%" style="padding:4px; border:1px solid #999">${{ $contract['pivot']['authorized_price'] }}</td>
+                            <td style="padding:4px; border:1px solid #999">{{ $contract['short_code'] ?? ''}}</td>
                         </tr> 
                         @endforeach
                     </table>
@@ -69,7 +69,7 @@
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
                         <td width="70%" style="padding:4px; border:1px solid #999">${{ $supplies['pivot']['authorized_price'] }}</td>
-                        <td style="padding:4px">{{ $supplies['short_code'] ?? ''}}</td>
+                        <td style="padding:4px; border:1px solid #999">{{ $supplies['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                 </table> 
