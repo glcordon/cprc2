@@ -28,25 +28,25 @@ class AccountsPayableController extends Controller
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
             $query->whereMonth('date_authorized','=', $thisDate);
         })->with('services')->get();
-        dd($clients->map(function($x) use($thisDate){
+        $clientData = $clients->map(function($x) use($thisDate){
             return collect($x->services->toArray())->filter(function($y) use($thisDate){
                 return Carbon::parse($y['pivot']['date_authorized'])->month == $thisDate;
             });
-        }));
-        $clientData = $clients->map(function($x){ 
-            $serviceData = collect($x->services)->map(function($y){
-                $pd = collect($y->pivot)->toArray();
-                $pivotData = collect($pd)->map(function($z){
-                        return $z;
-                });
-               return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
-            });
-           return [
-               'id'=>$x->id,
-               'first'=>$x->first_name, 
-               'last'=>$x->last_name, 
-               'service'=>$serviceData];
         });
+        // $clientData = $clients->map(function($x){ 
+        //     $serviceData = collect($x->services)->map(function($y){
+        //         $pd = collect($y->pivot)->toArray();
+        //         $pivotData = collect($pd)->map(function($z){
+        //                 return $z;
+        //         });
+        //        return['service_name' => $y->service_name, 'pivot' => $pivotData]; 
+        //     });
+        //    return [
+        //        'id'=>$x->id,
+        //        'first'=>$x->first_name, 
+        //        'last'=>$x->last_name, 
+        //        'service'=>$serviceData];
+        // });
         return view('partials.ap.index', compact('clientData','thisDate'));
     }
     public function participantReport(Request $request)
