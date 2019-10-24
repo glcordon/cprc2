@@ -29,7 +29,7 @@
               <li class="nav-item">
                   @if(\Auth::user())
                     <a class="nav-link" href="#"  data-toggle="modal" data-target="#date_modal2">Participation Report</a>
-                    <a class="nav-link" href="/ap">Participation Report</a>
+                    <a class="nav-link" href="/ap">AP</a>
                     
                   @endif
                 </li>
