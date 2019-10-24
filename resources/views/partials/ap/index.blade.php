@@ -41,11 +41,11 @@
 @foreach($client['services'] as $cs)
     
         <tr>
-            <td style="width:35%">{{ $cs['service_name'] }}</td>
+            <td style="width:30%">{{ $cs['service_name'] }}</td>
             <td style="width:25%"><label for="">$</label>
                 <input type="text" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
             </td>
-            <td style="width:25%"><label for="">Date Authorized</label>
+            <td style="width:30%"><label for="">Date Auth.</label>
                 <input type="date" name="date_authorized" id="date_authorized" value="{{ $cs['pivot']['date_authorized'] ?? 'Not Authorized' }}" aria-describedby="helpId" placeholder="">
             </td>
             <td style="width:15%">
