@@ -9,7 +9,12 @@
 <table style="margin:0 auto; width:75%" cellspacing=0>
     <thead>
         <th style="border:1px solid black; padding:10px;">Client Name</th>
-        <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services</th>
+        <th style="border:1px solid black; padding:10px;" colspan="2">Contract Services
+            <br> 
+            H=Housing<br />	
+            T=Transportation (Private)	<br />
+            C=Child Care	<br />
+        </th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Supplies</th>
         <th style="border:1px solid black; padding:10px;" colspan="2">Training</th>
         <th style="border:1px solid black; padding:10px;">Other</th>
