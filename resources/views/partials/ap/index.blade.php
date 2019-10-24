@@ -36,6 +36,7 @@
 </div>
 
 @foreach($clientData as $client)
+@dd($client)
 <h4>{{ $client['first_name'] }}, {{ $client['last_name'] }}</h4>
 <table class="table table-sm table-striped">
 @foreach($client['service'] as $cs)
