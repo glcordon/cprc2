@@ -56,7 +56,7 @@
                     <table style="width:100%;" cellspacing="0">
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
-                            <td width="70%" style="padding:4px; border:1px solid #999">${{ $contract['pivot']['authorized_price'] }}</td>
+                            <td width="60%" style="padding:4px; border:1px solid #999">${{ $contract['pivot']['authorized_price'] }}</td>
                             <td style="padding:4px; border:1px solid #999">{{ $contract['short_code'] ?? ''}}</td>
                         </tr> 
                         @endforeach
@@ -68,7 +68,7 @@
                 <table style="width:100%;" cellspacing='0'>
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
-                        <td width="70%" style="padding:4px; border:1px solid #999">${{ $supplies['pivot']['authorized_price'] }}</td>
+                        <td width="60%" style="padding:4px; border:1px solid #999">${{ $supplies['pivot']['authorized_price'] }}</td>
                         <td style="padding:4px; border:1px solid #999">{{ $supplies['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
