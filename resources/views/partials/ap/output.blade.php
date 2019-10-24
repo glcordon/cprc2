@@ -77,11 +77,11 @@
             </td>
             <td style="border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
-                <table style="width:100%;"> 
+                <table style="width:100%;" cellspacing=0> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
-                        <td width="70%">${{ $training['pivot']['authorized_price'] }}</td>
-                        <td>{{ $training['short_code'] ?? ''}}</td>
+                        <td width="70%"style="padding:4px; border:1px solid #999">${{ $training['pivot']['authorized_price'] }}</td>
+                        <td style="padding:4px; border:1px solid #999">{{ $training['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                 </table>
