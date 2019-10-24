@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@auth
+    
 @section('content1')
 <br>
 <br>
@@ -93,3 +94,4 @@
     });
 </script>
 @endpush
+@endauth
