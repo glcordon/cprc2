@@ -4,6 +4,7 @@
 <br>
 <br>
 <br>
+
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
         @csrf
@@ -35,7 +36,7 @@
 </div>
 
 @foreach($clientData as $client)
-<h4>{{ $client['first'] }}, {{ $client['last'] }}</h4>
+<h4>{{ $client['first_name'] }}, {{ $client['last_name'] }}</h4>
 <table class="table table-sm table-striped">
 @foreach($client['service'] as $cs)
     
