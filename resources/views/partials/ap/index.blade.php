@@ -8,26 +8,22 @@
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
         @csrf
-        <div class="form-group">
-                <select name="searchMonth" class="form-control w-25" id="Search Month">
-                        <option value="">Select Month</option>
-                        <option {{ $thisDate == 1 ? 'selected' : '' }} value="1">Jan</option>
-                        <option {{ $thisDate == 2 ? 'selected' : '' }} value="2">Feb</option>
-                        <option {{ $thisDate == 3 ? 'selected' : '' }} value="3">Mar</option>
-                        <option {{ $thisDate == 4 ? 'selected' : '' }} value="4">Apr</option>
-                        <option {{ $thisDate == 5 ? 'selected' : '' }} value="5">May</option>
-                        <option {{ $thisDate == 6 ? 'selected' : '' }} value="6">Jun</option>
-                        <option {{ $thisDate == 7 ? 'selected' : '' }} value="7">Jul</option>
-                        <option {{ $thisDate == 8 ? 'selected' : '' }} value="8">Aug</option>
-                        <option {{ $thisDate == 9 ? 'selected' : '' }} value="9">Sep</option>
-                        <option {{ $thisDate == 10 ? 'selected' : '' }} value="10">Oct</option>
-                        <option {{ $thisDate == 11 ? 'selected' : '' }} value="11">Nov</option>
-                        <option {{ $thisDate == 12 ? 'selected' : '' }} value="12">Dec</option>
-                    </select>
-        <label for=""> <button class="btn btn-xs btn-dark" type="submit">Switch Month</button></label>
-          </div>
-        
-       
+        <select name="searchMonth" class="form-control w-25" id="Search Month">
+            <option value="">Select Month</option>
+            <option {{ $thisDate == 1 ? 'selected' : '' }} value="1">Jan</option>
+            <option {{ $thisDate == 2 ? 'selected' : '' }} value="2">Feb</option>
+            <option {{ $thisDate == 3 ? 'selected' : '' }} value="3">Mar</option>
+            <option {{ $thisDate == 4 ? 'selected' : '' }} value="4">Apr</option>
+            <option {{ $thisDate == 5 ? 'selected' : '' }} value="5">May</option>
+            <option {{ $thisDate == 6 ? 'selected' : '' }} value="6">Jun</option>
+            <option {{ $thisDate == 7 ? 'selected' : '' }} value="7">Jul</option>
+            <option {{ $thisDate == 8 ? 'selected' : '' }} value="8">Aug</option>
+            <option {{ $thisDate == 9 ? 'selected' : '' }} value="9">Sep</option>
+            <option {{ $thisDate == 10 ? 'selected' : '' }} value="10">Oct</option>
+            <option {{ $thisDate == 11 ? 'selected' : '' }} value="11">Nov</option>
+            <option {{ $thisDate == 12 ? 'selected' : '' }} value="12">Dec</option>
+        </select>
+        <button class="btn btn-xs btn-dark" type="submit">Switch Month</button>
     </form>
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
