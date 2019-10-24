@@ -2,7 +2,7 @@
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
     Invoice # 402.{{ Carbon\Carbon::now()->year }}.{{ $id}}	<br>						
-    {{ Carbon\Carbon::parse($id.'-01-19')->startOfMonth()->format('m/d/Y')  }}-1/31/19<br>
+    {{ Carbon\Carbon::parse($id.'/01/19')->startOfMonth()->format('m/d/Y')  }}-1/31/19<br>
     <br>
 </div>
 
