@@ -135,7 +135,7 @@
                             +Touch Point
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servicesModal">
-                            +Accounts
+                            +Acts Payable
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
                                 +Job Data
