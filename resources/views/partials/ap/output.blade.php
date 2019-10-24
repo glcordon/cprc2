@@ -17,15 +17,15 @@
     </thead>
     <tbody>
         <tr>
-            <td style="padding:5px 0"></td>
-            <td style="padding:5px 0; border:1px solid #999">$Amount</td>
-            <td style="padding:5px 0; border:1px solid #999">Code</td>
-            <td style="padding:5px 0; border:1px solid #999">$Amount</td>
-            <td style="padding:5px 0; border:1px solid #999">Code</td>
-            <td style="padding:5px 0; border:1px solid #999">$Amount</td>
-            <td style="padding:5px 0; border:1px solid #999">Code</td>
-            <td style="padding:5px 0; border:1px solid #999">$Amount</td>
-            <td style="padding:5px 0; border:1px solid #999">Total</td>
+            <td style="padding:5px; border:1px solid #999 "></td>
+            <td style="padding:5px; border:1px solid #999">$Amount</td>
+            <td style="padding:5px; border:1px solid #999">Code</td>
+            <td style="padding:5px; border:1px solid #999">$Amount</td>
+            <td style="padding:5px; border:1px solid #999">Code</td>
+            <td style="padding:5px; border:1px solid #999">$Amount</td>
+            <td style="padding:5px; border:1px solid #999">Code</td>
+            <td style="padding:5px; border:1px solid #999">$Amount</td>
+            <td style="padding:5px; border:1px solid #999">Total</td>
         </tr>
         @foreach($clientData as $client)
         <tr>
