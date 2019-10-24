@@ -1,3 +1,5 @@
+@auth
+    
 <div style="text-align:center">
     <img src="http://portal.cpreentrync.org/storage/settings/October2019/t92bOKMKU6vBT9RqCIgg.png" width="300px"> <br><br>
     <strong>Transition/Reentry Support Form</strong><br>						
@@ -78,7 +80,7 @@
             </td>
             <td style="border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
-                <table style="width:100%;" cellspacing=0> 
+                <table style="width:100%;" cellspacing="0"> 
                     @foreach($client['service']['training'] as $training)
                     <tr>
                         <td width="70%"style="padding:4px; border:1px solid #999">${{ $training['pivot']['authorized_price'] }}</td>
@@ -105,6 +107,7 @@
       <tr><td style="padding:5px; border:1px solid #999; font-weight:bold">Total</td><td colspan="8" valign="top" style="padding:5px; border:1px solid #999;text-align:right; font-weight:bold">${{ $grandTotal ?? '0.00' }}</td></tr>
     </tfoot>
 </table>
+@endauth
 
     {{--  {{ $cs['service_name'] }} 
     <div class="form-group">
