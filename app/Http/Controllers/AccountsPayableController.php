@@ -30,7 +30,7 @@ class AccountsPayableController extends Controller
         })->with('services')->get();
         dd($clients->map(function($x) use($thisDate){
             return collect($x->services->toArray())->filter(function($y){
-                return $y['pivot'];
+                return $y['pivot']['date_authorized']=='';
             });
         }));
         $clientData = $clients->map(function($x){ 
