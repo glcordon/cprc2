@@ -27,6 +27,7 @@
             <td style="padding:5px; border:1px solid #999">$Amount</td>
             <td style="padding:5px; border:1px solid #999">Total</td>
         </tr>
+         <tr><td colspan="9" valign="top" style="background-color:yellow;text-align:right">${{ $grandTotal ?? '0.00' }}</td></tr>
         @foreach($clientData as $client)
         <tr>
             <td style="padding:5px; border:1px solid #999;">{{ $client['last'] }}, {{ $client['first'] }}</td>
