@@ -32,7 +32,7 @@ class AccountsPayableController extends Controller
             $thisService =  collect($x->services->toArray())->filter(function($y) use($thisDate){
                 return Carbon::parse($y['pivot']['date_authorized'])->month == $thisDate;
             });
-            return ['first_name' => $x->first_name, 'last_name' => $x->last, 'services'=>$thisService];
+            return ['first_name' => $x->first_name, 'last_name' => $x->last_name, 'services'=>$thisService];
         });
         // $clientData = $clients->map(function($x){ 
         //     $serviceData = collect($x->services)->map(function($y){
