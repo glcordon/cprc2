@@ -8,7 +8,7 @@
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
         @csrf
-        <select name="searchMonth" class="border-1" id="Search Month">
+        <select name="searchMonth" class="form-control" id="Search Month">
             <option value="">Select Month</option>
             <option {{ $thisDate == 1 ? 'selected' : '' }} value="1">Jan</option>
             <option {{ $thisDate == 2 ? 'selected' : '' }} value="2">Feb</option>
