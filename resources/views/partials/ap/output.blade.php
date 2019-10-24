@@ -63,7 +63,7 @@
                     </table>
                 @endif
             </td>
-            <td style="border:1px solid #999;" colspan="2" valign="top"> 
+            <td style="border:1px solid #999; padding:0;" colspan="2" valign="top"> 
                 @if(array_key_exists('supplies', $client['service']->toArray()))
                 <table style="width:100%;" cellspacing='0'>
                     @foreach($client['service']['supplies'] as $supplies)
