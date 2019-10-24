@@ -29,7 +29,7 @@ class AccountsPayableController extends Controller
             $query->whereMonth('date_authorized','=', $thisDate);
         })->with('services')->get();
         dd($clients->map(function($x) use($thisDate){
-            return $x->services->pivot_date_authorized;
+            return $x->services->toArray();
         }));
         $clientData = $clients->map(function($x){ 
             $serviceData = collect($x->services)->map(function($y){
