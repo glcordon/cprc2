@@ -109,7 +109,10 @@ class AccountsPayableController extends Controller
         $clients = Client::whereHas('services', function ($query) use($id) {
             $query->whereMonth('client_service.date_authorized','=', $id);
         })->with('services')->get();
-        $clientData = $clients->map(function($x){ 
+        $clientData = $clients->map(function($x) use($id){
+            $thisService =  collect($x->services->toArray())->filter(function($y) use($id){
+                return Carbon::parse($y['pivot']['date_authorized'])->month == $id;
+            });
             $serviceData = collect($x->services)->map(function($y){
                 $pd = collect($y->pivot)->toArray();
                 $pivotData = collect($pd)->map(function($z){
