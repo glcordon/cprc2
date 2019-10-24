@@ -1,5 +1,5 @@
 <div style="text-align:center">
-    <img src="http://portal.cpreentrync.org/storage/settings/October2019/t92bOKMKU6vBT9RqCIgg.png">
+    <img src="http://portal.cpreentrync.org/storage/settings/October2019/t92bOKMKU6vBT9RqCIgg.png" width="300px"> <br>
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
     Invoice # 402.{{ Carbon\Carbon::now()->year }}.{{ $id}}	<br>						
