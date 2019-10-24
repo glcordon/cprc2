@@ -29,7 +29,7 @@ class AccountsPayableController extends Controller
             $query->whereMonth('date_authorized','=', $thisDate);
         })->with('services')->get();
         dd($clients->filter(function($x) use($thisDate){
-            return $x->services;
+            return Carbon::parse($x->services->date_authorized)->month == $thisDate;
         }));
         $clientData = $clients->map(function($x){ 
             $serviceData = collect($x->services)->map(function($y){
