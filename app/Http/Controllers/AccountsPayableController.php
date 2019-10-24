@@ -144,7 +144,7 @@ class AccountsPayableController extends Controller
         $grandTotal = $clientData->map(function($total){
             return $total['total'];
         })->sum();
-        return view('partials.ap.output', compact('clientData', 'grandTotal'));
+        return view('partials.ap.output', compact('clientData','id', 'grandTotal'));
     }
 
     /**
