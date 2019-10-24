@@ -38,7 +38,7 @@
 @foreach($clientData as $client)
 <h4>{{ $client['first_name'] }}, {{ $client['last_name'] }}</h4>
 <table class="table table-sm table-striped">
-@foreach($client['service'] as $cs)
+@foreach($client['services'] as $cs)
     
         <tr>
             <td>{{ $cs['service_name'] }}</td>
