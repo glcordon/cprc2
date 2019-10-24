@@ -65,17 +65,17 @@
             </td>
             <td style="border:1px solid #999;" colspan="2" valign="top"> 
                 @if(array_key_exists('supplies', $client['service']->toArray()))
-                <table style="width:100%;">
+                <table style="width:100%;" cellspacing='0'>
                     @foreach($client['service']['supplies'] as $supplies)
                     <tr>
-                        <td width="70%" style="padding:4px">${{ $supplies['pivot']['authorized_price'] }}</td>
+                        <td width="70%" style="padding:4px; border:1px solid #999">${{ $supplies['pivot']['authorized_price'] }}</td>
                         <td style="padding:4px">{{ $supplies['short_code'] ?? ''}}</td>
                     </tr> 
                     @endforeach
                 </table> 
                 @endif
             </td>
-            <td style="padding:5px; border:1px solid #999;" colspan="2" valign="top">
+            <td style="border:1px solid #999;" colspan="2" valign="top">
                 @if(array_key_exists('training',$client['service']->toArray()))
                 <table style="width:100%;"> 
                     @foreach($client['service']['training'] as $training)
