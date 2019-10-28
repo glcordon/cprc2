@@ -455,7 +455,7 @@
                   notes:notes,
                   uploaded_file:uploaded_file,}
             )
-                .then(resonse=>{
+                .then(data=>{
                    $('.service_div').prepend(`
                 <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
                 <p>${data['date_authorized']}</p>
