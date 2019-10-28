@@ -454,9 +454,9 @@
                   date_authorized:auth_date,
                   notes:notes,
                   uploaded_file:uploaded_file,
-                },
-                headers: {
+                  headers: {
                   'Content-Type': 'multipart/form-data'
+                }
                 }
             )
                 .then(data=>{
