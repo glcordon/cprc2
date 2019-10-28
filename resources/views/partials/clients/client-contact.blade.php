@@ -446,8 +446,6 @@
             $.ajax({
                 method: "POST",
                 url: "/add-service",
-                processData: false,
-                //contentType: false,
                 data: { 
                   _token:token, 
                   client_id: client_id,
@@ -457,7 +455,9 @@
                   notes:notes,
                   uploaded_file:uploaded_file,
 
-                }
+                },processData: false,
+                contentType: false,
+                
               })
               .done(function(data){
                 $('.service_div').prepend(`
