@@ -447,17 +447,10 @@
             $.ajax({
                 method: "POST",
                 url: "/add-service",
-                data: { 
-                  _token:token, 
-                  client_id: client_id,
-                  service_id:service_id,
-                  authorized_price:auth_price,
-                  date_authorized:auth_date,
-                  notes:notes,
-                  uploaded_file:uploaded_file,
-
-                },processData: false,
-                contentType: false,
+                data:  new FormData(this),
+   contentType: false,
+         cache: false,
+   processData:false,
                 
               })
               .done(function(data){
