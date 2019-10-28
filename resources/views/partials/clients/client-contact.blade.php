@@ -448,6 +448,12 @@
             var client_id = $('#client_id').val();
             var data1 = new FormData()
             data1.append('uploaded_file', uploaded_file);
+            data1.append('service_id', uploaded_file);
+            data1.append('auth_price', uploaded_file);
+            data1.append('auth_date', uploaded_file);
+            data1.append('notes', uploaded_file);
+            data1.append('token', uploaded_file);
+            data1.append('client_id', uploaded_file);
             axios.post('/add-service', data1)
                 .then(data=>{
                    $('.service_div').prepend(`
