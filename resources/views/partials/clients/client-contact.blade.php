@@ -305,7 +305,9 @@
               <p class="form-text text-muted">
                 Add additional information about service, i.e. voucher, bus pass, gas card, etc.
               </p>
-              <input type="file" name="upload_name" id="upload_name"><label for="upload_name">Upload Invoice</label>
+              <div class="form-group">
+                <label for="upload_name">Upload Invoice</label><input type="file" name="upload_name" id="upload_name">
+              </div>
             </div>
           </div>
           <div class="modal-footer">
