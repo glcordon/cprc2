@@ -450,7 +450,7 @@
             data1.append('uploaded_file', uploaded_file);
             data1.append('service_id', service_id);
             data1.append('auth_price', auth_price);
-            data1.append('auth_date', auth_date);
+            data1.append('date_authorized', auth_date);
             data1.append('notes', notes);
             data1.append('token', token);
             data1.append('client_id', client_id);
