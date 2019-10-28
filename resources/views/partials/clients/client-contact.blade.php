@@ -440,9 +440,7 @@
             var auth_price = parentModal.find('#amount_authorized').val()
             var auth_date = parentModal.find('#service_date').val()
             var notes = parentModal.find('#service_notes').val()
-            var imagefile = $('#upload_file')[0].files[0]
-            console.log(imagefile)
-            return false
+            var uploaded_file = $('#upload_file')[0].files[0]
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             $.ajax({
@@ -455,6 +453,8 @@
                   authorized_price:auth_price,
                   date_authorized:auth_date,
                   notes:notes,
+                  uploaded_file:uploaded_file,
+
                 }
               })
               .done(function(data){
