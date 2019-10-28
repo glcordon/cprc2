@@ -446,8 +446,8 @@
             $.ajax({
                 method: "POST",
                 url: "/add-service",
-                //processData: false,
-                contentType: false,
+                processData: false,
+                //contentType: false,
                 data: { 
                   _token:token, 
                   client_id: client_id,
