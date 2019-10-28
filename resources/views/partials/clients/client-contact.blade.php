@@ -104,7 +104,7 @@
               <div class="service_div">
 
                 @foreach($services as $srv)
-                @dd($srv)
+                @dump($srv)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
                      <p>{{ $srv->pivot->date_authorized }}</p>
                      @if($srv->file_url) 
