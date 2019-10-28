@@ -441,7 +441,7 @@
             var auth_date = parentModal.find('#service_date').val()
             var notes = parentModal.find('#service_notes').val()
             var imagefile = $('#upload_file')[0].files[0]
-            console.log(iagefile)
+            console.log(imagefile)
             return false
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
