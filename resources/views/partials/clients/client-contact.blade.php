@@ -457,10 +457,10 @@
             axios.post('/add-service', data1)
                 .then(data=>{
                    $('.service_div').prepend(`
-                <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
-                <p>${data['date_authorized']}</p>
+                <a href="#"><h5 class="card-title"> ${data.data['service_name']}</h5></a>
+                <p>${data.data['date_authorized']}</p>
                 `)
-                console.log(data);
+                console.log(data.data);
                 clearForm()
                 //$('select#service_name  option:selected').hide();
                 //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
