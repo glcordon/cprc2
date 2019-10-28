@@ -243,7 +243,7 @@ class ClientController extends Controller
                ]);
                if($request->$request->uploaded_file)
                {
-                   $request->uploaded_file->storeAs('client_'.$client->id, $request->uploaded_file->getClientOriginalName());
+                   $request->uploaded_file->storeAs($client->id, $request->uploaded_file->getClientOriginalName());
                }
            return [
                'service_name' => Service::find($request->service_id)->service_name,
