@@ -448,10 +448,7 @@
             var client_id = $('#client_id').val();
             var data1 = new FormData()
             data1.append('uploaded_file', uploaded_file);
-            axios.post('/add-service', data1
-                 
-                }
-            )
+            axios.post('/add-service', data1)
                 .then(data=>{
                    $('.service_div').prepend(`
                 <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
