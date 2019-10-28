@@ -106,6 +106,7 @@
                 @foreach($services as $srv)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5></a>
                      <p>{{ $srv->pivot->date_authorized }}</p>
+                     if($srv->file_url) File Attached @endif
                      <hr />
                       {{--  <p>
                           Expiration:
