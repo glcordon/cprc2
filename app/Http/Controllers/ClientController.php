@@ -239,7 +239,12 @@ class ClientController extends Controller
             'authorized_price' => $request->authorized_price,
             'date_authorized' => $request->date_authorized,
             'notes' => $request->notes,
+            'file_url' =>$request->uploaded_file,
                ]);
+               if($request->has($request->uploaded_file))
+               {
+                   $request->uploaded_file->storeAs($client->id, $request->uploaded_file->getClientOriginalName());
+               }
            return [
                'service_name' => Service::find($request->service_id)->service_name,
                'date_authorized' => $request->date_authorized,
