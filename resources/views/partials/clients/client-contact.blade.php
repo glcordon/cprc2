@@ -380,6 +380,8 @@
 @endpush
 @endsection
 @push('scripts')
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script type="text/javascript">
 
   $('.timepicker').datetimepicker({
@@ -444,17 +446,17 @@
             var uploaded_file = $('#upload_file')[0].files[0]
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
-            $.ajax({
-                method: "POST",
-                url: "/add-service",
-                data:  new FormData(this),
-   contentType: false,
-         cache: false,
-   processData:false,
-                
-              })
-              .done(function(data){
-                $('.service_div').prepend(`
+            axios.post('/add-service',
+                  _token:token, 
+                  client_id: client_id,
+                  service_id:service_id,
+                  authorized_price:auth_price,
+                  date_authorized:auth_date,
+                  notes:notes,
+                  uploaded_file:uploaded_file,
+            )
+                .then(resonse=>{
+                   $('.service_div').prepend(`
                 <a href="#"><h5 class="card-title"> ${data['service_name']}</h5></a>
                 <p>${data['date_authorized']}</p>
                 `)
@@ -463,7 +465,8 @@
                 //$('select#service_name  option:selected').hide();
                 //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
                 //$('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
-              });
+              
+                })
             
         });
         function clearForm()
