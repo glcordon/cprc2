@@ -453,7 +453,11 @@
                   authorized_price:auth_price,
                   date_authorized:auth_date,
                   notes:notes,
-                  uploaded_file:uploaded_file,}
+                  uploaded_file:uploaded_file,
+                },
+                headers: {
+                  'Content-Type': 'multipart/form-data'
+                }
             )
                 .then(data=>{
                    $('.service_div').prepend(`
