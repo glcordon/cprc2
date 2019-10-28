@@ -447,13 +447,13 @@
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             axios.post('/add-service',
-                  _token:token, 
+                 { _token:token, 
                   client_id: client_id,
                   service_id:service_id,
                   authorized_price:auth_price,
                   date_authorized:auth_date,
                   notes:notes,
-                  uploaded_file:uploaded_file,
+                  uploaded_file:uploaded_file,}
             )
                 .then(resonse=>{
                    $('.service_div').prepend(`
