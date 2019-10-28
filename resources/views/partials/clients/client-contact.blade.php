@@ -306,7 +306,7 @@
                 Add additional information about service, i.e. voucher, bus pass, gas card, etc.
               </p>
               <div class="form-group">
-                <label for="upload_name">Upload Invoice</label><br><input type="file" name="upload_name" id="upload_name">
+                <label for="upload_file">Upload Invoice</label><br><input type="file" name="upload_name" id="upload_file">
               </div>
             </div>
           </div>
@@ -440,6 +440,9 @@
             var auth_price = parentModal.find('#amount_authorized').val()
             var auth_date = parentModal.find('#service_date').val()
             var notes = parentModal.find('#service_notes').val()
+            var imagefile = $('#upload_file')[0].files[0]
+            console.log(iagefile)
+            return false
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
             $.ajax({
