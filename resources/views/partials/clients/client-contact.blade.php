@@ -309,6 +309,7 @@
                 <label for="upload_file">Upload Invoice</label><br><input type="file" name="upload_name" id="upload_file">
               </div>
             </div>
+            {{ csrf_field() }}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
