@@ -232,6 +232,7 @@ class ClientController extends Controller
     {
         if($request)
         {
+            dd($request->image_file);
         $client = Client::find($request->client_id);
           ClientService::updateOrCreate([
             'service_id' => $request->service_id, 
