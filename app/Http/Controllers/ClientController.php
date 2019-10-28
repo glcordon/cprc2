@@ -241,7 +241,7 @@ class ClientController extends Controller
             'notes' => $request->notes,
             'file_url' =>$request->uploaded_file,
                ]);
-               if($request->$request->uploaded_file)
+               if($request->uploaded_file)
                {
                    $request->uploaded_file->storeAs($client->id, $request->uploaded_file->getClientOriginalName());
                }
