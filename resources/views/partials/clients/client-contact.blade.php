@@ -446,17 +446,10 @@
             var uploaded_file = $('#upload_file')[0].files[0]
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
-            axios.post('/add-service',
-                 { _token:token, 
-                  client_id: client_id,
-                  service_id:service_id,
-                  authorized_price:auth_price,
-                  date_authorized:auth_date,
-                  notes:notes,
-                  uploaded_file:uploaded_file,
-                  headers: {
-                  'Content-Type': 'multipart/form-data'
-                }
+            var data1 = new FormData()
+            data1.append('uploaded_file', uploaded_file);
+            axios.post('/add-service', data1
+                 
                 }
             )
                 .then(data=>{
