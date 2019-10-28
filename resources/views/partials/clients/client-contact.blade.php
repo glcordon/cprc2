@@ -475,6 +475,7 @@
           $('input#service_date').val('')
           $('input#amount_authorized').val('0.00')
           $('textarea#service_notes').val('')
+          $('input#upload_file').val('')
         }
         $('#saveJobData').on('click', function(e){
             e.preventDefault();
