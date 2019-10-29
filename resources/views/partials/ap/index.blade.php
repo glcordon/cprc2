@@ -44,7 +44,7 @@
         <tr>
             <td style="width:30%">{{ $cs['service_name'] }}
                 @if($cs['pivot']['file_url'])
-                    <a href="{{ '/get-file/'.$client['id'].'/'.$cs['pivot']['file_url'] }}"><i class="fas fa-file-export"></i></a> 
+                    <a href="{{ '/get-file/'.$cs['pivot']['client_id'].'/'.$cs['pivot']['file_url'] }}"><i class="fas fa-file-export"></i></a> 
                 @endif
             </td>
             <td style="width:25%"><label for="">$</label>
