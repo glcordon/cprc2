@@ -107,7 +107,7 @@
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5> </a>
                      <p>{{ $srv->pivot->date_authorized }}</p>
                      @if($srv->pivot->file_url) 
-                     <a href="{{ '/get-file/'.$clients->id.'/'.$srv->pivot->file_url) }}">Download</a> 
+                     <a href="{{ '/get-file/'.$clients->id.'/'.$srv->pivot->file_url }}">Download</a> 
                      @endif
                      <hr />
                       {{--  <p>
