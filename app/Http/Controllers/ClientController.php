@@ -233,7 +233,7 @@ class ClientController extends Controller
         if($request)
         {
         $client = Client::find($request->client_id);
-          ClientService::updateOrCreate([
+          $client_service = ClientService::updateOrCreate([
             'service_id' => $request->service_id, 
             'client_id' => $client->id, 
             'authorized_price' => $request->authorized_price,
@@ -245,6 +245,7 @@ class ClientController extends Controller
                {
                    $request->uploaded_file->storeAs($client->id, $request->uploaded_file->getClientOriginalName());
                }
+               return $client_service;
            return [
                'service_name' => Service::find($request->service_id)->service_name,
                'date_authorized' => $request->date_authorized,
