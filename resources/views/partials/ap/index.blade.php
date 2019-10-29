@@ -42,7 +42,11 @@
 @foreach($client['services'] as $cs)
     
         <tr>
-            <td style="width:30%">{{ $cs['service_name'] }}</td>
+            <td style="width:30%">{{ $cs['service_name'] }}
+                @if($cs['pivot']['file_url'])
+                    <a href="{{ '/get-file/'.$clients->id.'/'.$srv->pivot->file_url }}"><i class="fas fa-file-export"></i></a> 
+                @endif
+            </td>
             <td style="width:25%"><label for="">$</label>
                 <input type="text" name="authorized_price" id="authorized_price" value="{{ $cs['pivot']['authorized_price'] ?? '0.00'}}" aria-describedby="helpId" placeholder="">
             </td>
