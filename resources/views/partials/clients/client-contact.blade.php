@@ -102,12 +102,12 @@
             <div class="card-title">
               <h4>Services</h4>
               <div class="service_div">
-@dd(storage_path())
+
                 @foreach($services as $srv)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5> </a>
                      <p>{{ $srv->pivot->date_authorized }}</p>
                      @if($srv->pivot->file_url) 
-                     <a href="{{ url('storage/'.$clients->id.'/'.$srv->pivot->file_url) }}">Download</a> 
+                     <a href="{{ url('storage/app/'.$clients->id.'/'.$srv->pivot->file_url) }}">Download</a> 
                      @endif
                      <hr />
                       {{--  <p>
