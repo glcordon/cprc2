@@ -102,7 +102,7 @@
             <div class="card-title">
               <h4>Services</h4>
               <div class="service_div">
-
+@dd(storage_path())
                 @foreach($services as $srv)
                      <a href="#"><h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5> </a>
                      <p>{{ $srv->pivot->date_authorized }}</p>
