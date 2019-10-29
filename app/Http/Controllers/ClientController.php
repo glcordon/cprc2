@@ -130,6 +130,7 @@ class ClientController extends Controller
         //
         $clients = Client::find($id);
         $services = $clients->services;
+        dd($services);
         $additional_service = Services::where('service_type', '!=', 'referred')->get();
         $allServices = collect($additional_service->toArray());
         $otherServices = $additional_service->diff($services)->sortBy('service_name')->toArray();
