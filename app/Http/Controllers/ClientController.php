@@ -228,6 +228,10 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->back()->withInput();
     }
+    public function getFile(Int $id, $file_url)
+    {
+        return response()->download(storage_path('app/'.$id.'/'.  $file_url));
+    }
     public function addService(Request $request)
     {
         if($request)
