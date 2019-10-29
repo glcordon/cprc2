@@ -26,8 +26,8 @@ class AccountsPayableController extends Controller
         }
 
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
-            $query->whereMonth('date_authorized','=', $thisDate);
-        })->with('services')->get();
+                $query->whereMonth('date_authorized','=', $thisDate)->whereYear('date_authorized', '=', Carbon::now()->year);
+            })->with('services')->get();
         $clientData = $clients->map(function($x) use($thisDate){
             $thisService =  collect($x->services->toArray())->filter(function($y) use($thisDate){
                 return Carbon::parse($y['pivot']['date_authorized'])->month == $thisDate;
