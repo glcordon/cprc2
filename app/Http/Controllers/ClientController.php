@@ -13,6 +13,7 @@ use App\ClientService;
 use App\Imports\ClientImport;
 use App\Service;
 use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
 
 class ClientController extends Controller
 {
@@ -247,7 +248,7 @@ class ClientController extends Controller
                ]);
                if($request->uploaded_file)
                {
-                   $request->uploaded_file->storeAs($client->id, $request->uploaded_file->getClientOriginalName());
+                   $request->uploaded_file->storeAs($client->id, Carbon::now().'_'.$request->uploaded_file->getClientOriginalName());
                }
                return $client_service;
            return [
