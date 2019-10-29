@@ -237,7 +237,7 @@ class ClientController extends Controller
     {
         if($request)
         {
-            $filename = Carbon::now().'_'.$request->uploaded_file->getClientOriginalName();
+            $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
         $client = Client::find($request->client_id);
           $client_service = ClientService::updateOrCreate([
             'service_id' => $request->service_id, 
