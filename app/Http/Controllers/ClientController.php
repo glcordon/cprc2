@@ -231,7 +231,12 @@ class ClientController extends Controller
     }
     public function getFile(Int $id, $file_url)
     {
-        return response()->download(storage_path('app/'.$id.'/'.  $file_url));
+        if(Storage::exists(storage_path('app/'.$id.'/'.  $file_url)))
+        {
+           return response()->download(storage_path('app/'.$id.'/'.  $file_url)); 
+        }else{
+            return abort(404);
+        }
     }
     public function addService(Request $request)
     {
