@@ -1,6 +1,5 @@
 @extends('layouts.app')
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<script src="https://kit.fontawesome.com/f42913f22f.js" crossorigin="anonymous"></script>
 @section('content1')
 <style>
         .round { border-radius: 50%; margin:20px auto}
