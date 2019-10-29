@@ -239,7 +239,7 @@ class ClientController extends Controller
             'authorized_price' => $request->authorized_price,
             'date_authorized' => $request->date_authorized,
             'notes' => $request->notes,
-            'file_url' =>$request->uploaded_file,
+            'file_url' =>$request->uploaded_file->getClientOriginalName(),
                ]);
                if($request->uploaded_file)
                {
