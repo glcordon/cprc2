@@ -256,7 +256,7 @@ class ClientController extends Controller
                 'authorized_price' => $request->authorized_price,
                 'date_authorized' => $request->date_authorized,
                 'notes' => $request->notes,
-                'file_url' => $filename,
+                'file_url' => $filename ?? '',
                 ]);
                 
             return [
