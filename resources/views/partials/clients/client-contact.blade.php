@@ -540,7 +540,7 @@
           axios.get('/get-service/'+ $(this).attr('data-id'))
           .then(response =>{
             console.log(response.data)
-            $('#this_service #amount_authorized').val(response.data['amount_authorized'])
+            $('#this_service #date_authorized').val(response.data['date_authorized'])
           })
           
         })
