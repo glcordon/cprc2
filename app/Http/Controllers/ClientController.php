@@ -244,6 +244,7 @@ class ClientController extends Controller
         if($request)
         {
             // dd($request->uploaded_file);
+            $filename = '';
             if($request->uploaded_file == "unidentified")
                 {
                     $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
@@ -256,7 +257,7 @@ class ClientController extends Controller
                 'authorized_price' => $request->authorized_price,
                 'date_authorized' => $request->date_authorized,
                 'notes' => $request->notes,
-                'file_url' => $filename ?? '',
+                'file_url' => $filename,
                 ]);
                 
             return [
