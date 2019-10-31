@@ -537,6 +537,10 @@
         $(document).on('click', '#this_service', function(e){
           e.preventDefault()
           $('#servicesModal').modal('show')
+          axios.get('/get-service/'.$(this).attr('data-id'))
+          .then(response =>{
+            console.log(response.data)
+          })
           
         })
         
