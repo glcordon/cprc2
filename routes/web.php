@@ -47,5 +47,5 @@ Route::post('/ap/update-service', 'AccountsPayableController@updateService');
 Route::get('/ap/{id}/delete/', 'AccountsPayableController@destroy');
 Route::get('/ap/{id}/export/', 'AccountsPayableController@show');
 Route::get('/get-file/{id}/{file_url}', 'ClientController@getFile');
-Route::get('/get-status/{id}', 'ClientController@getStatus');
+Route::get('/get-service/{id}', 'ClientController@getService');
 });
