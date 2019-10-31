@@ -244,7 +244,6 @@ class ClientController extends Controller
     }
     public function addService(Request $request)
     {
-        return $request->all();
         if($request)
         {
             // dd($request->uploaded_file);
