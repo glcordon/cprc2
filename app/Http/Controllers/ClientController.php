@@ -257,17 +257,13 @@ class ClientController extends Controller
             $client_service = ClientService::updateOrCreate([
                 'service_id' => $request->service_id, 
                 'client_id' => $client->id, 
-                'authorized_price' => $request->authorized_price,
+                'authorized_price' => $request->auth_price,
                 'date_authorized' => $request->date_authorized,
                 'notes' => $request->notes,
                 'file_url' => $filename,
                 ]);
                 
-            return [
-                'service_name' => Service::find($request->service_id)->service_name,
-                'date_authorized' => $request->date_authorized,
-                'file' => $filename,
-            ];
+            return $client_service;
         }
     }
 
