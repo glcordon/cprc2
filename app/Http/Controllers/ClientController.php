@@ -244,6 +244,7 @@ class ClientController extends Controller
     }
     public function addService(Request $request)
     {
+        return $request->id;
         if($request)
         {
             if($request->id)
