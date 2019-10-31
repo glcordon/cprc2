@@ -246,6 +246,7 @@ class ClientController extends Controller
     {
         if($request)
         {
+            $client = Client::find($request->client_id);
             // dd($request->uploaded_file);
             $filename = '';
             if($request->uploaded_file == "unidentified")
@@ -253,7 +254,7 @@ class ClientController extends Controller
                     $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
                     $request->uploaded_file->storeAs($client->id, $filename);
                 }
-            $client = Client::find($request->client_id);
+            
             $client_service = ClientService::updateOrCreate([
                 'service_id' => $request->service_id, 
                 'client_id' => $client->id, 
