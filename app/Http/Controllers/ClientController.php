@@ -259,7 +259,7 @@ class ClientController extends Controller
                     $request->uploaded_file->storeAs($client->id, $filename);
                 }
             
-            $client_service = ClientService::updateOrCreate([
+            $client_service = ClientService::updateOrCreate(
                 [
                     'service_id' => $request->service_id, 
                     'client_id' => $client->id
@@ -270,7 +270,7 @@ class ClientController extends Controller
                     'notes' => $request->notes,
                     'file_url' => $filename
                 ]
-                ]);
+                );
                 
             return $client_service;
         }
