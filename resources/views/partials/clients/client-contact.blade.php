@@ -539,7 +539,7 @@
           $('#servicesModal').modal('show')
           axios.get('/get-service/'+ $(this).attr('data-id'))
           .then(response =>{
-            console.log(response.data)
+            console.log(response.data['date_authorized'])
             $('#servicesModal').find('#date_authorized').val(response.data['date_authorized'])
           })
           
