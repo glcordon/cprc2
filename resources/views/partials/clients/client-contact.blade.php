@@ -540,7 +540,7 @@
           axios.get('/get-service/'+ $(this).attr('data-id'))
           .then(response =>{
             console.log(moment(response.data['date_authorized']).format('MM/DD/YYYY'))
-            $('#servicesModal').find('#date_authorized').val(response.data['date_authorized'])
+            $('#servicesModal').find('#date_authorized').val(moment(response.data['date_authorized']).format('MM/DD/YYYY'))
           })
           
         })
