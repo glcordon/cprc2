@@ -536,7 +536,7 @@
         })
         $(document).on('click', '#this_service', function(e){
           e.preventDefault()
-          $('#servicesModal').modal.show()
+          $('#servicesModal').modal('show')
           
         })
         
