@@ -239,7 +239,7 @@ class ClientController extends Controller
             return abort(404);
         }
     }
-    public function getService(Services $service){
+    public function getService(ClientService $service){
         return $service;
     }
     public function addService(Request $request)
