@@ -541,6 +541,7 @@
           .then(response =>{
             console.log(moment(response.data['date_authorized']).format('MM/DD/YYYY'))
             $('#servicesModal').find('input#service_date').val(moment(response.data['date_authorized']).format('YYYY-MM-DD'))
+            $('#servicesModal').find('select#service_name option:eq('+response.data["service_name"]+')').prop('selected', true)
           })
           
         })
