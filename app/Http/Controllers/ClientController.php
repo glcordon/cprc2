@@ -243,7 +243,11 @@ class ClientController extends Controller
     {
         if($request)
         {
-            $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
+            if($request->uploaded_file)
+                {
+                    $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
+                    $request->uploaded_file->storeAs($client->id, $filename);
+                }
             $client = Client::find($request->client_id);
             $client_service = ClientService::updateOrCreate([
                 'service_id' => $request->service_id, 
@@ -253,10 +257,7 @@ class ClientController extends Controller
                 'notes' => $request->notes,
                 'file_url' => $filename,
                 ]);
-                if($request->uploaded_file)
-                {
-                    $request->uploaded_file->storeAs($client->id, $filename);
-                }
+                
             return [
                 'service_name' => Service::find($request->service_id)->service_name,
                 'date_authorized' => $request->date_authorized,
