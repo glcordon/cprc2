@@ -243,6 +243,7 @@ class ClientController extends Controller
     {
         if($request)
         {
+            dd($request->uploaded_file);
             if($request->uploaded_file)
                 {
                     $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
