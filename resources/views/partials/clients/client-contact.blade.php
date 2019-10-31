@@ -458,6 +458,7 @@
             data1.append('notes', notes);
             data1.append('token', token);
             data1.append('client_id', client_id);
+            data1.append('save_type', save_type);
             axios.post('/add-service', data1)
                 .then(data=>{
                    $('.service_div').prepend(`
