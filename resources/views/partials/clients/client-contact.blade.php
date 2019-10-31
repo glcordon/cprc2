@@ -196,8 +196,7 @@
             <option value="">Add A Service To Add</option>
            
             @foreach($otherServices as $service)
-            
-            <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
+              <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
             @endforeach
         </select><br>
         {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
@@ -443,6 +442,7 @@
             e.preventDefault();
             var parentModal = $(this).parent().parent()
             var save_type = $(this).attr('data-btn-type')
+            var id = $(this).attr('data-id')
             var service_id = parentModal.find('select option:selected').val()
             var auth_price = parentModal.find('#amount_authorized').val()
             var auth_date = parentModal.find('#service_date').val()
@@ -466,6 +466,7 @@
                 <p>${data.data['date_authorized']}</p>
                 `)
                 $('#servicesModal').find('input#saveServices').attr('data-btn-type', '');
+                $('#servicesModal').find('input#saveServices').attr('data-id', '');
 
                 console.log(data.data);
                 clearForm()
@@ -548,6 +549,7 @@
             $('#servicesModal').find('input#amount_authorized').val(response.data['amount_authorized'])
             $('#servicesModal').find('input#service_notes').val(response.data['notes'])
             $('#servicesModal').find('#saveServices').attr('data-btn-type', 'edit');
+            $('#servicesModal').find('#saveServices').attr('data-id', response.data['id']);
             $('#servicesModal').find('select#service_id option').val(response.data["service_name"]).attr("selected",true)
           })
           

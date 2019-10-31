@@ -246,6 +246,10 @@ class ClientController extends Controller
     {
         if($request)
         {
+            if($request->id)
+            {
+                $thisId = $request->id;
+            }
             $client = Client::find($request->client_id);
             // dd($request->uploaded_file);
             $filename = '';
@@ -256,8 +260,11 @@ class ClientController extends Controller
                 }
             
             $client_service = ClientService::updateOrCreate([
-                'service_id' => $request->service_id, 
-                'client_id' => $client->id, 
+                [
+                    'id' => $thisId,
+                    'service_id' => $request->service_id, 
+                    'client_id' => $client->id
+                ], 
                 'authorized_price' => $request->auth_price,
                 'date_authorized' => $request->date_authorized,
                 'notes' => $request->notes,
