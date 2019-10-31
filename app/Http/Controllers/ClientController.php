@@ -243,8 +243,8 @@ class ClientController extends Controller
     {
         if($request)
         {
-            dd($request->uploaded_file);
-            if($request->uploaded_file)
+            // dd($request->uploaded_file);
+            if($request->uploaded_file == "unidentified")
                 {
                     $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
                     $request->uploaded_file->storeAs($client->id, $filename);
