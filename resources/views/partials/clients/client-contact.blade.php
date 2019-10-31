@@ -442,6 +442,7 @@
         $('#saveServices').on('click', function(e){
             e.preventDefault();
             var parentModal = $(this).parent().parent()
+            var save_type = $(this).attr('data-btn-type')
             var service_id = parentModal.find('select option:selected').val()
             var auth_price = parentModal.find('#amount_authorized').val()
             var auth_date = parentModal.find('#service_date').val()
