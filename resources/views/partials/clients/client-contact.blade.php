@@ -491,8 +491,8 @@
           $('input#amount_authorized').val('').attr('place-holder', '0.00')
           $('textarea#service_notes').val('')
           $('input#upload_file').val('')
-          $('#servicesModal').find('#saveServices').attr('data-btn-type', '');
-          $('#servicesModal').find('#saveServices').attr('data-id', '');
+          $('#servicesModal').find('#saveServices').removeAttr('data-btn-type');
+          $('#servicesModal').find('#saveServices').removeAttr('data-id');
 
         }
         $('#saveJobData').on('click', function(e){
