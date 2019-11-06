@@ -473,7 +473,7 @@
                 <p>${data.data['date_authorized']}</p>
                 `)
                 $('#servicesModal').find('#saveServices').attr('data-btn-type', '');
-                $('#servicesModal').find('#saveServices').attr('data-id', '';
+                $('#servicesModal').find('#saveServices').attr('data-id', '');
 
                 console.log(data.data);
                 clearForm()
