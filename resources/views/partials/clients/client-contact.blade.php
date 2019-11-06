@@ -137,7 +137,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                             +Touch Point
                         </button>   
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#servicesModal">
+                        <button type="button" class="btn btn-primary" id='openServicesModal' data-toggle="modal" data-target="#servicesModal">
                             +Accts Payable
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
@@ -398,6 +398,10 @@
       $('#servicesModal').on("hidden.bs.modal", function(){
         clearForm()
       });
+      $('#openServicesModal').on('click', function(){
+        $('#servicesModal').find('input#saveServices').attr('data-btn-type', '');
+        $('#servicesModal').find('input#saveServices').attr('data-id', '');
+      })
       const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
@@ -443,6 +447,7 @@
         $('#saveServices').on('click', function(e){
             e.preventDefault();
             var parentModal = $(this).parent().parent()
+            
             var save_type = $(this).attr('data-btn-type')
             var id = $(this).attr('data-id')
             var service_id = parentModal.find('select option:selected').val()
