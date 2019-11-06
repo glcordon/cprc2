@@ -483,7 +483,7 @@
         {
           $('select#service_id').val('');
           $('input#service_date').val('')
-          $('input#amount_authorized').val('0.00')
+          $('input#amount_authorized').val('').attr('place-holder', '0.00')
           $('textarea#service_notes').val('')
           $('input#upload_file').val('')
           $('#servicesModal').find('input#saveServices').attr('data-btn-type', 'save');
