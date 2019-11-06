@@ -395,7 +395,9 @@
 </script> 
 <script>
     $(document).ready(function(){
-      
+      $('#servicesModal').on("hidden.bs.modal", function(){
+        clearForm()
+      });
       const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
