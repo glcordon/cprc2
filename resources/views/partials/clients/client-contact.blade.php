@@ -472,8 +472,8 @@
                 <a href="#"><h5 class="card-title"> ${data.data['service_name']}</h5></a>
                 <p>${data.data['date_authorized']}</p>
                 `)
-                $(this).attr('data-btn-type', '');
-                $(this).attr('data-id', '');
+                $('#servicesModal').find('#saveServices').attr('data-btn-type', '');
+                $('#servicesModal').find('#saveServices').attr('data-id', '';
 
                 console.log(data.data);
                 clearForm()
