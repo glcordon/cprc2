@@ -246,7 +246,7 @@ class ClientController extends Controller
     {
         if($request)
         {
-            return($request->all());
+            // return($request->all());
             $client = Client::find($request->client_id);
             // dd($request->uploaded_file);
             $filename = '';
