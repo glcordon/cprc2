@@ -103,7 +103,9 @@
               <div class="service_div">
 
                 @foreach($services as $srv)
-                     <a href="#" id="this_service" data-id="{{ $srv->pivot->id }}"><span class="card-title"> {{ $srv['service_name'] ?? '' }}</span> </a>
+                      {{--  <a href="#" id="this_service" data-id="{{ $srv->pivot->id }}">  --}}
+                       <span class="card-title"> {{ $srv['service_name'] ?? '' }}</span> 
+                      {{--  </a>  --}}
                      @if($srv->pivot->file_url) 
                      <a href="{{ '/get-file/'.$clients->id.'/'.$srv->pivot->file_url }}"><i class="fas fa-file-export"></i></a> 
                      @endif
