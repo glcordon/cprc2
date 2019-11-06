@@ -246,10 +246,6 @@ class ClientController extends Controller
     {
         if($request)
         {
-            if($request->has('id'))
-            {
-                $thisId = $request->id;
-            }
             $client = Client::find($request->client_id);
             // dd($request->uploaded_file);
             $filename = '';
@@ -258,20 +254,35 @@ class ClientController extends Controller
                     $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
                     $request->uploaded_file->storeAs($client->id, $filename);
                 }
-            
-            $client_service = ClientService::updateOrCreate(
-                [
-                    if($request->id){ 'id' => $thisId }
-                    'service_id' => $request->service_id, 
-                    'client_id' => $client->id
-                ], 
-                [
-                    'authorized_price' => $request->auth_price,
-                    'date_authorized' => $request->date_authorized,
-                    'notes' => $request->notes,
-                    'file_url' => $filename
-                ]
-                );
+                if($request->has('id'))
+                {
+                    $thisId = $request->id;
+                    $client_service = ClientService::updateOrCreate(
+                        [
+                            'id' => $request->id,
+                            'service_id' => $request->service_id, 
+                            'client_id' => $client->id
+                        ], 
+                        [
+                            'authorized_price' => $request->auth_price,
+                            'date_authorized' => $request->date_authorized,
+                            'notes' => $request->notes,
+                            'file_url' => $filename
+                        ]
+                        );
+                }else{
+                    $client_service = ClientService::updateOrCreate(
+                        [
+                            'service_id' => $request->service_id, 
+                            'client_id' => $client->id,
+                            'authorized_price' => $request->auth_price,
+                            'date_authorized' => $request->date_authorized,
+                            'notes' => $request->notes,
+                            'file_url' => $filename
+                        ]
+                        );
+                }
+                
                 
             return $client_service;
         }
