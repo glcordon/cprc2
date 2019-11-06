@@ -261,6 +261,7 @@ class ClientController extends Controller
             
             $client_service = ClientService::updateOrCreate(
                 [
+                    if($request->id){ 'id' => $thisId }
                     'service_id' => $request->service_id, 
                     'client_id' => $client->id
                 ], 
@@ -273,6 +274,26 @@ class ClientController extends Controller
                 );
                 
             return $client_service;
+        }
+    }
+
+    public function updateServices(Request $request, $id)
+    {
+        if($request)
+        {
+            $client_service = ClientService::updateOrCreate(
+                [
+                    'id' => $request->id;
+                    'service_id' => $request->service_id, 
+                    'client_id' => $client->id
+                ], 
+                [
+                    'authorized_price' => $request->auth_price,
+                    'date_authorized' => $request->date_authorized,
+                    'notes' => $request->notes,
+                    'file_url' => $filename
+                ]
+                );
         }
     }
 
