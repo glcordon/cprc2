@@ -294,7 +294,7 @@ class ClientController extends Controller
         {
             $client_service = ClientService::updateOrCreate(
                 [
-                    'id' => $request->id;
+                    'id' => $request->id,
                     'service_id' => $request->service_id, 
                     'client_id' => $client->id
                 ], 
