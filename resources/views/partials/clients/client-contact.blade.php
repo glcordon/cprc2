@@ -486,6 +486,9 @@
           $('input#amount_authorized').val('0.00')
           $('textarea#service_notes').val('')
           $('input#upload_file').val('')
+          $('#servicesModal').find('input#saveServices').attr('data-btn-type', '');
+          $('#servicesModal').find('input#saveServices').attr('data-id', '');
+
         }
         $('#saveJobData').on('click', function(e){
             e.preventDefault();
