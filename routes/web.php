@@ -33,11 +33,20 @@ Route::post('/client/add-job', 'ClientController@updateJob')->name('client.updat
 Route::post('/client/delete-job', 'ClientController@deleteJob')->name('client.deleteJob');
 Route::get('/delete-client/{id}', 'ClientController@destroy');
 Route::post('/find-user', 'ClientController@findUser')->name('client.findUser');
+Route::post('/client-upload', 'ClientController@clientUpload')->name('client.upload');
+Route::get('/client-upload', 'ClientController@showUploadForm')->name('client.uploadForm');
 
 Route::post('/add-note', 'NoteController@store')->name('note.add');
 Route::post('/add-service', 'ClientController@addService');
 Route::get('/report-generate', 'ReportController@index')->name('pdf');
 Route::post('/report-generate', 'ReportController@index')->name('pdf_post');
 Route::post('/participation-report', 'ReportController@participantReport')->name('participation_report');
-
+Route::get('/ap', 'AccountsPayableController@index');
+Route::post('/ap/get-month', 'AccountsPayableController@index');
+Route::post('/ap/update-service', 'AccountsPayableController@updateService');
+Route::get('/ap/{id}/delete/', 'AccountsPayableController@destroy');
+Route::get('/ap/{id}/export/', 'AccountsPayableController@show');
+Route::get('/get-file/{id}/{file_url}', 'ClientController@getFile');
+Route::get('/get-service/{service}', 'ClientController@getService');
+Route::post('/update-service/{service}', 'ClientController@getService');
 });

@@ -12,6 +12,6 @@ class Service extends Model
 
     public function client()
     {
-        return $this->belongsToMany('\App\Client', 'client_service', 'service_id', 'client_id');
+        return $this->belongsToMany('\App\Client', 'client_service', 'service_id', 'client_id')->withPivot(['created_at', 'updated_at']);
     }
 }

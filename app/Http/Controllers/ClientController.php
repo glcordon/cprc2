@@ -10,6 +10,11 @@ use App\ClientProfile;
 use App\Services;
 use Illuminate\Support\Facades\Auth;
 use App\ClientService;
+use App\Imports\ClientImport;
+use App\Service;
+use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
 {
@@ -24,7 +29,6 @@ class ClientController extends Controller
     }
     public function index()
     {
-       
         $clients = Client::where('status', 'active')->get();
          // return view('vendor.voyager.clients.browse');
         return view('partials.clients.client-index', compact('clients'));
@@ -52,7 +56,7 @@ class ClientController extends Controller
         }
         $users = $users->sortBy('caseLoad');
         $suggestedCaseworker = $users->where('caseLoad', $users->min('caseLoad'))->random()->name;
-        $services = Services::orderBy('service_name', 'ASC')->get();
+        $services = Services::where('service_type', '=', 'referred')->orderBy('service_name', 'ASC')->get();
         return view('partials.clients.client-add', compact('services','users', 'suggestedCaseworker'));
 
     }
@@ -113,7 +117,7 @@ class ClientController extends Controller
             $client->services()->attach($request->services);
             
 
-        return redirect()->route('client.index');
+        return redirect('/client/contact/'.$client->id);
         
     }
 
@@ -128,9 +132,9 @@ class ClientController extends Controller
         //
         $clients = Client::find($id);
         $services = $clients->services;
-        $additional_service = Services::get();
+        $additional_service = Services::where('service_type', '!=', 'referred')->get();
         $allServices = collect($additional_service->toArray());
-        $otherServices = $additional_service->diff($services)->toArray();
+        $otherServices = $additional_service->diff($services)->sortBy('service_name')->toArray();
         $notes = $clients->notes;
         $last_contact = $clients->notes->first()->created_at ?? '';
         // dd(Services::select('id', 'service_name')->pluck('id'));
@@ -210,7 +214,7 @@ class ClientController extends Controller
             $client->services()->sync($request->services);
             
 
-        return redirect()->route('client.index');
+            return redirect('/client/contact/'.$client->id);
     }
 
     /**
@@ -226,13 +230,78 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->back()->withInput();
     }
+    public function getFile(Int $id, $file_url)
+    {
+        if(Storage::disk('local')->exists($id.'/'.$file_url))
+        {
+           return response()->download(storage_path('app/'.$id.'/'.$file_url)); 
+        }else{
+            return abort(404);
+        }
+    }
+    public function getService(ClientService $service){
+        return $service;
+    }
     public function addService(Request $request)
     {
         if($request)
         {
+            // return($request->all());
             $client = Client::find($request->client_id);
-           ClientService::updateOrCreate(['service_id' => $request->service_id, 'client_id' => $client->id]);
-           return 'done';
+            // dd($request->uploaded_file);
+            $filename = '';
+            if($request->uploaded_file == "unidentified")
+                {
+                    $filename = Carbon::now()->format('m-d-y-H-i-s').'_'.$request->uploaded_file->getClientOriginalName();
+                    $request->uploaded_file->storeAs($client->id, $filename);
+                }
+                if($request->has('id'))
+                {
+                    $thisId = $request->id;
+                    $clientService = ClientService::find($thisId);
+                            $clientService->id = $request->id;
+                            $clientService->service_id = $request->service_id; 
+                            $clientService->client_id = $client->id;
+                            $clientService->authorized_price = $request->auth_price;
+                            $clientService->date_authorized = $request->date_authorized;
+                            $clientService->notes = $request->notes;
+                            $clientService->file_url = $filename;
+                            $clientService->save();
+                }else{
+                    $client_service = ClientService::updateOrCreate(
+                        [
+                            'service_id' => $request->service_id, 
+                            'client_id' => $client->id,
+                            'authorized_price' => $request->auth_price,
+                            'date_authorized' => $request->date_authorized,
+                            'notes' => $request->notes,
+                            'file_url' => $filename
+                        ]
+                        );
+                }
+                
+                
+            return $client_service;
+        }
+    }
+
+    public function updateServices(Request $request, $id)
+    {
+        if($request)
+        {
+            $client_service = ClientService::updateOrCreate(
+                [
+                    'id' => $request->id,
+                    'service_id' => $request->service_id, 
+                    'client_id' => $client->id
+                ], 
+                [
+                    'authorized_price' => $request->auth_price,
+                    'date_authorized' => $request->date_authorized,
+                    'notes' => $request->notes,
+                    'file_url' => $filename
+                ]
+                );
         }
     }
 
@@ -296,6 +365,73 @@ class ClientController extends Controller
             }
         }
         return($count);
+    }
+    public function showUploadForm()
+    {
+        return view('partials.clients.client-upload');
+    }
+
+    public function clientUpload(Request $request)
+    {
+
+        $path = $request->file('excel_file')->store('csvs');
+        
+        $clients = (new ClientImport)->toCollection($path, 'local', \Maatwebsite\Excel\Excel::XLSX)->flatten(1)->toArray();
+
+        foreach($clients as $row)
+        {
+            $client = new Client;
+            if($request->form_of_id == null)
+            {
+                $request->form_of_id = [""];
+            }
+            $client->enrollment_date = $this->convertExcelDate($row['enrollmentdate']) ?? '';
+            $client->first_name = explode(' ', $row['name'])[0] ?? ''; 
+            $client->last_name = explode(' ', $row['name'])[1] ?? '';
+            $client->suffix =  explode(' ', $row['name'])[2] ?? '';
+            $client->address_1 = explode(',', $row['address'])[0] ?? ''; 
+            $client->risk_level = '';
+            $client->city = explode(',', $row['address'])[1] ?? null;
+            $client->state = explode(',', $row['address'])[2] ?? null;
+            $client->zip = null;
+            $client->primary_phone = $row['telephone'] ?? '';
+            $client->secondary_phone = $row['telephone_2'] ?? '';
+            $client->email_address = $row['email'] ?? '';
+            $client->citizenship = $row['citizenship'] ?? '';
+            $client->form_of_id = json_encode($request->form_of_id);
+            $client->sex = $row['gender'][0] ?? '';
+            $client->release_date =  null;
+            $client->status = 'active' ?? '';
+            $client->full_name = $row['name'] ?? '';
+            $client->assigned_to = $row['assigned_to'] ?? '14';
+            $client->ncdps_id = $row['opus'] ?? '';
+            $client->maritial_status = $row['marital_status'] ?? '';           
+            $client->race = $row['race'] ?? '';
+            $client->ethnicity = $row['ethnicity'] ?? '';
+            $client->education = $row['level_of_education'] ?? '';
+            $client->dob = $this->convertExcelDate($row['dob']) ?? '';
+            $client->number_of_priors = $row['of_priors'] ?? null;
+            $client->first_offence_age = $row['age_at_1stoffense'] ?? null;
+            $client->charge = 'testing';
+            $client->save();
+            
+        }
+
+        return(collect($clients)->map(function($item){
+            return $item;
+                return $this->convertExcelDate($item['dob']);
+           
+            })
+        );
+
+        return Client::where("assigned_to", "14")->get();
+    }
+
+    public function convertExcelDate($date)
+    {
+            $EXCEL_DATE = $date;
+            $UNIX_DATE = ($EXCEL_DATE - 25569) * 86400;
+            return gmdate("Y-m-d", $UNIX_DATE);
     }
 }
 

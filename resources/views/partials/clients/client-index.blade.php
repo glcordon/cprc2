@@ -7,7 +7,7 @@
 
          <h1>List all Clients <small><em>({{ $clients->count() }})</em></small></h1>
             @if($clients->count() == 0)
-            <div class="col-md-12">No Clients To List </div> 
+                <div class="col-md-12">No Clients To List </div> 
             @endif
        </div>
             <div class="row">

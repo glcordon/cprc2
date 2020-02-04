@@ -300,7 +300,7 @@
                 <option value="complete" {{ isset($client) ? ($client->status == 'complete' ? 'selected="selected"' : '') : ''}}>Complete</option>
             </select>
              <hr>
-             <h5>Services</h5>
+               <h5>Services</h5>
 
                 @foreach($services as $service)
                     <div class="form-check form-check-inline flex" style="margin:3px 10px; display: -webkit-inline-box">
@@ -310,7 +310,7 @@
                         </label>
                     </div>
                 @endforeach
-            <br><br>
+            <br><br> 
        <button class="btn btn-lg btn-primary" type="submit" value="add" name="add">{{ !isset($client) ? "Add A New Client" : 'Update ' .$client->last_name. ', ' .$client->first_name}}</button>
        {{--  <button class="btn btn-lg btn-primary" type="submit" value="add-new" name="add">{{ !isset($client) ? "Add A New Client" : 'Update ' .$client->last_name. ', ' .$client->first_name}} And Create New </button>  --}}
         </form>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @section('content1')
 <style>
         .round { border-radius: 50%; margin:20px auto}
@@ -92,52 +92,58 @@
                         <small><em>No Job Listed</em></small> 
                       @endif
                     </div>
-                
+                    
             </div>
             <div class="card-footer">
                 
+            </div>
+            <hr>
+            <div class="card-title">
+              <h4>Services</h4>
+              <div class="service_div">
+
+                @foreach($services as $srv)
+                      {{--  <a href="#" id="this_service" data-id="{{ $srv->pivot->id }}">  --}}
+                       <span class="card-title"> {{ $srv['service_name'] ?? '' }}</span> 
+                      {{--  </a>  --}}
+                     @if($srv->pivot->file_url) 
+                     <a href="{{ '/get-file/'.$clients->id.'/'.$srv->pivot->file_url }}"><i class="fas fa-file-export"></i></a> 
+                     @endif
+                     <p>{{ $srv->pivot->date_authorized }}</p>
+                     
+                     <hr />
+                      {{--  <p>
+                          Expiration:
+                          @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
+                            Expired
+                          @else 
+                            {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
+                          @endif 
+                      
+                      @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
+                        Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
+                      @else
+                      @endif</p>  --}}
+                     
+                @endforeach
+              </div>
             </div>
         </div>
         </div>
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            <div class="card-title">
-              <h3>Services</h3>
-            <div class="card-body flex">
-              @foreach($services as $srv)
-              <div class="card text-center" style="width:45%; margin:10px;">
-                  <div class="card-header">
-                    <h5 class="card-title"> {{ $srv['service_name'] ?? '' }}</h5>
-                  </div>
-                  <div class="card-body">
-                    <p class="card-text">
-                        Expiration:
-                        @if(\Carbon\Carbon::now()->diffInDays($clients->enrollment_date) > $srv->service_duration)
-                          Expired
-                        @else 
-                          {{ Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString()  }}
-                        @endif 
-                    </p>
-                  </div>
-                  <div class="card-footer text-muted">
-                    @if(\Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) > 0 )
-                      Expires in ({{ \Carbon\Carbon::now()->diffInDays(Carbon\Carbon::parse($clients->enrollment_date)->addDays($srv->service_duration)->toDateString(), false) }}) Days
-                    @else
-
-                    @endif
-                  </div>
-                </div>
-              @endforeach
-            </div>
-            </div>
+            
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 py-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Add New Touch Point
+                            +Touch Point
+                        </button>   
+                        <button type="button" class="btn btn-primary" id='openServicesModal' data-toggle="modal" data-target="#servicesModal">
+                            +Accts Payable
                         </button>   
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addJobModal">
-                                Add Job Data
+                                +Job Data
                             </button>            
                 </div>
                 <div class="col-6">Last Contact: @if($last_contact !=''){{ $last_contact->toDateTimeString() ?? '' }}@endif</div>
@@ -192,8 +198,7 @@
             <option value="">Add A Service To Add</option>
            
             @foreach($otherServices as $service)
-            
-            <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
+              <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
             @endforeach
         </select><br>
         {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
@@ -272,7 +277,51 @@
     </div>
   </div>
 </div>
-
+{{--  Add Services Modal  --}}
+<div class="modal fade" id="servicesModal" tabindex="-1" role="dialog" aria-labelledby="servicesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="addServicesModal">
+          <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
+            <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
+              <option value="">Select A Service</option>
+              @foreach($otherServices as $srv)
+                  <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
+              @endforeach
+            </select>
+            <div class="form-group">
+              <label>Date Authorized:</label>
+              <input type="date" name="service_date" id="service_date" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Amount Authorized $</label>
+              <input type="number" value="0.00" name="amount_authorized" id="amount_authorized" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="service_notes">Additional Info</label>
+              <textarea class="form-control" name="service_notes" id="service_notes" rows="3"></textarea>
+              <p class="form-text text-muted">
+                Add additional information about service, i.e. voucher, bus pass, gas card, etc.
+              </p>
+              <div class="form-group">
+                <label for="upload_file">Upload Invoice</label><br><input type="file" name="upload_name" id="upload_file">
+              </div>
+            </div>
+            {{ csrf_field() }}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveServices">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <!-- Modal Add Touchpoint-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -301,12 +350,7 @@
       <input class="timepicker form-control" name="start_time" id="start_time" type="text"> <br>
         {{--  <input type="number" min="0" max="12" placeholder="Hr" id="hr" name="hr">:<input type="number" min="0" max="59" id="min" value="00"  placeholder="Min" name="min"><select name="am_pm" id="am_pm"><option value="">AM</option><option value="pm">PM</option></select>  --}}
         {{--  <a href="#" class="btn btn-sm btn-default" data-dismiss="modal" data-toggle="modal" data-target="#serviceModal">Add New Service</a>  --}}
-        <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
-            <option value="">Select A Service</option>
-            @foreach($services as $srv)
-                <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
-            @endforeach
-        </select>
+        
         <label for="duration">Duration:</label>
         <select name="duration" id="duration" class="form-control">
           <option value="30">30 Minutes</option>
@@ -340,6 +384,8 @@
 @endpush
 @endsection
 @push('scripts')
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script type="text/javascript">
 
   $('.timepicker').datetimepicker({
@@ -351,7 +397,13 @@
 </script> 
 <script>
     $(document).ready(function(){
-      
+      $('#servicesModal').on("hidden.bs.modal", function(){
+        clearForm()
+      });
+      $('#openServicesModal').on('click', function(){
+        $('#servicesModal').find('input#saveServices').attr('data-btn-type', '');
+        $('#servicesModal').find('input#saveServices').attr('data-id', '');
+      })
       const this_id = $('input#this_id').val();
         $('.btn-danger').on('click', function(){
             e.preventDefault();
@@ -375,7 +427,7 @@
             var note_date = $('#note_date').val();
             var start_time = $('#start_time').val();
             var duration = $('#duration').val();
-            if(note == '' || title == '' || start_time == '' || duration == '' || service_id == '')
+            if(note == '' || title == '' || start_time == '' || duration == '')
             {
               alert('All fields are required');
               return false;
@@ -394,25 +446,57 @@
                // });
         });
 
-        $('#saveService').on('click', function(e){
+        $('#saveServices').on('click', function(e){
             e.preventDefault();
-            let service_id = $('select#service_name').val();
-            var service_name = $('select#service_name  option:selected').text();
+            var parentModal = $(this).parent().parent()
+            
+            var save_type = $(this).attr('data-btn-type')
+            var id = $(this).attr('data-id')
+            var service_id = parentModal.find('select option:selected').val()
+            var auth_price = parentModal.find('#amount_authorized').val()
+            var auth_date = parentModal.find('#service_date').val()
+            var notes = parentModal.find('#service_notes').val()
+            var uploaded_file = $('#upload_file')[0].files[0]
             var token = "{{ @csrf_token() }}";
             var client_id = $('#client_id').val();
-            $.ajax({
-                method: "POST",
-                url: "/add-service",
-                data: { _token:token, service_id: service_id, client_id: client_id}
-              })
-              .done(function(data){
-                console.log(data);
-                $('select#service_name  option:selected').hide();
-                $('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
-                // $('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
-              });
+            var data1 = new FormData()
+            data1.append('uploaded_file', uploaded_file);
+            data1.append('service_id', service_id);
+            data1.append('auth_price', auth_price);
+            data1.append('date_authorized', auth_date);
+            data1.append('notes', notes);
+            data1.append('token', token);
+            data1.append('client_id', client_id);
+            data1.append('save_type', save_type);
+            axios.post('/add-service', data1)
+                .then(data=>{
+                   $('.service_div').prepend(`
+                <a href="#"><h5 class="card-title"> ${data.data['service_name']}</h5></a>
+                <p>${data.data['date_authorized']}</p>
+                `)
+                $('#servicesModal').find('#saveServices').attr('data-btn-type', '');
+                $('#servicesModal').find('#saveServices').attr('data-id', '');
+
+                console.log(data.data);
+                clearForm()
+                //$('select#service_name  option:selected').hide();
+                //$('select#service_id').append('<option value="'+service_id+'">'+service_name+'</option>');
+                //$('.timeline').prepend('<li><a id="title_type" target="_blank" href="#">'+type+'</a><a href="#" class="float-right">Now</a><p>'+note+'</p></li>');
+              
+                })
             
         });
+        function clearForm()
+        {
+          $('select#service_id').val('');
+          $('input#service_date').val('')
+          $('input#amount_authorized').val('').attr('place-holder', '0.00')
+          $('textarea#service_notes').val('')
+          $('input#upload_file').val('')
+          $('#servicesModal').find('#saveServices').removeAttr('data-btn-type');
+          $('#servicesModal').find('#saveServices').removeAttr('data-id');
+
+        }
         $('#saveJobData').on('click', function(e){
             e.preventDefault();
             var job_name = $('#job_name').val();
@@ -467,6 +551,22 @@
               this_div.parent().fadeOut().remove()
             })
         })
+        $(document).on('click', '#this_service', function(e){
+          e.preventDefault()
+          $('#servicesModal').modal('show')
+          axios.get('/get-service/'+ $(this).attr('data-id'))
+          .then(response =>{
+            console.log(response.data)
+            $('#servicesModal').find('input#service_date').val(moment(response.data['date_authorized']).format('YYYY-MM-DD'))
+            $('#servicesModal').find('#amount_authorized').val(response.data['authorized_price'])
+            $('#servicesModal').find('input#service_notes').val(response.data['notes'])
+            $('#servicesModal').find('#saveServices').attr('data-btn-type', 'edit');
+            $('#servicesModal').find('#saveServices').attr('data-id', response.data['id']);
+            $('#servicesModal').find('select#service_id option').val(response.data["service_name"]).attr("selected",true)
+          })
+          
+        })
+        
     });
 
       //  });
