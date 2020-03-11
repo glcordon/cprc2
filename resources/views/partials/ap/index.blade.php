@@ -24,6 +24,10 @@
             <option {{ $thisDate == 11 ? 'selected' : '' }} value="11">Nov</option>
             <option {{ $thisDate == 12 ? 'selected' : '' }} value="12">Dec</option>
         </select>
+        <select name="searchYear"  class="w-25 border-dark" id="Search Year">
+            <option value="2019"></option>
+            <option value="2020"></option>
+        </select>
         <button class="btn btn-xs btn-dark" type="submit">Switch Month</button>
     </form>
     <strong>Transition/Reentry Support Form</strong><br>						
