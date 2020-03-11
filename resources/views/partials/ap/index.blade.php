@@ -35,7 +35,7 @@
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
     Invoice # 402.{{ Carbon\Carbon::now()->year }}.{{ Carbon\Carbon::now()->month }}	<br>						
-    {{ Carbon\Carbon::create()->month($thisMonth)->startOfMonth()->format('m/d/Y') }} - {{ Carbon\Carbon::create()->month($thisMonth)->endOfMonth()->format('m/d/Y')  }}<br>
+    {{ Carbon\Carbon::create()->month($thisMonth)->year($thisYear)->startOfMonth()->format('m/d/Y') }} - {{ Carbon\Carbon::create()->month($thisMonth)->year($thisYear)->endOfMonth()->format('m/d/Y')  }}<br>
     <br>
 </div>
 <div class="col-12 text-right">
