@@ -5,7 +5,7 @@
 <br>
 <br>
 <br>
-
+@dump($thisYear)
 <div style="text-align:center">
     <form action="/ap/get-month" method="post">
         @csrf
