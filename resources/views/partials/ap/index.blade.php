@@ -11,18 +11,18 @@
         @csrf
         <select name="searchMonth" class="w-25 border-dark" id="Search Month">
             <option value="">Select Month</option>
-            <option {{ $thisDate == 1 ? 'selected' : '' }} value="1">Jan</option>
-            <option {{ $thisDate == 2 ? 'selected' : '' }} value="2">Feb</option>
-            <option {{ $thisDate == 3 ? 'selected' : '' }} value="3">Mar</option>
-            <option {{ $thisDate == 4 ? 'selected' : '' }} value="4">Apr</option>
-            <option {{ $thisDate == 5 ? 'selected' : '' }} value="5">May</option>
-            <option {{ $thisDate == 6 ? 'selected' : '' }} value="6">Jun</option>
-            <option {{ $thisDate == 7 ? 'selected' : '' }} value="7">Jul</option>
-            <option {{ $thisDate == 8 ? 'selected' : '' }} value="8">Aug</option>
-            <option {{ $thisDate == 9 ? 'selected' : '' }} value="9">Sep</option>
-            <option {{ $thisDate == 10 ? 'selected' : '' }} value="10">Oct</option>
-            <option {{ $thisDate == 11 ? 'selected' : '' }} value="11">Nov</option>
-            <option {{ $thisDate == 12 ? 'selected' : '' }} value="12">Dec</option>
+            <option {{ $thisMonth == 1 ? 'selected' : '' }} value="1">Jan</option>
+            <option {{ $thisMonth == 2 ? 'selected' : '' }} value="2">Feb</option>
+            <option {{ $thisMonth == 3 ? 'selected' : '' }} value="3">Mar</option>
+            <option {{ $thisMonth == 4 ? 'selected' : '' }} value="4">Apr</option>
+            <option {{ $thisMonth == 5 ? 'selected' : '' }} value="5">May</option>
+            <option {{ $thisMonth == 6 ? 'selected' : '' }} value="6">Jun</option>
+            <option {{ $thisMonth == 7 ? 'selected' : '' }} value="7">Jul</option>
+            <option {{ $thisMonth == 8 ? 'selected' : '' }} value="8">Aug</option>
+            <option {{ $thisMonth == 9 ? 'selected' : '' }} value="9">Sep</option>
+            <option {{ $thisMonth == 10 ? 'selected' : '' }} value="10">Oct</option>
+            <option {{ $thisMonth == 11 ? 'selected' : '' }} value="11">Nov</option>
+            <option {{ $thisMonth == 12 ? 'selected' : '' }} value="12">Dec</option>
         </select>
         <select name="searchYear"  class="w-25 border-dark" id="Search Year">
             <option value="2019"></option>
@@ -33,11 +33,11 @@
     <strong>Transition/Reentry Support Form</strong><br>						
     Eastern Carolina Council of Government	<br>							
     Invoice # 402.{{ Carbon\Carbon::now()->year }}.{{ Carbon\Carbon::now()->month }}	<br>						
-    {{ Carbon\Carbon::create()->month($thisDate)->startOfMonth()->format('m/d/Y') }} - {{ Carbon\Carbon::create()->month($thisDate)->endOfMonth()->format('m/d/Y')  }}<br>
+    {{ Carbon\Carbon::create()->month($thisMonth)->startOfMonth()->format('m/d/Y') }} - {{ Carbon\Carbon::create()->month($thisMonth)->endOfMonth()->format('m/d/Y')  }}<br>
     <br>
 </div>
 <div class="col-12 text-right">
-    <a href="/ap/{{ $thisDate }}/export" class="btn btn-sm btn-dark mr-0">Export</a>
+    <a href="/ap/{{ $thisMonth }}/export" class="btn btn-sm btn-dark mr-0">Export</a>
 </div>
 
 @foreach($clientData as $client)
