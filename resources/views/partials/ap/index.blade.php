@@ -26,8 +26,8 @@
         </select>
         <select name="searchYear"  class="w-25 border-dark" id="Search Year">
             <option value="">Select Year</option>
-            <option {{ $thisMonth == 2019 ? 'selected' : '' }} value="2019">2019</option>
-            <option {{ $thisMonth == 2020 ? 'selected' : '' }} value="2020">2020</option>
+            <option {{ $thisMonth == '2019' ? 'selected' : '' }} value="2019">2019</option>
+            <option {{ $thisMonth == '2020' ? 'selected' : '' }} value="2020">2020</option>
         </select>
         <button class="btn btn-xs btn-dark" type="submit">Switch Month</button>
     </form>
