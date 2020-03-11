@@ -22,11 +22,12 @@ class AccountsPayableController extends Controller
         $thisDate = Carbon::now()->month;
         if($request)
         {
-           $thisDate = $request->searchMonth; 
+           $thisMonth = $request->searchMonth;
+           $thisYear = $request->searchYear;
         }
 
         $clients = Client::whereHas('services', function ($query) use($thisDate) {
-                $query->whereMonth('date_authorized','=', $thisDate)->whereYear('date_authorized', '=', Carbon::now()->year);
+                $query->whereMonth('date_authorized','=', $thisDate)->whereYear('date_authorized', '=', $thisYear);
             })->with('services')->get();
         $clientData = $clients->map(function($x) use($thisDate){
             $thisService =  collect($x->services->toArray())->filter(function($y) use($thisDate){
