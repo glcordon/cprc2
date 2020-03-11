@@ -19,18 +19,20 @@ class AccountsPayableController extends Controller
      */
     public function index(Request $request)
     {
-        $thisDate = Carbon::now()->month;
+        $thisMonth = Carbon::now()->month;
+        $thisyear = Carbon::now()->year;
         if($request)
         {
-           $thisDate = $request->searchMonth; 
+           $thisMonth = $request->searchMonth;
+           $thisYear = $request->searchYear;
         }
 
-        $clients = Client::whereHas('services', function ($query) use($thisDate) {
-                $query->whereMonth('date_authorized','=', $thisDate)->whereYear('date_authorized', '=', Carbon::now()->year);
+        $clients = Client::whereHas('services', function ($query) use($thisMonth, $thisYear) {
+                $query->whereMonth('date_authorized','=', $thisMonth)->whereYear('date_authorized', '=', $thisYear);
             })->with('services')->get();
-        $clientData = $clients->map(function($x) use($thisDate){
-            $thisService =  collect($x->services->toArray())->filter(function($y) use($thisDate){
-                return Carbon::parse($y['pivot']['date_authorized'])->month == $thisDate;
+        $clientData = $clients->map(function($x) use($thisMonth, $thisYear){
+            $thisService =  collect($x->services->toArray())->filter(function($y) use($thisMonth, $thisYear){
+                return Carbon::parse($y['pivot']['date_authorized'])->month == $thisMonth && Carbon::parse($y['pivot']['date_authorized'])->year == $thisYear;
             });
             return ['first_name' => $x->first_name, 'last_name' => $x->last_name, 'services'=>$thisService];
         });
@@ -48,7 +50,7 @@ class AccountsPayableController extends Controller
         //        'last'=>$x->last_name, 
         //        'service'=>$serviceData];
         // });
-        return view('partials.ap.index', compact('clientData','thisDate'));
+        return view('partials.ap.index', compact('clientData','thisMonth', 'thisYear'));
     }
     public function participantReport(Request $request)
     {
