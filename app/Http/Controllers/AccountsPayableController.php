@@ -50,7 +50,7 @@ class AccountsPayableController extends Controller
         //        'last'=>$x->last_name, 
         //        'service'=>$serviceData];
         // });
-        return view('partials.ap.index', compact('clientData','thisDate'));
+        return view('partials.ap.index', compact('clientData','thisMonth', 'thisYear'));
     }
     public function participantReport(Request $request)
     {
