@@ -268,7 +268,8 @@
         Start Date: <br>
         <input type="date" name="job_start_date" id="job_start_date" class="form-control" placeholder="Enter Start Date">
         {{--  <input type="number" id="service_duration" name="service_duration" class="form-control" placeholder="Service duration in days"><br>  --}}
-        
+        <br />Notes <br>
+        <textarea name="notes" id="notes" cols="30" rows="10" class="form-control"></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
