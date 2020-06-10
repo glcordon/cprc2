@@ -32,7 +32,7 @@ class AccountsPayableController extends Controller
             })->with('services')->get();
         $clientData = $clients->map(function($x) use($thisMonth, $thisYear){
             $thisService =  collect($x->services->toArray())->filter(function($y) use($thisMonth, $thisYear){
-                return Carbon::parse($y['pivot']['date_authorized'])->month == $thisMonth && Carbon::parse($y['pivot']['date_authorized'])->year == $thisYear;
+                return $y['service_type'] != 'referred' && Carbon::parse($y['pivot']['date_authorized'])->month == $thisMonth && Carbon::parse($y['pivot']['date_authorized'])->year == $thisYear;
             });
             return ['first_name' => $x->first_name, 'last_name' => $x->last_name, 'services'=>$thisService];
         });
