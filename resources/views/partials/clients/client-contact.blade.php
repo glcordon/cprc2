@@ -133,7 +133,7 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            adfadsfasdfasdfasdfas
+            
             <div class="row">
                 <div class="col-6 py-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -226,7 +226,7 @@
         <select name="service_name" id="service_name" class="form-control">
             <option value="">Select A Service</option>
            
-            @foreach($services as $service)
+            @foreach($allServices as $service)
             
             <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
             @endforeach
