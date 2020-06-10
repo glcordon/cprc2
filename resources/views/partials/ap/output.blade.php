@@ -107,6 +107,7 @@
       <tr><td style="padding:5px; border:1px solid #999; font-weight:bold">Total</td><td colspan="8" valign="top" style="padding:5px; border:1px solid #999;text-align:right; font-weight:bold">${{ $grandTotal ?? '0.00' }}</td></tr>
     </tfoot>
 </table>
+{{ asset('img/logo.jpg') }}
 @endauth
 
     {{--  {{ $cs['service_name'] }} 
