@@ -16,16 +16,15 @@ class Client extends Model
     protected $dates = ['created_at', 'updated_at','deleted_at'];
     public function scopeAgedBetween($query, $start, $end = null)
     {
-    if (is_null($end)) {
-        $end = $start;
+        if (is_null($end)) {
+            $end = $start;
+        }
+
+        $start = Carbon::now()->subYears($start)->toDateString(); 
+        $end = Carbon::now()->subYears($end)->addYear()->subDay()->toDateString();  // plus 1 year minus a day
+
+        return $query->whereBetween('dob', [$start, $end]);
     }
-    dump($query);
-
-    $start = Carbon::now()->subYears($start);
-    $end = Carbon::now()->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
-
-    return $query->whereBetween('dob', [$start, $end]);
-}
 
     public function caseworker()
     {
