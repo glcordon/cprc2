@@ -51,12 +51,12 @@
                     @foreach($clients as $client)
                     <tr>
                         <td>{{ $client->first_name }}</td>
-                        <td></td>
+                        <td>{{ $client->middle_name ?? '' }}</td>
                         <td>{{ $client->last_name }}</td>
                         <td>{{ $client->ncdps_id }}</td>
                         <td>{{ $client->risk_level }}</td>
                         <td>{{ $client->enrollment_date }}</td>
-                        <td>{{ $client->status!=='active'?$client->updated_at:'' }}</td>
+                        <td>{{ $client->status!=='active'? $client->updated_at : 'Active' }}</td>
                     </tr>
                     @endforeach
                 </tbody>
