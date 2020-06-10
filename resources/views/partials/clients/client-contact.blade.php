@@ -133,7 +133,7 @@
         </div>
         <div class="card-column col-9">
         <div class="col-12 card padding-bottom-3">
-            
+            adfadsfasdfasdfasdfas
             <div class="row">
                 <div class="col-6 py-2">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
