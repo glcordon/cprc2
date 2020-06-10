@@ -107,7 +107,7 @@
       <tr><td style="padding:5px; border:1px solid #999; font-weight:bold">Total</td><td colspan="8" valign="top" style="padding:5px; border:1px solid #999;text-align:right; font-weight:bold">${{ $grandTotal ?? '0.00' }}</td></tr>
     </tfoot>
 </table>
-<div class="row" style="paddin-top:40px; text-align:center;">
+<div class="row" style="margin-top:20px; padding-top:40px; text-align:center;">
     <div class="col-12">
         <img src="{{ URL::to('/') }}/img//logo.jpg" width="300px" alt=""><br>
         503 Guion St<br />
