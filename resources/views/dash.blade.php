@@ -104,30 +104,30 @@
 		<div class="col-12">
 			<h3> Demographics: </h3>
 		</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="card-counter secondary">
 				  <i class="fa fa-database"></i>
 				  <span class="count-numbers">{{ $under25 }}</span>
 				  <span class="count-name">Ex-Offenders Under 25</span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="card-counter dark">
-				  <i class="fa fa-database"></i>
+				  <i class="fa fa-file-alt"></i>
 				  <span class="count-numbers">{{ $between28and35 }}</span>
 				  <span class="count-name">Ex-Offenders betwen 26 and 35 </span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="card-counter success">
 				  <i class="fa fa-database"></i>
 				  <span class="count-numbers">{{  $between36and50  }}</span>
 				  <span class="count-name">Ex-Offenders betwen 36 and 50  </span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="card-counter primary">
-				  <i class="fa fa-database"></i>
+				  <i class="fa fa-file-alt"></i>
 				  <span class="count-numbers">{{ $over50 }}</span>
 				  <span class="count-name">Ex-Offenders over 50  </span>
 				</div>
