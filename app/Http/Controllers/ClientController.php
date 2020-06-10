@@ -282,10 +282,10 @@ class ClientController extends Controller
                         );
                 }
                 
-                
+                dd($client_service);
             return collect($client_service)->map(function($x) use($serviceName){
                 dd($x);
-                
+
                 return [
                     'service_name' => $serviceName['service_name'],
                     'service_id' => $x['service_id'],
