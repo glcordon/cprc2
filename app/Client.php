@@ -26,7 +26,6 @@ class Client extends Model
         return $query
             ->where('dob', '>=', $start)
             ->where('dob', '<', $end)
-            ->get()
             ;
     }
 
