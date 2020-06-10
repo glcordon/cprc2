@@ -306,7 +306,7 @@
                     <div class="form-check form-check-inline flex" style="margin:3px 10px; display: -webkit-inline-box">
                         <input type="checkbox" class="form-check-input" name="services[]" value="{{ $service->id }}" id="service_{{ $service->id }}" {{ isset($client) ? (in_array($service->id, $client->services->pluck('id')->toArray()) ? 'checked="checked"' : '') : ''}}> 
                         <label  class="form-check-label" for="service_{{ $service->id }}">
-                            {{ $service->service_name }}<br /> <small><em>Duration: {{ $service->service_duration ?? '' }} Days</em></small>
+                            {{ $service->service_name }}
                         </label>
                     </div>
                 @endforeach
