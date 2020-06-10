@@ -22,7 +22,7 @@ class Client extends Model
     $start = $now->subYears($start);
     $end = $now->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
 
-    return $query->whereBetween('dob', $start, $end);
+    return $query->whereBetween('dob', [$start, $end]);
 }
 
     public function caseworker()
