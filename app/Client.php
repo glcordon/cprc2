@@ -23,7 +23,7 @@ class Client extends Model
         $start = Carbon::now()->subYears($start);
         $end = Carbon::now()->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
 
-        return $query->whereBetween('dob', [$end, $start])->where('status', '<>', 'active');
+        return $query->whereBetween('dob', [$end, $start])->where('status', 'active');
     }
 
     public function caseworker()
