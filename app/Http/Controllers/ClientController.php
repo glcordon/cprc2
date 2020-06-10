@@ -134,11 +134,12 @@ class ClientController extends Controller
         $services = $clients->services;
         $additional_service = Services::where('service_type', '!=', 'referred')->get();
         $allServices = collect($additional_service->toArray());
-        $otherServices = $additional_service->diff($services)->sortBy('service_name')->toArray();
+        $otherServices = $additional_service->sortBy('service_name')->toArray();
         $notes = $clients->notes;
+        $theServices = collect(Services::get())->toArray();
         $last_contact = $clients->notes->first()->created_at ?? '';
         // dd(Services::select('id', 'service_name')->pluck('id'));
-        return view('partials.clients.client-contact', compact('clients', 'services','notes', 'allServices', 'otherServices', 'last_contact'));
+        return view('partials.clients.client-contact', compact('clients', 'theServices', 'services','notes', 'allServices', 'otherServices', 'last_contact'));
     }
 
     /**

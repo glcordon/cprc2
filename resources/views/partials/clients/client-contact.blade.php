@@ -197,7 +197,7 @@
         <select name="service_name" id="service_name" class="form-control">
             <option value="">Add A Service To Add</option>
            
-            @foreach($allServices as $service)
+            @foreach($otherServices as $service)
               <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
             @endforeach
         </select><br>
@@ -226,7 +226,7 @@
         <select name="service_name" id="service_name" class="form-control">
             <option value="">Select A Service</option>
            
-            @foreach($allServices as $service)
+            @foreach($theServices as $service)
             
             <option value="{{ $service['id'] }}">{{ $service['service_name'] }}</option>
             @endforeach
