@@ -285,13 +285,13 @@ class ClientController extends Controller
                 
             return collect($client_service)->map(function($x) use($serviceName){
                 return [
-                    'service_name' => $serviceName->service_name,
-                    'service_id' => $x->service_id,
-                    'client_id' => $x->client_id,
-                    'authorized_price' => $x->authorized_price,
-                    'date_authorized' => $x->date_authorized,
-                    'notes' => $x->notes,
-                    'file_url' => $x->file_url
+                    'service_name' => $serviceName['service_name'],
+                    'service_id' => $x['service_id'],
+                    'client_id' => $x['client_id'],
+                    'authorized_price' => $x['authorized_price'],
+                    'date_authorized' => $x['date_authorized'],
+                    'notes' => $x['notes'],
+                    'file_url' => $x['file_url']
 
                 ];
             });
