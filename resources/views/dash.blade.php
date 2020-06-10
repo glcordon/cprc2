@@ -102,7 +102,7 @@
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<h3> Active Ex-Offender Demographics: </h3>
+			<h3> Active Ex-Offender Age Demographics: </h3>
 		</div>
 			<div class="col-md-6">
 				<div class="card-counter primary">
