@@ -15,10 +15,11 @@ class Client extends Model
     protected $fillable = ['user_id', 'client_services', 'assigned_to'];
     protected $dates = ['created_at', 'updated_at','deleted_at'];
     public function scopeAgedBetween($query, $start, $end = null)
-{
+    {
     if (is_null($end)) {
         $end = $start;
     }
+    dump($query);
 
     $start = Carbon::now()->subYears($start);
     $end = Carbon::now()->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
