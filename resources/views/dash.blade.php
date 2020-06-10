@@ -108,7 +108,7 @@
 				<div class="card-counter primary">
 				  <i class="fa fa-database"></i>
 				  <span class="count-numbers">{{ $under25 }}</span>
-				  <span class="count-name">Ex-Offenders Under 25</span>
+				  <span class="count-name">Ex-Offenders 25 and Under</span>
 				</div>
 			</div>
 			<div class="col-md-6">
