@@ -21,9 +21,9 @@ class Client extends Model
     }
 
     $now = Carbon::now();
-    dump([$start, $end]);
     $start = $now->subYears($start);
     $end = $now->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
+    dump([$start, $end]);
 
     return $query->whereBetween('dob', [$start, $end]);
 }
