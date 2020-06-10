@@ -106,28 +106,28 @@
 		</div>
 			<div class="col-md-6">
 				<div class="card-counter primary">
-				  <i class="fa fa-database"></i>
+				  <i class="fa fa-hashtag"></i>
 				  <span class="count-numbers">{{ $under25 }}</span>
 				  <span class="count-name">Ex-Offenders 25 and Under</span>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="card-counter primary">
-				  <i class="fa fa-file-alt"></i>
+				  <i class="fa fa-hashtag"></i>
 				  <span class="count-numbers">{{ $between28and35 }}</span>
 				  <span class="count-name">Ex-Offenders betwen 26 and 35 </span>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="card-counter primary">
-				  <i class="fa fa-database"></i>
+				  <i class="fa fa-hashtag"></i>
 				  <span class="count-numbers">{{  $between36and50  }}</span>
 				  <span class="count-name">Ex-Offenders betwen 36 and 50  </span>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="card-counter primary">
-				  <i class="fa fa-file-alt"></i>
+				  <i class="fa fa-hashtag"></i>
 				  <span class="count-numbers">{{ $over50 }}</span>
 				  <span class="count-name">Ex-Offenders over 50  </span>
 				</div>
