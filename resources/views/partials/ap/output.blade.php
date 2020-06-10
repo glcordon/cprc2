@@ -56,7 +56,7 @@
             <td style="padding:5px; border:1px solid #999;">{{ $client['last'] }}, {{ $client['first'] }}</td>
             <td style="border:1px solid #999; padding:0;" colspan="2" valign="top">
                 @if(array_key_exists('contract', $client['service']->toArray()))
-                    <table style="width:100%;" cellspacing="0" cellpadding='0'>
+                    <table style="width:100%; margin:-1px;" cellspacing="0" cellpadding='0'>
                         @foreach($client['service']['contract'] as $contract)
                         <tr>
                             <td width="60%" style="padding:4px; border:1px solid #999">${{ $contract['pivot']['authorized_price'] }}</td>
