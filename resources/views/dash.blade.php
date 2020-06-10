@@ -83,6 +83,8 @@
 			</div>
 		</div>
 	</div>  --}}
+	@dump($under25)
+@dump($between28and35)
 	<div class="row">
 			<div class="col-md-6">
 			  <div class="card-counter primary">
