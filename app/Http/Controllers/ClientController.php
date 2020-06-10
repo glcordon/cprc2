@@ -245,8 +245,6 @@ class ClientController extends Controller
     }
     public function addService(Request $request)
     {
-        return $request->all();
-        
         if($request)
         {
             // return($request->all());
@@ -275,7 +273,6 @@ class ClientController extends Controller
                     $client_service = ClientService::updateOrCreate(
                         [
                             'service_id' => $request->service_id,
-                            'service_name' => $serviceName->service_name,
                             'client_id' => $client->id,
                             'authorized_price' => $request->auth_price,
                             'date_authorized' => $request->date_authorized,
@@ -286,7 +283,18 @@ class ClientController extends Controller
                 }
                 
                 
-            return $client_service;
+            return $client_service->map(function($x) use($serviceName){
+                return [
+                    'service_name' => $serviceName->service_name,
+                    'service_id' => $x->service_id,
+                    'client_id' => $x->client_id,
+                    'authorized_price' => $x->authorized_price,
+                    'date_authorized' => $x->date_authorized,
+                    'notes' => $x->notes,
+                    'file_url' => $x->file_url
+
+                ];
+            });
         }
     }
 
