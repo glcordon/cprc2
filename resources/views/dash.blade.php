@@ -83,10 +83,10 @@
 			</div>
 		</div>
 	</div>  --}}
-	@dump($under25)
-@dump($between28and35)
-@dump($between36and50)
-@dump($over50)
+	Ex-Offenders Under 25 : $under25
+	Ex-Offenders betwen 26 and 35 : $between28and35
+	Ex-Offenders betwen 36 and 50 : $between36and50
+	Ex-Offenders over 50 : $over50
 	<div class="row">
 			<div class="col-md-6">
 			  <div class="card-counter primary">
