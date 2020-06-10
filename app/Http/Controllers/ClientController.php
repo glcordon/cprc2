@@ -138,7 +138,7 @@ class ClientController extends Controller
         $notes = $clients->notes;
         $last_contact = $clients->notes->first()->created_at ?? '';
         // dd(Services::select('id', 'service_name')->pluck('id'));
-        return view('partials.clients.client-contact', compact('clients', 'services','notes', 'otherServices', 'last_contact'));
+        return view('partials.clients.client-contact', compact('clients', 'services','notes', 'allServices', 'otherServices', 'last_contact'));
     }
 
     /**
