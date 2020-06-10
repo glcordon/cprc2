@@ -292,7 +292,7 @@
           <input type="hidden" name="client_id" id="client_id" value="{{ $clients->id }}">
             <select name="service_id" id="service_id" class="form-control" style="margin-bottom:10px;" required="required">
               <option value="">Select A Service</option>
-              @foreach($otherServices as $srv)
+              @foreach($theServices as $srv)
                   <option value="{{ $srv['id'] }}">{{ $srv['service_name'] ?? '' }}</option>
               @endforeach
             </select>
