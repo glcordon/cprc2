@@ -249,6 +249,7 @@ class ClientController extends Controller
         {
             // return($request->all());
             $client = Client::find($request->client_id);
+            $serviceName = Services::find($request->service_id);
             // dd($request->uploaded_file);
             $filename = '';
             if($request->uploaded_file == "unidentified")
@@ -271,7 +272,8 @@ class ClientController extends Controller
                 }else{
                     $client_service = ClientService::updateOrCreate(
                         [
-                            'service_id' => $request->service_id, 
+                            'service_id' => $request->service_id,
+                            'service_name' => $serviceName->service_name,
                             'client_id' => $client->id,
                             'authorized_price' => $request->auth_price,
                             'date_authorized' => $request->date_authorized,
