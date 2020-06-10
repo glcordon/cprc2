@@ -110,7 +110,9 @@ class ReportController extends Controller
         $service = Service::get();
         $under25 = Client::agedBetween(16,25)->count();
         $between28and35 = Client::agedBetween(28, 34)->count();
-        return view('dash', compact('myCaseload','clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount','under25', 'between28and35', 'thisDate'));
+        $between36and50 = Client::agedBetween(36, 50)->count();
+        $over50 = Client::agedBetween(51, 100)->count();
+        return view('dash', compact('between36and50', 'over50','myCaseload','clients', 'totalActive', 'all', 'service','jobCount', 'inactiveCount', 'inactiveClients', 'serviceCount','under25', 'between28and35', 'thisDate'));
 
     }
 }
