@@ -471,10 +471,10 @@
             data1.append('save_type', save_type);
             axios.post('/add-service', data1)
                 .then(data=>{
-                   $('.service_div').prepend(`
-                <a href="#"><h5 class="card-title"> ${data.data['service_name']}</h5></a>
-                <p>${data.data['date_authorized']}</p>
-                `)
+             //      $('.service_div').prepend(`
+             //   <a href="#"><h5 class="card-title"> ${data.data['service_name']}</h5></a>
+            //    <p>${data.data['date_authorized']}</p>
+            //    `)
                 $('#servicesModal').find('#saveServices').attr('data-btn-type', '');
                 $('#servicesModal').find('#saveServices').attr('data-id', '');
 
