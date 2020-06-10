@@ -90,7 +90,10 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $('.table').DataTable();
+        var table = $('.table').DataTable();
+        table
+    .order( [ 4, 'desc' ] )
+    .draw();
         $('.btn-danger').on('click', function(e){
             if(confirm('Are You Sure') == false)
             {
