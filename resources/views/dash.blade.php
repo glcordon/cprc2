@@ -101,11 +101,13 @@
 		</div>
 	</div>
 	<div class="row">
-		<h3> Demographics: </h3>
-		Ex-Offenders Under 25 : <strong>{{ $under25 }} </strong>|
-		Ex-Offenders betwen 26 and 35 : <strong>{{ $between28and35 }} </strong>|
-		Ex-Offenders betwen 36 and 50 : <strong>{{ $between36and50 }} </strong>|
-		Ex-Offenders over 50 : <strong>{{ $over50 }}</strong> 
+		<div class="col-12">
+			<h3> Demographics: </h3>
+			Ex-Offenders Under 25 : <strong>{{ $under25 }} </strong>|
+			Ex-Offenders betwen 26 and 35 : <strong>{{ $between28and35 }} </strong>|
+			Ex-Offenders betwen 36 and 50 : <strong>{{ $between36and50 }} </strong>|
+			Ex-Offenders over 50 : <strong>{{ $over50 }}</strong> 
+		</div>
 	</div>
 	
 	<div class="row">
