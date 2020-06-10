@@ -110,7 +110,7 @@
 <div class="row" style="margin-top:20px; padding-top:40px; text-align:center;">
     <div class="col-12">
         <img src="{{ URL::to('/') }}/img//logo.jpg" width="300px" alt=""><br>
-        503 Guion St<br />
+        503 Guion St | 
         New Bern, NC 28561
 
     </div>
