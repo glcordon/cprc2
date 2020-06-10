@@ -83,31 +83,32 @@
 			</div>
 		</div>
 	</div>  --}}
-	<strong> Demographics: </strong>
-	Ex-Offenders Under 25 : <strong>{{ $under25 }} </strong>|
-	Ex-Offenders betwen 26 and 35 : <strong>{{ $between28and35 }} </strong>|
-	Ex-Offenders betwen 36 and 50 : <strong>{{ $between36and50 }} </strong>|
-	Ex-Offenders over 50 : <strong>{{ $over50 }}</strong> 
 	<div class="row">
-			<div class="col-md-6">
-			  <div class="card-counter primary">
+		<div class="col-md-6">
+			<div class="card-counter primary">
 				<i class="fa fa-code-fork"></i>
 				<span class="count-numbers">{{ count($all) }}</span>
 				<span class="count-name">Enrolled This Month</span>
-			  </div>
 			</div>
+		</div>
 		
-			<div class="col-md-6">
-			  <div class="card-counter success">
+		<div class="col-md-6">
+			<div class="card-counter success">
 				<i class="fa fa-database"></i>
 				<span class="count-numbers">{{ $totalActive }}</span>
 				<span class="count-name">Currently Active</span>
-			  </div>
 			</div>
+		</div>
 	</div>
-
-		
-			<div class="row">
+	<div class="row">
+		<h3 Demographics: </h3>
+		Ex-Offenders Under 25 : <strong>{{ $under25 }} </strong>|
+		Ex-Offenders betwen 26 and 35 : <strong>{{ $between28and35 }} </strong>|
+		Ex-Offenders betwen 36 and 50 : <strong>{{ $between36and50 }} </strong>|
+		Ex-Offenders over 50 : <strong>{{ $over50 }}</strong> 
+	</div>
+	
+	<div class="row">
 				<div class="col-8">
 						<h3>Number of clients that received supportive services:</h3>
 				</div>
