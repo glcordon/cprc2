@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Carbon\Carbon;
+
 class Client extends Model
 {
     use SoftDeletes;
@@ -18,7 +20,7 @@ class Client extends Model
         $end = $start;
     }
 
-    $now = $this->freshTimestamp();
+    $now = Carbon::now();
     $start = $now->subYears($start);
     $end = $now->subYears($end)->addYear()->subDay(); // plus 1 year minus a day
 
