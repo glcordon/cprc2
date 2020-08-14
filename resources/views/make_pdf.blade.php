@@ -48,7 +48,7 @@
                 <th colspan="3" style="border:1px solid black">Dismissal</th>
             </tr>
         </thead>
-        <thead style="background-color:#800020; color:white;">
+        <thead style="background-color:black; font-size:10px; color:white;">
             <tr>
                 {{-- id --}}
                 <th>First Name</th>
