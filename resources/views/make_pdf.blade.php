@@ -98,9 +98,9 @@
                         {{-- Supervision --}}
                         <td>Recent Incarseration</td>
                         <td>NCDPS/DCC  Supervision TYPE</td>
-                        <td>NCDPS/DCC Supervision LEVEL</td>
+                        <td>{{ $client->supervision_level}}</td>
                         <td>{{ $client->risk_level }}</td>
-                        <td>Registered Sex Offender</td>
+                        <td>{{ $client->sex_offender }}</td>
                        {{-- Dismissal  --}}
                        <td>Dismissal Date</td>
                        <td>LRC Outcome</td>
