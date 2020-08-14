@@ -50,6 +50,7 @@ class ReportController extends Controller
            } 
            
        } 
+       dd($activeClients);
        $inactiveCount = array_count_values($inactiveClients->pluck('status')->toArray()); 
        $jobCount = array_count_values($numberOfJobs->sort()->toArray());
        $serviceCount = array_count_values($numberOfServices->sort()->toArray());

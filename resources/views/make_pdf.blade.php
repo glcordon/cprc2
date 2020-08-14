@@ -27,7 +27,7 @@
 		</div>
 		<div class="col-8" style="text-align:center;">
 			<h1>North Carolina Local Reentry Council</h1>
-			<h2>Monthly Progress Report</h2>
+			<h2>Monthly Data Collection</h2>
 			<h3>Due by 15th of each Month</h3>
 		</div>
 	</div>
@@ -37,142 +37,88 @@
 			<div class="col-3">Reporting Month/Year:</div>
 			<div class="col-3"> {{ $thisDate->month }}/{{ $thisDate->year }}</div>
 	</div>
-	
-	<div class="row" style="background-color:#005b96; color:white; marign:0">
-		<div class="col-12">Activity Summary</div>
-	
-	<div class="col-12" style="background-color:#b3cde0;margin:0; color:black">
-		Please enter the number of reentry clients for each category during the reporting period.
 	</div>
-	</div>
-	<div class="row">
-		<div class="col-4">
-				Number of reentry clients:
-		</div>
-		<div class="col-8">
-
-		</div>
-	</div>
-		<div class="row" style="background-color:#b3cde0; color:black">
-			<div class="col-3">Enrolled:</div>
-			<div  style="border:1px solid black;" class="col-3">{{ count($all) }}</div>
-			<div class="col-3">Active</div>
-			<div style="border:1px solid black" class="col-3">{{ $totalActive }}</div>
-		</div>
-		
-			<div class="row">
-				<div class="col-4">
-						Number of clients that received supportive services:
-				</div>
-				<div class="col-8">
-		
-				</div>
-			</div>
-					@foreach($service->sortBy('service_name')->chunk(3) as $chunk)
-						<div class="row" style="background-color:#b3cde0;">
-						@foreach($chunk as $serv)
-							<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-							<div style="border:1px solid black"  class="col-2">{{ $serviceCount[$serv->service_name] ?? '0' }}</div>
-						@endforeach
-						</div>
-					@endforeach
-					<div class="row">
-						<div class="col-4">
-								Supportive Services Detail:
-						</div>
-						<div class="col-8">
-				
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-								Employment: Hourly Wage Ranges
-						</div>
-						<div class="col-8">
-				
-						</div>
-					</div>
-					<div class="row" style="background-color:#b3cde0; color:black">
-						<div class="col-2" style="text-align:right">
-							Min Wage
-						</div>
-						<div class="col-1" style="border:1px solid black;padding-top:9px">
-							{{ $jobCount['min'] ?? 0 }}
-						</div>
-						<div class="col-2" style="text-align:right">
-							Min Wage - $8.00
-						</div>
-						<div class="col-1" style="border:1px solid black;padding-top:9px">
-							{{ $jobCount['minTo8'] ?? 0 }}
-						</div>
-						<div class="col-2" style="text-align:right">
-							$9.01 - $10.00 
-						</div>
-						<div class="col-1" style="border:1px solid black;padding-top:9px">
-							{{ $jobCount['minTo10'] ?? 0 }}
-						</div>
-						<div class="col-2" style="text-align:right">
-							$10.00+
-						</div>
-						<div class="col-1" style="border:1px solid black;padding-top:9px">
-							{{ $jobCount['over10'] ?? 0 }}
-						</div>
-					</div>
-					<div class="row">
-						Housing: Type
-					</div>
-					<div class="row" style="background-color:#b3cde0; color:black">
-
-						@foreach($service->sortBy('service_name') as $serv)
-							@if(strpos($serv->service_name,'Housing') === 0)
-								<div class="col-2" style="text-align:right">{{ $serv->service_name }}</div>
-								<div style="border:1px solid black"  class="col-2">{{ $serv->client()->count() }}</div>
-							@endif
-						
-					@endforeach
-					</div>
-					<div class="row">
-						Number of Client Dismissals:
-					</div>
-					<div class="row">
-						<div class="col-3 text-right">Successfully Completed</div><div class="col-1" style="border:1px solid black">
-							{{ $inactiveCount['Successfully Completed'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Non-compliant</div><div class="col-1" style="border:1px solid black">
-								{{ $inactiveCount['Non-compliant'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Moved Away</div><div class="col-1" style="border:1px solid black">
-								{{ $inactiveCount['Moved Away'] ?? '0' }}
-						</div>
-					</div>
-					<div class="row">
-						
-						<div class="col-3 text-right">Dropped Out (Quit)</div><div class="col-1" style="border:1px solid black">
-								{{ $inactiveCount['Quit'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Re-Arrest</div><div class="col-1" style="border:1px solid black">
-								{{ $inactiveCount['Re-Arrest'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Deceased</div><div class="col-1" style="border:1px solid black">
-							{{ $inactiveCount['Deceased'] ?? '0' }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3 text-right">No Contact</div><div class="col-1" style="border:1px solid black">
-							{{ $inactiveCount['No Contact'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Transferred</div><div class="col-1" style="border:1px solid black">
-							{{ $inactiveCount['Transferred'] ?? '0' }}
-						</div>
-						<div class="col-3 text-right">Complete</div><div class="col-1" style="border:1px solid black">
-							{{ $inactiveCount['complete'] ?? '0' }}
-						</div>
-					</div>
-					</div>
-					
-
-								
-			</div>
+	<table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th colspan="5" style="border:1px solid black; background:pink;">Identification</th>
+                <th colspan="2" style="border:1px solid black; background:coral;">Enrollment</th>
+                <th colspan="4" style="border:1px solid black; background:cornsilk">Demographic</th>
+                <th colspan="5" style="border:1px solid black; background:greenyellow">Supervision</th>
+                <th colspan="3" style="border:1px solid black; background:lightblue">Dismissal</th>
+            </tr>
+        </thead>
+        <thead style="background-color:black; font-size:10px; color:white;">
+            <tr>
+                {{-- id --}}
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>OPUS/ID Number</th>
+                <th>DOB</th>
+                {{-- Enrollment --}}
+                <th>Enrollment Date</th>
+                <th>Referral Source</th>
+                {{-- Demographic --}}
+                <th>Gender</th>
+                <th>Race</th>
+                <th>Ethnicity</th>
+                <th>Maritial Status</th>
+                {{-- Supervision --}}
+                <th>Recent Incarseration</th>
+                <th>NCDPS/DCC  Supervision TYPE</th>
+                <th>NCDPS/DCC Supervision LEVEL</th>
+                <th>Risk Level</th>
+                <th>Registered Sex Offender</th>
+                {{-- dismissal --}}
+                <th>Dismissal Date</th>
+                <th>LRC Outcome</th>
+                <th>Criminal Justice Outcome</th>
+            </tr>
+        </thead>
+                <tbody>
+                    @foreach($clients as $client)
+                    <tr>
+                        {{-- id  --}}
+                        <td>{{ $client->first_name }}</td>
+                        <td>{{ $client->middle_name ?? '' }}</td>
+                        <td>{{ $client->last_name }}</td>
+                        <td>{{ $client->ncdps_id }}</td>
+                        <td>{{ $client->dob ?? '' }}</td>
+                        {{-- Enrollment --}}
+                        <td>
+                            {{ $client->enrollment_date }}
+                        </td>
+                        <td>{{ $client->released_from }}</td>
+                        {{-- Demographics --}}
+                        <td>{{ $client->sex }}</td>
+                        <td>{{ $client->race}}</td>
+                        <td>{{ $client->ethnicity}}</td>
+                        <td>{{ $client->maritial_status }}</td>
+                        {{-- Supervision --}}
+                        <td>
+							{{-- Recent Incarseration -- Field --}}
+						</td>
+                        <td>
+							{{-- NCDPS/DCC  Supervision TYPE -- Field --}}
+						</td>
+                        <td>{{ $client->supervision_level}}</td>
+                        <td>{{ $client->risk_level }}</td>
+                        <td>{{ $client->sex_offender }}</td>
+                       {{-- Dismissal  --}}
+                       <td>
+						   {{-- Dismissal Date -- Field --}}
+						</td>
+                       <td>
+						   {{-- LRC Outcome -- Field --}}
+						</td>
+                        <td>{{ $client->status!=='active'? $client->updated_at : 'Active' }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </tr>
+        </thead>
+    </table>
 		</div>
 		
 					
