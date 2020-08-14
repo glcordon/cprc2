@@ -41,11 +41,11 @@
 	<table class="table table-striped">
         <thead>
             <tr>
-                <th colspan="5" style="border:1px solid black">Identification</th>
-                <th colspan="2" style="border:1px solid black">Enrollment</th>
-                <th colspan="4" style="border:1px solid black">Demographic</th>
-                <th colspan="5" style="border:1px solid black">Supervision</th>
-                <th colspan="3" style="border:1px solid black">Dismissal</th>
+                <th colspan="5" style="border:1px solid black; background:pink;">Identification</th>
+                <th colspan="2" style="border:1px solid black; background:coral;">Enrollment</th>
+                <th colspan="4" style="border:1px solid black; background:cornsilk">Demographic</th>
+                <th colspan="5" style="border:1px solid black; background:greenyellow">Supervision</th>
+                <th colspan="3" style="border:1px solid black; background:lightblue">Dismissal</th>
             </tr>
         </thead>
         <thead style="background-color:black; font-size:10px; color:white;">
