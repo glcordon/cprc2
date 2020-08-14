@@ -37,6 +37,7 @@
 			<div class="col-3">Reporting Month/Year:</div>
 			<div class="col-3"> {{ $thisDate->month }}/{{ $thisDate->year }}</div>
 	</div>
+	</div>
 	<table class="table table-striped">
         <thead>
             <tr>
