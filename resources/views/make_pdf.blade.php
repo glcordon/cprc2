@@ -96,14 +96,22 @@
                         <td>{{ $client->ethnicity}}</td>
                         <td>{{ $client->maritial_status }}</td>
                         {{-- Supervision --}}
-                        <td>Recent Incarseration</td>
-                        <td>NCDPS/DCC  Supervision TYPE</td>
+                        <td>
+							{{-- Recent Incarseration -- Field --}}
+						</td>
+                        <td>
+							{{-- NCDPS/DCC  Supervision TYPE -- Field --}}
+						</td>
                         <td>{{ $client->supervision_level}}</td>
                         <td>{{ $client->risk_level }}</td>
                         <td>{{ $client->sex_offender }}</td>
                        {{-- Dismissal  --}}
-                       <td>Dismissal Date</td>
-                       <td>LRC Outcome</td>
+                       <td>
+						   {{-- Dismissal Date -- Field --}}
+						</td>
+                       <td>
+						   {{-- LRC Outcome -- Field --}}
+						</td>
                         <td>{{ $client->status!=='active'? $client->updated_at : 'Active' }}</td>
                     </tr>
                     @endforeach
