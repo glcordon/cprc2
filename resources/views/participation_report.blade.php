@@ -38,24 +38,71 @@
 	</div>
 	
 	<table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="5" style="border:1px solid black">Identification</th>
+                <th colspan="2" style="border:1px solid black">Enrollment</th>
+                <th colspan="4" style="border:1px solid black">Demographic</th>
+                <th colspan="5" style="border:1px solid black">Supervision</th>
+                <th colspan="3" style="border:1px solid black">Dismissal</th>
+            </tr>
+        </thead>
         <thead style="background-color:#800020; color:white;">
             <tr>
+                {{-- id --}}
                 <th>First Name</th>
                 <th>Middle Name</th>
                 <th>Last Name</th>
                 <th>OPUS/ID Number</th>
-                <th>Risk Level</th>
+                <th>DOB</th>
+                {{-- Enrollment --}}
                 <th>Enrollment Date</th>
+                <th>Referral Source</th>
+                {{-- Demographic --}}
+                <th>Gender</th>
+                <th>Race</th>
+                <th>Ethnicity</th>
+                <th>Maritial Status</th>
+                {{-- Supervision --}}
+                <th>Recent Incarseration</th>
+                <th>NCDPS/DCC  Supervision TYPE</th>
+                <th>NCDPS/DCC Supervision LEVEL</th>
+                <th>Risk Level</th>
+                <th>Registered Sex Offender</th>
+                {{-- dismissal --}}
                 <th>Dismissal Date</th>
+                <th>LRC Outcome</th>
+                <th>Criminal Justice Outcome</th>
+            </tr>
+        </thead>
                 <tbody>
                     @foreach($clients as $client)
                     <tr>
+                        {{-- id  --}}
                         <td>{{ $client->first_name }}</td>
                         <td>{{ $client->middle_name ?? '' }}</td>
                         <td>{{ $client->last_name }}</td>
                         <td>{{ $client->ncdps_id }}</td>
+                        <td>{{ $client->dob ?? '' }}</td>
+                        {{-- Enrollment --}}
+                        <td>
+                            {{ $client->enrollment_date }}
+                        </td>
+                        <td>Referral Source</td>
+                        {{-- Demographics --}}
+                        <td>Gender</td>
+                        <td>Race</td>
+                        <td>Ethnicity</td>
+                        <td>Maritial Status</td>
+                        {{-- Supervision --}}
+                        <td>Recent Incarseration</td>
+                        <td>NCDPS/DCC  Supervision TYPE</td>
+                        <td>NCDPS/DCC Supervision LEVEL</td>
                         <td>{{ $client->risk_level }}</td>
-                        <td>{{ $client->enrollment_date }}</td>
+                        <td>Registered Sex Offender</td>
+                       {{-- Dismissal  --}}
+                       <td>Dismissal Date</td>
+                       <td>LRC Outcome</td>
                         <td>{{ $client->status!=='active'? $client->updated_at : 'Active' }}</td>
                     </tr>
                     @endforeach
