@@ -89,12 +89,12 @@
                         <td>
                             {{ $client->enrollment_date }}
                         </td>
-                        <td>Referral Source</td>
+                        <td>{{ $client->released_from }}</td>
                         {{-- Demographics --}}
-                        <td>Gender</td>
-                        <td>Race</td>
-                        <td>Ethnicity</td>
-                        <td>Maritial Status</td>
+                        <td>{{ $client->sex }}</td>
+                        <td>{{ $client->race}}</td>
+                        <td>{{ $client->ethnicity}}</td>
+                        <td>{{ $client->maritial_status }}</td>
                         {{-- Supervision --}}
                         <td>Recent Incarseration</td>
                         <td>NCDPS/DCC  Supervision TYPE</td>
