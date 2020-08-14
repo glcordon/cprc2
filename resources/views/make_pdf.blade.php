@@ -38,7 +38,7 @@
 			<div class="col-3"> {{ $thisDate->month }}/{{ $thisDate->year }}</div>
 	</div>
 	</div>
-	<table class="table table-striped">
+	<table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th colspan="5" style="border:1px solid black; background:pink;">Identification</th>
