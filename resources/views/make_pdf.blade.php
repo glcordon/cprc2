@@ -77,7 +77,7 @@
             </tr>
         </thead>
                 <tbody>
-                    @foreach($clients as $client)
+                    @foreach($all as $client)
                     <tr>
                         {{-- id  --}}
                         <td>{{ $client->first_name }}</td>
